@@ -1,0 +1,32 @@
+name: V2b nonlinear design full-interval Stage 4 and 4A certification
+on:
+  push:
+    paths:
+      - 'verification/v2b_alt_quadratic_rosen_interval.py'
+      - 'verification/v2b_alt_quadratic_policy_interval.py'
+      - 'verification/requirements_v2b_interval.txt'
+      - '.github/workflows/v2b-alt-quadratic-certificate.yml'
+  pull_request:
+jobs:
+  full-space-unique-firm-nash:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Certify global firm pseudo-gradient strict diagonal concavity
+        run: python -u verification/v2b_alt_quadratic_rosen_interval.py
+  all-continuous-policy-depths:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Certify global policy incentive and frozen positive-depth IS
+        run: python -u verification/v2b_alt_quadratic_policy_interval.py
