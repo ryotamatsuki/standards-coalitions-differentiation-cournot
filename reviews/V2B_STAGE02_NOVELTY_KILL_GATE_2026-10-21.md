@@ -1,4 +1,7 @@
 # Stage 2: V2b literature frontier and novelty kill gate
+
+> **Published original-source update (2026-10-21):** The author supplied the complete Gandal–Shy (2001) *Journal of International Economics* paper (21 pages). All five propositions and the model, union and network sections were reviewed. The historical "full text missing" designation below is superseded. **The paper DOES NOT directly absorb the restricted V2b ex-post firm-design coalition reversal**, although government standards unions, mutual-recognition dominance, outsider welfare and network effects are established prior art. Crucially, Gandal–Shy's **no formal union can still yield fully mutual recognition**, which differs from V2b's incompatible SW. **Stage 6 remains CONDITIONAL GO** due to wider prior-art/editorial questions. Full proposition mapping: [Gandal–Shy original-paper audit](../literature/GANDAL_SHY_2001_FULLTEXT_V2B_ABSORPTION_2026-10-21.md).
+
 Date: 2026-10-21. Source cutoff: 2026-10-21 (including 2026 preprints).
 Workflow authority: research-paper-workflow THEORY_PAPER_RESEARCH_PIPELINE.md v2.9, Stage 2.
 Canonical verdict: **CONDITIONAL GO** to closing **one material source/theorem-mapping blocker**; Stage 4 / 4A / 6 cannot be retrospectively treated as passed.
