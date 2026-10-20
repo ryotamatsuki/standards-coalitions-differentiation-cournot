@@ -1,11 +1,14 @@
 # Project State — 2026-10-21
 
+> **Published original-source update (2026-10-21):** The author supplied the complete Gandal–Shy (2001) *Journal of International Economics* paper (21 pages). All five propositions and the model, union and network sections were reviewed. The historical "full text missing" designation below is superseded. **The paper DOES NOT directly absorb the restricted V2b ex-post firm-design coalition reversal**, although government standards unions, mutual-recognition dominance, outsider welfare and network effects are established prior art. Crucially, Gandal–Shy's **no formal union can still yield fully mutual recognition**, which differs from V2b's incompatible SW. **Stage 6 remains CONDITIONAL GO** due to wider prior-art/editorial questions. Full proposition mapping: [Gandal–Shy original-paper audit](../literature/GANDAL_SHY_2001_FULLTEXT_V2B_ABSORPTION_2026-10-21.md).
+
+
 ## Stage 6 — Novelty Re-Kill: CONDITIONAL GO (2026-10-21)
 
 - **CURRENT-PAPER CANONICAL VERDICT: CONDITIONAL GO**, not novelty certification. Stage 4A restricted mathematical PASS persists, but originality is **UNRESOLVED / PARTIALLY ABSORBED** and Stage 7 is **not yet unconditionally authorized**.
 - **New serious predecessors:** Cabral–Salant (2014 IJIO; fully inspectable 2008 WP, Props 1–3) already proves investment-driven failure of otherwise appealing standardization; Buchholz–Hattori (2024 Economic Modelling; inspectable 2021 WP Props 1–3) already proves coalition–endogenous technology paradoxes. 2025 Takarada–Kawabata §5.4 discusses exogenous differentiation changing regional standards incentives. Retract any broad claims that these general mechanisms are novel.
 - **One material blocker:** explain/prove substantive independent economic knowledge in the *narrow* V2b result — **governments commit fixed-depth compatibility, firms select costly residual substitutability afterward, and both AB union incentive and C accession incentive change sign** — that is not already an immediate known investment-and-coalition corollary. Without this, downgrade to NO-GO or research note instead of ad hoc model expansion.
-- **User instruction honored:** unavailable Gandal–Shy (2001), Baake–Boom (2001) and revised journal proof texts remain expressly UNRESOLVED source limitations, **not** evidence of novel theory; work not stopped for unavailable full text.
+- **User instruction honored:** Gandal–Shy (2001) NOW fully reviewed; unavailable Baake–Boom (2001) and revised journal proof texts remain expressly UNRESOLVED source limitations, **not** evidence of novel theory; work not stopped for unavailable full text.
 - [Full Stage 6 canonical verdict, proposition ledger, editor-value audit, independent future questions](reviews/V2B_STAGE06_NOVELTY_REKILL_2026-10-21.md).
 - [Updated actual-theorem / generic-parent absorption matrix](literature/V2B_STAGE06_PARENT_THEOREM_ABSORPTION_2026-10-21.md).
 - **Next:** one bounded Stage 6 contribution/parent-theorem absorption closure, followed by Stage 6 GO → Stage 7 if successful; otherwise NO-GO/narrow research-note disposition. No theory freeze.
