@@ -107,7 +107,7 @@ def global_interior_roots():
 
 def derivatives_su(w):
     determinant=w[4]*w[8]-w[5]*w[7]
-    if not (pos(determin) or neg(determin)):return None
+    if not (pos(determinant) or neg(determinant)):return None
     du=(-w[6]*w[8]+w[5]*w[9])/determinant
     dv=(w[6]*w[7]-w[4]*w[9])/determinant
     return (w[12]+w[10]*du+w[11]*dv,
