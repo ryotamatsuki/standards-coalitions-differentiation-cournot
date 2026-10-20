@@ -1,0 +1,20 @@
+name: Stage 7.5 preregistered nonlinear design diagnostic
+on:
+  push:
+    paths:
+      - 'verification/v2b_stage075_nonlinear_design_diagnostic.py'
+      - '.github/workflows/v2b-stage075-nonlinear.yml'
+      - 'verification/requirements_v2b.txt'
+  pull_request:
+jobs:
+  test-precommitted-outcome:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r verification/requirements_v2b.txt
+      - name: Recompute nonlinear Cournot, Stage-4 Nash, and all-g diagnostic
+        run: python verification/v2b_stage075_nonlinear_design_diagnostic.py
