@@ -68,23 +68,23 @@ def suOutsider (g x : Rat) : Rat :=
 /-- Numerically vulnerable strict fixed-x C accession at g=1/200. -/
 theorem frozen_c_participation_small :
   suOutsider (1/200) xSWproxy <
-  international (1/200) xSWproxy := by decide
+  international (1/200) xSWproxy := by decide +kernel
 
 /-- Keep the PRE-REGISTERED g=.05 failure visible in the FORMAL layer. -/
 theorem frozen_c_participation_failed_at_original_depth :
   international (1/20) xSWproxy <
-  suOutsider (1/20) xSWproxy := by decide
+  suOutsider (1/20) xSWproxy := by decide +kernel
 
 /-- Frozen international policy strictly beats complete separation at g=.005. -/
 theorem frozen_international_better_than_sw :
   international 0 xSWproxy <
-  international (1/200) xSWproxy := by decide
+  international (1/200) xSWproxy := by decide +kernel
 
 /-- Nonlinear actual-design rational PROXIES: international g=.05 is Pareto
     better than SW; Nash identity is NOT established inside Lean. -/
 theorem endogenous_proxy_pareto_gain :
   international 0 xSWproxy <
-  international (1/20) xISproxy := by decide
+  international (1/20) xISproxy := by decide +kernel
 
 #print axioms frozen_c_participation_small
 #print axioms frozen_c_participation_failed_at_original_depth
