@@ -1,0 +1,30 @@
+name: Stage 7.5A Lean 4 rational welfare core
+on:
+  push:
+    paths:
+      - 'formal/V2bWelfareCore.lean'
+      - 'lean-toolchain'
+      - '.github/workflows/stage075a-lean-core.yml'
+  pull_request:
+jobs:
+  lean-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean toolchain with elan
+        shell: bash
+        run: |
+          curl --retry 3 --connect-timeout 15 -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          "$HOME/.elan/bin/lean" --version
+      - name: Ensure no unchecked proofs or project-specific axioms
+        shell: bash
+        run: |
+          if grep -nE '^[[:space:]]*(sorry|admit|axiom)([[:space:]]|$)' formal/V2bWelfareCore.lean; then
+            echo 'ERROR: placeholder/axiom found'
+            exit 1
+          fi
+      - name: Kernel-check exact-rational policy welfare comparisons
+        shell: bash
+        run: |
+          "$HOME/.elan/bin/lean" formal/V2bWelfareCore.lean
