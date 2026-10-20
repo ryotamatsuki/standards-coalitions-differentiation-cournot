@@ -3,6 +3,18 @@
 **Status: WORKING NOTES — NO THEORY FREEZE / NO SUBMISSION AUTHORIZATION.**  
 Last archived: 2026-10-21 (Asia/Tokyo). This repository captures exploratory conversations and independently reproducible algebra checks; it is **not** a completed or refereed proof of a unique subgame-perfect equilibrium.
 
+## Stage 3 candidate selection — GO (2026-10-21)
+
+- **Selected model: V2b only** for the upcoming Stage 4 mathematical gate. V1 is an archived baseline; V2a multiplicity is a preserved negative; additional adoption costs / interface aftermarket / market-access law are deferred.
+- [Formal Stage 3 GO and contribution memo](reviews/V2B_STAGE03_CANDIDATE_SELECTION_2026-10-21.md).
+- [Independent primitive-first Stage 3 policy-feedback diagnostic](verification/v2b_stage03_mechanism.py) and [CI workflow](.github/workflows/v2b-stage03-feedback.yml) (PASS).
+- At witness (eta,rho,kappa)=(0.758,0.9,0.8505), SU member direct marginal welfare = +0.006767924; endogenous firm-design feedback = -0.015069744; **total = -0.008301820**. This is an exactly specified model-specific local numerical decomposition, not a universal theorem.
+- **Stage 2 remains CONDITIONAL GO** because original government-standards predecessor theorem access is incomplete; the user authorizes proceeding provisionally, not treating missing sources as novelty evidence.
+- Stage 4 construction/mathematics gate **next**; Stage 4A clean-room adversarial audit then Stage 6 novelty re-kill, conditional on legitimate routing.
+- No theory freeze, no academic priority claim, no full-game mathematical adversarial certification.
+
+---
+
 ## Stage 2 literature novelty gate — 2026-10-21
 
 **Canonical Stage 2 verdict: CONDITIONAL GO (not closed).**
