@@ -1,0 +1,112 @@
+# V2b — Stage 6 Novelty Re-Kill Gate
+**Audit date/cutoff:** 2026-10-21 (JST). **Workflow authority:** research-paper-workflow, THEORY_PAPER_RESEARCH_PIPELINE.md stable v2.9, Stage 6 / GOV §2.12.
+**Canonical current-paper verdict:** **CONDITIONAL GO** — **one material novelty/economic-contribution blocker** remains. This is **NOT** a source-scoped theorem-novelty certificate. Stage 7 has **NOT** been authorized by an unqualified Stage-6 GO; user-directed deferral of unobtainable full texts is recorded as residual scope limitation and not a positive novelty signal.
+
+## 1. Executive hostile-referee verdict
+
+The mathematics from Stage 4A survives in its restricted scope: an exact rational parameter witness and an unspecified nonempty open parameter neighborhood, with computer-assisted checks. **It does not automatically become an original economic-theory result**.
+
+Major **new Stage-6 kill evidence** not highlighted at Stage 2:
+1. **Cabral and Salant (2014, IJIO 36:48–56)**, accessible in an author 2008 working paper, **Proposition 2** already establishes that firms can rationally preserve incompatible technologies *despite current profits favoring standardization* because adopting a single standard undermines future R&D incentives; **Proposition 3** gives a possible welfare case for fragmentation. This **absorbs** the broad proposed “strategic endogenous investment overturns a superficially favorable standardization decision” claim.
+2. **Buchholz and Hattori (2024, Economic Modelling 135:106722)**, full 2021 author WP accessible, **Propositions 1–3** demonstrate country-technology/coalition endogeneity can produce a SPNE cooperation paradox reducing aggregate public-good provision and welfare. This **absorbs** the broad “endogenous technical decisions can reverse government coalition benefits” mechanism.
+3. **Takarada–Kawabata (2025), §5.4**, already notes that product differentiation changes governments' incentives to form regional standards mutual-recognition agreements. Outsider block and three-country standards unions are established in Takarada et al. (2020), Gandal–Shy (2001) and others. The general differentiation/regionalism juxtaposition is **not novel**.
+
+**The only surviving restricted candidate:** in a precisely specified 3-sovereign standards **compatibility** consent game with A/B-fixed g and C accession, an ex-post *firm-level*, costly horizontal **residual design** choice changes the cross-substitutability matrix and flips *both* the SU-member's marginal welfare incentive and C's IS accession incentive, leading to positive-depth IS under a frozen-SW-design counterfactual versus no positive-depth union under endogenous design, on a nonempty open parameter region. No accessible prior theorem has been demonstrated to produce **that exact simultaneous, government-mediated reversal** as a direct specialization. However, the claimed conceptual increment over Cabral–Salant and known coalition models may be too small/model-specific to publish by itself.
+
+**One material blocker for full GO:** establish, with an exact predecessor-theorem mapping and a concise *economic knowledge gain*, that this restricted 3-country government/firm design–consent inversion is more than a mechanically implemented corollary of known strategic investment disincentives and coalition-formation logic. That includes explaining **why member and outsider participation change together and what policy prediction differs**; a mere rephrasing of existing underinvestment is not enough. Inaccessible original full-text results from Gandal–Shy and Baake–Boom are held as known residual risks **inside this same theorem-absorption task**, not separately treated as arbitrary new gates or reasons to halt work.
+
+**Maturity:** MATHEMATICS = Stage-4A restricted computer-assisted mathematical adversarial PASS (not formal Lean PASS). NOVELTY = **UNRESOLVED / PARTIALLY ABSORBED**, NOT EVIDENCE-SCOPED NOVELTY CERTIFIED.
+
+## 2. Exact claim identity / quantifiers
+
+- V2B-4A-01: Stage-5 Cournot equilibrium positive unique for all S,g,x at witness → mathematical use of contraction/PSD. **Rosen and fixed-point mathematics STANDARD; no novelty.**
+- V2B-4A-02: Stage-4 costly-design unique global Nash for all S,g at witness when κ>81(1−ρ)^2. **Rosen (1965) uniqueness directly absorbs the *solution method*, only the model's bound specific; not independent new theory.**
+- V2B-4A-03: Endogenous design at witness, **all** g∈(0,1], W_A^SU(g)<W^SW and W_i^IS(g)<W_C^SU(g) (computer-assisted interval proof), so **no substantive** positive-depth union is sequentially rational. Zero-depth institutional labels are tie-dependent.
+- V2B-4A-04: Frozen x=x_SW* at *every* policy history, with identical government consent game, utility, design cost **level** and payoff accounting, admits a positive g (e.g., 0.05) with accepted IS superior to every terminal SU and SW. This frozen x is a **restricted counterfactual game**, not another equilibrium of the endogenous model.
+- V2B-4A-05: strict conditions imply a **nonempty unquantified open neighborhood** for this same *quadratic utility/additive X/Cournot* structure, not arbitrary demand or network functional forms.
+- Local lemma: (I−O)'(0)=2M'(0) where one-edge AB SU member effect is M'(0). **Generic symmetry and graph-edge linearity; no standalone novelty.** Numerical at witness M'_frozen(0)=+.006767924, M'_endogenous(0)=−.008301820.
+
+The actually claimed novelty is **the conjunction of V2B-4A-03 and -04** as a controlled benchmark reversal in one sequential 3-government/3-firm system. These are statements about **different strategic regimes** (frozen vs endogenous x), not an identical-hypotheses contradiction of a published predecessor.
+
+## 3. Search execution and proposition-specific log
+
+Stage 2's 15-paper ledger revisited; current searches included government standards union C outsider welfare, ex-post design Nash, Cournot network substitution, standards innovation R&D dynamic regulation, cooperation/technology coalition paradox, Nash concave game, partition-function bargaining, mutual recognition and recent 2025–2026 variants. Application nouns were also stripped for “nested investment game coalition formation with endogenous follower effort”, “coalition technology adoption paradox”, “sequential consent endogenous Cournot investment”, “continuation equilibrium affects partition formation”. Backward references via Economides–Skrzypacz and Cabral–Salant plus forward/latest papers checked to the 2026-10-21 cutoff. A search outcome is not proof of absence.
+
+| Claim searched | New decisive nearest source/result and exact accessible depth | Stage-6 resolution |
+|---|---|---|
+| “Standardization desirable ex post but unattractive ex ante once firms innovate” | Cabral–Salant (2008 WP) Prop 1/2/3 §§3–5 and journal 2014 abstract, original preprint substantive text available | **ABSORBED at broad mechanism level**, publisher 2014 theorem/proof not accessed; do not quote preprint proposition numbers as if audited journal version. |
+| “Coalition plus endogenous technical choice harms aggregate welfare” | Buchholz–Hattori (2021 CESifo WP) Prop 1 §3, Prop 2 p14, Prop 3 p15, journal 2024 abstract | **ABSORBED broad coalition/technology paradox**; their country technological decision precedes coalition, not after policy. |
+| “Differentiated products affect regional standards cooperation” | Takarada–Kawabata (2025 DP701) Props 1–3 pp12/16/19 and **§5.4 pp22–23** original 36p PDF | **ABSORBED** as exogenous comparative static; not an endogenous post-policy design Nash. |
+| “Network size versus stronger substitute-competition drives standards alliances” | Economides–Flyer (1997 WP, published 1998); Economides–Skrzypacz (2003) Prop 1 p11 / Prop 2 p14 | **ABSORBED** as baseline mechanism and firm-led coalition regimes. |
+| “3-government bilateral union/third-country veto” | Takarada et al. 2020 Prop 6 and corollary, Takarada–Kawabata 2025 Props 1–3, Gandal–Shy 2001 abstract | **ABSORBED** structural component, full Gandal–Shy theorem-level match **UNRESOLVED**. |
+| “Unique firm design Nash by strong curvature; endogenous x comparative static via IFT” | Rosen 1965 diagonal strict concavity, matrix calculus and implicit-function theorem | **DIRECTLY ABSORBED methods**, not originality. |
+| “Full controlled fixed-x versus ex-post-x government consent reversal at a verified open set” | Comparisons above plus generic coalition formation (Ray–Vohra 1999, Bloch/ Yi related) and Hashimzade–Sun 2026 network-policy R&D | **NOT DIRECTLY DERIVED from inspected specific propositions**, but **PARTIALLY ABSORBED and novelty UNRESOLVED**; methodological parent may leave little stand-alone contribution. |
+
+## 4. Full theorem-absorption map / closest-paper matrix
+
+Expanded source-specific proposition domain, canonical variable map, transformation, absorption verdict and access URL reside in:
+[../literature/V2B_STAGE06_PARENT_THEOREM_ABSORPTION_2026-10-21.md](../literature/V2B_STAGE06_PARENT_THEOREM_ABSORPTION_2026-10-21.md).
+
+Main three hostile mappings:
+
+**Cabral–Salant dynamic standards regulation → V2b.**
+Attempt: D (different technologies)↔SW, S (shared technology)↔IS; incumbent firm R&D effort↔post-policy x_i; higher current static standardized payoff↔frozen-x government payoff. **Failure of exact theorem absorption:** their dynamic investment affects evolving technology quality and is undertaken by firms under a voluntary standard-setting game; V2b is one static policy proposal by **governments** followed by horizontal product-substitution design and fixed-g third-country participation. Cabral's Prop 2 concludes a firm-level standardization equilibrium can fail; it does not logically imply either V2b government's M'_SU(g)<0 or outsider C's I(g)−O(g)<0 given distinct state/policy/payoffs. Nonetheless the **economic explanatory idea is pre-existing** and cannot support an unqualified originality claim.
+
+**Buchholz–Hattori public-good coalition technology game → V2b.**
+Attempt: cooperating group K↔AB; outsider M↔C; private technology decision↔firms' costly x; public-good coordination action↔g and compatibility coalition. **Failure of exact mapping:** their technology adoption is by outsider country **before** a possible coalition and reduces later public-good provision, not post-policy firm-Nash product homogeneity changing cross-substitution and consumer welfare; government authority/payoff and no C member application differ. Their earlier coalition paradox theorem **does not state an all-g controlled frozen-versus-endogenous standards accession reversal**. Broad “coalitions induce perverse technology behavior” is known.
+
+**General partition-function coalitions / Economides–Skrzypacz → V2b.**
+Reduce downstream Cournot & design game to state-dependent government payoffs \widetilde W_i(S,g). This indeed puts V2b in a **known partition-externality coalition class**: backwards induction through membership conditions is not new. To map Economides–Skrzypacz Prop 1 or Ray–Vohra theorems one must replace firm coalition payoffs with national welfare, add continuous inherited depth and design follower equilibria, changing the theorem's primitive restrictions. The general tools **do not determine the signs** of V2b's \widetilde W derivatives from class membership alone. **Open hostile objection:** perhaps the exact sign switch is a routine/unsurprising example of a known investment-under-cooperation theorem, leaving insufficient economic value for a journal.
+
+## 5. Nested benchmark / comparison objects
+
+| Economic result | Standard-only exogenous B/X | Fixed x=x_SW* for all g | V2b endogenous x after policy | Absorption |
+|---|---|---|---|---|
+| Network-size increase and rivalry when compatibility grows | Already understood | present | present | Economides–Flyer **known** |
+| SU/C optimality conditional on reduced govt payoffs | Externally supplied | A/B/C consent game | Same consent game | Govt coalition/participation **known** |
+| W'_A,SU(0) at exact witness | Depends exogenous x | **+0.006767924** | **−0.008301820** | Chain rule known, sign contingent on private Nash and cost |
+| (I−O)'(0) at exact witness | Graph derivative identity generic | **+0.013535848** | **−0.016603640** | Factor 2 by symmetric edge decomposition, *not a new theorem* |
+| Full substantive equilibrium | Usually unspecified | **positive-depth IS** | **no positive-depth integration** | Restricted conditional result, **not direct corollary shown**, substantial overlap with prior Cabral paradox |
+| Transferring this result to nonlinear network stocks/standards access laws | N/A | N/A | **not certified** | Portability Stage 7.5A pending |
+
+**False-positive claim regression (Stage-2 prediction):** Stage 2 implied “post-policy endogenous design affects standards viability” might be a fresh mechanism. Cabral–Salant (2014) and Buchholz–Hattori (2024) independently establish *standards ↔ investment incentives* and *coalition ↔ technology incentives* paradoxes. Therefore retract any blanket claim that private adaptation suppressing standardization or endogenous technology altering coalition formation is new. The only priority candidate left is narrow *private horizontal design after sovereign fixed-depth standard offer changes both member SU and outsider IS participation incentives*. Registry updated; keep previous provisional claims in historical files with revised status.
+
+## 6. Editorial/economic contribution completeness memo (120–200 words)
+
+The accessible predecessor literature already explains why compatibility can intensify competition (Economides and coauthors), why standards may discourage innovation (Cabral–Salant), why product differentiation affects government standards agreements (Takarada–Kawabata), and why coalition options can distort technology incentives (Buchholz–Hattori). A field editor therefore should not accept V2b merely for combining these ingredients. The candidate contribution is narrower: sovereign governments offer a fixed-depth interoperability agreement, private firms subsequently optimize product design outside the standardized component, and an outsider may veto enlargement. Even when a fixed-design benchmark predicts a mutually profitable international standard, accounting for the design response can destroy *both* the original bilateral agreement and outsider accession. A restricted exact counterexample and a nonempty open neighborhood demonstrate that this is a coalition-selection mistake, not just a price or investment effect. What economists would learn beyond earlier results is a potential failure of standards-policy assessments that freeze downstream residual differentiation and omit outsider participation feedback. However, because the present result has a particular additive linear-quadratic structure and one unquantified open parameter neighborhood, its independent editorial value is **unproven**; the causal mechanism may reduce to a familiar investment-under-cooperation trade-off. No publication-level novelty is claimed.
+
+## 7. Open questions demanded by the CURRENT claim
+
+| Issue from question/title | Classification | Why | Next test without adding primitives now |
+|---|---|---|---|
+| Specific causal link from standardized interoperability to reoptimized residual cross-substitutability to national participation sign reversal | **ESSENTIAL FOLLOW-UP for editorial claim, not a new parameter** | Otherwise Cabral/Rosen/Takarada already convey all important insight. | Distinguish analytic formula for direct/indirect policy incentives and counterfactual, attempt parent-theorem absorption; seek a transparent sufficient sign condition instead of model cherry-picked witness. This is the **single Stage-6 material blocker**. |
+| V2b result only a small open neighborhood, strong κ and additive X | **BOUNDED LIMITATION** | A narrow exact existential result is sound but cannot be called generic standards policy prediction. | At Stage 7/7.5A later decide whether a more general parameter condition is necessary; do not force an extension to rescue novelty. |
+| Consumer network utility relates to contemporaneous units, not installed complementary-device stock | **BOUNDED LIMITATION** | USB-C and EV charger applicability limited, not fatal for abstract pure theory. | Scope claims and real-world examples to mechanisms supported by H, not mandatory policies. |
+| Planner remedy, mandates, adoption subsidy, bargaining transfers | **FUTURE PAPER** | V2b current research question is diagnostic coalition failure, not optimal implementation policy; adding costs/subsidies may hand-tune results. | Do not implement before a fresh author-selected Stage 3 and math recertification. |
+| Full original theorem text of Gandal–Shy/Baake–Boom and published Cabral–Salant; 1996 Gandal WP listing download blocked | **SOURCE-ACCESS UNCERTAINTY within parent-theorem risk**, not a new theory agenda | User explicitly directs moving on; abstract-level evidence cannot close theorem-priority proof. | Preserve unresolved sources/version differences; do not assert priority. |
+
+**Bounded path alternatives (no model edit authorized):**
+- **Baseline-only:** keep witness/open-neighborhood theorem and strict fixed-design benchmark; lowest proof cost, but Cabral–Salant broad overlap makes publication bar high.
+- **One meaningful bounded strengthening:** analytically characterize primitive condition for derivative sign reversal and C veto across some \eta,\rho,\kappa region. Could improve contribution but requires Stage 3 → Stage 4/4A → Stage 6 regression and risks proving only mundane algebra. **Not authorized in Stage 6**.
+- **Reframe as research note or terminate if absorbed:** emphasize a counterexample to frozen-design standards coalition policy evaluation, with exact numerical/certificate replication; strongest near-term economically faithful exposition, journal merit still conditional.
+**Stop rule:** if exact restricted result reduces to one prior theorem or cannot yield a specific economic lesson beyond the already-known investment-incentive effect after one bounded claim clarification, issue NO-GO/research-note rather than add government players, fixed costs or special regulations.
+
+## 8. CURRENT paper and NEXT questions MUST be independent
+
+**CURRENT verdict:** CONDITIONAL GO; one blocker above. No Stage-7 GO, no theory freeze, no manuscript authorization and **NO "EVIDENCE-SCOPED NOVELTY CERTIFIED" label.** The Stage-4A mathematical PASS remains valid on its own quantifiers.
+
+**NEXT-QUESTION OPPORTUNITY MEMO: PROPOSED ONLY / NOT AUTHORIZED**
+
+1. **AUDITOR-INFERRED, CROSS-PAPER — endogenous private residual design after sovereign international standards**. Source contrast: Takarada–Kawabata 2025 §5.4 (exogenous differentiation) versus Baake–Boom 2001 (firm quality choice before private compatibility) and V2b. Question: does the *ordering* of compatibility and firm design determine welfare-sign direction under otherwise comparable competition? Learning: causal role of policy commitment sequence. Strongest kill: Cabral–Salant 2008 WP Prop 2 and generic Stackelberg commitment theorem. Minimum test: write equivalent primitives, swap timing and solve both full games; **hypothesis / UNRESOLVED**, no claim that it remains open.
+2. **AUTHOR-STATED, AUDITOR-INFERRED — partial technology spillovers under standards**. Cabral–Salant 2008 WP §5 notes its technology sharing assumptions are extreme. Question: which imperfect R&D spillover ranges preserve or overturn the rational nonstandardization paradox when coalition members can restrict imitation? Learning: necessary spillover threshold rather than a binary common/separate technology. Strongest kill: later dynamic standards + spillover papers and 2014 revised Cabral text (unread). Minimum test: reconstruct published model and literature first. **UNRESOLVED/PROPOSED**, not a V2b extension automatically.
+3. **CROSS-PAPER — outsider vote and flexible compatibility depth**. Takarada 2020/2025 outsider MR problem versus V2b fixed-depth IS. Question: is a partly reversible or renegotiable integration depth a generic cure for third-country accession deadlock, or does private design exacerbate it? Learning: commitment versus renegotiation mechanism. Strongest kill: Gandal–Shy original government recognition and general coalition contract bargaining; minimum test: compare exact game with and without renegotiation after first completing source/theorem scan. **UNRESOLVED/PROPOSED**, earlier V1 allowed renegotiation and cannot be mixed into canonical V2b without regression.
+
+No future opportunity changes the current-paper verdict.
+
+## 9. Final canonical Stage-6 decision / routing
+
+**CONDITIONAL GO — exactly one material issue: substantive non-absorption/editorial economic value of the narrowed policy-consent inversion relative to Cabral–Salant, Buchholz–Hattori, known standards coalitions and generic follower-investment/partition-function equilibrium theorems.**
+
+Source access limits and formal-validation work are recorded separately as evidence/scope caveats, not silently treated as newly solved. Since standard Stage 6 GO is not achieved, Stage 7 **is not unconditionally authorized**. Permissible next bounded work is *Stage-6 targeted contribution-identity and theorem-absorption closure using accessible sources and model algebra*, not another round of unrelated model extensions. If one genuinely distinct contribution survives with explicit economic content, issue Stage-6 GO and route Stage 7; otherwise downgrade to NO-GO/research note, preserving the mathematical counterexample.
+
+Source cutoff: 2026-10-21. User-authorized decision: skip inaccessible full texts for now rather than block entire work, but do not use missing access as positive evidence of novelty.
