@@ -1,0 +1,21 @@
+name: V2b Stage 3 feedback decomposition
+on:
+  push:
+    paths:
+      - 'verification/v2b_stage03_mechanism.py'
+      - '.github/workflows/v2b-stage03-feedback.yml'
+      - 'verification/requirements_v2b_interval.txt'
+  pull_request:
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install SymPy and SciPy
+        run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Audit Stage-3 direct and indirect coalition effects
+        run: python verification/v2b_stage03_mechanism.py
