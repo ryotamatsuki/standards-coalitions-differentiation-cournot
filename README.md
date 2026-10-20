@@ -1,5 +1,18 @@
 # Standards Coalitions, Endogenous Product Differentiation, and Cournot Competition
 
+## Stage 6 — Novelty Re-Kill: CONDITIONAL GO (2026-10-21)
+
+- **CURRENT-PAPER CANONICAL VERDICT: CONDITIONAL GO**, not novelty certification. Stage 4A restricted mathematical PASS persists, but originality is **UNRESOLVED / PARTIALLY ABSORBED** and Stage 7 is **not yet unconditionally authorized**.
+- **New serious predecessors:** Cabral–Salant (2014 IJIO; fully inspectable 2008 WP, Props 1–3) already proves investment-driven failure of otherwise appealing standardization; Buchholz–Hattori (2024 Economic Modelling; inspectable 2021 WP Props 1–3) already proves coalition–endogenous technology paradoxes. 2025 Takarada–Kawabata §5.4 discusses exogenous differentiation changing regional standards incentives. Retract any broad claims that these general mechanisms are novel.
+- **One material blocker:** explain/prove substantive independent economic knowledge in the *narrow* V2b result — **governments commit fixed-depth compatibility, firms select costly residual substitutability afterward, and both AB union incentive and C accession incentive change sign** — that is not already an immediate known investment-and-coalition corollary. Without this, downgrade to NO-GO or research note instead of ad hoc model expansion.
+- **User instruction honored:** unavailable Gandal–Shy (2001), Baake–Boom (2001) and revised journal proof texts remain expressly UNRESOLVED source limitations, **not** evidence of novel theory; work not stopped for unavailable full text.
+- [Full Stage 6 canonical verdict, proposition ledger, editor-value audit, independent future questions](reviews/V2B_STAGE06_NOVELTY_REKILL_2026-10-21.md).
+- [Updated actual-theorem / generic-parent absorption matrix](literature/V2B_STAGE06_PARENT_THEOREM_ABSORPTION_2026-10-21.md).
+- **Next:** one bounded Stage 6 contribution/parent-theorem absorption closure, followed by Stage 6 GO → Stage 7 if successful; otherwise NO-GO/narrow research-note disposition. No theory freeze.
+
+---
+
+
 **Status: WORKING NOTES — NO THEORY FREEZE / NO SUBMISSION AUTHORIZATION.**  
 Last archived: 2026-10-21 (Asia/Tokyo). This repository captures exploratory conversations and independently reproducible algebra checks; it is **not** a completed or refereed proof of a unique subgame-perfect equilibrium.
 
