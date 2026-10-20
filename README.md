@@ -3,6 +3,17 @@
 **Status: WORKING NOTES — NO THEORY FREEZE / NO SUBMISSION AUTHORIZATION.**  
 Last archived: 2026-10-21 (Asia/Tokyo). This repository captures exploratory conversations and independently reproducible algebra checks; it is **not** a completed or refereed proof of a unique subgame-perfect equilibrium.
 
+## Stage 4 minimal-model gate — restricted GO (2026-10-21)
+
+- **Canonical verdict: GO for the exact-rational V2b witness and continuity-open neighborhood only.** Government substantive IS under frozen SW designs versus no positive-depth union under endogenous costly designs.
+- Complete input and proof-scope ledger: [Stage 4 audit](reviews/V2B_STAGE04_MINIMAL_MODEL_GATE_2026-10-21.md).
+- Independent-from-production Stage-4 primitive reconstruction: [script](verification/v2b_stage04_primitive_reconstruction.py), [CI](.github/workflows/v2b-stage04-primitive.yml); **PASS**. This is a second implementation and numerical diagnostic, **not** the logically independent Stage-4A red-team gate.
+- Full continuum sign certificate: [rational-interval source](verification/v2b_interval_reversal_certificate.py); [CI run](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39472853173) previously **PASS**.
+- **Next: Stage 4A independent mathematical adversarial certification**, including a preliminary formalization-applicability decision. Stage 2 inaccessible old-paper theorem priority still UNRESOLVED by author instruction.
+- NOT certified: broad full-parameter SPNE mapping, independent proof audit, general functional-form portability, theorem-level novelty, theory freeze or manuscript readiness.
+
+---
+
 ## Stage 3 candidate selection — GO (2026-10-21)
 
 - **Selected model: V2b only** for the upcoming Stage 4 mathematical gate. V1 is an archived baseline; V2a multiplicity is a preserved negative; additional adoption costs / interface aftermarket / market-access law are deferred.
