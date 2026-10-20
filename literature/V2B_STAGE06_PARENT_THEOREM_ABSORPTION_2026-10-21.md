@@ -1,5 +1,8 @@
 > **Full-text update, 2026-10-21:** Gandal–Shy (2001) published original was supplied by the author and audited across Propositions 1–5. Its earlier ABSTRACT-ONLY status is superseded. See [source-specific published-paper audit](GANDAL_SHY_2001_FULLTEXT_V2B_ABSORPTION_2026-10-21.md). **Canonical Stage 6 remains CONDITIONAL GO.**
 
+> **CURRENT-STAGE ADDENDUM (2026-10-21):** Exact original-source absorption remains as logged, but the restrictive Stage-6 contribution has been clarified: a **strictly Pareto-improving (even after endogenous design) IS is blocked under sequential union formation**, while fixed-design counterpart leads to positive-depth IS. See [latest Stage 6 closeout](../reviews/V2B_STAGE06_CONTRIBUTION_CLOSURE_2026-10-21.md) and [interval check](../verification/v2b_stage06_pareto_holdout.py). The March 2009 Cabral–Salant WP has propositions numbered 1 and 2, distinct from the 2008 draft. Canonical gate routing is **restricted GO to Stage 7**, not source-universe novelty certification.
+
+
 # V2b Stage 6 — Parent-Theorem and Whole-Game Absorption Ledger
 **Audit date and source cutoff:** 2026-10-21. **Purpose:** compare the exact Stage-4A-certified restricted V2b proposition to *actual* theorems rather than setup buzzwords. This document supersedes no earlier model math or source ledger; it updates Stage-2 priority estimates.
 
