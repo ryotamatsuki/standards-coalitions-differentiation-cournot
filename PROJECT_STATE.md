@@ -1,5 +1,16 @@
 # Project State — 2026-10-21
 
+## Stage 2 literature gate (2026-10-21)
+
+- **CONDITIONAL GO — source/theorem absorption remains UNRESOLVED.**
+- Existing literature absorbs the general trade-off, endogenous product design in network markets, outsider veto, and differentiation-driven standards-incentive changes.
+- Restricted ex-post firm design / government coalition-outcome reversal is a candidate only, not originality-certified.
+- Critical next step: retrieve and theorem-map full Gandal–Shy (2001) standardization-union source, plus clarify Baake–Boom timing.
+- Details: reviews/V2B_STAGE02_NOVELTY_KILL_GATE_2026-10-21.md and literature/V2B_STAGE02_CLOSEST_PAPERS_2026-10-21.md.
+- Stage 4A independent audit NOT done; Stage 6 and theory freeze NOT authorized.
+
+---
+
 ## Newer V2b result — computer-assisted (2026-10-21)
 
 - **V2b is the current analysis candidate.** The V1 statements below are archived baseline results, not transferable to V2b.
