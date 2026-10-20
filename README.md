@@ -3,6 +3,18 @@
 **Status: WORKING NOTES — NO THEORY FREEZE / NO SUBMISSION AUTHORIZATION.**  
 Last archived: 2026-10-21 (Asia/Tokyo). This repository captures exploratory conversations and independently reproducible algebra checks; it is **not** a completed or refereed proof of a unique subgame-perfect equilibrium.
 
+## Stage 2 literature novelty gate — 2026-10-21
+
+**Canonical Stage 2 verdict: CONDITIONAL GO (not closed).**
+- Broad novelty claims **KILLED**: compatibility-versus-competition, endogenous design per se, 3-country standards unions and outsider veto, differentiation's influence on country-standard incentives, and network strength versus substitutability are established earlier.
+- Restricted V2b candidate **UNRESOLVED**: ex-ante government g commitment -> ex-post costly firms' design Nash -> positive-depth IS under frozen x but no positive-depth agreement under endogenous x.
+- A decisive governmental predecessor is Gandal & Shy (2001), whose original theorem text was not obtained. **One material Stage 2 blocker:** original-source theorem absorption for government standards-union models, led by Gandal–Shy and complemented by Baake–Boom timing comparison. No lack-of-access inference of novelty.
+- Full and partial primary/source comparisons (15 items): [closest-paper ledger](literature/V2B_STAGE02_CLOSEST_PAPERS_2026-10-21.md).
+- [Canonical gate report and absorption map](reviews/V2B_STAGE02_NOVELTY_KILL_GATE_2026-10-21.md).
+- Stage 4A independent mathematical adversarial audit **not yet conducted**. Stage 6 novelty recertification may **not** start before Stage 2 completion and Stage 4/4A GO. No theory freeze.
+
+---
+
 ## Current frontier: V2b additive design/compatibility separation (2026-10-21)
 
 **Latest result: a computer-assisted continuous-g coalition reversal certificate at an exact rational parameter witness.**
