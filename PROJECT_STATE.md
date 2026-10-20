@@ -1,5 +1,17 @@
 # Project State — 2026-10-21
 
+## Stage 4A — independent adversarial mathematics: restricted GO (2026-10-21)
+
+- **Canonical verdict: GO — MATHEMATICAL ADVERSARIAL CERTIFICATION PASS, narrowly for the V2b exact-rational witness/open-neighborhood sign reversal.** No universal all-parameter government SPNE theorem, mathematical portability or claim of academic priority.
+- [Stage 4A theorem-scope and red-team audit](reviews/V2B_STAGE04A_ADVERSARIAL_CERTIFICATION_2026-10-21.md).
+- [Independently rederived SU and IS policy-root Krawczyk verifier](verification/v2b_stage04a_krawczyk_cleanroom.py). [GitHub Actions PASS](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39480815816). **1,000 rational g intervals; 0 unresolved sign or enclosure cells.** Checks frozen benchmark at g=.05 versus all SU policies, plus unilateral firm profit perturbations.
+- Reviewer had access to public Stage-4 claims: not a fully blinded clean-room review. New script does **not** call previous solvers and uses Krawczyk/interval Newton instead of original Poincare–Miranda face-sign approach; both methods still share SymPy/mpmath interval arithmetic and require later proof-assistant/audited implementation as appropriate.
+- Preliminary Formal Verification Gate = **FORMALIZATION APPLICABLE**; no Lean/mathlib or other formal verification PASS. Highest-priority target is quantified all-g derivative signs and root enclosures. Reassess and close at Stage 7.5A, not Stage 4A.
+- **Next: Stage 6 Novelty Re-Kill** with theorem-by-theorem prior art. User requested skipping inaccessible full texts for now; Stage 2 remains literature-conditional, and inaccessible predecessor results remain an explicit unresolved novelty threat, not evidence of originality.
+- Formal government membership at g=0 is indifference-selection dependent; theorem concerns **substantive positive-depth agreements** only.
+
+---
+
 ## Stage 4 minimal-model gate — restricted GO (2026-10-21)
 
 - **Canonical verdict: GO for the exact-rational V2b witness and continuity-open neighborhood only.** Government substantive IS under frozen SW designs versus no positive-depth union under endogenous costly designs.
