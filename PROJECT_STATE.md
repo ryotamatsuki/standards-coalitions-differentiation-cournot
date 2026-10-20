@@ -1,6 +1,18 @@
 # Project State — 2026-10-21
 
-## Authority and disposition
+## Newer V2b result — computer-assisted (2026-10-21)
+
+- **V2b is the current analysis candidate.** The V1 statements below are archived baseline results, not transferable to V2b.
+- Distinguish standard compatibility `g` from firm-controlled design similarity `x_i` with additive `X_ij=(x_i+x_j)/2`, `B=rho*H+(1-rho)*X`, and design cost `kappa*(1-x_i)^2/2`.
+- **Continuous-g witness:** `eta=379/500`, `rho=9/10`, `kappa=1701/2000`, `a-c=1`. Stage-4 unique pure NE under the checked sufficient condition. Verified rational-interval signs for every `g∈[0,1]`: `dW_A^SU/dg<0` and `d(W_i^IS-W_C^SU)/dg<0`. At g=0 all institutional regimes are payoff equivalent; hence no substantive positive-depth agreement in the endogenous game.
+- **Frozen-design counterfactual:** at `g=1/20` C wants accession, A/B approve, and IS government welfare exceeds SW and the *entire* SU payoff envelope. Therefore the frozen-choice game selects positive-depth IS.
+- **Scope:** computer-assisted proof at a witness with an open-neighborhood continuity argument, not a complete general-`(eta,rho,kappa)` SPNE map; no theorem-level prior-art audit, no theory freeze, and no manuscript or submission claim.
+- [Auditable proof record](docs/V2B_CONTINUOUS_REVERSAL_CERTIFICATE_2026-10-21.md) · [Interval implementation](verification/v2b_interval_reversal_certificate.py) · [CI workflow](.github/workflows/v2b-interval-certificate.yml).
+- **Next stage:** independently audit the interval proof and its economic interpretation, then compare theorem-by-theorem with closest standards/compatibility/endogenous-product-design literature. Examine robustness and whether a non-SU conclusion has an economic reason (not a parameter-finding artifact).
+
+---
+
+## Archived V1 authority and disposition
 - This is an independent **new research project**, not a continuation authorized under the terminated C-ESD theory freeze.
 - **Stage: exploratory theory and reproducibility archival.**
 - **Theory freeze: NONE. Journal claim / novelty claim: NONE.**
