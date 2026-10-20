@@ -3,11 +3,24 @@
 **Status: WORKING NOTES — NO THEORY FREEZE / NO SUBMISSION AUTHORIZATION.**  
 Last archived: 2026-10-21 (Asia/Tokyo). This repository captures exploratory conversations and independently reproducible algebra checks; it is **not** a completed or refereed proof of a unique subgame-perfect equilibrium.
 
-## Research question
+## Current frontier: V2b additive design/compatibility separation (2026-10-21)
+
+**Latest result: a computer-assisted continuous-g coalition reversal certificate at an exact rational parameter witness.**
+- [Full proof statement, assumptions and computational scope](docs/V2B_CONTINUOUS_REVERSAL_CERTIFICATE_2026-10-21.md)
+- [Reproducible interval proof script](verification/v2b_interval_reversal_certificate.py)
+- [Earlier finite-grid witness](docs/V2B_REGIME_REVERSAL_NUMERICAL_WITNESS_2026-10-21.md) retained as historical preliminary evidence.
+
+V2b **differs materially from V1**: governments choose compatibility `g`, firms choose residual homogeneity `x_i`, and cross-firm substitution is `B_ij=rho*H_ij+(1-rho)*(x_i+x_j)/2`. Firms incur symmetric real design cost `kappa*(1-x_i)^2/2`. V1's `z_i >= g` constraints, welfare and cutoffs **do not carry over**.
+
+At `eta=0.758, rho=0.9, kappa=0.8505`, rational-interval checks over the full continuum establish that the **endogenous-firm-choice game selects no positive-depth agreement**, while a **frozen-SW-design counterfactual admits a positive-depth IS that dominates every SU policy**. The inequalities persist in a nonempty but unquantified open neighborhood. This is a **conditional computer-assisted result**, not an independent human-reviewed theorem or a claim of originality. No theory freeze or submission authorization has been granted.
+
+---
+
+## Archived V1 research question (historical specification)
 
 Three initially symmetric countries A, B, C each host one firm; each firm sells in all three countries. Governments negotiate a common *minimum product-homogeneity / harmonization depth* and firms subsequently choose realized homogeneity subject to that floor. Harmonization increases same-standard network usefulness but also makes products closer substitutes in Cournot markets.
 
-**Timing (current version):**
+**Archived V1 timing (not the latest V2b design game):**
 
 1. A proposes an A–B standards union and common depth `g ∈ [0,1]`; B accepts/rejects. Rejection gives SW.
 2. If A–B forms SU, C applies to join or stays outside.
