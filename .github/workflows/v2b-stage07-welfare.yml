@@ -1,0 +1,21 @@
+name: V2b Stage 7 welfare and institutional audit
+on:
+  push:
+    paths:
+      - 'verification/v2b_stage07_welfare_institutions.py'
+      - 'verification/requirements_v2b.txt'
+      - '.github/workflows/v2b-stage07-welfare.yml'
+  pull_request:
+jobs:
+  independent-accounts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install NumPy and SciPy
+        run: python -m pip install -r verification/requirements_v2b.txt
+      - name: Check national and world welfare and local alternative-agenda contrast
+        run: python verification/v2b_stage07_welfare_institutions.py
