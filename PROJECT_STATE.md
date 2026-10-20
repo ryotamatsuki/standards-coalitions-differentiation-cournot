@@ -1,5 +1,17 @@
 # Project State — 2026-10-21
 
+## CURRENT RESEARCH GATE — Stage 7.5 GO → Stage 7.5A (2026-10-21)
+
+- **Stage 7.5 CONDITIONAL GO blocker CLOSED for the NARROW EXISTENTIAL claim**, NOT for original fixed-depth g=.05 robustness. The exact SAME parameters and 2+1 government institution were held fixed under a pre-registered non-cosmetic residual-design variant `X_ij=(x_i²+x_j²)/2`. The complete **endogenous SW-equivalent** versus **frozen-design positive-depth IS** reversal was proven again, now at frozen `g=1/200=.005`, with independently certified firm Nash/global welfare signs for all g.
+- **DO NOT ERASE THE NEGATIVE RESULT:** under the nonlinear alternative at originally pre-registered `g=.05`, frozen C still **rejects** IS (gain ≈ −0.000440395). The positive g=.005 participation gain is extremely small (≈9.10×10⁻⁷); the existential claim survives, the uniform/same-g claim does not.
+- New reproducible global certifications: [entire 3-firm asymmetric strategy Rosen uniqueness](verification/v2b_alt_quadratic_rosen_interval.py); [all-g nonlinear agreement and positive frozen g=.005 IS](verification/v2b_alt_quadratic_policy_interval.py); [dedicated 2-job CI, both PASS](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39516205888). Earlier first CI run FAILED due a variable-name typo; fixed and re-run PASS, with original failure log retained.
+- [Stage 4/4A diagnostic math proof ledger](reviews/V2B_ALT_QUADRATIC_STAGE04_04A_CERTIFICATION_2026-10-21.md). [Stage 6/7 limited regression (no new priority claim)](reviews/V2B_ALT_QUADRATIC_STAGE06_07_REGRESSION_2026-10-21.md). [Current canonical Stage 7.5 full-theory investment decision — GO](reviews/V2B_STAGE075_REPAIR_CLOSURE_AND_FULL_THEORY_GO_2026-10-21.md).
+- **NEXT MANDATORY STAGE: Stage 7.5A quantifier/portability red team AND formal-verification gate**. Stage 8 freeze/manuscript NOT YET authorized; no claim of all-formulation generality or publication-level academic novelty.
+- CANONICAL V2b `X_ij=(x_i+x_j)/2` remains **unchanged**. The quadratic design map is a *diagnostic robustness experiment* only. Real-world bilateral technology coordination (GSM, ChaoJi) supports **motivation**, not exact 2+1 sovereign accession rules or empirical C refusal.
+
+---
+
+
 ## Current route: Stage 7 GO / Stage 7.5 CONDITIONAL GO (2026-10-21)
 
 - **Theory-paper convention:** A faithful reconstruction of ISO voting or a demonstrated historical three-country accession veto is **not a prerequisite** for a stylized economic theory paper. The abstraction must instead explain the causal question, defend pivotal institutional assumptions and restrict external claims. Original examples: **France–Germany GSM** and **Japan–China ChaoJi** pre-international/bilateral technical cooperation. A/B consent + C application + fixed inherited g is **a model assumption**, not a claimed ISO/GSM/ChaoJi procedure.
