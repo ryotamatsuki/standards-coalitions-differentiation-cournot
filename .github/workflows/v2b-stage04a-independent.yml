@@ -1,0 +1,21 @@
+name: Stage 4A independent Krawczyk certification
+on:
+  push:
+    paths:
+      - 'verification/v2b_stage04a_krawczyk_cleanroom.py'
+      - 'verification/requirements_v2b_interval.txt'
+      - '.github/workflows/v2b-stage04a-independent.yml'
+  pull_request:
+jobs:
+  adversarial-reconstruction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install interval and symbolic dependencies
+        run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Run independent Krawczyk interval certificate and payoff tests
+        run: python -u verification/v2b_stage04a_krawczyk_cleanroom.py
