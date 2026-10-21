@@ -10,9 +10,11 @@ freeze:
 
 table: freeze
 	$(PYTHON) production/scripts/generate_welfare_table.py --write
+	$(PYTHON) production/scripts/generate_consent_table.py --write
 
 table-check: freeze
 	$(PYTHON) production/scripts/generate_welfare_table.py --check
+	$(PYTHON) production/scripts/generate_consent_table.py --check
 
 fast-proofs: freeze
 	$(PYTHON) verification/v2b_stage06_pareto_holdout.py
