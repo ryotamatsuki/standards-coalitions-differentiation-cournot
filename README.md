@@ -1,5 +1,16 @@
 # Standards Coalitions, Endogenous Product Differentiation, and Cournot Competition
 
+## CURRENT CANONICAL GATE — Stage 7.5A CONDITIONAL GO (2026-10-21)
+
+- **Generality/quantifier/portability audit completed.** The headline is an **INSTITUTION-SPECIFIC existential counterexample** under the specified A/B-first unchanged-g/C opt-in consent game, with both φ(x)=x and φ(x)=x² proving the exact-witness frozen-positive-IS versus endogenous-no-positive-coalition reversal. No generic result for all design/network functions or alternative institutional agendas.
+- [Stage 7.5A claim-scoped Contribution Robustness Certificate](reviews/V2B_STAGE075A_CONTRIBUTION_ROBUSTNESS_CERTIFICATE_2026-10-21.md). The φ=x² original fixed-depth g=.05 frozen C application **FAILED**, while certified g=.005 frozen C application is positive by only ≈9.1×10⁻⁷. Preserve both facts and avoid same-depth claims. A direct unanimous ABC offer at g=.05 would be accepted relative to SW in the separate hypothetical protocol, highlighting agenda-specific blockage.
+- **Lean 4 v4.24.0 exact-rational proof-critical welfare core: PASS, LIMITED SCOPE.** [Lean source](formal/V2bWelfareCore.lean); [CI PASS](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39517673634); [source/theorem fidelity, standard axiom and exclusion ledger](reviews/V2B_STAGE075A_FORMAL_VERIFICATION_GATE_2026-10-21.md). Formally verifies FOUR inequalities at explicit RATIONAL design proxies only. Actual Nash root enclosure, full g continuum and full economic SPNE remain in separate Stage4A interval certificates; no full-model Lean proof.
+- [Canonical Stage 7.5A CONDITIONAL GO red-team report](reviews/V2B_STAGE075A_GENERALITY_FORMAL_RED_TEAM_GATE_2026-10-21.md). **ONE REMAINING BLOCKER:** [AUTHOR_INTELLECTUAL_CONTRIBUTION_RECORD draft](reviews/AUTHOR_INTELLECTUAL_CONTRIBUTION_RECORD_V2B_2026-10-21.md) needs author's substantive judgment/confirmation of mechanism, model assumptions, scope and proof limits; do not misrepresent author independent verification.
+- **Stage 8 THEORY FREEZE / manuscript NOT AUTHORIZED until Stage 7.5A closes after author review.** Earlier Stage7.5 and Stage6/7/4A results stand within their historical scopes. Do not retune coefficients, change canonical model or hide negative robustness results.
+
+---
+
+
 ## CURRENT RESEARCH GATE — Stage 7.5 GO → Stage 7.5A (2026-10-21)
 
 - **Stage 7.5 CONDITIONAL GO blocker CLOSED for the NARROW EXISTENTIAL claim**, NOT for original fixed-depth g=.05 robustness. The exact SAME parameters and 2+1 government institution were held fixed under a pre-registered non-cosmetic residual-design variant `X_ij=(x_i²+x_j²)/2`. The complete **endogenous SW-equivalent** versus **frozen-design positive-depth IS** reversal was proven again, now at frozen `g=1/200=.005`, with independently certified firm Nash/global welfare signs for all g.
