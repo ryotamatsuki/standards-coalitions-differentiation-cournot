@@ -26,6 +26,13 @@ if not gen.is_file():
     errors.append("Missing deterministically generated welfare table; run make table")
 else:
     alltext += "\n" + gen.read_text(encoding="utf-8")
+consent = PAPER / "generated" / "consent_table.tex"
+if not consent.is_file():
+    errors.append("Missing Stage13 generated consent table; run make table")
+else:
+    alltext += "\n" + consent.read_text(encoding="utf-8")
+    if r"\input{generated/consent_table.tex}" not in alltext:
+        errors.append("Unreferenced Stage13 consent table")
 bibliography = (PAPER/"references.bib").read_text(encoding="utf-8")
 available_bib=set(re.findall(r"@\w+\s*\{\s*([^,\s}]+)",bibliography))
 cited=set()
@@ -59,7 +66,7 @@ core = [
     r"\label{eq:member-path}",r"\label{eq:outsider-path}",
     r"\label{eq:rejection}",r"\label{eq:frozen-votes}",
     r"\label{eq:pareto}",r"\label{eq:failed-comparison}",
-    r"\label{eq:app_krawczyk}"
+    r"\label{eq:app_krawczyk}",r"\label{tab:v2b-consent-margins}",r"\label{app:rosen-bound}"
 ]
 for needle in core:
     if needle not in alltext:
