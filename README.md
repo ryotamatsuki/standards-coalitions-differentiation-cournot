@@ -1,5 +1,17 @@
 # Standards Coalitions, Endogenous Product Differentiation, and Cournot Competition
 
+## CURRENT CANONICAL STATUS — STAGE 8 THEORY FREEZE COMPLETE (2026-10-21)
+
+- **Freeze identifier:** `V2B-THEORY-FREEZE-2026-10-21-v1`. **[AUTHORITATIVE frozen V2b model and theorem/proof register](docs/V2B_THEORY_FREEZE_2026-10-21_v1.md)**, original frozen Git blob SHA `ca16f0d4699364c7466d463c40e01cb5eaa2d8e5`. **[Stage 8 checklist and freeze certificate](reviews/V2B_STAGE08_THEORY_FREEZE_CERTIFICATE_2026-10-21.md)**.
+- **Author's user-message approval:** 「承認する」 to the previously specified institution-specific existence proposition; documented in [Author Intellectual Contribution Record](reviews/AUTHOR_INTELLECTUAL_CONTRIBUTION_RECORD_V2B_2026-10-21.md). Approval DOES NOT claim personal independent reproduction of AI/math proofs.
+- **Stage 7.5A NOW GO, not conditional:** [Final scope/portability/formal GO](reviews/V2B_STAGE075A_FINAL_GO_AFTER_AUTHOR_CONFIRMATION_2026-10-21.md). Earlier CONDITIONAL GO and Stage 7.5 original diagnostic failure remain historical records.
+- **Formal Verification Gate:** **PASS — selected pointwise exact-rational arithmetic proof-critical CORE only**. [Lean 4 source](formal/V2bWelfareCore.lean), [CI PASS](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39517673634). NOT a complete formalized Nash/SPNE or all-g model theorem, which relies separately on Stage4A interval proofs.
+- Canonical V2b φ(x)=x; separately certified p=2 φ(x)=x² diagnostic robustness, with **g=.05 frozen C approval FAILURE** still on record, but existential positive-depth frozen IS at g=.005 independently interval proven. Positive-depth endogenous governments do not agree for any g at exact witness; hypothetical IS(.05) is Pareto better than SW in both tested φ models. **Institution-specific, not generic.**
+- **NEXT STAGE = Stage 9 — production/reproducibility setup**, NOT journal manuscript submission. Stage8 frozen economic rules cannot be modified without change control/affected audit replay. Old docs/MODEL_SPECIFICATION.md, docs/EQUILIBRIUM_LEDGER.md are HISTORICAL V1, explicitly marked not current V2b.
+
+---
+
+
 ## CURRENT CANONICAL GATE — Stage 7.5A CONDITIONAL GO (2026-10-21)
 
 - **Generality/quantifier/portability audit completed.** The headline is an **INSTITUTION-SPECIFIC existential counterexample** under the specified A/B-first unchanged-g/C opt-in consent game, with both φ(x)=x and φ(x)=x² proving the exact-witness frozen-positive-IS versus endogenous-no-positive-coalition reversal. No generic result for all design/network functions or alternative institutional agendas.
