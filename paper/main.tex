@@ -1,0 +1,45 @@
+\documentclass[11pt,a4paper]{article}
+% STAGE 9 INFRASTRUCTURE SCAFFOLD — NOT A STAGE 10 MANUSCRIPT.
+% Theory source of truth: ../docs/V2B_THEORY_FREEZE_2026-10-21_v1.md
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{corollary}[proposition]{Corollary}
+\newcommand{\SW}{\mathrm{SW}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\IS}{\mathrm{IS}}
+
+\title{International Standards Coalitions and Endogenous Product Design}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent\emph{Stage 9 production scaffold only. The abstract and main text
+are deliberately reserved for Stage 10; no journal-ready manuscript
+or theorem statement is asserted by this build.}
+\end{abstract}
+
+\input{sections/01_model}
+\input{sections/02_equilibrium}
+\input{sections/03_main_results}
+\input{sections/04_welfare}
+\input{sections/05_robustness}
+\input{sections/06_related_literature}
+\input{sections/07_discussion}
+\appendix
+\input{sections/A_proofs}
+
+% Bibliography inclusion tests source metadata; real argument-level citations
+% belong to Stage 10.
+\nocite{GandalShy2001,CabralSalant2014,BuchholzHattori2024,TakaradaKawabata2025,Rosen1965}
+\bibliographystyle{plainnat}
+\bibliography{references}
+\end{document}
