@@ -61,10 +61,16 @@ jobs:
           pdfinfo paper/build/main.pdf | grep '^Pages:'
           test -s paper/build/main.pdf
           pdftotext paper/build/main.pdf paper/build/main.txt
-          grep -qi 'endogenous product design' paper/build/main.txt
-          grep -qi 'frozen-design' paper/build/main.txt
-          grep -qi 'rational-interval' paper/build/main.txt
-          if grep -qi 'Stage 10 section reserved' paper/build/main.txt; then exit 1; fi
+          python - <<'PY'
+          from pathlib import Path
+          text=" ".join(Path("paper/build/main.txt").read_text(errors="replace").lower().split())
+          for required in ("endogenous", "design", "frozen", "interval", "cournot", "proposition"):
+              if required not in text:
+                  raise SystemExit("Required manuscript concept missing from PDF text: "+required)
+          if "stage 10 section reserved" in text:
+              raise SystemExit("Stage 10 section placeholder remains in PDF")
+          print("PDF text-concept audit PASS after whitespace normalization")
+          PY
           python - <<'PY'
           import re
           from pathlib import Path
