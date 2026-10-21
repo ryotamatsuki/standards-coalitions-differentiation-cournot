@@ -1,5 +1,8 @@
 # Equilibrium and welfare ledger
 
+> **ARCHIVAL V1 EQUILIBRIUM LEDGER, NOT V2b.** See [Stage 8 V2b canonical theory freeze](V2B_THEORY_FREEZE_2026-10-21_v1.md) for current model, parameter witness, equilibrium claims and proof ledger. V1 thresholds/formulas below are NOT V2b results.
+
+
 **Status convention:** [ALGEBRA] identity checked under displayed candidate continuation; [CANDIDATE] needs complete off-path best-response and SPNE proof; [INTERPRETATION] model-specific.
 
 ## 1. Symmetric candidate firm continuations [ALGEBRA, CANDIDATE AS FULL SUBGAME CLAIM]
