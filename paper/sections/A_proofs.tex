@@ -1,5 +1,71 @@
 \section{Reduced Formulas and Computer-Assisted Proofs}\label{app:proofs}
 
+
+\subsection{A full-strategy curvature bound}\label{app:rosen-bound}
+
+The canonical linear similarity mapping permits an analytic
+global firm-Nash uniqueness certificate.
+Set $\alpha=621/500$, $\beta=1/10$,
+$\overline m=121/500$, and
+$D_0=\alpha-2\overline m=379/500>0$.
+For every policy regime, depth $g\in[0,1]$ and
+asymmetric design vector $x\in[0,1]^3$,
+the Cournot matrix $M$ has diagonal $\alpha$
+and nonnegative off-diagonal entries no greater
+than $\overline m$. Strict row diagonal dominance
+implies $\|M^{-1}\|_\infty\leq D_0^{-1}$,
+while its positive fixed-point quantities satisfy
+$\|q\|_\infty\leq\alpha^{-1}$.
+
+Write $M_i=\partial M/\partial x_i$ and
+$q^{[i]}=\partial q/\partial x_i$.
+For the linear mapping,
+$\|M_i\|_\infty\leq\beta$ and
+$\partial M_i/\partial x_j=0$.
+Thus matrix differentiation, applied to the
+\emph{full} asymmetric design space, yields
+\[
+ q^{[i]}=-M^{-1}M_iq,\qquad
+ \frac{\partial q^{[i]}}{\partial x_j}
+ =M^{-1}M_jM^{-1}M_iq+
+  M^{-1}M_iM^{-1}M_jq.
+\]
+In particular,
+\[
+ \|q^{[i]}\|_\infty
+ \leq\frac{\beta}{D_0\alpha}<0.106221,
+ \quad
+ \left\|\frac{\partial q^{[i]}}{\partial x_j}
+ \right\|_\infty
+ \leq\frac{2\beta^2}{D_0^2\alpha}<0.028027.
+\]
+By the product rule, every second derivative of
+each firm's operating profit $3q_k^2$ obeys
+\begin{equation}\label{eq:global-design-curvature}
+ \left|
+ \frac{\partial^2(3q_k^2)}
+      {\partial x_i\partial x_j}
+ \right|
+ \leq 6\left[
+ \left(\frac{\beta}{D_0\alpha}\right)^2
+ +\frac{2\beta^2}{D_0^2\alpha^2}
+ \right]<0.203092=:h.
+\end{equation}
+The once-paid cost adds $-\kappa$ to the
+pseudo-gradient's own Jacobian diagonal but
+nothing to its off-diagonals. Therefore the
+symmetric part of the three-player pseudo-gradient
+Jacobian is strictly negative diagonally dominant:
+its largest row upper bound is at most
+$-\kappa+3h<-0.2412$.
+This verifies Rosen strict diagonal concavity,
+as well as each firm's own-payoff strict concavity,
+\emph{globally}, without using symmetry to
+remove unilateral deviations.
+Existence of the required \emph{interior} Nash
+for each policy depth is separately certified
+by the uniform root-inclusion program below.
+
 \subsection{SU market reduction and unilateral design equations}
 
 After establishing global firm-Nash uniqueness, the SU continuation
@@ -126,12 +192,14 @@ bound is mechanically transferred into this variant.
 
 \subsection{Auditable artifacts and proof-assistant boundary}
 
-The scripts
-\path{verification/v2b_stage04a_krawczyk_cleanroom.py},
-\path{verification/v2b_alt_quadratic_rosen_interval.py},
-\path{verification/v2b_alt_quadratic_policy_interval.py},
-and \path{verification/v2b_stage06_pareto_holdout.py}
-contain exact interval targets, successful inclusion
+The auditable programs include
+\begin{itemize}
+\item \path{verification/v2b_stage04a_krawczyk_cleanroom.py};
+\item \path{verification/v2b_alt_quadratic_rosen_interval.py};
+\item \path{verification/v2b_alt_quadratic_policy_interval.py};
+\item \path{verification/v2b_stage06_pareto_holdout.py}.
+\end{itemize}
+They contain exact interval targets, successful inclusion
 checks, and positive welfare enclosures.
 The source manifest and exact theorem mapping reside at
 \path{production/freeze_manifest.json} and

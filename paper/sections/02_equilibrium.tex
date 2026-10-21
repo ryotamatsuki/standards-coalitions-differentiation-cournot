@@ -74,24 +74,20 @@ $\SW$ or $\IS$ all firms choose the same $x$; under $\SU$ the
 two members choose a common $u$ and the outsider chooses $v$.
 \end{lemma}
 \begin{proof}
-Each firm's design payoff is continuous on the compact product
-strategy space. Differentiating \eqref{eq:design-bridge}, the
-standard full-strategy Jacobian bound at this witness is
-\[
-  \left|\frac{\partial^2(3q_i^2)}
-                    {\partial x_i\partial x_j}\right|
-       \leq27(1-\rho)^2d^2=0.27 .
-\]
-The design-cost term subtracts $\kappa=0.8505$ from the
-own-strategy diagonal. Therefore the symmetric part of
-the Nash pseudo-gradient Jacobian is strictly
-negative diagonally dominant, since
-\[
- \kappa>3\cdot 27(1-\rho)^2d^2=0.81.
-\]
-Own-payoff strict concavity and Rosen's diagonal-strict-concavity
-condition yield existence and uniqueness of a pure Nash
-on the \emph{entire asymmetric cube} \citep{Rosen1965}.
+Each firm's design payoff is continuous on the compact
+strategy cube. Appendix~\ref{app:rosen-bound} derives a
+bound on \emph{all} entries of the full asymmetric
+design pseudo-gradient Jacobian from the Cournot
+inverse, rather than from the symmetric equilibrium
+path. Specifically, $h=0.203092$ strictly exceeds
+the derived operating-profit Hessian bound, and the
+symmetric Jacobian has strictly negative
+diagonal-dominance margin at least
+$\kappa-3h>0.2412$.
+This gives own-payoff strict concavity and Rosen's
+diagonal-strict-concavity condition on the entire
+asymmetric cube \citep{Rosen1965}, hence
+existence and uniqueness of its pure Nash equilibrium.
 Uniform interior root-inclusion checks for the member/outside
 and international design equations give an interior Nash at
 each $g$, including $g=0$ and $g=1$; the exact continuous
