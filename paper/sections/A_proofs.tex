@@ -1,5 +1,151 @@
-\section{Proof and Reproduction Roadmap}\label{app:proofs}
-\emph{Stage 10 technical proof manuscript pending. The auditable theorem
-certificate mapping is maintained at
-\texttt{production/THEOREM\_CERTIFICATE\_MAP.md}; automated certificates
-are not a replacement for readable bridge equations and proofs.}
+\section{Reduced Formulas and Computer-Assisted Proofs}\label{app:proofs}
+
+\subsection{SU market reduction and unilateral design equations}
+
+After establishing global firm-Nash uniqueness, the SU continuation
+is symmetric between A and B: $x_A=x_B=u$, $x_C=v$. Set
+\begin{equation}\label{eq:app_mn}
+ \alpha=2-\eta,\quad \beta=1-\rho,\quad
+ h=(\rho-\eta)g+\beta u,\quad
+ n=\beta(u+v)/2,\quad D=\alpha(\alpha+h)-2n^2.
+\end{equation}
+Then the matrix in \eqref{eq:Mq} and its reduced solution are
+\begin{equation}\label{eq:app_market}
+ M_{\SU}=\begin{pmatrix}
+ \alpha & h & n\\ h & \alpha & n\\ n & n & \alpha
+ \end{pmatrix},\quad
+ (\alpha+h)Q_M+nQ_O=1,\quad 2nQ_M+\alpha Q_O=1,
+\end{equation}
+\begin{equation}\label{eq:app_quantities}
+ Q_M=\frac{\alpha-n}{D},\qquad
+ Q_O=\frac{\alpha+h-2n}{D}.
+\end{equation}
+These are market quantities only; the design Nash conditions require
+\emph{unilateral}, not joint symmetric, derivatives:
+\begin{align}
+ F_M(u,v,g)
+ &=\left[6q_A(-M^{-1}M_{x_A}q)_A+
+                  \kappa(1-x_A)\right]_{x=(u,u,v)}=0,
+ \label{eq:app_Fm}\\
+ F_O(u,v,g)
+ &=\left[6q_C(-M^{-1}M_{x_C}q)_C+
+                  \kappa(1-x_C)\right]_{x=(u,u,v)}=0.
+ \label{eq:app_Fo}
+\end{align}
+The correct domestic SU surplus and country welfare terms are
+\begin{align}
+ \CS_{\SU}&=(1+\rho g+\beta u)Q_M^2+
+                    Q_O^2/2+2nQ_MQ_O,\label{eq:app_cs}\\
+ W_M&=\CS_{\SU}+3Q_M^2-\kappa(1-u)^2/2,\label{eq:app_wm}\\
+ W_O&=\CS_{\SU}+3Q_O^2-\kappa(1-v)^2/2.\label{eq:app_wo}
+\end{align}
+The substitution term in consumer surplus uses $\rho g$,
+whereas the Cournot off-diagonal matrix uses $(\rho-\eta)g$.
+Mixing them would change the national welfare object and
+invalidate the main result.
+
+\subsection{IS scalar design equation}
+
+For the unique symmetric international continuation put
+$t=(\rho-\eta)g+\beta y$ and $Q_I=1/(\alpha+2t)$.
+A single firm's deviation from a symmetric design profile yields
+\begin{equation}\label{eq:app_isf}
+ F_I(y,g)=\kappa(1-y)-
+  \frac{6\beta\alpha}{(\alpha-t)(\alpha+2t)^3}=0.
+\end{equation}
+International per-country welfare then reduces to
+\begin{equation}\label{eq:app_iw}
+ W_I(y,g)=
+ \frac{\tfrac92+3(\rho g+\beta y)}{(\alpha+2t)^2}
+ -\frac{\kappa}{2}(1-y)^2 .
+\end{equation}
+Equations \eqref{eq:app_Fm}--\eqref{eq:app_iw} are precisely
+the equilibrium and welfare objects audited by the
+independent Stage-4A programs.
+
+\subsection{Uniform interval proof on the entire compatibility domain}
+
+The canonical Stage-4A certificate covers the policy continuum
+as the union of 1,000 exact adjacent closed rational intervals
+$G_k=[k/1000,(k+1)/1000]$ for $k=0,\ldots,999$.
+For each cell, a numerical candidate merely supplies the centre
+of an outward-rounded rational design rectangle $Z_k$.
+For SU the parameter-uniform Krawczyk operator is
+\begin{equation}\label{eq:app_krawczyk}
+ {\cal K}(z_0,Z_k,G_k)
+ =z_0-CF(z_0,G_k)
+ +\left[I-C D_{(u,v)}F(Z_k,G_k)\right](Z_k-z_0),
+\end{equation}
+where $F=(F_M,F_O)$ and $C$ is a numerical preconditioner.
+Strict interior inclusion and certified Jacobian invertibility
+verify the local root for all real $g$ in each cell; the
+international continuation has its own scalar interval Newton
+test. Lemma~\ref{lem:design}, proved on the full asymmetric design
+cube, supplies global Nash uniqueness and eliminates other root
+selections.
+
+For each enclosed continuation the computer evaluates
+the derivatives defined by \eqref{eq:member-path} and
+\eqref{eq:outsider-path}, including the implicit design-response
+terms. Strict negative outward upper bounds throughout the
+entire collection of policy cells give
+\eqref{eq:signed-bounds}. Combined with equality of all
+regimes at $g=0$ they imply the strict inequalities for
+every $g>0$; a numerical policy grid would not imply that result.
+
+For the frozen counterfactual, the true SW root is itself
+enclosed by rational FOC sign changes. The program holds
+that root fixed across histories, verifies the strict
+C and member consent margins at $g=.05$, and certifies
+the \emph{supremum} of member SU welfare over 500 closed
+rational $g$ intervals. This establishes
+\eqref{eq:frozen-envelope} over the entire offer set.
+
+\subsection{The separate nonlinear experiment}
+
+Under \eqref{eq:quadratic-map}, replace the definitions of
+$h,n,t$ with
+\[
+ h^{(2)}=(\rho-\eta)g+\beta u^2,\quad
+ n^{(2)}=\beta(u^2+v^2)/2,\quad
+ t^{(2)}=(\rho-\eta)g+\beta y^2.
+\]
+Because each off-diagonal entry responds to design
+with marginal effect $\beta x_i$, its IS design FOC becomes
+\[
+ F_I^{(2)}(y,g)=\kappa(1-y)-
+ \frac{12\beta y\alpha}
+ {(\alpha-t^{(2)})(\alpha+2t^{(2)})^3}=0.
+\]
+A separate interval Gershgorin/Rosen certificate checks
+every asymmetric firm design in $[0,1]^3$ and every
+$g\in[0,1]$, followed by uniform government payoff signs.
+The frozen SU policy upper envelope uses 4,000
+closed rational depth cells. No baseline root or Rosen
+bound is mechanically transferred into this variant.
+
+\subsection{Auditable artifacts and proof-assistant boundary}
+
+The scripts
+\path{verification/v2b_stage04a_krawczyk_cleanroom.py},
+\path{verification/v2b_alt_quadratic_rosen_interval.py},
+\path{verification/v2b_alt_quadratic_policy_interval.py},
+and \path{verification/v2b_stage06_pareto_holdout.py}
+contain exact interval targets, successful inclusion
+checks, and positive welfare enclosures.
+The source manifest and exact theorem mapping reside at
+\path{production/freeze_manifest.json} and
+\path{production/THEOREM_CERTIFICATE_MAP.md}.
+Both interval pipelines rely on trusted SymPy and mpmath
+arithmetic kernels. CI success verifies that the archived
+programs ran, not the academic priority of this result.
+
+The separate Lean 4 program
+\path{formal/V2bWelfareCore.lean} proves four strict
+\emph{pointwise rational} welfare comparisons in the
+nonlinear model at specified rational \emph{design proxies}.
+It does not prove those proxies are the actual Nash
+roots, nor formally certify the Cournot game,
+the all-$g$ continuation or the government's entire
+subgame-perfect equilibrium. Those claims rest on the
+separately stated analytic and rational-interval arguments.
