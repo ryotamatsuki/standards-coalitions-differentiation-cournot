@@ -1,5 +1,98 @@
-\section{Design-Function Robustness}\label{sec:robustness}
-\emph{Stage 10 section reserved. Report the separately certified
-$x_i^2$ mapping, the failed original frozen $g=0.05$ test, and the small
-strict frozen C-acceptance gain at $g=0.005$. Do not claim universal
-function-form portability.}
+\section{A Nonlinear Design-Function Check}\label{sec:robustness}
+
+The existence claim is not intended to hold for every way
+in which nonstandardized attributes enter substitutability.
+To probe dependence on the additive form in
+\eqref{eq:matrices}, we examine one
+\emph{pre-registered} nonlinear design mapping, holding
+the government protocol, exact parameter vector
+\eqref{eq:witness}, design-cost function \eqref{eq:designcost},
+network mechanism, and Cournot stage \emph{unchanged}:
+\begin{equation}\label{eq:quadratic-map}
+ X^{(2)}_{ii}=1,\qquad
+ X^{(2)}_{ij}=\frac{x_i^2+x_j^2}{2}\quad (i\ne j).
+\end{equation}
+This is not a mere change of variables: the design cost
+continues to be quadratic in the \emph{original} $x_i$.
+The marginal effect of private design on product substitution
+is thus different from that in the baseline.
+
+A separate three-firm pseudo-gradient and equilibrium
+calculation is required. The proof checks strict diagonal
+concavity in the entire asymmetric design domain and
+uniform member/outside equilibrium root inclusion across
+all $g\in[0,1]$, rather than substituting $x_i^2$
+into a previously selected baseline equilibrium.
+
+\begin{proposition}[Existential persistence under one nonlinear mapping]
+\label{prop:quadratic}
+At $\theta_0$ and under \eqref{eq:quadratic-map},
+the fully endogenous game still satisfies
+\[
+ m^{(2)}(g)<s^{(2)},\qquad
+ i^{(2)}(g)<o^{(2)}(g)\quad\text{for all }g\in(0,1].
+\]
+However, in the design-frozen counterfactual at the
+\emph{positive but smaller} depth $g=1/200$, $\IS$
+is strictly accepted and dominates every terminal
+$\SU$ and $\SW$ alternative. At $g=1/20$,
+an exogenously constituted international agreement
+remains Pareto superior to fragmentation even when
+firms reoptimize their nonlinear designs.
+\end{proposition}
+
+\begin{proof}
+A separate rational-interval Rosen/Gershgorin
+certificate bounds the symmetric Jacobian of the
+actual three-player firm pseudo-gradient on
+$[0,1]^3\times[0,1]$ for each institutional regime,
+establishing unique Nash design continuations.
+Uniform signed root faces and interval implicit
+differentiation then verify both strict country
+inequalities across closed rational policy intervals.
+In the frozen game, the unique $\SW$ design is
+approximately $0.610737480$. At $g=1/200$,
+the interval-certified gains satisfy
+\[
+ \widehat{i}^{(2)}(1/200)-
+ \widehat{o}^{(2)}(1/200)>9.09\times10^{-7}>0,
+\]
+and the proposed $\IS$ beats the $\SW$ allocation
+and a separately certified full-$g$ upper envelope
+for $\SU$ member payoffs. At $g=1/20$ with
+\emph{endogenous} designs, the interval-certified
+national welfare improvement of the hypothetical
+$\IS$ over $\SW$ is approximately $0.016601147>0$.
+The separate certificate and reproduced program
+targets are described in
+Appendix~\ref{app:proofs}.
+\end{proof}
+
+\paragraph{A pre-registered failed comparison.}
+The initially specified \emph{same-depth} test did
+\emph{not} survive the nonlinear mapping: holding
+firms' designs frozen and keeping $g=1/20$,
+country $C$ would \emph{reject} international
+accession, with
+\begin{equation}\label{eq:failed-comparison}
+ \widehat{i}^{(2)}(1/20)-
+ \widehat{o}^{(2)}(1/20)\simeq-0.000440395<0.
+\end{equation}
+This negative finding must not be reclassified as
+passing merely because a \emph{distinct existential}
+positive-depth result at $g=1/200$ was subsequently
+proved. The latter participation gain is only about
+$9.1\times10^{-7}$, so the effective compatibility
+range may be quantitatively fragile.
+
+Proposition~\ref{prop:quadratic} documents exactly
+\emph{two} certified design maps, $\phi(x)=x$
+and $\phi(x)=x^2$. It does not establish a
+uniform theorem for $\phi(x)=x^p$ with arbitrary
+$p\in[1,2]$, for general nonlinear network adoption,
+asymmetric national markets, or alternative bargaining
+institutions. Such stronger claims would require
+fresh primitives, equilibrium proofs, and separate
+certification. Likewise, no numerical parameter
+radius for the strictly local open neighborhood of
+\eqref{eq:witness} is claimed.
