@@ -1,0 +1,114 @@
+name: Stage 9 V2b frozen reproducibility and LaTeX scaffold
+on:
+  push:
+    paths:
+      - 'production/**'
+      - 'paper/**'
+      - 'Makefile'
+      - '.gitignore'
+      - 'docs/V2B_THEORY_FREEZE_2026-10-21_v1.md'
+      - 'verification/*.py'
+      - 'formal/**'
+      - 'lean-toolchain'
+      - '.github/workflows/stage09-reproducibility.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    name: Verify Stage8 economic freeze
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reject any unapproved frozen-model/proof-source drift
+        run: python production/scripts/verify_freeze.py
+
+  baseline-proof-and-table:
+    name: Baseline exact-witness mathematical checks
+    runs-on: ubuntu-latest
+    needs: integrity
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: production/requirements-stage9.txt
+      - run: python -m pip install -r production/requirements-stage9.txt
+      - run: python verification/v2b_stage04a_krawczyk_cleanroom.py
+      - run: python verification/v2b_stage06_pareto_holdout.py
+      - run: python verification/v2b_stage07_welfare_institutions.py
+      - name: Regenerate and verify national/world welfare table
+        run: |
+          make table
+          make table-check
+      - name: Print dependency versions for reproduction
+        run: python -m pip freeze
+
+  nonlinear-proof:
+    name: Independent nonlinear design Nash and policy certificate
+    runs-on: ubuntu-latest
+    needs: integrity
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: production/requirements-stage9.txt
+      - run: python -m pip install -r production/requirements-stage9.txt
+      - run: python verification/v2b_alt_quadratic_rosen_interval.py
+      - run: python verification/v2b_alt_quadratic_policy_interval.py
+
+  lean-proof-core:
+    name: Lean kernel check - rational-proxy core only
+    runs-on: ubuntu-latest
+    needs: integrity
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pinned Lean 4 via elan
+        shell: bash
+        run: |
+          curl --retry 3 --connect-timeout 15 -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          "$HOME/.elan/bin/lean" --version
+      - name: Reject incomplete Lean proofs
+        run: |
+          if grep -nE '^[[:space:]]*(sorry|admit|axiom)([[:space:]]|$)' formal/V2bWelfareCore.lean; then
+            exit 1
+          fi
+      - name: Exact-rational inequality kernel check, not full model
+        run: "$HOME/.elan/bin/lean formal/V2bWelfareCore.lean"
+
+  latex-scaffold:
+    name: Build Stage9 bibliography and PDF shell
+    runs-on: ubuntu-latest
+    needs: integrity
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: production/requirements-stage9.txt
+      - run: python -m pip install -r production/requirements-stage9.txt
+      - name: Install LaTeX, bibtex and latexmk
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended texlive-fonts-recommended lmodern latexmk
+      - name: Build author-unfilled Stage9 scaffold using the generated table
+        run: make paper
+      - name: Check PDF exists
+        run: test -s paper/build/main.pdf
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v2b-stage09-scaffold-not-a-manuscript
+          path: paper/build/main.pdf
+          retention-days: 7
