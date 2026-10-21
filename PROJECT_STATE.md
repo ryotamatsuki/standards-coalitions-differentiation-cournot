@@ -1,5 +1,16 @@
 # Project State — 2026-10-21
 
+## LATEST WORKFLOW STATUS — STAGE 9 GO (2026-10-21)
+
+- **Stage9 reproducible production scaffold COMPLETE** without altering any Stage8 economic primitives, proof source, Lean kernel file or the exact-v2b parameter witness. [Stage9 gate report](reviews/V2B_STAGE09_REPRODUCIBILITY_GATE_2026-10-21.md).
+- **[CI — ALL FIVE JOBS PASS](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39524698485)**: frozen 9-blob source-integrity guard, canonical Stage4A+Pareto/national welfare, nonlinear p=2 Rosen+all-g government inequalities, limited Lean4 arithmetic proof and LaTeX/BibTeX scaffold build. An initial first-run LaTeX formatting error was corrected; [failed run](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39524532077) retained.
+- [Production instructions and Makefile commands](production/README.md); [LaTeX scaffold](paper/main.tex) with model/equilibrium/results/welfare/robustness/literature/discussion/proofs sections; [original-paper bibliography](paper/references.bib), [deterministic welfare-table generator](production/scripts/generate_welfare_table.py), [fixed Python3.12 dependencies](production/requirements-stage9.txt), [frozen 9-blob manifest](production/freeze_manifest.json).
+- [Theorem/evidence correspondence T1–T7](production/THEOREM_CERTIFICATE_MAP.md) and [benchmark, negative-experiment and proof-failure register](production/BENCHMARK_AND_FAILURE_REGISTER.md). **Lean proves only 4 pointwise rational PROXY inequalities** and baseline all-g math remains Stage4A computer-assisted. p=2 pre-registered frozen C at g=.05 remains a failure.
+- GitHub Actions includes a **downloadable 7-day PDF BUILD ARTIFACT (Stage9 shell, NOT manuscript)**. **NEXT: Stage10 section-by-section paper construction.** Theory freeze ID V2B-THEORY-FREEZE-2026-10-21-v1 remains authoritative.
+
+---
+
+
 ## CURRENT CANONICAL STATUS — STAGE 8 THEORY FREEZE COMPLETE (2026-10-21)
 
 - **Freeze identifier:** `V2B-THEORY-FREEZE-2026-10-21-v1`. **[AUTHORITATIVE frozen V2b model and theorem/proof register](docs/V2B_THEORY_FREEZE_2026-10-21_v1.md)**, original frozen Git blob SHA `ca16f0d4699364c7466d463c40e01cb5eaa2d8e5`. **[Stage 8 checklist and freeze certificate](reviews/V2B_STAGE08_THEORY_FREEZE_CERTIFICATE_2026-10-21.md)**.
