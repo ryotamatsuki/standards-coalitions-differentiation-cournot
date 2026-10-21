@@ -1,5 +1,134 @@
 \section{Model}\label{sec:model}
-\emph{Stage 10 section reserved. Use only the frozen V2b utility,
-independent compatibility $g$, residual firm design $x_i$, and
-fixed-depth three-government consent sequence. Do not import archived V1
-assumptions such as $x_i\ge g$.}
+
+\subsection{A bilateral-first technical agreement}
+
+Consider three countries, indexed by $i\in\{A,B,C\}$, each hosting a
+single firm, and three separated national product markets. All three
+firms sell in each national market. The governments observe all previous
+decisions and maximize national welfare. At the technology-policy stage,
+compatibility among \emph{interfaces} is distinguished from the
+similarity of the other attributes chosen by firms.
+
+The extensive form has five stages. First, government $A$ offers a
+bilateral standards union between $A$ and $B$, denoted $\SU$, at
+a \emph{technical compatibility depth} $g\in[0,1]$. Government $B$
+accepts or rejects; rejection leaves all countries with separate
+standards ($\SW$). Second, after an accepted bilateral union, country
+$C$ decides whether to request accession. Nonapplication leaves $\SU$
+in place. Third, if $C$ applies, both $A$ and $B$ must approve.
+Unanimity produces an international standards union ($\IS$), while
+either veto retains $\SU$. Accession \emph{inherits the existing $g$}:
+no party can renegotiate its depth at this stage.
+
+Fourth, given the realized institutional regime, each firm simultaneously
+chooses a residual product-homogeneity index $x_i\in[0,1]$. A higher
+$x_i$ reduces differentiation in nonstandardized attributes; critically,
+there is no restriction $x_i\geq g$ and no requirement that whole
+products be identical merely because their technical interfaces work
+together. A firm pays the real design cost
+\begin{equation}\label{eq:designcost}
+ K_i(x_i)=\frac{\kappa}{2}(1-x_i)^2,\qquad \kappa>0,
+\end{equation}
+\emph{once across its worldwide operations}. Finally, firms
+simultaneously select nonnegative Cournot quantities in every market,
+taking expected network use as fixed when choosing quantities.
+All firms and governments know the primitives, chosen designs, and
+compatibility commitments.
+
+Government votes, applications, and acceptance at indifference are
+weakly affirmative. Membership labels at $g=0$ may therefore depend
+on indifferent choices even though the corresponding allocations are
+identical. We study the \emph{substantive} formation of unions with
+$g>0$, not the uniqueness of zero-depth institutional labels.
+There are no side payments, adjustment fees, border barriers,
+government mandates, or renegotiation after $C$ applies.
+
+\subsection{Demand and distinct dimensions of compatibility}
+
+In every national market, a representative quasilinear consumer has
+the conditional utility
+\begin{equation}\label{eq:utility}
+ U(q\mid n^e)
+ =a\mathbf{1}^{\top}q-\frac{1}{2}q^{\top}Bq
+       +\eta q^{\top}H n^e,\qquad
+ B=\rho H+(1-\rho)X ,
+\end{equation}
+where $q=(q_A,q_B,q_C)^\top$ is the local consumption vector,
+$n^e$ is the \emph{expected} vector of network use in the same
+market, $0<\rho<1$ measures the importance of technical
+compatibility for substitutability, and $0\leq\eta<1$ measures
+network benefits. Throughout, own diagonal entries are
+$H_{ii}=X_{ii}=1$. For $i\ne j$, define
+\begin{equation}\label{eq:matrices}
+ H_{ij}=
+ \begin{cases}
+ g,&\text{$i$ and $j$ belong to the same standards union},\\
+ 0,&\text{otherwise},
+ \end{cases}
+ \qquad
+ X_{ij}=\frac{x_i+x_j}{2}.
+\end{equation}
+Thus $\SW$ has no off-diagonal entries of $H$, $\SU$ adds only the
+$AB$ edge, and $\IS$ gives every pair the same inherited $g$.
+Residual similarity $X$ need not vanish under separate standards,
+and the common interface $H$ need not eliminate other product
+differences. The quadratic matrices are positive semidefinite
+at the certified parameter witness and design domain.
+
+Holding expectations $n^e$ fixed for the consumer's conditional
+choice, inverse demand is
+\begin{equation}\label{eq:demand}
+ p=a\mathbf{1}-Bq+\eta H n^e.
+\end{equation}
+Firms share constant marginal production cost $c$. In the Cournot
+stage, an individual firm's quantity deviation does \emph{not}
+change $n^e$ contemporaneously; equilibrium expectations are
+subsequently fulfilled, $n^e=q$. All national markets have
+identical primitives and hence identical fulfilled-expectations
+quantities in the unique continuation considered below.
+
+\subsection{Profit, welfare, and benchmarks}
+
+Let $d=a-c>0$. At an interior fulfilled-expectations Cournot
+equilibrium the margin in each national market is $p_i-c=q_i$.
+Consequently, firm $i$ receives operating profits $3q_i^2$
+from the \emph{three} markets but pays its design expenditure only
+once. Its Stage-4 objective is
+\begin{equation}\label{eq:pi}
+ \Pi_i(x;S,g)=3q_i(x;S,g)^2-K_i(x_i).
+\end{equation}
+Conditional consumer surplus in \emph{one} country's market is
+$\CS(q;S,g,x)=\tfrac12q^\top Bq$, evaluated at fulfilled
+expectations; adding $\eta q^\top Hq$ again would double-count
+network utility in this surplus calculation. Government $i$
+values its own consumers and its home firm's worldwide net income:
+\begin{equation}\label{eq:welfare}
+ W_i(S,g;x)=
+ \underbrace{\frac12q^\top Bq}_{\text{domestic consumer surplus}}
+ +\underbrace{3q_i^2}_{\text{home firm's world operating profit}}
+ -\underbrace{\frac{\kappa}{2}(1-x_i)^2}_{\text{once-paid design cost}}.
+\end{equation}
+World welfare is
+\begin{equation}\label{eq:world}
+ {\cal W}=3\CS+3\sum_i q_i^2
+                       -\frac{\kappa}{2}\sum_i(1-x_i)^2.
+\end{equation}
+
+The actual game allows post-policy design responses at every
+history. We also analyze a \emph{different restricted-strategy
+counterfactual game} in which each $x_i$ is forced to equal the
+corresponding $\SW$ design Nash choice after \emph{every} history.
+This is a forecast with frozen private designs, not another
+equilibrium of the original unconstrained design game. Separately,
+we evaluate the conditional welfare of an $\IS$ allocation at a
+specified $g$ even if the governments' sequential consent rules
+prevent its implementation. That benchmark is not a planner's
+unrestricted first best.
+
+Our result is an existence result at the following exact rational
+parameter vector:
+\begin{equation}\label{eq:witness}
+ \theta_0=(d,\eta,\rho,\kappa)
+ =\left(1,\frac{379}{500},\frac9{10},\frac{1701}{2000}\right).
+\end{equation}
+No universal claim is made for arbitrary demand or parameters.
