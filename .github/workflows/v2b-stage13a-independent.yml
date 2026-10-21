@@ -1,0 +1,26 @@
+name: Stage13A independent analytic audit
+on:
+  push:
+    paths:
+      - 'verification/v2b_stage13a_independent_audit.py'
+      - '.github/workflows/v2b-stage13a-independent.yml'
+  pull_request:
+jobs:
+  independent-propositions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r production/requirements-stage9.txt
+      - name: Preserve existing theory freeze
+        run: python production/scripts/verify_freeze.py
+      - name: Reconstruct unilateral derivatives and certify new local parameter region
+        run: python -u verification/v2b_stage13a_independent_audit.py --json stage13a-results.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stage13a-independent-exact-results
+          path: stage13a-results.json
+          retention-days: 7
