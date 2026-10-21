@@ -1,0 +1,102 @@
+# Stage 12 — Journal Positioning, Economic Contribution and Editorial Fit Gate (V2b)
+**Workflow:** research-paper-workflow v2.9, 2026-10-21 JST.  
+**Manuscript:** *International Standards Coalitions and Endogenous Product Design*.  
+**Upstream:** Stage8 freeze `V2B-THEORY-FREEZE-2026-10-21-v1`; Stage10 14-page manuscript successful PDF CI run `39537935322`; Stage11 hostile referee report on branch `stage11/referee-attack-20261021`, CONDITIONAL GO.  
+**Mandatory Stage12 inputs:** [Candidate-Universe Ledger](STAGE12_CANDIDATE_UNIVERSE_2026-10-21.md) created **before ranking**; [RIO requirements baseline](STAGE12_RIO_REQUIREMENTS_LEDGER_2026-10-21.md); [Stage7.5A robustness](../reviews/V2B_STAGE075A_CONTRIBUTION_ROBUSTNESS_CERTIFICATE_2026-10-21.md).  
+**Overall verdict: CONDITIONAL GO — PRIMARY JOURNAL PROVISIONALLY SELECTED, serious newly identified prior-art full-proposition check required before submission; Stage13 integration may prepare but must NOT represent novelty check as closed.** Does not reopen frozen theory or create a submission package.
+
+## 1. Executive positioning / journal ladder
+
+**Primary** — **Review of Industrial Organization (RIO)**, standard *research article*, **provided** the new Cheng–Huang (2025) near-neighbor receives full proposition-level absorption check and the contribution is explicitly limited to institutional sequence + post-government endogenous residual design causing opposite *country consent* signs. RIO's official scope welcomes significant IO theoretical papers and public policy, including compact theoretical models; Wang–Zhao 2026 horizontal Cournot merger and Sorek 2026 quality-innovation/Cournot are recent relevant theory forms. Its preferred empirical/case-study verifiability is the specific editorial risk for this noncalibrated counterexample. Official: https://link.springer.com/journal/11151/aims-and-scope ; articles https://doi.org/10.1007/s11151-026-10069-x , https://doi.org/10.1007/s11151-025-10046-w.
+
+**Stretch (not first submission for current exact-strength)** — *International Journal of Industrial Organization (IJIO)*, theoretical IO eligible but high significance/generalizable-mechanism risk; 2026 standard-setting/innovation empirical paper makes an explicit economic question relevant but not by itself adequate priority (https://shop.elsevier.com/journals/international-journal-of-industrial-organization/0167-7187 ; https://doi.org/10.1016/j.ijindorg.2025.103235). *Journal of Economics & Management Strategy* is further stretch due to managerial strategy and policy-implementation breadth demanded by strong comparator Kim (2025), despite theoretical IO scope (https://editjems.org/aims-and-scope/ ; https://doi.org/10.1111/jems.12643).
+
+**Realistic fallbacks, in conditional order**:
+1. **Journal of Industry, Competition and Trade (JICT)** — recent 2026 technology-adoption/Cournot theory is a strong article-type analog (https://doi.org/10.1007/s10842-026-00475-y); 2024 game-theoretic cross-jurisdiction regulation demonstrates that stylized institutional games can appear with tightly qualified policy implications (https://doi.org/10.1007/s10842-024-00431-8). However the official journal requires applied theoretical papers to *clearly highlight empirical and economic-policy implications*, making non-implementability/no empirical analogue a live editorial barrier (https://link.springer.com/journal/10842/aims-and-scope).
+2. **Review of Network Economics (RNE)** — specializes in network industries, competition and regulation, explicitly accepts theoretical research; deeper substantive network application may be needed, and submission rules/fees were not exhaustively verified (https://www.degruyterbrill.com/journal/key/rne/html). Not an automatic safety journal.
+
+**Secondary / conditional alternatives:** *Journal of Economics* (mathematical micro theory welcomes this methodology but **severe novelty-local overlap** with Cheng–Huang 2025 and Buccella–Fanti–Gori 2023), *Information Economics and Policy* (telecom/information-policy scope but current institutional/tech application thin), *Economic Modelling* (policy relevance demand), and *Research in Economics* (editors explicitly filter on economic importance of correct results, not easy). Consult the pre-ranking universe for all exclusions.
+
+**Safety net:** narrower *Review of Network Economics* article or a carefully framed research note **only if** editorial comments identify that a full paper cannot clear economic significance; not a license to delete proof-critical bridges or claim the current 14-page research article is already a note. No fabricated acceptance probabilities or journal-specific acceptance rates.
+
+## 2. Certified research-strength matrix (do not upgrade)
+
+| Surviving Stage7.5A result | Exactly licensed | Classification | Journal implication |
+|---|---|---|---|
+| Endogenous design makes all g>0 regional SU and C accession unattractive in specified government game at exact theta0 | two separately certified phi={x,x²}; country welfare+firm Nash; NOT under every institutional agenda | **INSTITUTION-SPECIFIC** | RIO/JICT must accept narrow agenda as informative, not universal theorem |
+| Frozen SW Nash design across all histories yields *some* positive IS | phi=x witness .05; phi=x² .005; frozen is distinct restricted-strategy game; latter ~9.1e-7 margin | **INSTITUTION-SPECIFIC / bounded counterfactual** | Frame as potential governmental forecasting error |
+| Hypothetical endogenous IS at g=.05 Pareto-dominates SW for each phi | off-path conditional constrained allocation, not first-best; governments cannot reach it through the specified consent history | **CONDITIONALLY PORTABLE** | Highlights economic significance of real welfare wedge |
+| Unique firm Nash/continuation | canonical Rosen analytic + interval; nonlinear separate full x/g checks; Lean arithmetic proxy signs only | **CONDITIONALLY PORTABLE to two maps** | Keep proof/evidence transparency; no general concave-game innovation |
+| *All* monotone phi or all forms of standards consent fail | false/generalization unsupported; one-shot direct IS(.05) succeeds and nonlinear fixed-g=.05 frozen C fails | **FALSIFIED AS OVERCLAIM** | Explicit negative results increase credibility; cannot be paper's headline |
+
+Maximum honest one-sentence contribution: **An exact, institution-specific example demonstrates that taking downstream costly residual product design as fixed can reverse governments' forecasts of whether an international technical agreement can be formed, despite a conditional Pareto gain from multilateral compatibility.**
+
+## 3. Target-vs-claim Journal-Fit Matrix
+
+These are **subjective, paper-conditional editorial assessments** informed by official scope + examples, not official submission odds.
+
+| Journal | Recent theoretical comparator and verified scope | Actual fit | Specific likely desk/editor objection | Verdict |
+|---|---|---|---|---|
+| **RIO** | 2026 Wang–Zhao Cournot merger and Sorek quality innovation; official welcomes significant theory but wants verifiable reality | **BEST BALANCE / PRIMARY** | Single finely tuned theta0 + stipulated inherited-g agenda do not explain an observed standard coalition or robust empirical pattern | HIGH but actionable exposition and empirical predictions |
+| **JICT** | 2026 Häckner–Herzing technology adoption and Cournot; 2024 cross-jurisdiction tariff/embargo game; explicit applied-theory policy implications | **CLOSE FIELD FALLBACK** | Diagnoses failure but no contractual implementability, empirical comparator or specific policy instrument | HIGH; add falsifiable implications, not unproved instrument |
+| **RNE** | official network-industry competition and theory remit; relevant ongoing 2025–26 network topics | **TOPICALLY CLOSE FALLBACK** | Three identical markets and local fulfilled expectations understate real network dynamics | MEDIUM–HIGH |
+| **JoE** | 2023 Buccella et al strategic compatibility; **2025 Cheng–Huang quality, firm veto, network effects, welfare** | **THEORY-TYPE FIT; NOVELTY COLLISION** | Reviewer may see familiar veto/noncompatibility and design interaction dressed as country problem | VERY HIGH prior-art risk; full published proposition check outstanding |
+| **IJIO** | official theoretical IO; 2026 IEEE standard-setting/innovation empirical | **STRETCH** | Mechanism is a computed existence witness, no parameter/institution theorem generality or measurable guidance | VERY HIGH |
+| **JEMS** | 2025 Kim interoperability regulation with instrument + welfare results | **STRETCH** | Weak firm/managerial strategy angle and no empirically actionable regulation | VERY HIGH |
+| **IEP** | official theoretical information/telecom policy remit | **SECONDARY** | "Technical standards" is generic, no telecom industry adoption or regulation institutions actually modeled | HIGH |
+| **Economic Modelling** | official invites policy-relevant theoretical industrial and international econ | **SECONDARY** | Computational proof of existence with no calibrated scenario/simulation policy magnitude | HIGH |
+| **Research in Economics** | official original theoretical papers, editors screen the publishability of even correct findings | **SECONDARY** | The question may seem too institution-specific to merit a general-interest theoretical paper | HIGH |
+
+### Literature-venue audit result
+All obvious serious IO venues and journals represented by named nearest predecessors (GS *Journal of International Economics* **excluded**, Baake–Boom *IJIO* **included**, Buccella and Cheng–Huang *JoE* **included**, Buchholz–Hattori *Economic Modelling* **included**, 2025–26 theory RIO/JICT **included**) are accounted for in the pre-ranking universe. Neither venue quality nor an ancestor's publication constitutes proof that this model will be accepted.
+
+## 4. Newly discovered 2025 direct-adjacency threat — do not hide
+
+**Cheng & Huang, `Quality competition and product compatibility in network industries`, Journal of Economics 145 (2025), 31–57, published online 30 December 2024, DOI https://doi.org/10.1007/s00712-024-00896-5.** Accessible publisher abstract and some excerpts show **endogenous quality, strategic firm compatibility, veto vs no veto, network externalities, incompatible equilibrium and welfare effects**. This is a *serious* closer paper to the broad language "veto + endogenous product design + welfare-improving compatibility not chosen." It does not automatically absorb V2b's exact government AB→C inherited-g timing or the frozen-versus-endogenous *government participation* sign reversal; accessible excerpts indicate firms hold veto authority, not governments, and two firms rather than national government triad. **BUT** the full journal-version propositions are paywalled in the current independent search and were not proposition-by-proposition inspected: classification **POTENTIAL PARTIAL ABSORPTION, EXACT THEOREM NOT YET MATCHED**. This must be explicitly added to the Stage13 literature and prior-art ledger. If access to full text reveals an overarching general theorem that implies the V2b reversal, **ROLLBACK to Stage 6 / Stage 11; halt unqualified journal selection.**
+
+Other top overlaps unchanged:
+- Gandal & Shy (2001), government standard recognition, SU outsiders and network benefits, but price competition with fixed variety; source fully audited in the repository. https://doi.org/10.1016/S0022-1996(00)00067-2.
+- Takarada–Kawabata (2025), regulatory mutual recognition, three-country Cournot, outsider obstacles and exogenous differentiation; must be contrasted prominently with policy agenda and post-policy private x. https://oikono.econ.nagoya-cu.ac.jp/wp-content/uploads/sites/2/2025/02/DP701_Kawabata_February2025.pdf.
+- Cabral–Salant (2014), standards can discourage development investment, not novel as general idea. https://doi.org/10.1016/j.ijindorg.2013.07.006.
+- Buchholz–Hattori (2024), technology/coalition paradox framework. https://doi.org/10.1016/j.econmod.2024.106722.
+- Buccella–Fanti–Gori (2023), Cournot network-compatibility choice and quasi-fixed costs. https://doi.org/10.1007/s00712-023-00834-x.
+
+## 5. Stage7.5 and v2.9 economic-significance/question completeness re-audit
+
+**Answered question:** Is there a coherent exact model in which government forecasting with firms' designs fixed predicts feasible IS, but post-policy firm design equilibrium leads to government consensus failure despite a conditional Pareto benefit? **Yes, at exact theta0 in stated agenda; supported by all-g interval methods.**
+
+**Not answered:** Frequency of this mechanism in real standard-setting; optimal treaty design; implementation/funding/transfer commitments; transfer or mandate welfare with incentives; robustness for arbitrary country asymmetries, demand and institutional rules. These are **BOUNDED LIMITATIONS** for a deliberately stylized diagnostic theory paper, *not* secretly proved instruments. There is no policy-effect causal estimate. Readers learn to distinguish immediate compatibility gains from induced changes in exporting-firm rents and the outside option created by intermediate SU membership.
+
+**WHY:** A first-step AB agreement produces an attractive outside continuation for C and changes firms' subsequent design, so sequential consent need not implement an available welfare-improving IS. Modeled.
+**SHOULD:** Conditional IS at g=.05 Pareto dominates SW with endogenous Nash designs, but this is not a planner optimum. Derived not implemented.
+**COULD:** Direct one-shot ABC unanimity would accept g=.05 relative to SW *in a different agenda*, but treaty authority, enforceability, renegotiation incentives and transfers are not modeled. Discussion-only, not a policy prescription.
+
+**Editor-facing publication case (diagnostic theory):** Strategic technical-standard negotiations often precede firms' product development. Evaluating an agreement holding those downstream competitive choices constant may therefore misidentify who will favor membership. This paper formalizes the distortion in a fully specified, sequential, three-government market game: at a certified exact parameter vector, an initially bilateral technical union cannot win member assent at any strictly positive depth, and the outsider declines admission, even though international harmonization conditional on firm optimization makes every country better off than fragmentation. In a controlled restricted-design comparison the same institutional agenda allows international agreement. The mechanism is not that standardization universally impairs investment—already known—but that a privately chosen residual characteristic shifts country-level export profit and the outsider option under an inherited-depth vote. A direct-grand-offer falsification identifies the exact role of the institutional pathway. This may provide a precise warning against static-participation policy forecasts, conditional on a testable sequence of concessions and differentiated products.
+
+**Strongest skeptical editor refusal:** The existence example relies on three symmetric countries, fulfilled quantity expectations, a specified bilateral-first unanimity institution, quadratic costs and carefully tuned rational parameters. Nearby scholarship already proves that compatibility interacts with endogenous private quality and veto power, and that regional coalitions suffer outsider blocking. The paper shows no tractable broad threshold theorem, measured probability of occurrence, concrete application of the voting sequence to international standards agencies, or implementable policy design. The nonlinear variant's original common-depth validation fails and the only surviving frozen-participation gain is tiny. Even if the interval computations are flawless, a referee could judge the result to be a narrow mathematical amalgam rather than a new economic phenomenon of sufficient general interest. A faithful 14-page article would have to provide a strongly argued forecasting interpretation and credible testable institutional implication to overcome that objection.
+
+**Decision among bounded paths:** **BASELINE ONLY + editorial repositioning.** Do not add a new agent, policy instrument, new parameter search, broad function claim or new theorem solely to reach IJIO. If the Cheng–Huang theorem fully absorbs the governing comparison or the RIO editor considers diagnostic-only insufficient, return to Stage6 to reassess whether a research note or other question merits a *separately authorized* project. No blanket extension is approved.
+
+## 6. Primary journal requirements and fit
+
+See [separate 2026-10-21 journal-specific RIO requirements ledger](STAGE12_RIO_REQUIREMENTS_LEDGER_2026-10-21.md), sourced to:
+- https://link.springer.com/journal/11151/submission-guidelines
+- https://link.springer.com/journal/11151/how-to-publish-with-us
+
+Verified official issues: abstract 150–250 words, keywords 4–6, correct author/title page, editable LaTeX source at initial submission, final author-approved portal-built PDF, Data Availability, substantive AI disclosure in a relevant section, funding/competing interest/authorship declarations. Review anonymity, exact journal source-folder/file-designation requirements, submission fee if any, paper/category limits, special cover-letter fields and authenticated portal options are **UNVERIFIED**. Subscription route is officially available with **no APC**; optional OA at the currently displayed $3290 USD / £2390 GBP / €2690 EUR at acceptance (not a submission fee). No paywall bypass attempted.
+
+## 7. Stage 13 manuscript-integration contract
+
+**Allowed, in order:**
+1. **Prior-art checkpoint FIRST:** Secure authoritative Cheng–Huang complete article/proposition text if accessible, or mark partial-source uncertainty prominently; map its exact theorem to V2b government/firm timing, consent votes, payoff benchmark and frozen-vs-endogenous reversal. Update related-literature with exact source and disclosure. If direct absorption appears, STOP and return Stage6 / Stage11 rather than writing an overstated article.
+2. **Contribution framing only:** introduce same-`g=.05` country-consent table for canonical `phi=x`, both full vs frozen responses, and actual constrained hypothetical IS vs SW; emphasize government forecasting error and the bilateral outsider option. Preserve exact-witness and alternative agenda failure.
+3. **Proof exposition:** embed fully auditable global canonical Rosen/Jacobian analytic bound or equivalent in Appendix; provide reportable interval certificate log digest, exact domains, SHA/environment, but do not assert independent mpmath full proof unless actually performed.
+4. **Accessible examples:** add a falsifiable observational prediction about expected design adjustment, country participation and outside option; historical GSM/ChaoJi remain motivation not observed verification.
+5. **Editing and journal layout:** maintain theorem bridge equations and negative p=2 fixed-depth test; 150–250 word abstract and 4–6 keywords, JEL codes, title/author/funding/AI declarations, check 14-page article after proper Springer layout; supplement code and reproducibility instructions.
+6. **No substantive modifications:** no changes to `V2B-THEORY-FREEZE-2026-10-21-v1` 9 files, theta, g choice, vote order, network utility, published result status, or robustness class without rollback and recertification.
+
+**Stage 14 mandatory**: refresh all official RIO instructions and authenticated portal file types, anonymity model, fee/preprint rules, source zips/subfolders, build portal PDF and confirm final author signoff before any submission. **Stage 12 is not a final submission approval.**
+
+## 8. Final verdict
+
+**CONDITIONAL GO — PROVISIONAL PRIMARY RIO; ONE DISCRETE MATERIAL UNRESOLVED ISSUE: CHENG–HUANG (2025) COMPLETE PROP-LEVEL ABSORPTION.** Current strongest contribution is correctly scoped, CI passes do not prove novelty, and the selected primary venue has a defensible theory-facing remit. An unresolved near-neighbor with endogenous quality, veto and incompatible equilibrium prevents issuing an unconditional `PRIMARY JOURNAL SELECTED — GO TO INTEGRATION` declaration. **Continue Stage13 preparation only with that source gate; halt submission if the source-level novelty comparison remains materially uncertain or contradicts the claimed residue.**

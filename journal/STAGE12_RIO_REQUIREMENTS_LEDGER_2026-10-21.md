@@ -1,0 +1,53 @@
+# Stage 12 — Initial Journal Requirements Ledger: Review of Industrial Organization
+**As-of access date:** 2026-10-21 JST. **Journal**: *Review of Industrial Organization*, Springer Nature, journal no. 11151; **article**: original research/theory paper (not Notes until editorial direction). **Status:** Stage12 INITIAL BASELINE; every portal-specific and material UNVERIFIED item must be resolved again at Stage14. *Not a submission-QA PASS.*
+
+## Official source keys (journal-specific unless otherwise stated)
+- **S1 Aims** https://link.springer.com/journal/11151/aims-and-scope (journal-specific, evidence priority 3)
+- **S2 Instructions for Authors** https://link.springer.com/journal/11151/submission-guidelines (journal-specific, priority 3)
+- **S3 How to publish / fees** https://link.springer.com/journal/11151/how-to-publish-with-us (journal-specific, priority 3)
+- **S4 Submission entry** linked from journal home and S2: https://submission.nature.com/ (journal-linked, **authenticated portal screen uninspected**, priority 2 NOT achieved)
+- **S5 Recent comparable theory** https://doi.org/10.1007/s11151-026-10069-x (Wang and Zhao, 2026 pure Cournot merger theorem), https://doi.org/10.1007/s11151-025-10046-w (Sorek, 2026 quality innovation & Cournot extension). Publication pattern, not submission requirement.
+
+| Topic | Current authoritative source | Operative rule/evidence | Submission artifact and action | Status at Stage12 |
+|---|---|---|---|---|
+| Identity / topical scope | S1 | Original all-aspects IO, innovation/competition/regulation; theory is eligible, significant IO theory desired, policy/real-condition verification encouraged | Main text framing in Introduction and discussion | PASS (scope eligible, editorial acceptance not certified) |
+| Target article type | S1,S2 | Research paper supported, shorter notes/commentaries also welcome; no assumption that Notes is superior | Original research article in portal | PASS provisional; category option UNVERIFIED |
+| Submission portal | S1,S2 | Journal Submit manuscript links to `submission.nature.com` | Author account, submission record | PASS general URL; specific portal fields UNVERIFIED |
+| Review anonymity | S2 | No journal-specific explicit single/double-anonymized rule found in accessed guide; title-page includes names | Manuscript vs title page separation, metadata and supplements | **UNVERIFIED** (do not assume single-blind or double-blind) |
+| Author/title page | S2 | Title, author names, affiliation, corresponding author active email, ORCID if available; acknowledgments on title page | Separate `title_page.tex` or title/front matter in required format | PASS requirement; exact separate upload designation UNVERIFIED |
+| Editable source at initial submission | S2 §§ Manuscript Submission, Source Files | Submit all relevant editable sources with every submission and revision, LaTeX accepted | `paper/main.tex`, section tex, bibliography, generated table and supporting styles | PASS rule; source archive format UNVERIFIED |
+| PDF | S2 LaTeX and Online Submission | Online system compiles source files into PDF to approve for peer review | Check portal-generated PDF (not only GitHub CI PDF) | PASS rule; actual build UNVERIFIED |
+| LaTeX package/folder restrictions | S2 | Source upload; exact archives, nesting and file designation unspecified in accessed public guide | Stage13 self-contained source package, clean compile and portal-specific packaging | **UNVERIFIED** |
+| Springer class | S2 | Guide contains LaTeX online submission instructions but no universal compulsory class identified in accessed excerpt | Evaluate `sn-jnl` journal template vs `article` | **UNVERIFIED**; no forced conversion at Stage12 |
+| Abstract | S2 Title Page | Abstract 150–250 words; no undefined abbreviations/unlisted references | `paper/main.tex` abstract | PASS rule; count and prose check at Stage13 |
+| Keywords | S2 Title Page | 4–6 keywords | Add below abstract and portal metadata | PASS rule; not yet in current Stage10 main.tex |
+| JEL | S2 Classification code | Journal-specific JEL instructions need location/read at Stage13; determine appropriate codes (likely L13, L15, L50/L52, F15 only if justified) | Add source/portal | **UNVERIFIED exact number/content** |
+| Manuscript length | S2 | No verified journal-specific numerical main-text maximum from public guide. 14-page single-spaced-ish LaTeX PDF ≠ same 14 pages in Springer format | Actual layout check and page count after formatting | **UNVERIFIED page/word ceiling** |
+| Figures and tables | S2 Tables / Artwork | Sequential captioning, supply correct image sources/resolution, place figure in text where possible | Welfare/payoff table and optional 5-stage diagram | PASS general; final line/font/DPI and designation at Stage14 |
+| Appendix / online supplement | S2 SI | Supplemental files cited in text, identified/captioned, submitted standard formats; published as received | Retain proof-critical bridge in main/appendix; companion reproducible code with labeled resources | PASS baseline; exact upload roles UNVERIFIED |
+| Data availability | S2 Research Data Policy | Data availability statement is required for original research; if no observational data, accurately describe generated computational certificate/code | Source provenance / Data Availability section | PASS rule; factual final statement pending |
+| Code availability / reproducibility | S2, project Stage4A/9/11 | Data/material/software supporting claims should be reproducible; external GitHub scripts and logs must match final frozen paper; disclose reliance on SymPy/mpmath, Lean proxy boundary | Anonymized if review requires; code reproducibility readme | PASS direction; journal-specific mandatory code deposit not verified |
+| Funding | S2 Declarations | Declare actual support, when applicable; titles/portal consistency | Title page + declarations + portal | PASS rule; actual author facts must be confirmed |
+| Competing interests | S2 Submission / Competing Interests | Disclose financial/non-financial interests; submission interface specifically seeks authorship and competing-interest fields | Statement plus portal field | PASS |
+| Authorship / CRediT | S2 | Authorship criteria and contribution information; system asks for contribution details | Contributions and human sign-off; AI cannot be author | PASS baseline; exact portal labels UNVERIFIED |
+| Generative AI | S2 Title Page | Substantive LLM use must be documented in Methods or suitable alternative; copyediting alone excepted; human accountable for final text | Honest substantial-AI disclosure in suitable section and linked provenance; no automatic claim human checked all proofs | PASS rule; exact declaration final wording not yet written |
+| Ethics/consent | S2 | Disclose relevant human/animal subjects if applicable; this pure theory has no empirical human/animal recruitment | N/A statement as requested | NOT APPLICABLE for participant/animal consent, subject to portal |
+| Acknowledgments | S2 Title Page | Acknowledge assistance/funding in designated title material | Author-identifying front matter, subject to anonymization | PASS rule |
+| Prior publication / preprints | S2 ethics | No simultaneous journal consideration and original work; exact preprint scope not resolved here | Author attestation at submission | PASS exclusivity rule; detailed preprint policy UNVERIFIED |
+| Reviewer suggestions | S2 Ethics | Suggestion/exclusion permitted; independent reviewers, institutional emails or public validation recommended | Portal suggestions only if field appears | PASS optional, actual form UNVERIFIED |
+| Open-access charges | S3 | Hybrid. Subscription-route **no APC**. Optional OA APC currently GBP2390 / USD3290 / EUR2690 (at acceptance, taxes may apply). | Choose publication route after acceptance | PASS official snapshot; recheck live |
+| Submission fee | S3 | Official web source discusses publication APC but does not clearly affirm or deny a separate submission/handling fee | Author account checkout/portal | **UNVERIFIED** (do not claim no fee) |
+| Cover letter | S2 | Not explicitly confirmed mandatory from observed guide | Cover letter after Stage13; portal assignment | **UNVERIFIED** |
+| Highlights / graphical abstract | S2 | No journal-specific requirement confirmed in accessed guide | Do not add unless portal demands | **UNVERIFIED** |
+| File metadata anonymity | S2 | Depends on actual review model | PDF metadata, `\author`, code path, GitHub identity | **UNVERIFIED** pending review mode |
+| Author institutional approvals / affiliations | S2 | Responsibility to provide correct affiliation and any relevant approvals | Actual author sign-off | PASS requirement; facts remain author-dependent |
+
+## Immediate Stage 13 actions and Stage 14 blockers
+
+**Stage13 may safely perform**: (a) theory-frozen language polish; (b) decisive near-neighbor proposition map, particularly **Cheng–Huang (2025)** and Takarada–Kawabata (2025); (c) direct same-g 0.05 frozen-versus-endogenous government participation table; (d) appendix analytic global-curvature detail and machine certificate logs; (e) 150–250 word abstract, 4–6 keywords, appropriate JEL; (f) provenance and accurate AI/conditional network utility disclosure; (g) LaTeX package reproducibility and accessible figures if used; (h) positioning as diagnostic theory with falsifiable economics.
+
+**Stage14 MUST resolve**: exact review anonymity; whether a separate title page and anonymized supplemental program are compulsory; upload file designations and source archive structure/subfolder restrictions; precise paper category/page limits; JEL and highlight/graphical abstract/cover letter requirement; fee if any beyond optional OA APC; preprint policy; actual authenticated portal field order; generated-PDF identity and author metadata; final signed AI and data declarations; whether deposited GitHub reproducibility program reveals author identity under applicable blind review.
+
+**Evidentiary note**: the official Springer guide contains generic content (e.g., “manuscripts should be submitted in Word”) alongside a dedicated LaTeX section and editable source requirement. This is **not** a requirement to convert this paper to Word. Follow actual venue LaTeX upload rules and portal instructions; unresolved conflicts marked for Stage14.
+
+**This ledger does not certify current portal access, all required files, or submission eligibility of the manuscript as-is.**
