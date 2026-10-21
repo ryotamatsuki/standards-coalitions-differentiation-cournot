@@ -1,4 +1,149 @@
-\section{Sequential Compatibility and Coalition Formation}\label{sec:results}
-\emph{Stage 10 section reserved. State only the exact-witness,
-institution-specific existence results. Full-government continuation and
-all-$g$ inequalities are computer-assisted, not full Lean theorems.}
+\section{Sequential Compatibility and Coalition Formation}
+\label{sec:results}
+
+The central result concerns a \emph{difference in feasible
+governmental agreements}, not a difference between two
+fixed-design demand schedules. Every comparison below uses the
+unique downstream design and Cournot equilibria derived in
+Section~\ref{sec:equilibrium}, unless explicitly labelled
+as a frozen-design counterfactual.
+
+\begin{proposition}[No positive-depth agreement under endogenous design]
+\label{prop:rejection}
+Under the five-stage bilateral-first consent game, canonical
+similarity mapping \eqref{eq:matrices}, and the exact witness
+\eqref{eq:witness}, for every real $g\in(0,1]$,
+\begin{equation}\label{eq:rejection}
+ m(g)<s,\qquad i(g)<o(g).
+\end{equation}
+Thus no substantive positive-depth $\SU$ or $\IS$ is reached
+in a subgame-perfect outcome of the government game.
+Formal zero-depth membership labels need not be unique.
+\end{proposition}
+
+\begin{proof}
+Write the symmetric bilateral-union design continuation as
+$(u(g),u(g),v(g))$, with $u$ chosen by the members and $v$
+by the outsider. Equation~\eqref{eq:design-bridge} specifies
+the \emph{unilateral} firm Nash conditions
+$F_M(u,v,g)=F_O(u,v,g)=0$.
+As long as this Jacobian is nonsingular, implicit
+differentiation gives the total member-welfare derivative
+\begin{equation}\label{eq:member-path}
+ m'(g)=W_{A,g}^{\SU}
+       +W_{A,u}^{\SU}u'(g)
+       +W_{A,v}^{\SU}v'(g),\qquad
+ \begin{pmatrix}u'\\v'\end{pmatrix}
+ =-D_{(u,v)}F^{-1}D_gF.
+\end{equation}
+Similarly, writing the unique $\IS$ design equilibrium
+as $(y(g),y(g),y(g))$, the total accession-margin derivative is
+\begin{equation}\label{eq:outsider-path}
+ \bigl(i(g)-o(g)\bigr)'
+ =i_g+i_y y'
+ -\bigl(W_{C,g}^{\SU}
+       +W_{C,u}^{\SU}u'+W_{C,v}^{\SU}v'\bigr),
+ \qquad y'=-F_{I,g}/F_{I,y}.
+\end{equation}
+The derivatives $W_{A,g}$ and $i_g$ in these expressions hold
+private design fixed, while the terms multiplied by $u',v',y'$
+incorporate the firms' \emph{actual} post-policy responses.
+
+The exact rational-interval certificate associated with
+Appendix~\ref{app:proofs} isolates the unique design Nash
+uniformly and checks nonsingularity on \emph{all} of
+$g\in[0,1]$. It then encloses the full right-hand sides
+of \eqref{eq:member-path} and
+\eqref{eq:outsider-path} over 1,000 adjacent closed
+rational policy intervals, proving the strict uniform bounds
+\begin{equation}\label{eq:signed-bounds}
+  m'(g)<-0.0079701929973,\qquad
+  \bigl(i(g)-o(g)\bigr)'<-0.0150388833377.
+\end{equation}
+These are conservative upper bounds returned by the interval
+certificate, \emph{not} approximate maxima of a numerical grid.
+At $g=0$, all three institutional labels deliver the same
+market and firm-design continuation, so
+$m(0)=o(0)=i(0)=s$. Integrating the strictly negative
+derivatives yields \eqref{eq:rejection} for every $g>0$.
+
+Backward induction is immediate but economically consequential:
+$C$ strictly prefers the bilateral outsider continuation to
+accession at any positive inherited $g$, hence does not apply;
+anticipating a terminal $\SU$, $B$ strictly prefers rejecting
+$A$'s positive-depth proposal and obtaining $\SW$.
+Government $A$ cannot bypass these choices by selecting a
+different $g$. A zero-depth formal union remains
+payoff-equivalent to $\SW$ and may be supported by indifferent
+votes.
+\end{proof}
+
+\subsection{The frozen-design forecast}
+
+Define $\widehat{m}(g)$, $\widehat{o}(g)$ and
+$\widehat{i}(g)$ by \eqref{eq:welfare} in a \emph{different}
+restricted-strategy government game. In this benchmark,
+all firms' designs are held at their common actual $\SW$
+Nash level $\bar x=x^{\SW}$ after every history, even when
+governments choose a positive compatibility depth. The cost
+of that design remains the same once-paid real resource cost.
+No firm can change design in the benchmark; the policy rules
+and Cournot stage remain unchanged.
+
+\begin{proposition}[A frozen-design policy forecast reverses the outcome]
+\label{prop:frozen}
+At $\theta_0$ under the canonical residual-similarity mapping,
+the frozen-design game admits a positive-depth $\IS$
+with the inherited compatibility $g=1/20$. At this offer,
+$C$ strictly prefers applying, both $A$ and $B$ strictly
+prefer approving accession, and the proposed $\IS$
+beats $\SW$ and \emph{every possible terminal $\SU$
+policy} for the proposer. Hence at least one optimal
+government outcome in the restricted-design game is a
+positive-depth $\IS$, unlike the original game in
+Proposition~\ref{prop:rejection}.
+\end{proposition}
+
+\begin{proof}
+Opposite-sign rational interval bounds for the $\SW$
+design FOC isolate
+$\bar x\in[0.71859270731,0.71859270734]$.
+Substituting the \emph{same} $\bar x$ into each
+conditional government regime and taking $g=1/20$ gives
+\begin{equation}\label{eq:frozen-votes}
+ \widehat{i}(1/20)-\widehat{o}(1/20)
+    >0.00023461662306,\quad
+ \widehat{i}(1/20)>\widehat{m}(1/20),\quad
+ \widehat{i}(1/20)>s.
+\end{equation}
+The strict comparison with all alternative bilateral outcomes
+uses a separate entire-policy-domain interval envelope:
+\begin{equation}\label{eq:frozen-envelope}
+ \sup_{g\in[0,1]}\widehat{m}(g)
+       <2.423573565
+       <2.4413970373
+       <\widehat{i}(1/20).
+\end{equation}
+The full set $[0,1]$ in the supremum is certified using
+500 adjacent rational intervals, not guessed by maximizing
+over a grid. By \eqref{eq:frozen-votes}, $C$ applies and the
+two existing members approve the stated feasible $\IS$;
+$B$ also prefers it to declining the entire proposal.
+Equation~\eqref{eq:frozen-envelope} excludes all terminal
+$\SU$ offers and $\SW$ as optimal proposals for $A$.
+With affirmative votes at indifference, the positive-depth
+feasible-acceptance set is closed within the compact policy
+domain; a proposer optimum exists. No particular
+globally maximizing $g$ or uniquely labelled government
+strategy profile is asserted.
+\end{proof}
+
+The reversal in Propositions~\ref{prop:rejection}
+and \ref{prop:frozen} is a controlled contrast between
+\emph{one original private-design game} and a
+\emph{strategy-restricted forecast} evaluated under the
+same government decision sequence and design-cost accounting.
+It is not an experiment in which standards accidentally alter
+the entirety of product quality, and it is not an
+endogenous full-equilibrium result of the frozen design
+restrictions themselves.
