@@ -1,0 +1,20 @@
+name: Stage15 independent finite-depth consent diagnostic
+on:
+  pull_request:
+    paths:
+      - verification/stage15_global_depth_diagnostic.py
+      - .github/workflows/stage15-depth-diagnostic.yml
+  push:
+    branches:
+      - audit/stage15-global-consent-priority-20261022
+permissions:
+  contents: read
+jobs:
+  independent-depth-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python verification/stage15_global_depth_diagnostic.py
