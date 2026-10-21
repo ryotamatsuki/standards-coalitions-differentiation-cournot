@@ -1,4 +1,126 @@
 \section{Market and Design Equilibria}\label{sec:equilibrium}
-\emph{Stage 10 section reserved. Derive fulfilled-expectations Cournot
-first-order conditions and design Nash from the frozen primitives;
-cite the Stage 4A full-strategy certificate with its exact scope.}
+
+We solve the game backwards, first taking the realized institutional
+regime $S\in\{\SW,\SU,\IS\}$, its chosen $g$, and the firms' design
+vector $x$ as given. A Cournot firm takes expected network use
+$n^e$ as fixed during a unilateral output deviation. The first-order
+condition in a national market is
+$p_i-c-q_i=0$. Substituting \eqref{eq:demand} and subsequently imposing
+rationally fulfilled expectations $n^e=q$ yields the system
+\begin{equation}\label{eq:Mq}
+ M(S,g,x)q=d\mathbf{1},\qquad
+ M=I+B-\eta H
+ =I+(\rho-\eta)H+(1-\rho)X.
+\end{equation}
+This distinguishes the \emph{consumer} substitution matrix $B$
+from the \emph{fulfilled-expectations Cournot} matrix $M$.
+Write $\alpha=2-\eta$ and $\beta=1-\rho$.
+At \eqref{eq:witness}, $\alpha=1.242$, $\beta=0.1$, the diagonal
+of $M$ equals $\alpha$, and each off-diagonal element lies in
+$[0,0.242]$.
+
+\begin{lemma}[Unique interior quantity continuation]
+\label{lem:quantities}
+At $\theta_0$, for every $S$, $g\in[0,1]$, and
+$x\in[0,1]^3$, each national Cournot game with fulfilled
+network expectations has a unique equilibrium with $q_i>0$.
+It is given by
+\begin{equation}\label{eq:qinv}
+ q(x;S,g)=dM(S,g,x)^{-1}\mathbf{1}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+With $d=1$, the (fulfilled-expectations) best-response fixed-point
+map has components
+\[
+ T_i(q)=\max\left\{0,\,
+ \frac{1-\sum_{j\ne i}M_{ij}q_j}{\alpha}\right\}.
+\]
+It maps $[0,1/\alpha]^3$ into itself, with sup-norm Lipschitz
+constant at most $2(0.242)/1.242<1$. Moreover, every
+untruncated numerator on that cube is at least
+$1-2(0.242)/1.242>0$. Banach's fixed-point theorem
+therefore gives a unique strictly interior nonnegative
+continuation. The interior conditions coincide with
+\eqref{eq:Mq}, proving \eqref{eq:qinv}.
+\end{proof}
+
+\subsection{Private residual design}
+
+Each firm anticipates \eqref{eq:qinv}, but chooses its own
+$x_i$ while keeping rival firms' design choices fixed. Matrix
+differentiation gives the indispensable unilateral-deviation
+bridge
+\begin{equation}\label{eq:design-bridge}
+ \frac{\partial q}{\partial x_i}
+ =-M^{-1}\frac{\partial M}{\partial x_i}q,\qquad
+ F_i(x;S,g):=\frac{\partial\Pi_i}{\partial x_i}
+ =6q_i\frac{\partial q_i}{\partial x_i}
+       +\kappa(1-x_i).
+\end{equation}
+In particular, the symmetric equilibrium path cannot be
+found by replacing a unilateral firm's derivative with a
+derivative that moves all symmetric firms' designs jointly.
+For a design in the interior, $F_i=0$; endpoint designs must
+satisfy the appropriate one-sided inequalities.
+
+\begin{lemma}[Unique global design continuation]
+\label{lem:design}
+For the canonical similarity mapping \eqref{eq:matrices}
+at $\theta_0$, after every regime and every $g\in[0,1]$,
+the Stage-4 design game has exactly one pure Nash equilibrium
+$x^*(S,g)$ in $[0,1]^3$. The equilibrium is interior. Under
+$\SW$ or $\IS$ all firms choose the same $x$; under $\SU$ the
+two members choose a common $u$ and the outsider chooses $v$.
+\end{lemma}
+\begin{proof}
+Each firm's design payoff is continuous on the compact product
+strategy space. Differentiating \eqref{eq:design-bridge}, the
+standard full-strategy Jacobian bound at this witness is
+\[
+  \left|\frac{\partial^2(3q_i^2)}
+                    {\partial x_i\partial x_j}\right|
+       \leq27(1-\rho)^2d^2=0.27 .
+\]
+The design-cost term subtracts $\kappa=0.8505$ from the
+own-strategy diagonal. Therefore the symmetric part of
+the Nash pseudo-gradient Jacobian is strictly
+negative diagonally dominant, since
+\[
+ \kappa>3\cdot 27(1-\rho)^2d^2=0.81.
+\]
+Own-payoff strict concavity and Rosen's diagonal-strict-concavity
+condition yield existence and uniqueness of a pure Nash
+on the \emph{entire asymmetric cube} \citep{Rosen1965}.
+Uniform interior root-inclusion checks for the member/outside
+and international design equations give an interior Nash at
+each $g$, including $g=0$ and $g=1$; the exact continuous
+root inclusion and endpoint details are documented in
+Appendix~\ref{app:proofs} and the accompanying
+rational-interval certificate. Symmetry and global uniqueness
+then imply the stated member and international identities.
+\end{proof}
+
+The common $\SW$ solution at $g=0$ is
+$x_A^{\SW}=x_B^{\SW}=x_C^{\SW}\simeq0.718592707322$.
+Its welfare is $W^{\SW}\simeq2.422078421718$ per country.
+
+\subsection{Reduced-form government continuation payoffs}
+
+Denote, with firms truly reoptimizing in each regime,
+\begin{equation}\label{eq:gov-payoffs}
+ s=W_i(\SW;x^*(\SW)),\quad
+ m(g)=W_A(\SU,g;x^*(\SU,g))
+     =W_B(\SU,g;x^*(\SU,g)),
+\end{equation}
+\begin{equation}\label{eq:gov-payoffs2}
+ o(g)=W_C(\SU,g;x^*(\SU,g)),\qquad
+ i(g)=W_j(\IS,g;x^*(\IS,g))\quad (j=A,B,C).
+\end{equation}
+These are the \emph{country} payoffs, not profits of a standard-setting
+consortium. They encode the exact off-path alternatives:
+$C$ compares $i(g)$ with $o(g)$ at inherited $g$,
+and $B$ can reject the entire proposal to receive $s$.
+The government equilibrium is obtained by backward induction
+over these well-defined continuations, not by comparing
+fixed-design firm profits at a single $g$.
