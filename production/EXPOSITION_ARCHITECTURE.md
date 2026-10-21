@@ -1,5 +1,5 @@
 # V2b Stage 10 — Exposition Architecture
-**Profile:** THEORY-FIRST, institution-specific existence/counterexample theory paper. No target journal chosen; no imposed article type or page cap. Stage 8 theory frozen as V2B-THEORY-FREEZE-2026-10-21-v1.
+**Profile:** THEORY-FIRST, institution-specific existence/counterexample theory paper. No target journal chosen; no imposed article type or page cap. Stage 8 economic theory unchanged; nonlinear proof software technically reissued as V2B-THEORY-FREEZE-2026-10-21-v2-CERT-REPAIR (historical v1 preserved).
 
 ## Core question and arrival budget
 - **Opening paragraph:** Does endogenous nonstandardized product design after a bilateral compatibility commitment change government agreement formation, even when three-country interoperability remains Pareto attractive?
