@@ -1,0 +1,943 @@
+python3 production/scripts/verify_freeze.py
+FROZEN OK docs/V2B_THEORY_FREEZE_2026-10-21_v1.md ca16f0d4699364c7466d463c40e01cb5eaa2d8e5
+FROZEN OK formal/V2bWelfareCore.lean b93d4564c4e29093bea1e3e006d2e9865d627c2f
+FROZEN OK lean-toolchain c00a53503cc3cc776c290056ed21ce7e5d80b083
+FROZEN OK verification/v2b_stage04a_krawczyk_cleanroom.py 25cb3b15cff6e50f7ee1bc5b0e1657300c8c306f
+FROZEN OK verification/v2b_alt_quadratic_rosen_interval.py 241626632392fa66f13507471cd2fb256733bb0f
+FROZEN OK verification/v2b_alt_quadratic_policy_interval.py 771a2444eafd71d50e46b733a11c95f70ad89b2f
+FROZEN OK verification/v2b_interval_reversal_certificate.py a4848954281f842fbddd8d0b90b18cebf67cc5ad
+FROZEN OK verification/v2b_stage06_pareto_holdout.py 17e2204521146fd9b3f7cc9497aa1d13013b576e
+FROZEN OK verification/v2b_stage07_welfare_institutions.py ea6c04ad95574549969847ad7b1ecd16e0b94614
+STAGE8 FREEZE VERIFIED: 9 file blobs, V2B-THEORY-FREEZE-2026-10-21-v1
+python3 production/scripts/generate_welfare_table.py --write
+WROTE paper/generated/welfare_table.tex
+python3 production/scripts/generate_consent_table.py --write
+WROTE paper/generated/consent_table.tex
+cd paper && latexmk -pdf -bibtex -interaction=nonstopmode -halt-on-error -file-line-error -outdir=build main.tex
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 31 Jan. 2024. Version 4.83.
+Latexmk: making output directory 'build'
+No existing .aux file, so I'll make a simple one, and require run of *latex.
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Category 'other':
+  Rerun of 'pdflatex' forced or previously required:
+    Reason or flag: 'Initial setup'
+
+------------
+Run number 1 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="build"  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(build/main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/00_introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdfte
+x.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
+
+Package natbib Warning: Citation `GandalShy2001' on page 2 undefined on input l
+ine 79.
+
+
+Package natbib Warning: Citation `TakaradaKawabata2025' on page 2 undefined on
+input line 81.
+
+
+Package natbib Warning: Citation `CabralSalant2014' on page 2 undefined on inpu
+t line 83.
+
+
+Package natbib Warning: Citation `ChengHuang2025' on page 2 undefined on input
+line 87.
+
+
+LaTeX Warning: Reference `tab:v2b-consent-margins' on page 2 undefined on input
+ line 94.
+
+
+LaTeX Warning: Reference `sec:model' on page 2 undefined on input line 118.
+
+
+LaTeX Warning: Reference `sec:equilibrium' on page 2 undefined on input line 12
+1.
+
+
+LaTeX Warning: Reference `sec:results' on page 2 undefined on input line 123.
+
+
+LaTeX Warning: Reference `sec:welfare' on page 2 undefined on input line 125.
+
+
+LaTeX Warning: Reference `sec:robustness' on page 2 undefined on input line 127
+.
+
+) (./sections/01_model.tex [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
+}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{/usr/share/texmf/fonts
+/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}])
+(./sections/02_equilibrium.tex
+
+LaTeX Warning: Reference `eq:demand' on page 4 undefined on input line 8.
+
+
+LaTeX Warning: Reference `eq:witness' on page 4 undefined on input line 18.
+
+
+LaTeX Warning: Reference `eq:Mq' on page 4 undefined on input line 45.
+
+
+LaTeX Warning: Reference `eq:qinv' on page 4 undefined on input line 45.
+
+
+LaTeX Warning: Reference `eq:qinv' on page 4 undefined on input line 50.
+
+[4]
+
+LaTeX Warning: Reference `eq:matrices' on page 5 undefined on input line 69.
+
+
+LaTeX Warning: Reference `app:rosen-bound' on page 5 undefined on input line 78
+.
+
+
+Package natbib Warning: Citation `Rosen1965' on page 5 undefined on input line
+89.
+
+
+LaTeX Warning: Reference `app:proofs' on page 5 undefined on input line 95.
+
+) (./sections/03_main_results.tex
+
+LaTeX Warning: Reference `sec:equilibrium' on page 5 undefined on input line 8.
+
+
+
+LaTeX Warning: Reference `eq:matrices' on page 5 undefined on input line 14.
+
+
+LaTeX Warning: Reference `eq:witness' on page 5 undefined on input line 15.
+
+
+LaTeX Warning: Reference `eq:design-bridge' on page 5 undefined on input line 2
+7.
+
+[5]
+
+LaTeX Warning: Reference `app:proofs' on page 6 undefined on input line 53.
+
+
+LaTeX Warning: Reference `eq:member-path' on page 6 undefined on input line 56.
+
+
+
+LaTeX Warning: Reference `eq:outsider-path' on page 6 undefined on input line 5
+7.
+
+
+LaTeX Warning: Reference `eq:rejection' on page 6 undefined on input line 68.
+
+
+LaTeX Warning: Reference `eq:welfare' on page 6 undefined on input line 84.
+
+
+LaTeX Warning: Reference `prop:rejection' on page 6 undefined on input line 104
+.
+
+[6]
+
+LaTeX Warning: Reference `eq:frozen-votes' on page 7 undefined on input line 13
+1.
+
+
+LaTeX Warning: Reference `eq:frozen-envelope' on page 7 undefined on input line
+ 134.
+
+
+LaTeX Warning: Reference `tab:v2b-consent-margins' on page 7 undefined on input
+ line 144.
+
+
+LaTeX Warning: Reference `prop:rejection' on page 7 undefined on input line 151
+.
+
+(./generated/consent_table.tex)
+
+LaTeX Warning: Reference `prop:rejection' on page 7 undefined on input line 154
+.
+
+
+LaTeX Warning: Reference `prop:frozen' on page 7 undefined on input line 155.
+
+) (./sections/04_welfare.tex
+
+LaTeX Warning: Reference `prop:rejection' on page 7 undefined on input line 3.
+
+
+LaTeX Warning: Reference `eq:Mq' on page 7 undefined on input line 28.
+
+
+LaTeX Warning: Reference `eq:welfare' on page 7 undefined on input line 29.
+
+[7]
+
+LaTeX Warning: Reference `prop:rejection' on page 8 undefined on input line 36.
+
+
+
+LaTeX Warning: Reference `tab:v2b-regime-welfare' on page 8 undefined on input
+line 41.
+
+
+LaTeX Warning: Reference `prop:rejection' on page 8 undefined on input line 46.
+
+
+(./generated/welfare_table.tex)
+
+LaTeX Warning: Reference `eq:member-path' on page 8 undefined on input line 78.
+
+
+) (./sections/05_robustness.tex [8]
+
+LaTeX Warning: Reference `eq:matrices' on page 9 undefined on input line 6.
+
+
+LaTeX Warning: Reference `eq:witness' on page 9 undefined on input line 9.
+
+
+LaTeX Warning: Reference `eq:designcost' on page 9 undefined on input line 9.
+
+
+LaTeX Warning: Reference `eq:quadratic-map' on page 9 undefined on input line 2
+9.
+
+
+LaTeX Warning: Reference `app:proofs' on page 9 undefined on input line 68.
+
+
+LaTeX Warning: Reference `prop:quadratic' on page 9 undefined on input line 88.
+
+
+
+LaTeX Warning: Reference `eq:witness' on page 9 undefined on input line 98.
+
+) (./sections/06_related_literature.tex [9]
+
+Package natbib Warning: Citation `GandalShy2001' on page 10 undefined on input
+line 6.
+
+
+Package natbib Warning: Citation `TakaradaKawabata2025' on page 10 undefined on
+ input line 14.
+
+
+Package natbib Warning: Citation `EconomidesFlyer1998' on page 10 undefined on
+input line 30.
+
+
+Package natbib Warning: Citation `EconomidesSkrzypacz2003' on page 10 undefined
+ on input line 30.
+
+
+Package natbib Warning: Citation `CabralSalant2014' on page 10 undefined on inp
+ut line 31.
+
+
+Package natbib Warning: Citation `ChengHuang2025' on page 10 undefined on input
+ line 37.
+
+
+Package natbib Warning: Citation `BuccellaFantiGori2024' on page 10 undefined o
+n input line 44.
+
+
+Package natbib Warning: Citation `BuchholzHattori2024' on page 10 undefined on
+input line 53.
+
+
+Package natbib Warning: Citation `RayVohra1999' on page 10 undefined on input l
+ine 67.
+
+
+Package natbib Warning: Citation `Rosen1965' on page 10 undefined on input line
+ 67.
+
+
+Package natbib Warning: Citation `ChengHuang2025' on page 10 undefined on input
+ line 73.
+
+) (./sections/07_discussion.tex [10]
+
+Package natbib Warning: Citation `GSMAHistory' on page 11 undefined on input li
+ne 16.
+
+
+Package natbib Warning: Citation `CHAdeMO2020' on page 11 undefined on input li
+ne 16.
+
+
+LaTeX Warning: Reference `sec:model' on page 11 undefined on input line 21.
+
+
+LaTeX Warning: Reference `eq:utility' on page 11 undefined on input line 39.
+
+
+LaTeX Warning: Reference `eq:welfare' on page 11 undefined on input line 39.
+
+
+LaTeX Warning: Reference `prop:pareto' on page 11 undefined on input line 47.
+
+[11]) (./sections/A_proofs.tex [12]
+
+LaTeX Warning: Reference `eq:Mq' on page 13 undefined on input line 78.
+
+
+LaTeX Warning: Reference `eq:app_Fm' on page 13 undefined on input line 128.
+
+
+LaTeX Warning: Reference `eq:app_iw' on page 13 undefined on input line 128.
+
+
+LaTeX Warning: Reference `lem:design' on page 13 undefined on input line 149.
+
+
+LaTeX Warning: Reference `eq:member-path' on page 13 undefined on input line 15
+4.
+
+
+LaTeX Warning: Reference `eq:outsider-path' on page 13 undefined on input line
+155.
+
+
+LaTeX Warning: Reference `eq:signed-bounds' on page 13 undefined on input line
+158.
+
+[13]
+
+LaTeX Warning: Reference `eq:frozen-envelope' on page 14 undefined on input lin
+e 168.
+
+
+LaTeX Warning: Reference `eq:quadratic-map' on page 14 undefined on input line
+172.
+
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd))
+No file main.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[14{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}] (build/main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on build/main.pdf (14 pages, 345874 bytes).
+Transcript written on build/main.log.
+Latexmk: Missing bbl file 'build/main.bbl' in following:
+ No file main.bbl.
+Latexmk: Getting log file 'build/main.log'
+Latexmk: Examining 'build/main.fls'
+Latexmk: Examining 'build/main.log'
+Latexmk: References changed.
+Latexmk: References changed.
+Latexmk: Log file says output to 'build/main.pdf'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: applying rule 'bibtex build/main'...
+Rule 'bibtex build/main':  Reasons for rerun
+Category 'other':
+  Rerun of 'bibtex build/main' forced or previously required:
+    Reason or flag: 'Initial set up of rule'
+
+------------
+Run number 1 of rule 'bibtex build/main'
+------------
+====== ENV{BIBINPUTS} changed to '/workspace/scratch/b4d61b40e92e/v2b/paper:build:/workspace/scratch/b4d61b40e92e/v2b/paper/build:'
+Latexmk: Change directory to 'build/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='/workspace/scratch/b4d61b40e92e/v2b/paper:build:/workspace/scratch/b4d61b40e92e/v2b/paper/build:'
+  BSTINPUTS='/workspace/scratch/b4d61b40e92e/v2b/paper:'.
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+The top-level auxiliary file: main.aux
+The style file: plainnat.bst
+Database file #1: references.bib
+Latexmk: Change directory back to '/workspace/scratch/b4d61b40e92e/v2b/paper'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  build/main.aux
+  build/main.bbl
+  build/main.out
+
+------------
+Run number 2 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="build"  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(build/main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(build/main.out) (build/main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/00_introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdfte
+x.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}]
+
+Package natbib Warning: Citation `GandalShy2001' on page 2 undefined on input l
+ine 79.
+
+
+Package natbib Warning: Citation `TakaradaKawabata2025' on page 2 undefined on
+input line 81.
+
+
+Package natbib Warning: Citation `CabralSalant2014' on page 2 undefined on inpu
+t line 83.
+
+
+Package natbib Warning: Citation `ChengHuang2025' on page 2 undefined on input
+line 87.
+
+) (./sections/01_model.tex [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
+}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{/usr/share/texmf/fonts
+/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}])
+(./sections/02_equilibrium.tex [4]
+
+Package natbib Warning: Citation `Rosen1965' on page 5 undefined on input line
+89.
+
+) (./sections/03_main_results.tex [5] [6] (./generated/consent_table.tex))
+(./sections/04_welfare.tex [7] (./generated/welfare_table.tex))
+(./sections/05_robustness.tex [8]) (./sections/06_related_literature.tex
+[9]
+
+Package natbib Warning: Citation `GandalShy2001' on page 10 undefined on input
+line 6.
+
+
+Package natbib Warning: Citation `TakaradaKawabata2025' on page 10 undefined on
+ input line 14.
+
+
+Package natbib Warning: Citation `EconomidesFlyer1998' on page 10 undefined on
+input line 30.
+
+
+Package natbib Warning: Citation `EconomidesSkrzypacz2003' on page 10 undefined
+ on input line 30.
+
+
+Package natbib Warning: Citation `CabralSalant2014' on page 10 undefined on inp
+ut line 31.
+
+
+Package natbib Warning: Citation `ChengHuang2025' on page 10 undefined on input
+ line 37.
+
+
+Package natbib Warning: Citation `BuccellaFantiGori2024' on page 10 undefined o
+n input line 44.
+
+
+Package natbib Warning: Citation `BuchholzHattori2024' on page 10 undefined on
+input line 53.
+
+
+Package natbib Warning: Citation `RayVohra1999' on page 10 undefined on input l
+ine 67.
+
+
+Package natbib Warning: Citation `Rosen1965' on page 10 undefined on input line
+ 67.
+
+
+Package natbib Warning: Citation `ChengHuang2025' on page 10 undefined on input
+ line 73.
+
+) (./sections/07_discussion.tex [10]
+
+Package natbib Warning: Citation `GSMAHistory' on page 11 undefined on input li
+ne 16.
+
+
+Package natbib Warning: Citation `CHAdeMO2020' on page 11 undefined on input li
+ne 16.
+
+[11]) (./sections/A_proofs.tex [12] [13]
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd)) (build/main.bbl [14{/usr/share/texmf
+/fonts/enc/dvips/lm/lm-ts1.enc}]
+Underfull \hbox (badness 2875) in paragraph at lines 83--89
+\T1/lmr/m/n/10.95 (+20) ni-tion.  Tech-ni-cal Re-port Dis-cus-sion Pa-per 701,
+Nagoya City Uni-ver-sity, 2025.
+
+Underfull \hbox (badness 5133) in paragraph at lines 83--89
+\T1/lmr/m/n/10.95 (+20) URL []$\T1/lmtt/m/n/10.95 https : / / oikono . econ . n
+agoya-[]cu . ac . jp / wp-[]content / uploads / sites / 2 / 2025 / 02 /
+)
+
+Package natbib Warning: There were undefined citations.
+
+[15] (build/main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+) )
+(see the transcript file for additional information)</usr/share/texmf/fonts/typ
+e1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on build/main.pdf (15 pages, 356855 bytes).
+Transcript written on build/main.log.
+Latexmk: Getting log file 'build/main.log'
+Latexmk: Examining 'build/main.fls'
+Latexmk: Examining 'build/main.log'
+Latexmk: Found input bbl file 'build/main.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'build/main.pdf'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: applying rule 'bibtex build/main'...
+Rule 'bibtex build/main':  Reasons for rerun
+Changed files or newly in use/created:
+  build/main.aux
+
+------------
+Run number 2 of rule 'bibtex build/main'
+------------
+====== ENV{BIBINPUTS} changed to '/workspace/scratch/b4d61b40e92e/v2b/paper:build:/workspace/scratch/b4d61b40e92e/v2b/paper/build:'
+Latexmk: Change directory to 'build/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='/workspace/scratch/b4d61b40e92e/v2b/paper:build:/workspace/scratch/b4d61b40e92e/v2b/paper/build:'
+  BSTINPUTS='/workspace/scratch/b4d61b40e92e/v2b/paper:'.
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+The top-level auxiliary file: main.aux
+The style file: plainnat.bst
+Database file #1: references.bib
+Latexmk: Change directory back to '/workspace/scratch/b4d61b40e92e/v2b/paper'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  build/main.aux
+
+------------
+Run number 3 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="build"  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(build/main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(build/main.out) (build/main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/00_introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdfte
+x.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}])
+(./sections/01_model.tex [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{
+/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}])
+(./sections/02_equilibrium.tex [4]) (./sections/03_main_results.tex [5]
+[6] (./generated/consent_table.tex)) (./sections/04_welfare.tex [7]
+(./generated/welfare_table.tex)) (./sections/05_robustness.tex [8])
+(./sections/06_related_literature.tex [9] [10]) (./sections/07_discussion.tex
+[11]) (./sections/A_proofs.tex [12] [13]
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd)) [14{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-ts1.enc}] (build/main.bbl
+Underfull \hbox (badness 2875) in paragraph at lines 83--89
+\T1/lmr/m/n/10.95 (+20) ni-tion.  Tech-ni-cal Re-port Dis-cus-sion Pa-per 701,
+Nagoya City Uni-ver-sity, 2025.
+
+Underfull \hbox (badness 5133) in paragraph at lines 83--89
+\T1/lmr/m/n/10.95 (+20) URL []$\T1/lmtt/m/n/10.95 https : / / oikono . econ . n
+agoya-[]cu . ac . jp / wp-[]content / uploads / sites / 2 / 2025 / 02 /
+) [15] (build/main.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)</usr/share/texmf/fonts/typ
+e1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on build/main.pdf (15 pages, 358346 bytes).
+Transcript written on build/main.log.
+Latexmk: Getting log file 'build/main.log'
+Latexmk: Examining 'build/main.fls'
+Latexmk: Examining 'build/main.log'
+Latexmk: Found input bbl file 'build/main.bbl'
+Latexmk: References changed.
+Latexmk: Log file says output to 'build/main.pdf'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: applying rule 'bibtex build/main'...
+Rule 'bibtex build/main':  Reasons for rerun
+Changed files or newly in use/created:
+  build/main.aux
+
+------------
+Run number 3 of rule 'bibtex build/main'
+------------
+====== ENV{BIBINPUTS} changed to '/workspace/scratch/b4d61b40e92e/v2b/paper:build:/workspace/scratch/b4d61b40e92e/v2b/paper/build:'
+Latexmk: Change directory to 'build/'.
+To assist finding of files in document directory, I set
+  BIBINPUTS='/workspace/scratch/b4d61b40e92e/v2b/paper:build:/workspace/scratch/b4d61b40e92e/v2b/paper/build:'
+  BSTINPUTS='/workspace/scratch/b4d61b40e92e/v2b/paper:'.
+------------
+Running 'bibtex  "main.aux"'
+------------
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+The top-level auxiliary file: main.aux
+The style file: plainnat.bst
+Database file #1: references.bib
+Latexmk: Change directory back to '/workspace/scratch/b4d61b40e92e/v2b/paper'
+Latexmk: applying rule 'pdflatex'...
+Rule 'pdflatex':  Reasons for rerun
+Changed files or newly in use/created:
+  build/main.aux
+
+------------
+Run number 4 of rule 'pdflatex'
+------------
+------------
+Running 'pdflatex  -interaction=nonstopmode -halt-on-error -file-line-error -recorder -output-directory="build"  "main.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty)
+(/usr/share/texmf/tex/latex/lm/lmodern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/share/texmf/tex/latex/lm/t1lmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(build/main.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(build/main.out) (build/main.out)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-cmr.cfg)
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/omllmm.fd)
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd)
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg)
+(./sections/00_introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdfte
+x.map}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}])
+(./sections/01_model.tex [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{
+/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{/usr/share/texmf/fonts/e
+nc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}])
+(./sections/02_equilibrium.tex [4]) (./sections/03_main_results.tex [5]
+[6] (./generated/consent_table.tex)) (./sections/04_welfare.tex [7]
+(./generated/welfare_table.tex)) (./sections/05_robustness.tex [8])
+(./sections/06_related_literature.tex [9] [10]) (./sections/07_discussion.tex
+[11]) (./sections/A_proofs.tex [12] [13]
+(/usr/share/texmf/tex/latex/lm/ts1lmr.fd)
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd)) [14{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-ts1.enc}] (build/main.bbl
+Underfull \hbox (badness 2875) in paragraph at lines 83--89
+\T1/lmr/m/n/10.95 (+20) ni-tion.  Tech-ni-cal Re-port Dis-cus-sion Pa-per 701,
+Nagoya City Uni-ver-sity, 2025.
+
+Underfull \hbox (badness 5133) in paragraph at lines 83--89
+\T1/lmr/m/n/10.95 (+20) URL []$\T1/lmtt/m/n/10.95 https : / / oikono . econ . n
+agoya-[]cu . ac . jp / wp-[]content / uploads / sites / 2 / 2025 / 02 /
+) [15] (build/main.aux) )
+(see the transcript file for additional information)</usr/share/texmf/fonts/typ
+e1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on build/main.pdf (15 pages, 358346 bytes).
+Transcript written on build/main.log.
+Latexmk: Getting log file 'build/main.log'
+Latexmk: Examining 'build/main.fls'
+Latexmk: Examining 'build/main.log'
+Latexmk: Found input bbl file 'build/main.bbl'
+Latexmk: Log file says output to 'build/main.pdf'
+Latexmk: Found bibliography file(s):
+  ./references.bib
+Latexmk: All targets (build/main.pdf) are up-to-date

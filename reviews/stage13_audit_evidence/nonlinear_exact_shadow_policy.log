@@ -1,0 +1,8 @@
+CERTIFIED: SU Nash in (0.60,0.67)x(0.60,0.65) and IS Nash in (0.60,0.73) for all g; seconds 78.226856795
+CERTIFIED ALL REAL g in [0,1] — SU member W derivative <0, IS-vs-C outsider derivative <0. closed g cells: 100 adaptive splits: 0 largest derivative upper bounds: -0.014278736686089652 -0.01657547425035518 seconds: 1.5257746500000167
+ORIGINAL g=.05 fixed-design C accession FAILS: [-0.000440394834116262265336895810820872699602680969, -0.000440394830940852423049810616981973604402590329]
+CERTIFIED frozen-design international agreement at g=1/200: C advantage [0.000000909880904270441158681794106261892984490111032, 0.000000909884085517109842656260341528629186347822752] IS minus SW [0.00204149542523715166933196383681626121788626785, 0.00204149542829598061884340955008065679411061655] IS welfare lower 2.5981598137007733 frozen SU full-domain upper 2.596269202172074 seconds 10.964676886000007
+CERTIFIED: even after endogenous design, IS at .05 strictly Pareto improves on SW by [0.0166011467983061462934235644053447100201778818, 0.0166011474094363189510871865311244032408292969]
+PASS: nonlinear design existential coalition reversal at same parameter witness
+NON-PASS REMAINS: frozen C accession at fixed original g=.05.
+NOT CERTIFIED: unrestricted functional forms, arbitrary parameters, alternative bargaining regimes or journal-level originality.

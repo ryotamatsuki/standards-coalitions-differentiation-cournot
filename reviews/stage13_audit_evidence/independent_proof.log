@@ -1,0 +1,5 @@
+CURVATURE {'q1': '25000/235359', 'q1_float': 0.10622070963931696, 'q2_float': 0.028026572464199727, 'h': '1250000000/6154873209', 'h_float': 0.2030911048130415, 'margin_float': 0.24122668556087554}
+PSD_vertices SW min_det 243/250 min_all_principal 243/250
+PSD_vertices SU min_det 0 min_all_principal 0
+PSD_vertices IS min_det 0 min_all_principal 0
+IS_FOC_difference 0
