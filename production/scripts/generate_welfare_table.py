@@ -56,7 +56,7 @@ def render() -> str:
         + r"\hline" "\n"
         + r"\end{tabular}" "\n"
         + r"\par\smallskip" "\n"
-        + r"\begin{minipage}{0.94\linewidth}\footnotesize"
+        + r"\begin{minipage}{0.94\linewidth}\footnotesize "
         + "These are downstream firm equilibrium continuation payoffs conditional "
         + "on each indicated standards regime, not on-path government agreements. "
         + "The canonical sequential government game implements no positive-depth "
