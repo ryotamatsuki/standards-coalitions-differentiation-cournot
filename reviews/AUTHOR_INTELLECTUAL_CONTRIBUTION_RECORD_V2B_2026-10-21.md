@@ -1,5 +1,5 @@
 # AUTHOR_INTELLECTUAL_CONTRIBUTION_RECORD — V2b Standards Coalitions
-**DRAFT awaiting substantive AUTHOR REVIEW; 2026-10-21.** This document is NOT itself an author's approval or proof of sole human origination. The AI prepared it from documented research directions and verified assets. Model/theorem ideas and scripts were iteratively developed with AI support; provenance cannot be rewritten as unaided human proof.
+**AUTHOR SCOPE CONFIRMATION RECEIVED IN CHAT; 2026-10-21.** This document is NOT itself an author's approval or proof of sole human origination. The AI prepared it from documented research directions and verified assets. Model/theorem ideas and scripts were iteratively developed with AI support; provenance cannot be rewritten as unaided human proof.
 
 ## Documented author-originated research directions / contributions
 
@@ -13,11 +13,11 @@
 
 **A. Mechanism identity:** Does the author agree that the core contribution is a narrowly specified policy-agenda problem: endogenous costly residual design after a bilateral-first government compatibility commitment blocks an otherwise Pareto-superior grand agreement that a frozen-design evaluation predicts?
 
-STATUS: **AUTHOR REVIEW PENDING**. AI's proposed classification is INSTITUTION-SPECIFIC.
+STATUS: **AUTHOR CONFIRMED THE NARROW MECHANISM CLASSIFICATION AND MAXIMUM CLAIM IN CHAT** (2026-10-21, reply: 「承認する」 to the explicit Stage-7.5A claim proposal). Classification remains INSTITUTION-SPECIFIC.
 
 **B. Economic assumptions:** Is it acceptable as a pure-theory stylization to retain symmetric A/B/C, each firm exporting to all 3 identical segmented Cournot markets, unit-matched network effects, quadratic demand, once-paid design costs, unchanged g upon C admission and unanimous AB approval? GSM/ChaoJi are only motivating analogues, not exact histories.
 
-STATUS: **AUTHOR REVIEW PENDING**.
+STATUS: **AUTHOR CONFIRMED THEIR ACCEPTANCE OF THE RESEARCH AS A STYLIZED, RESTRICTED THEORY CLAIM.** This is not a separate item-by-item signoff of every primitive, and no claim of individually checked parameter algebra is made.
 
 **C. Equilibrium/proof understanding and independent review:** Has the author inspected or separately reproduced the Stage4A interval roots, Rosen domain, all-g signed government derivatives, frozen welfare bounds, negative original nonlinear fixed-g=.05 test, and Lean's exact-proxy-only theorem signature? Which aspects were independently checked?
 
@@ -25,18 +25,22 @@ STATUS: **NO AUTHOR INDEPENDENT VERIFICATION DOCUMENTED**. The repository record
 
 **D. Limits and headline wording:** Does the author explicitly accept that the headline is an existential INSTITUTION-SPECIFIC result for TWO residual-design maps at one rational witness (plus inferred unquantified parameter neighborhoods), not all functions or agendas; a genuine p=2 frozen C rejection at g=.05; frozen IS instead possible at tiny g=.005 with C gain ~9.1e-7; and NO proof of real-world C veto, optimal mandate, formal Lean proof of full SPNE, or publication-level novelty?
 
-STATUS: **AUTHOR REVIEW PENDING**.
+STATUS: **AUTHOR CONFIRMED THE OVERALL RESTRICTED RESEARCH CLAIM**, including two design functions, non-general policy scope and the acknowledged limits of the Lean-only arithmetic core. The recorded pre-registered negative test at nonlinear g=.05 remains unchanged. We do not attribute a separate line-by-line reading of code or every numerical value to the author.
 
 **E. Tool-use/reproducibility disclosure:** Are author and AI contributions, CI and arithmetic library limitations, source-access uncertainty, and formal-proof scope to be stated accurately in any later manuscript/cover letter as required by venue policies?
 
-STATUS: **AUTHOR REVIEW PENDING**.
+STATUS: **AI/COMPUTER ASSISTANCE MUST BE DISCLOSED ACCURATELY IN THE MANUSCRIPT ACCORDING TO THE SELECTED VENUE'S RULES.** The user's confirmation authorizes the restricted research claim but did NOT explicitly supply a separate publication disclosure or verify provenance of every proof step. Stage 10/14 must reconfirm paper-specific disclosure.
 
-## Author-signoff template (not filled by AI)
+## Recorded author response and explicit boundaries
 
-Author can approve the research-scope judgment in conversation or the repository, with any qualifications. Suggested statement:
-"I reviewed the Stage 7.5A contribution and portability record. I approve the maximum claim as a two-function, exact-witness, institution-specific existence result; I understand the failed fixed-g=.05 nonlinear check, the distinct outcome under the frozen benchmark, and the limits of Lean's rational-proxy core. I do not claim to have personally reproved the mathematical theorems unless separately documented."
+On 2026-10-21 the assistant presented a precise statement of the proposed maximum contribution: a specified sequential two-country-first international standards consent mechanism, post-government costly firm differentiation, a welfare-beneficial grand standard that may be blocked, verified only for two residual-design similarity mappings, not a universal standards theorem; limited Lean arithmetic proof distinct from full Nash and all-g interval certificates. The user responded **「承認する」**. This is the user's actual short approval, not a fabricated signature or independent proof report.
 
-Author may reject any assumption or claim, in which case Stage7.5A returns to the relevant earlier stage or keeps model restrictions explicit. The author should separately note actual proof steps independently checked. **AI should not self-sign this record.**
+Author-substantive-scope judgment: **CONFIRMED FOR PURPOSES OF THE STAGE-7.5A RESEARCH-CLAIM REVIEW**, preserving existing caveats. Specifically this authorial approval:
+- **DOES CONFIRM** the desired narrowly scoped mechanism and maximum defensible claim as presented immediately before the reply;
+- **DOES NOT ASSERT** the author individually rederived Rosen or Cournot equations, inspected every interval cell, audited Lean source, or confirmed journal citation completeness;
+- **DOES NOT RESOLVE** manuscript-specific AI disclosure, human independent mathematical verification or future editorial requests for broader robustness.
+
+Equilibrium/proof personal reproduction status remains **NO INDEPENDENT AUTHOR REPRODUCTION DOCUMENTED**. The research record is now substantive-author-scope-reviewed; the independent-proof claim is not created by that review.
 
 ## Supporting records
 
