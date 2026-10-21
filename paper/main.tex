@@ -1,12 +1,14 @@
 \documentclass[11pt,a4paper]{article}
-% STAGE 9 INFRASTRUCTURE SCAFFOLD — NOT A STAGE 10 MANUSCRIPT.
-% Theory source of truth: ../docs/V2B_THEORY_FREEZE_2026-10-21_v1.md
+% Stage 10 manuscript draft. Frozen theory: V2B-THEORY-FREEZE-2026-10-21-v1.
+% This document is NOT submission-ready and is subject to Stage 11--14 review.
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[round,authoryear]{natbib}
 \usepackage[hidelinks]{hyperref}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
 
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}[proposition]{Lemma}
@@ -14,6 +16,7 @@
 \newcommand{\SW}{\mathrm{SW}}
 \newcommand{\SU}{\mathrm{SU}}
 \newcommand{\IS}{\mathrm{IS}}
+\newcommand{\CS}{\mathrm{CS}}
 
 \title{International Standards Coalitions and Endogenous Product Design}
 \author{}
@@ -22,11 +25,29 @@
 \maketitle
 
 \begin{abstract}
-\noindent\emph{Stage 9 production scaffold only. The abstract and main text
-are deliberately reserved for Stage 10; no journal-ready manuscript
-or theorem statement is asserted by this build.}
+Can a welfare-improving international technical standard fail
+to emerge because of private choices made \emph{after} governments
+commit to compatibility? We construct a five-stage three-country
+standards game in which two countries first choose a technical
+compatibility depth, a third may apply to join, and firms subsequently
+choose costly nonstandardized product attributes before Cournot
+competition. At an exactly specified parameter witness, endogenous
+private design makes every strictly positive bilateral union
+unattractive to its members and accession unattractive to the
+outsider. Nonetheless, a hypothetical three-country agreement
+strictly Pareto-dominates fragmentation even after firms
+reoptimize their product attributes. A controlled forecast that
+freezes product designs at their fragmented-market choices
+instead predicts an accepted international agreement. A separately
+certified nonlinear design mapping preserves this existential
+contrast, although the feasible compatibility depth changes
+and a pre-registered same-depth robustness test fails.
+The result is an institution-specific, computer-assisted
+existence argument, not a universal standardization theorem
+or a claim of empirically observed accession refusal.
 \end{abstract}
 
+\input{sections/00_introduction}
 \input{sections/01_model}
 \input{sections/02_equilibrium}
 \input{sections/03_main_results}
@@ -37,9 +58,6 @@ or theorem statement is asserted by this build.}
 \appendix
 \input{sections/A_proofs}
 
-% Bibliography inclusion tests source metadata; real argument-level citations
-% belong to Stage 10.
-\nocite{GandalShy2001,CabralSalant2014,BuchholzHattori2024,TakaradaKawabata2025,Rosen1965}
 \bibliographystyle{plainnat}
 \bibliography{references}
 \end{document}
