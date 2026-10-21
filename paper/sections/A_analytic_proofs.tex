@@ -1,0 +1,210 @@
+\section{Additional Analytic Comparative-Static Details}
+\label{app:analytic-proofs}
+
+\subsection{Design first-order conditions and full asymmetric deviations}
+
+Retain the notation of Section~\ref{sec:analytic}.
+The three Cournot first-order conditions can be
+written with off-diagonal matrix entries
+$b_{AB},b_{AC},b_{BC}$ as
+$Mq=d{\bf1}$. A unilateral firm-design deviation
+differentiates only the two off-diagonal entries
+incident on that firm's product:
+$(M_{x_i})_{ij}=(M_{x_i})_{ji}=\beta/2$, $j\ne i$.
+Therefore
+\[
+ q_{x_i}=-M^{-1}M_{x_i}q,\quad
+ F_i=6q_i(-M^{-1}M_{x_i}q)_i+\kappa(1-x_i).
+\]
+For $\IS$, evaluating this unilateral derivative at
+$x_i=y$ gives \eqref{eq:analytic-is-foc}; it would
+be incorrect to differentiate the symmetric total
+profit along $(y,y,y)$ instead.
+
+At the symmetric fragmented profile $x=z{\bf1}$,
+the off-diagonal Cournot coefficients are
+$s_0=\beta z$. The spectral decomposition is
+\[
+ M^{-1}
+ =\frac{1}{P}\left(I-\frac{s_0}{L}{\bf1}{\bf1}^\top\right),
+ \qquad Q=d/L,\quad P=\alpha-s_0,\quad L=\alpha+2s_0.
+\]
+Taking the full asymmetric derivatives of the
+three-firm pseudo-gradient and only then evaluating
+at symmetry gives \eqref{eq:analytic-lh}.
+The direct forcing of the AB interface link is
+\eqref{eq:analytic-pr}, satisfying
+\[
+ p_0-r_0
+ =\frac{6\delta\beta d^2(\alpha-3s_0)}{P^2L^3}.
+\]
+Its local reduced implicit-function system is
+\eqref{eq:analytic-design-system}. Its determinant
+is $(\ell-h_0)(\ell+2h_0)$, and the exact
+solution is
+\[
+\begin{split}
+ u'&=\frac{-\ell p_0+h_0 r_0}
+               {(\ell-h_0)(\ell+2h_0)},\\
+ v'&=\frac{2h_0p_0-(\ell+h_0)r_0}
+               {(\ell-h_0)(\ell+2h_0)},\\
+ u'-v'&=\frac{p_0-r_0}{h_0-\ell}.
+\end{split}
+\]
+Under $\delta>0$, $\alpha>3s_0$, and
+$-\ell>2h_0$, the eigenvalues
+$\ell-h_0$ (twice) and $\ell+2h_0$
+are strictly negative and $-DF$ is
+a nonsingular M-matrix. Together with a
+genuine interior Nash continuation, this
+proves Proposition~\ref{prop:analytic-B}.
+
+A conservative sufficient condition for Rosen
+uniqueness in the whole asymmetric design cube
+is available when $\delta\geq0$ and $\eta>0$:
+every market matrix has off-diagonal entries
+between $0$ and $1-\eta$, diagonal $\alpha=2-\eta$,
+and inverse norm at most $1/\eta$.
+Then
+\[
+ \big|\partial_{x_j}\partial_{x_i}(3q_k^2)\big|
+ \leq \frac{18\beta^2d^2}{\eta^2\alpha^2}.
+\]
+If $\kappa>54\beta^2d^2/(\eta^2\alpha^2)$,
+the symmetric part of the three-player design
+pseudo-gradient Jacobian is strictly negative
+diagonally dominant, so Rosen's strict diagonal
+concavity yields global Nash uniqueness.
+This does not guarantee that each Nash lies
+in the interior; interiority must be established
+separately for each use of implicit differentiation.
+The new Stage13A exact rational interval proof
+checks both sufficient conditions and the
+local interior Nash continuation in an explicit
+open primitive-parameter domain.
+
+\subsection{Government welfare incidence and the corrected sign}
+
+At the symmetric fragmented point the derivative
+of domestic consumer surplus with respect to
+\emph{any} firm's similarity is
+\[
+ \CS_{x_j}
+ =-\frac{\beta d^2(\eta+2s_0)}{L^3},
+\]
+and the home firm has
+\[
+ \Pi_{A,x_A}=0,\qquad
+ \Pi_{A,x_B}=\Pi_{A,x_C}
+ =-\frac{3\beta d^2(\alpha-2s_0)}{PL^3}.
+\]
+Because $(x_A,x_B,x_C)=(u,u,v)$ under
+the bilateral continuation, and because the
+firm's own Nash FOC cancels only
+$\Pi_{A,x_A}$, total differentiation yields
+\[
+ m'(0)=D+\CS_{x_A}u'
+       +\CS_{x_B}u'+\CS_{x_C}v'
+       +\Pi_{A,x_B}u'+\Pi_{A,x_C}v'
+     =D-\mathcal L.
+\]
+This verifies that the loss contributions in
+\eqref{eq:analytic-loss} must be \emph{added}.
+The independently examined older Stage13 research
+report printed an incorrect minus sign, which is
+preserved in the audit ledger as a failed literal
+formula; none of the present propositions uses it.
+
+At the fragmentation-symmetric network, a country's
+marginal welfare response to an incident compatibility
+edge is equal across its two possible incident edges;
+there is a common effect from the third,
+nonincident edge. A two-member union adds only the
+AB edge, while an international union adds all
+three edges. Taking the difference of the
+third-country's bilateral-outside payoff from
+its international continuation cancels the
+nonincident-edge response, leaving twice the
+member effect:
+\[
+ (i-o)'(0)=2m'(0),\qquad
+ (\widehat i-\widehat o)'(0)=2D.
+\]
+These identities do not claim a new generic
+coalition-formation theorem.
+
+For the frozen-design welfare, the
+third-country's marginal bilateral outside payoff is
+$\widehat o'(0)=D+6\delta d^2/(PL^2)$;
+thus
+\[
+ (\widehat i-\widehat m)'(0)
+ =2D+\frac{6\delta d^2}{PL^2},\qquad
+ \widehat i'(0)=3D+\frac{6\delta d^2}{PL^2}.
+\]
+Under $\delta>0$ and $D>0$, C applies,
+existing members approve, and B accepts
+against SW, at sufficiently small positive $g$.
+The derivative argument does \emph{not} prove
+that proposer A's \emph{global} optimal
+choice is this particular small depth:
+that is a separate full-policy menu comparison
+in Proposition~\ref{prop:frozen} at $\theta_0$.
+
+\subsection{Independent exact rational nonvacuity certificate}
+
+The independent Stage13A proof uses rational
+coordinate bounds
+\[
+ z\in[0.7185,0.7187],\ \
+ \eta\in[0.75795,0.75805],\ \
+ \rho\in[0.89995,0.90005],\ \
+ d\in[0.999,1.001]
+\]
+and defines $\kappa$ by the symmetric
+fragmentation FOC:
+\[
+ \kappa=\frac{6\beta\alpha d^2}
+ {PL^3(1-z)}.
+\]
+The proof treats every endpoint and interval
+operation as an exact rational, verifies that
+$\kappa_z>2.7166$, and thereby obtains
+a nonempty \emph{open} region in original
+$(d,\eta,\rho,\kappa)$ coordinates.
+Among its conservative strict bounds are
+$u'-v'>0.02709$, $D>0.00611$,
+$\mathcal L-D>0.00737$ and
+$-\ell-2h_0>0.76425$, together with the
+full-space Rosen margin. The displayed
+numbers are weaker decimal summaries;
+exact endpoint rationals and the complete
+no-float derivation are in
+\texttt{verification/v2b\_stage13a\_independent\_audit.py}
+and its logged \texttt{verification/stage13a/}
+outputs. This proves the local design/consent
+reversal on a genuine multidimensional
+parameter region, not a global
+$g\in(0,1]$ coalition-failure theorem there.
+
+\subsection{The balanced-channel policy outcome}
+
+If $\rho=\eta=r$, then
+$M=I+(1-r)X$ is independent of the
+government's compatibility regime and depth.
+The strong curvature bound in
+\eqref{eq:analytic-D-conditions} gives a
+unique symmetric private-design Nash.
+The second bound in that condition ensures
+the symmetric design FOC is strictly
+positive at zero, while it is strictly
+negative at one. Its interior stationary
+root is the unique Nash. At that root,
+each country's consumer surplus increases
+by $rgQ^2$ for each distinct compatibility
+edge, without a private-profit or cost
+response. With only AB linked, there is one
+edge; with all countries linked, there are
+three. The government's complete selection
+result follows from the strict monotonicity
+of \eqref{eq:analytic-D-welfare}.
