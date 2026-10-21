@@ -1,0 +1,21 @@
+name: Stage16 exact finite-depth national consent certificate
+on:
+  pull_request:
+    paths:
+      - verification/stage16_fixed_depth_certificate.py
+      - .github/workflows/stage16-fixed-depth-certificate.yml
+  push:
+    branches:
+      - audit/stage16-fixed-depth-priority-gate-20261022
+permissions:
+  contents: read
+jobs:
+  exact-rational-fixed-depth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact Fraction Krawczyk and consent proof
+        run: python verification/stage16_fixed_depth_certificate.py
