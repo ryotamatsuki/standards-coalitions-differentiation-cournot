@@ -1,4 +1,7 @@
 # V2b Stage 7.5A — Generality / Quantifier / Portability Red-Team FINAL GATE REPORT
+
+> **POST-CONFIRMATION STATUS OVERRIDE (2026-10-21):** This document remains the historical Stage 7.5A CONDITIONAL GO due to then-pending author intellectual judgment. The user subsequently expressly approved the narrow stated claim (「承認する」); the author contribution record was updated and a [Stage 7.5A final limited GO](V2B_STAGE075A_FINAL_GO_AFTER_AUTHOR_CONFIRMATION_2026-10-21.md) issued. [Stage 8 V2b canonical theory freeze](../docs/V2B_THEORY_FREEZE_2026-10-21_v1.md) has since passed. Historical conditional language below is preserved for audit, not current routing.
+
 **Date:** 2026-10-21 JST. **Workflow authority:** research-paper-workflow v2.9 Stage 7.5A and its PORTABILITY_FALSIFICATION, FORMAL_VERIFICATION and THEOREM_CERTIFICATION checklists.
 
 ## Canonical verdict: CONDITIONAL GO — AWAIT AUTHOR SUBSTANTIVE REVIEW / INTELLECTUAL CONTRIBUTION RECORD
