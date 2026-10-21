@@ -19,7 +19,7 @@ for section in SECTIONS:
         errors.append("Missing section: "+str(p));continue
     v = p.read_text(encoding="utf-8")
     alltext += "\n"+v
-    if "\\input{sections/"+section+"}" not in MAIN:
+    if "\\input{sections/"+section+"}" not in MAIN.read_text(encoding="utf-8"):
         errors.append("Section omitted from main: "+section)
 gen = PAPER / "generated" / "welfare_table.tex"
 if not gen.is_file():
