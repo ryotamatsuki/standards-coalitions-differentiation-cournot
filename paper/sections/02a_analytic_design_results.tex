@@ -1,0 +1,243 @@
+\section{Analytic Design Responses and National Consent}\label{sec:analytic}
+
+The model permits parameter-dependent comparative statics without replacing
+its linear-quadratic preferences or the government's sequential agenda.
+Write $\alpha=2-\eta$, $\beta=1-\rho$, and $\delta=\rho-\eta$,
+with $d=a-c>0$. A firm's $x_i$ is \emph{residual similarity}:
+an increase in $x_i$ means \emph{less} differentiation.
+All statements in this section concern the canonical
+$X_{ij}=(x_i+x_j)/2$ mapping. The strictly interior Nash,
+regularity, and positivity conditions are substantive assumptions,
+not consequences of writing an interior first-order condition.
+
+\subsection{Differentiation in an international standards union}
+
+For an international union of depth $g$, at a symmetric design
+$x_i=y$, set $t=\delta g+\beta y$. Every firm's conditional
+quantity is $Q=d/(\alpha+2t)$, and a unilateral design
+deviation yields the \emph{Nash} equation
+\begin{equation}\label{eq:analytic-is-foc}
+ F(y,g;\theta)=\kappa(1-y)-
+ \frac{6\beta\alpha d^2}{(\alpha-t)(\alpha+2t)^3}=0.
+\end{equation}
+This describes an implicitly determined equilibrium design,
+not an elementary closed-form $y^*(\theta,g)$.
+At fragmentation, the same equation with $g=0$ defines the
+symmetric design $z=x^{\SW}$.
+
+Define
+\begin{equation}\label{eq:analytic-GK}
+ G(t)=\frac{6\beta\alpha d^2(5\alpha-8t)}
+ {(\alpha-t)^2(\alpha+2t)^4},\qquad
+ K=\kappa-\beta G(t).
+\end{equation}
+
+\begin{proposition}[Private-design comparative statics]\label{prop:analytic-A}
+Consider a smooth continuation of interior symmetric
+\emph{Nash} equilibria satisfying
+$\alpha-t>0$, $\alpha+2t>0$, and $K>0$.
+Along this continuation,
+\begin{equation}\label{eq:analytic-A}
+ \frac{\partial y^*}{\partial\kappa}=\frac{1-y}{K}>0,\qquad
+ \frac{\partial y^*}{\partial d}
+ =-\frac{12\beta\alpha d}
+ {(\alpha-t)(\alpha+2t)^3K}<0,\qquad
+ \frac{\partial y^*}{\partial g}=\frac{\delta G(t)}{K}.
+\end{equation}
+If also $5\alpha>8t$, the last derivative has the
+sign of $\rho-\eta$: increasing technical compatibility
+reduces residual differentiation when $\rho>\eta$ and
+increases it when $\rho<\eta$.
+\end{proposition}
+
+\begin{proof}
+Differentiate the \emph{unilateral} equation
+\eqref{eq:analytic-is-foc} implicitly.
+It has $F_y=-K$, $F_g=\delta G(t)$ and
+$F_\kappa=1-y$.
+The derivative with respect to $d$ follows
+by differentiating the $d^2$ multiplier.
+The sign restrictions are the stated assumptions.
+\end{proof}
+
+The firm-scale trade-off depends on the ratio $\kappa/d^2$,
+holding the other primitives fixed. Parameter $d$ is the
+net demand intercept, not the literal number of consumers.
+The proposition is conditional on an interior Nash branch;
+an endpoint design may remain fixed as $\kappa$ changes.
+
+\subsection{Different design responses inside and outside a bilateral union}
+
+At the symmetric fragmentation Nash $z$, put
+\[
+ s_0=\beta z,\quad P=\alpha-s_0,\quad L=\alpha+2s_0.
+\]
+Let $\ell$ and $h_0$ denote respectively the own and
+cross elements of the three-firm design pseudo-gradient
+Jacobian, evaluated at fragmentation:
+\begin{equation}\label{eq:analytic-lh}
+\begin{split}
+\ell&=-\kappa+
+\frac{6\beta^2d^2(\alpha-2s_0)(2\alpha+s_0)}
+ {P^2L^4},\\
+h_0&=\frac{3\beta^2d^2(3\alpha-2s_0)}{PL^4}.
+\end{split}
+\end{equation}
+Here $h_0$ is \emph{not} the member--member Cournot
+cross coefficient $h$ in Appendix~\ref{app:proofs}.
+The direct forcing terms from introducing the $AB$
+compatibility edge are $p_0$ (member) and $r_0$ (outsider):
+\begin{equation}\label{eq:analytic-pr}
+\begin{split}
+p_0&=\frac{6\delta\beta d^2(\alpha-2s_0)(2\alpha+s_0)}
+ {P^2L^4},\\
+r_0&=\frac{6\delta\beta d^2(\alpha^2-2\alpha s_0+4s_0^2)}
+ {P^2L^4}.
+\end{split}
+\end{equation}
+
+\begin{proposition}[Members adjust residual design more than the outsider]
+\label{prop:analytic-B}
+Suppose the fragmentation design $z\in(0,1)$ is a strict
+Nash equilibrium, and the nearby bilateral stationary
+solutions are a smooth continuation of genuine interior
+Nash equilibria, with uniquely defined member and
+outsider designs $u(g),v(g)$. If
+\begin{equation}\label{eq:analytic-B-conditions}
+ \delta>0,\qquad \alpha>3\beta z,\qquad -\ell>2h_0,
+\end{equation}
+then
+\[
+ \boxed{u'(0)>v'(0)>0.}
+\]
+Thus an infinitesimal increase in bilateral interface
+compatibility reduces residual product differentiation
+for all firms, but more for member firms.
+This is a \emph{local} response at fragmentation,
+not a ranking for all positive $g$.
+\end{proposition}
+
+\begin{proof}
+Taking every firm's \emph{unilateral} derivative before
+imposing member symmetry, the implicit-response system is
+\begin{equation}\label{eq:analytic-design-system}
+ \begin{pmatrix}\ell+h_0&h_0\\2h_0&\ell\end{pmatrix}
+ \begin{pmatrix}u'\\v'\end{pmatrix}
+ =-\begin{pmatrix}p_0\\r_0\end{pmatrix}.
+\end{equation}
+The direct-forcing difference is
+$p_0-r_0=
+6\delta\beta d^2(\alpha-3s_0)/(P^2L^3)>0$.
+Under \eqref{eq:analytic-B-conditions}, $h_0>0$ and
+$p_0>r_0>0$, while minus the Jacobian in the
+full three-firm system is a strictly diagonally
+dominant nonsingular M-matrix.
+Consequently $u',v'>0$ and, from
+\eqref{eq:analytic-design-system},
+$u'-v'=(p_0-r_0)/(h_0-\ell)>0$.
+The strict Nash-continuation assumption prevents
+mistaking a stationary root for a global best response.
+\end{proof}
+
+The full-asymmetric Rosen bound
+$\kappa>54\beta^2d^2/(\eta^2\alpha^2)$
+is a convenient sufficient condition for global
+design-Nash uniqueness on the policy cube when
+$\delta\geq0$ and $\eta>0$; local interiority still
+requires an interior root and continuity.
+These conditions, and Proposition~\ref{prop:analytic-B},
+are jointly satisfied on the \emph{nonempty open
+four-dimensional primitive-parameter region}
+independently certified in the supplementary audit.
+This does not mean that the result occupies most
+of the economically admissible parameter space.
+
+\subsection{Private adjustment and the government's participation margin}
+
+Define the country-$A$ \emph{direct} compatibility effect
+at fragmentation, with all firm designs held at $z$:
+\begin{equation}\label{eq:analytic-direct}
+ D=d^2\left[
+ \frac{\rho}{L^2}
+ -\frac{2\delta(1+2s_0)}{L^3}
+ -\frac{6\delta\alpha}{PL^3}\right].
+\end{equation}
+Under the conditions of Proposition~\ref{prop:analytic-B},
+define the induced national welfare loss
+\begin{equation}\label{eq:analytic-loss}
+ \begin{split}
+ \mathcal L={}&
+ \underbrace{\frac{\beta d^2(\eta+2s_0)}{L^3}
+          (2u'(0)+v'(0))}_{\text{consumer-surplus loss}}\\
+ &+\underbrace{\frac{3\beta d^2(\alpha-2s_0)}{PL^3}
+          (u'(0)+v'(0))}_{\text{rivals' design effect on exporter profit}}.
+ \end{split}
+\end{equation}
+\emph{Both terms are added as losses.}
+The opposite sign printed for the second term
+in the original Stage13 research note was
+identified as an error in independent Stage13A
+and is not used here.
+
+\begin{proposition}[An analytic local reversal of governmental consent]
+\label{prop:analytic-C}
+Under the hypotheses of Proposition~\ref{prop:analytic-B},
+if the explicitly defined primitive-dependent quantities
+satisfy
+\begin{equation}\label{eq:analytic-C-conditions}
+ 0<D<\mathcal L,
+\end{equation}
+then at $g=0$
+\[
+ \widehat m'(0)=D>0,\qquad
+ m'(0)=D-\mathcal L<0.
+\]
+Moreover,
+$(i-o)'(0)=2m'(0)<0$ and
+$(\widehat i-\widehat o)'(0)=2D>0$.
+For every qualifying parameter vector,
+at \emph{sufficiently small} positive depths
+the frozen-design restricted game admits an
+international accession accepted by all governments,
+whereas the original endogenous-design game rejects
+the terminal bilateral union and outsider accession.
+The existence of a \emph{globally proposer-optimal}
+positive-depth international standard in the frozen game
+does \emph{not} follow from this local result alone.
+\end{proposition}
+
+\begin{proof}
+The home's own-design Nash condition
+$\Pi_{A,x_A}=0$ eliminates only that component
+of its private-profit response. Direct evaluation
+of the domestic consumer-surplus derivative and
+the home firm's profit derivatives with respect to
+its \emph{rivals'} designs yields
+$m'(0)=D-\mathcal L$; see Appendix~\ref{app:analytic-proofs}.
+The two outsider-accession slopes follow by permutation
+symmetry of the three compatibility edges at fragmentation.
+The frozen incumbent accession approval margin also has
+positive slope
+$(\widehat i-\widehat m)'(0)
+=2D+6\delta d^2/(PL^2)>0$,
+and $\widehat i'(0)=3D+6\delta d^2/(PL^2)>0$,
+so all applicable consent inequalities hold for sufficiently
+small positive $g$ by continuity. In the actual design game,
+$m(g)-s$ and $i(g)-o(g)$ have strictly negative local
+slopes, precluding the positive-depth bilateral path there.
+\end{proof}
+
+At the exact witness \eqref{eq:witness},
+$D\simeq0.0067679241$ and
+$\mathcal L\simeq0.0150697441$, consisting of
+a consumer response of approximately $0.005216220$
+and a competing-firm profit effect of approximately
+$0.009853524$. The independently checked local responses
+are $u'(0)\simeq0.060810232$ and
+$v'(0)\simeq0.032304817$.
+The strict condition \eqref{eq:analytic-C-conditions}
+holds not only at this witness but over the
+explicit nonzero-volume parameter region
+recorded by the exact rational Stage13A certificate.
+Unlike the all-depth theorem that follows, this
+general-parameter proposition makes only a local claim.
