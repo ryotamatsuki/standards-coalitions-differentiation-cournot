@@ -1,0 +1,21 @@
+{
+  "CS_partials": [
+    -0.033887998235337946,
+    -0.03388799822978683,
+    -0.03388799822978683
+  ],
+  "home_profit_partials": [
+    0.0,
+    -0.10582096707789644,
+    -0.10582096707789644
+  ],
+  "design_response": [
+    0.06081023173898358,
+    0.06081023173898358,
+    0.032304816888206744
+  ],
+  "CS_design_effect": -0.005216219628905908,
+  "home_profit_design_effect": -0.009853524495234633,
+  "own_profit_FOC": 0.0,
+  "method": "central difference eps=1e-5; diagnostic only"
+}

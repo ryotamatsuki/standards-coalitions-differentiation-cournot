@@ -1,0 +1,15 @@
+python3 production/scripts/verify_freeze.py
+FROZEN OK docs/V2B_THEORY_FREEZE_2026-10-21_v1.md ca16f0d4699364c7466d463c40e01cb5eaa2d8e5
+FROZEN OK formal/V2bWelfareCore.lean b93d4564c4e29093bea1e3e006d2e9865d627c2f
+FROZEN OK lean-toolchain c00a53503cc3cc776c290056ed21ce7e5d80b083
+FROZEN OK verification/v2b_stage04a_krawczyk_cleanroom.py 25cb3b15cff6e50f7ee1bc5b0e1657300c8c306f
+FROZEN OK verification/v2b_alt_quadratic_rosen_interval.py 241626632392fa66f13507471cd2fb256733bb0f
+FROZEN OK verification/v2b_alt_quadratic_policy_interval.py 771a2444eafd71d50e46b733a11c95f70ad89b2f
+FROZEN OK verification/v2b_interval_reversal_certificate.py a4848954281f842fbddd8d0b90b18cebf67cc5ad
+FROZEN OK verification/v2b_stage06_pareto_holdout.py 17e2204521146fd9b3f7cc9497aa1d13013b576e
+FROZEN OK verification/v2b_stage07_welfare_institutions.py ea6c04ad95574549969847ad7b1ecd16e0b94614
+STAGE8 FREEZE VERIFIED: 9 file blobs, V2B-THEORY-FREEZE-2026-10-21-v1
+python3 production/scripts/generate_welfare_table.py --check
+VERIFIED paper/generated/welfare_table.tex deterministically matches frozen model
+python3 production/scripts/generate_consent_table.py --check
+VERIFIED paper/generated/consent_table.tex against equilibrium evaluator and exact anchors
