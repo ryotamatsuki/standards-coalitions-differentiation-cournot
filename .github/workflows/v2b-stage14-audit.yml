@@ -1,0 +1,27 @@
+name: Stage14 independent mechanism audit
+on:
+  push:
+    paths:
+      - 'verification/stage14_math_audit.py'
+      - 'reviews/STAGE14_*.md'
+      - 'literature/STAGE14_PRIOR_ART_ABSORPTION.md'
+      - '.github/workflows/v2b-stage14-audit.yml'
+  pull_request:
+jobs:
+  exact-local-mechanism:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r production/requirements-stage9.txt
+      - run: python production/scripts/verify_freeze.py
+      - name: Independent symbolic and exact rational mechanism checks
+        run: python -u verification/stage14_math_audit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stage14-exact-local-mechanism
+          path: verification/stage14/math_results.json
+          retention-days: 7
