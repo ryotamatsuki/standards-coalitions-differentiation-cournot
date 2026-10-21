@@ -1,6 +1,21 @@
 \section{Reduced Formulas and Computer-Assisted Proofs}\label{app:proofs}
 
 
+\subsection{Positive semidefiniteness of demand}\label{app:utility-psd}
+At the exact parameter witness, $B$ is affine in
+$(x_A,x_B,x_C,g)$ for each regime, on $[0,1]^4$.
+Every matrix in this cube is a convex combination
+of the 16 vertex matrices. Direct exact-rational
+principal-minor checks find all principal minors
+nonnegative at every vertex (the minimum determinant
+is $243/250$ for $\SW$ and zero for $\SU$ and $\IS$).
+Hence all vertex matrices are positive semidefinite;
+convexity of the positive-semidefinite cone proves
+$B\succeq 0$ on the full cube. For the alternative
+$\phi(x)=x^2$, the variables $z_i=x_i^2\in[0,1]$
+cover the same cube and $B$ is affine in $(z,g)$,
+so the same argument applies. This does not
+establish strict concavity of demand at every endpoint.
 \subsection{A full-strategy curvature bound}\label{app:rosen-bound}
 
 The canonical linear similarity mapping permits an analytic
