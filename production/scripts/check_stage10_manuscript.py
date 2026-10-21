@@ -8,8 +8,9 @@ ROOT = Path(__file__).resolve().parents[2]
 PAPER = ROOT / "paper"
 MAIN = PAPER / "main.tex"
 SECTIONS = [
-    "00_introduction","01_model","02_equilibrium","03_main_results",
-    "04_welfare","05_robustness","06_related_literature","07_discussion","A_proofs"
+    "00_introduction","01_model","02_equilibrium","02a_analytic_design_results",
+    "03_main_results","03a_policy_benchmark","04_welfare","05_robustness",
+    "06_related_literature","07_discussion","A_proofs","A_analytic_proofs"
 ]
 alltext = MAIN.read_text(encoding="utf-8")
 errors = []
