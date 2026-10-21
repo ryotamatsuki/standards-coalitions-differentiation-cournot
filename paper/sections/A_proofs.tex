@@ -158,12 +158,27 @@ For SU the parameter-uniform Krawczyk operator is
  +\left[I-C D_{(u,v)}F(Z_k,G_k)\right](Z_k-z_0),
 \end{equation}
 where $F=(F_M,F_O)$ and $C$ is a numerical preconditioner.
-Strict interior inclusion and certified Jacobian invertibility
-verify the local root for all real $g$ in each cell; the
-international continuation has its own scalar interval Newton
-test. Lemma~\ref{lem:design}, proved on the full asymmetric design
-cube, supplies global Nash uniqueness and eliminates other root
-selections.
+Each $Z_k$ is centered at a numerical root rounded to
+12 decimal places and converted to an exact rational;
+its two coordinate half-widths are $1/5000$.
+The numeric inverse Jacobian preconditioner $C$ is
+similarly rounded to 12 decimals and rationalized.
+All inclusion comparisons use outward interval arithmetic
+with 35 decimal digits. The numerical approximation
+is permitted only because the final interval operator
+strictly encloses its effect. The algorithm checks
+the rational rectangles lie in the interior design cube
+and evaluates $\mathcal K(Z_k,G_k)\subset
+\operatorname{int}(Z_k)$ with a nonsingular Jacobian.
+For the international scalar root in $Y_k$,
+the interval Newton test is
+$N=y_0-F_I(y_0,G_k)/F_{I,y}(Y_k,G_k)
+\subset\operatorname{int}(Y_k)$ with $F_{I,y}<0$.
+At this witness all 1,000 rational policy cells pass
+without adaptive subdivision. These box tests
+certify roots for every $g$ in their closed cells;
+Lemma~\ref{lem:design} supplies global firm Nash
+uniqueness on the full asymmetric cube.
 
 For each enclosed continuation the computer evaluates
 the derivatives defined by \eqref{eq:member-path} and
@@ -198,12 +213,54 @@ with marginal effect $\beta x_i$, its IS design FOC becomes
  \frac{12\beta y\alpha}
  {(\alpha-t^{(2)})(\alpha+2t^{(2)})^3}=0.
 \]
-A separate interval Gershgorin/Rosen certificate checks
-every asymmetric firm design in $[0,1]^3$ and every
-$g\in[0,1]$, followed by uniform government payoff signs.
+The repaired nonlinear certificate uses a SymPy
+rational-coefficient printer that constructs every
+coefficient as an outward interval $\operatorname{iv}(p)/q$,
+rather than evaluating $p/q$ as binary64 before
+interval evaluation. In the global pseudo-gradient
+Jacobian, Gershgorin rows use interval sums of
+the diagonal and absolute symmetrized off-diagonals;
+only the strict negative interval upper bound
+determines acceptance. At the exact witness the
+global three-firm Rosen check covers the full
+four-dimensional $(x_A,x_B,x_C,g)$ cube with
+one $\SW$ box, one $\SU$ box and five $\IS$
+boxes; the least favorable reported row upper
+bound is below $-0.0949634$.
+
+The equilibrium-root face checks use the closed SU
+rectangle $[0.60,0.67]\times[0.60,0.65]$ and
+the closed IS interval $[0.60,0.73]$.
+SU face signs are checked over 40 rational
+counterpart subintervals and 100 rational
+policy cells, with positive inward FOCs on
+the low faces and negative FOCs on the high faces;
+the same sign test covers both IS faces.
+Poincare--Miranda gives an interior root in
+each SU rectangle for every policy depth;
+the intermediate-value theorem gives the IS
+root. The global Rosen result makes those
+interior roots the unique Nash equilibria.
+
+For each of 100 adjacent closed depth cells
+the certificate then encloses the design root
+in local rational rectangles of half-width
+$1/400$ about numerical proposals that are
+rounded and converted to exact rationals.
+All six SU/IS faces retain strict inward signs
+on each policy cell; the 2-by-2 implicit
+derivative determinant and IS scalar derivative
+exclude zero. The interval total member
+welfare derivative and accession-margin derivative
+have upper bounds below $-0.01427873$ and
+$-0.01657547$, respectively, covering the
+whole closed $g\in[0,1]$ continuum.
 The frozen SU policy upper envelope uses 4,000
-closed rational depth cells. No baseline root or Rosen
-bound is mechanically transferred into this variant.
+closed rational depth cells. The originally
+pre-registered frozen C rejection at $g=.05$
+remains an adverse result. No baseline root,
+linearity-specific Rosen inequality or binary64
+coefficient is substituted into this variant.
 
 \subsection{Auditable artifacts and proof-assistant boundary}
 
