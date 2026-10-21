@@ -1,5 +1,5 @@
 # AUTHOR_INTELLECTUAL_CONTRIBUTION_RECORD — V2b Standards Coalitions
-**AUTHOR SCOPE CONFIRMATION RECEIVED IN CHAT; 2026-10-21.** This document is NOT itself an author's approval or proof of sole human origination. The AI prepared it from documented research directions and verified assets. Model/theorem ideas and scripts were iteratively developed with AI support; provenance cannot be rewritten as unaided human proof.
+**AUTHOR SCOPE CONFIRMATION RECEIVED IN CHAT; 2026-10-21.** This document RECORDS the user's explicit chat approval of the narrowly defined research scope; it is NOT a signature, evidence of unaided human origination, or evidence of independent human reproof. The AI prepared it from documented research directions and verified assets. Model/theorem ideas and scripts were iteratively developed with AI support; provenance cannot be rewritten as unaided human proof.
 
 ## Documented author-originated research directions / contributions
 
