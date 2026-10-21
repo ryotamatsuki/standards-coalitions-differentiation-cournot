@@ -1,16 +1,20 @@
 {
-  "freeze_id": "V2B-THEORY-FREEZE-2026-10-21-v1",
-  "scope": "Stage 8 frozen economic model and proof inputs; SHA-1 values are Git blob object IDs, not file-content SHA256",
+  "freeze_id": "V2B-THEORY-FREEZE-2026-10-21-v2-CERT-REPAIR",
+  "scope": "Stage8 successor frozen model and technically re-certified nonlinear proof inputs; canonical economics unchanged; SHA-1 Git blob object IDs.",
   "frozen_files": {
     "docs/V2B_THEORY_FREEZE_2026-10-21_v1.md": "ca16f0d4699364c7466d463c40e01cb5eaa2d8e5",
     "formal/V2bWelfareCore.lean": "b93d4564c4e29093bea1e3e006d2e9865d627c2f",
     "lean-toolchain": "c00a53503cc3cc776c290056ed21ce7e5d80b083",
     "verification/v2b_stage04a_krawczyk_cleanroom.py": "25cb3b15cff6e50f7ee1bc5b0e1657300c8c306f",
-    "verification/v2b_alt_quadratic_rosen_interval.py": "241626632392fa66f13507471cd2fb256733bb0f",
-    "verification/v2b_alt_quadratic_policy_interval.py": "771a2444eafd71d50e46b733a11c95f70ad89b2f",
+    "verification/v2b_alt_quadratic_rosen_interval.py": "161cb52f4095fa1e973444e1a7f53b7c72463b6a",
+    "verification/v2b_alt_quadratic_policy_interval.py": "2b190889013ef44cf35c43481dcd04734cefcb45",
     "verification/v2b_interval_reversal_certificate.py": "a4848954281f842fbddd8d0b90b18cebf67cc5ad",
     "verification/v2b_stage06_pareto_holdout.py": "17e2204521146fd9b3f7cc9497aa1d13013b576e",
-    "verification/v2b_stage07_welfare_institutions.py": "ea6c04ad95574549969847ad7b1ecd16e0b94614"
+    "verification/v2b_stage07_welfare_institutions.py": "ea6c04ad95574549969847ad7b1ecd16e0b94614",
+    "verification/v2b_exact_rational_interval.py": "cf256733f233d48ead8236f00eb1ede35a868f45",
+    "docs/V2B_THEORY_FREEZE_2026-10-21_v2.md": "e0babd94d9057890382210a634e551871ee468e0"
   },
-  "correction_procedure": "Any economic change or edits to frozen core files require author-approved theory change control and reruns of affected Stage 4A/7.5A/Stage 8 gates. Do not silently update hashes."
+  "correction_procedure": "v1 immutable in Git; only repaired nonlinear proof dependencies changed, with explicit v2 Stage4A/7.5A audit and successor Stage8 document; further changes require new freeze and author acknowledgement.",
+  "parent_freeze_id": "V2B-THEORY-FREEZE-2026-10-21-v1",
+  "recertification_evidence": "https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39571673076"
 }

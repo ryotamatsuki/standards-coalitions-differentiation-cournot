@@ -29,6 +29,8 @@ from scipy.optimize import root, brentq
 from mpmath import iv
 import numpy as np
 import sympy as sp
+from v2b_exact_rational_interval import (interval_lambdify, exact_interval,
+                                        assert_exact_coefficient_contract)
 from time import perf_counter
 iv.dps=40
 
@@ -58,7 +60,7 @@ WM=CS+3*qm**2-kappa*(1-u)**2/2
 WO=CS+3*qo**2-kappa*(1-v)**2/2
 su_expr=[fm,fo,WM,WO]+[sp.diff(z,t) for z in (fm,fo,WM,WO)
                         for t in (u,v,g)]
-su_interval=sp.lambdify((u,v,g),su_expr,modules='math',cse=True)
+su_interval=interval_lambdify((u,v,g),su_expr)
 su_numeric=sp.lambdify((u,v,g),(fm,fo),modules='numpy',cse=True)
 
 t=(rho-eta)*g+beta*y**2
@@ -66,15 +68,13 @@ q=1/(A+2*t)
 fi=kappa*(1-y)-12*beta*y*A/((A-t)*(A+2*t)**3)
 WI=(sp.Rational(9,2)+3*(rho*g+beta*y**2))*q**2-kappa*(1-y)**2/2
 is_expr=[fi,WI,sp.diff(fi,y),sp.diff(fi,g),sp.diff(WI,y),sp.diff(WI,g)]
-is_interval=sp.lambdify((y,g),is_expr,modules='math',cse=True)
+is_interval=interval_lambdify((y,g),is_expr)
 is_numeric=sp.lambdify((y,g),fi,modules='numpy',cse=True)
 
 def exact(a,b=None):
     """Closed outward-rounded interval from rational endpoints only."""
     if b is None:b=a
-    a,b=Q(a),Q(b)
-    return iv.mpf([a.numerator*b.denominator,
-                   b.numerator*a.denominator])/(a.denominator*b.denominator)
+    return exact_interval(a,b)
 def pos(z):return z.a>0
 def neg(z):return z.b<0
 
@@ -223,6 +223,7 @@ def endogenous_pareto():
           'strictly Pareto improves on SW by',gap,flush=True)
 
 if __name__=='__main__':
+    assert_exact_coefficient_contract()
     global_interior_roots()
     all_policy_depths()
     frozen_agreement()

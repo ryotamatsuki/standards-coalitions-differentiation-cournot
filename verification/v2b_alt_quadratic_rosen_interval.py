@@ -12,6 +12,8 @@ production module is imported. This is not a Lean formal proof.
 from fractions import Fraction as Q
 import sympy as sp
 from mpmath import iv
+from v2b_exact_rational_interval import (interval_lambdify, exact_interval,
+                                        assert_exact_coefficient_contract)
 iv.dps=40
 x=sp.symbols('x0 x1 x2',real=True)
 g=sp.symbols('g',real=True)
@@ -21,9 +23,7 @@ beta=sp.Rational(1,10)
 kappa=sp.Rational(1701,2000)
 
 def closed(a,b):
-    a,b=Q(a),Q(b)
-    return iv.mpf([a.numerator*b.denominator,
-                   b.numerator*a.denominator])/(a.denominator*b.denominator)
+    return exact_interval(a,b)
 
 def compile_gradient_hessian(S):
     def hij(i,j):
@@ -39,7 +39,7 @@ def compile_gradient_hessian(S):
         qi_der=(-inv*M.diff(x[i])*quantities)[i]
         gradients.append(6*quantities[i]*qi_der+kappa*(1-x[i]))
     J=[sp.diff(gradients[i],x[j]) for i in range(3) for j in range(3)]
-    return sp.lambdify((*x,g),J,modules='math',cse=True)
+    return interval_lambdify((*x,g),J)
 
 def certify(S,limit=100000):
     fun=compile_gradient_hessian(S)
@@ -51,16 +51,15 @@ def certify(S,limit=100000):
         J=[[vals[3*i+j] for j in range(3)] for i in range(3)]
         row_bounds=[]
         for i in range(3):
-            row=float(J[i][i].b)
+            row=J[i][i]  # rigorous interval sum; do not round to float
             for j in range(3):
                 if i==j: continue
                 symmetric_offdiag=(J[i][j]+J[j][i])/2
-                row+=max(abs(float(symmetric_offdiag.a)),
-                         abs(float(symmetric_offdiag.b)))
-            row_bounds.append(row)
+                row+=abs(symmetric_offdiag)  # iv abs encloses the true magnitude
+            row_bounds.append(row.b)  # outward upper endpoint after interval sum
         if max(row_bounds)<0:
             accepted+=1
-            largest_upper=max(largest_upper,max(row_bounds))
+            largest_upper=max(largest_upper,float(max(row_bounds)))  # logging only AFTER strict interval sign
             continue
         divisions+=1
         if divisions>limit:
@@ -76,5 +75,6 @@ def certify(S,limit=100000):
     assert largest_upper<0
 
 if __name__=='__main__':
+    assert_exact_coefficient_contract()
     for S in ('SW','SU','IS'):certify(S)
     print('PASS: strict diagonal concavity for entire nonlinear design strategy space')
