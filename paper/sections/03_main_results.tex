@@ -1,219 +1,162 @@
-\section{Reduced Formulas and Computer-Assisted Proofs}\label{app:proofs}
+\section{Sequential Compatibility and Coalition Formation}
+\label{sec:results}
 
+The central result concerns a \emph{difference in feasible
+governmental agreements}, not a difference between two
+fixed-design demand schedules. Every comparison below uses the
+unique downstream design and Cournot equilibria derived in
+Section~\ref{sec:equilibrium}, unless explicitly labelled
+as a frozen-design counterfactual.
 
-\subsection{A full-strategy curvature bound}\label{app:rosen-bound}
+\begin{proposition}[No positive-depth agreement under endogenous design]
+\label{prop:rejection}
+Under the five-stage bilateral-first consent game, canonical
+similarity mapping \eqref{eq:matrices}, and the exact witness
+\eqref{eq:witness}, for every real $g\in(0,1]$,
+\begin{equation}\label{eq:rejection}
+ m(g)<s,\qquad i(g)<o(g).
+\end{equation}
+Thus no substantive positive-depth $\SU$ or $\IS$ is reached
+in a subgame-perfect outcome of the government game.
+Formal zero-depth membership labels need not be unique.
+\end{proposition}
 
-The canonical linear similarity mapping permits an analytic
-global firm-Nash uniqueness certificate.
-Set $\alpha=621/500$, $\beta=1/10$,
-$\overline m=121/500$, and
-$D_0=\alpha-2\overline m=379/500>0$.
-For every policy regime, depth $g\in[0,1]$ and
-asymmetric design vector $x\in[0,1]^3$,
-the Cournot matrix $M$ has diagonal $\alpha$
-and nonnegative off-diagonal entries no greater
-than $\overline m$. Strict row diagonal dominance
-implies $\|M^{-1}\|_\infty\leq D_0^{-1}$,
-while its positive fixed-point quantities satisfy
-$\|q\|_\infty\leq\alpha^{-1}$.
+\begin{proof}
+Write the symmetric bilateral-union design continuation as
+$(u(g),u(g),v(g))$, with $u$ chosen by the members and $v$
+by the outsider. Equation~\eqref{eq:design-bridge} specifies
+the \emph{unilateral} firm Nash conditions
+$F_M(u,v,g)=F_O(u,v,g)=0$.
+As long as this Jacobian is nonsingular, implicit
+differentiation gives the total member-welfare derivative
+\begin{equation}\label{eq:member-path}
+ m'(g)=W_{A,g}^{\SU}
+       +W_{A,u}^{\SU}u'(g)
+       +W_{A,v}^{\SU}v'(g),\qquad
+ \begin{pmatrix}u'\\v'\end{pmatrix}
+ =-D_{(u,v)}F^{-1}D_gF.
+\end{equation}
+Similarly, writing the unique $\IS$ design equilibrium
+as $(y(g),y(g),y(g))$, the total accession-margin derivative is
+\begin{equation}\label{eq:outsider-path}
+ \bigl(i(g)-o(g)\bigr)'
+ =i_g+i_y y'
+ -\bigl(W_{C,g}^{\SU}
+       +W_{C,u}^{\SU}u'+W_{C,v}^{\SU}v'\bigr),
+ \qquad y'=-F_{I,g}/F_{I,y}.
+\end{equation}
+The derivatives $W_{A,g}$ and $i_g$ in these expressions hold
+private design fixed, while the terms multiplied by $u',v',y'$
+incorporate the firms' \emph{actual} post-policy responses.
 
-Write $M_i=\partial M/\partial x_i$ and
-$q^{[i]}=\partial q/\partial x_i$.
-For the linear mapping,
-$\|M_i\|_\infty\leq\beta$ and
-$\partial M_i/\partial x_j=0$.
-Thus matrix differentiation, applied to the
-\emph{full} asymmetric design space, yields
+The exact rational-interval certificate associated with
+Appendix~\ref{app:proofs} isolates the unique design Nash
+uniformly and checks nonsingularity on \emph{all} of
+$g\in[0,1]$. It then encloses the full right-hand sides
+of \eqref{eq:member-path} and
+\eqref{eq:outsider-path} over 1,000 adjacent closed
+rational policy intervals, proving the strict uniform bounds
+\begin{equation}\label{eq:signed-bounds}
+  m'(g)<-0.0079701929973,\qquad
+  \bigl(i(g)-o(g)\bigr)'<-0.0150388833377.
+\end{equation}
+These are conservative upper bounds returned by the interval
+certificate, \emph{not} approximate maxima of a numerical grid.
+At $g=0$, all three institutional labels deliver the same
+market and firm-design continuation, so
+$m(0)=o(0)=i(0)=s$. Integrating the strictly negative
+derivatives yields \eqref{eq:rejection} for every $g>0$.
+
+Backward induction is immediate but economically consequential:
+$C$ strictly prefers the bilateral outsider continuation to
+accession at any positive inherited $g$, hence does not apply;
+anticipating a terminal $\SU$, $B$ strictly prefers rejecting
+$A$'s positive-depth proposal and obtaining $\SW$.
+Government $A$ cannot bypass these choices by selecting a
+different $g$. A zero-depth formal union remains
+payoff-equivalent to $\SW$ and may be supported by indifferent
+votes.
+\end{proof}
+
+\subsection{The frozen-design forecast}
+
+Define $\widehat{m}(g)$, $\widehat{o}(g)$ and
+$\widehat{i}(g)$ by \eqref{eq:welfare} in a \emph{different}
+restricted-strategy government game. In this benchmark,
+all firms' designs are held at their common actual $\SW$
+Nash level $\bar x=x^{\SW}$ after every history, even when
+governments choose a positive compatibility depth. The cost
+of that design remains the same once-paid real resource cost.
+No firm can change design in the benchmark; the policy rules
+and Cournot stage remain unchanged.
+
+\begin{proposition}[A frozen-design policy forecast reverses the outcome]
+\label{prop:frozen}
+At $\theta_0$ under the canonical residual-similarity mapping,
+the frozen-design game admits a positive-depth $\IS$
+with the inherited compatibility $g=1/20$. At this offer,
+$C$ strictly prefers applying, both $A$ and $B$ strictly
+prefer approving accession, and the proposed $\IS$
+beats $\SW$ and \emph{every possible terminal $\SU$
+policy} for the proposer. Hence at least one optimal
+government outcome in the restricted-design game is a
+positive-depth $\IS$, unlike the original game in
+Proposition~\ref{prop:rejection}.
+\end{proposition}
+
+\begin{proof}
+Opposite-sign rational interval bounds for the $\SW$
+design FOC isolate the interval
 \[
- q^{[i]}=-M^{-1}M_iq,\qquad
- \frac{\partial q^{[i]}}{\partial x_j}
- =M^{-1}M_jM^{-1}M_iq+
-  M^{-1}M_iM^{-1}M_jq.
+ \bar x\in[0.71859270731,\;0.71859270734].
 \]
-In particular,
-\[
- \|q^{[i]}\|_\infty
- \leq\frac{\beta}{D_0\alpha}<0.106221,
- \quad
- \left\|\frac{\partial q^{[i]}}{\partial x_j}
- \right\|_\infty
- \leq\frac{2\beta^2}{D_0^2\alpha}<0.028027.
-\]
-By the product rule, every second derivative of
-each firm's operating profit $3q_k^2$ obeys
-\begin{equation}\label{eq:global-design-curvature}
- \left|
- \frac{\partial^2(3q_k^2)}
-      {\partial x_i\partial x_j}
- \right|
- \leq 6\left[
- \left(\frac{\beta}{D_0\alpha}\right)^2
- +\frac{2\beta^2}{D_0^2\alpha^2}
- \right]<0.203092=:h.
+Substituting the \emph{same} $\bar x$ into each
+conditional government regime and taking $g=1/20$ gives
+\begin{equation}\label{eq:frozen-votes}
+ \widehat{i}(1/20)-\widehat{o}(1/20)
+    >0.00023461662306,\quad
+ \widehat{i}(1/20)>\widehat{m}(1/20),\quad
+ \widehat{i}(1/20)>s.
 \end{equation}
-The once-paid cost adds $-\kappa$ to the
-pseudo-gradient's own Jacobian diagonal but
-nothing to its off-diagonals. Therefore the
-symmetric part of the three-player pseudo-gradient
-Jacobian is strictly negative diagonally dominant:
-its largest row upper bound is at most
-$-\kappa+3h<-0.2412$.
-This verifies Rosen strict diagonal concavity,
-as well as each firm's own-payoff strict concavity,
-\emph{globally}, without using symmetry to
-remove unilateral deviations.
-Existence of the required \emph{interior} Nash
-for each policy depth is separately certified
-by the uniform root-inclusion program below.
-
-\subsection{SU market reduction and unilateral design equations}
-
-After establishing global firm-Nash uniqueness, the SU continuation
-is symmetric between A and B: $x_A=x_B=u$, $x_C=v$. Set
-\begin{equation}\label{eq:app_mn}
- \alpha=2-\eta,\quad \beta=1-\rho,\quad
- h=(\rho-\eta)g+\beta u,\quad
- n=\beta(u+v)/2,\quad D=\alpha(\alpha+h)-2n^2.
+The strict comparison with all alternative bilateral outcomes
+uses a separate entire-policy-domain interval envelope:
+\begin{equation}\label{eq:frozen-envelope}
+ \sup_{g\in[0,1]}\widehat{m}(g)
+       <2.423573565
+       <2.4413970373
+       <\widehat{i}(1/20).
 \end{equation}
-Then the matrix in \eqref{eq:Mq} and its reduced solution are
-\begin{equation}\label{eq:app_market}
- M_{\SU}=\begin{pmatrix}
- \alpha & h & n\\ h & \alpha & n\\ n & n & \alpha
- \end{pmatrix},\quad
- (\alpha+h)Q_M+nQ_O=1,\quad 2nQ_M+\alpha Q_O=1,
-\end{equation}
-\begin{equation}\label{eq:app_quantities}
- Q_M=\frac{\alpha-n}{D},\qquad
- Q_O=\frac{\alpha+h-2n}{D}.
-\end{equation}
-These are market quantities only; the design Nash conditions require
-\emph{unilateral}, not joint symmetric, derivatives:
-\begin{align}
- F_M(u,v,g)
- &=\left[6q_A(-M^{-1}M_{x_A}q)_A+
-                  \kappa(1-x_A)\right]_{x=(u,u,v)}=0,
- \label{eq:app_Fm}\\
- F_O(u,v,g)
- &=\left[6q_C(-M^{-1}M_{x_C}q)_C+
-                  \kappa(1-x_C)\right]_{x=(u,u,v)}=0.
- \label{eq:app_Fo}
-\end{align}
-The correct domestic SU surplus and country welfare terms are
-\begin{align}
- \CS_{\SU}&=(1+\rho g+\beta u)Q_M^2+
-                    Q_O^2/2+2nQ_MQ_O,\label{eq:app_cs}\\
- W_M&=\CS_{\SU}+3Q_M^2-\kappa(1-u)^2/2,\label{eq:app_wm}\\
- W_O&=\CS_{\SU}+3Q_O^2-\kappa(1-v)^2/2.\label{eq:app_wo}
-\end{align}
-The substitution term in consumer surplus uses $\rho g$,
-whereas the Cournot off-diagonal matrix uses $(\rho-\eta)g$.
-Mixing them would change the national welfare object and
-invalidate the main result.
+The full set $[0,1]$ in the supremum is certified using
+500 adjacent rational intervals, not guessed by maximizing
+over a grid. By \eqref{eq:frozen-votes}, $C$ applies and the
+two existing members approve the stated feasible $\IS$;
+$B$ also prefers it to declining the entire proposal.
+Equation~\eqref{eq:frozen-envelope} excludes all terminal
+$\SU$ offers and $\SW$ as optimal proposals for $A$.
+With affirmative votes at indifference, the positive-depth
+feasible-acceptance set is closed within the compact policy
+domain; a proposer optimum exists. No particular
+globally maximizing $g$ or uniquely labelled government
+strategy profile is asserted.
+\end{proof}
 
-\subsection{IS scalar design equation}
+The sign contrast is displayed at the common depth $g=1/20$ in
+Table~\ref{tab:v2b-consent-margins}. Positive values of
+$m(g)-s$ and $i(g)-o(g)$ favor forming the bilateral agreement
+and accession, respectively. Both signs change when private
+designs are held fixed; the positive $i(g)-s$ in the
+endogenous column illustrates that a welfare-improving
+international continuation can remain inaccessible.
+The table is a point illustration, not the proof of the
+entire-policy-domain inequalities in Proposition~\ref{prop:rejection}.
+\input{generated/consent_table.tex}
 
-For the unique symmetric international continuation put
-$t=(\rho-\eta)g+\beta y$ and $Q_I=1/(\alpha+2t)$.
-A single firm's deviation from a symmetric design profile yields
-\begin{equation}\label{eq:app_isf}
- F_I(y,g)=\kappa(1-y)-
-  \frac{6\beta\alpha}{(\alpha-t)(\alpha+2t)^3}=0.
-\end{equation}
-International per-country welfare then reduces to
-\begin{equation}\label{eq:app_iw}
- W_I(y,g)=
- \frac{\tfrac92+3(\rho g+\beta y)}{(\alpha+2t)^2}
- -\frac{\kappa}{2}(1-y)^2 .
-\end{equation}
-Equations \eqref{eq:app_Fm}--\eqref{eq:app_iw} are precisely
-the equilibrium and welfare objects audited by the
-independent Stage-4A programs.
-
-\subsection{Uniform interval proof on the entire compatibility domain}
-
-The canonical Stage-4A certificate covers the policy continuum
-as the union of 1,000 exact adjacent closed rational intervals
-$G_k=[k/1000,(k+1)/1000]$ for $k=0,\ldots,999$.
-For each cell, a numerical candidate merely supplies the centre
-of an outward-rounded rational design rectangle $Z_k$.
-For SU the parameter-uniform Krawczyk operator is
-\begin{equation}\label{eq:app_krawczyk}
- {\cal K}(z_0,Z_k,G_k)
- =z_0-CF(z_0,G_k)
- +\left[I-C D_{(u,v)}F(Z_k,G_k)\right](Z_k-z_0),
-\end{equation}
-where $F=(F_M,F_O)$ and $C$ is a numerical preconditioner.
-Strict interior inclusion and certified Jacobian invertibility
-verify the local root for all real $g$ in each cell; the
-international continuation has its own scalar interval Newton
-test. Lemma~\ref{lem:design}, proved on the full asymmetric design
-cube, supplies global Nash uniqueness and eliminates other root
-selections.
-
-For each enclosed continuation the computer evaluates
-the derivatives defined by \eqref{eq:member-path} and
-\eqref{eq:outsider-path}, including the implicit design-response
-terms. Strict negative outward upper bounds throughout the
-entire collection of policy cells give
-\eqref{eq:signed-bounds}. Combined with equality of all
-regimes at $g=0$ they imply the strict inequalities for
-every $g>0$; a numerical policy grid would not imply that result.
-
-For the frozen counterfactual, the true SW root is itself
-enclosed by rational FOC sign changes. The program holds
-that root fixed across histories, verifies the strict
-C and member consent margins at $g=.05$, and certifies
-the \emph{supremum} of member SU welfare over 500 closed
-rational $g$ intervals. This establishes
-\eqref{eq:frozen-envelope} over the entire offer set.
-
-\subsection{The separate nonlinear experiment}
-
-Under \eqref{eq:quadratic-map}, replace the definitions of
-$h,n,t$ with
-\[
- h^{(2)}=(\rho-\eta)g+\beta u^2,\quad
- n^{(2)}=\beta(u^2+v^2)/2,\quad
- t^{(2)}=(\rho-\eta)g+\beta y^2.
-\]
-Because each off-diagonal entry responds to design
-with marginal effect $\beta x_i$, its IS design FOC becomes
-\[
- F_I^{(2)}(y,g)=\kappa(1-y)-
- \frac{12\beta y\alpha}
- {(\alpha-t^{(2)})(\alpha+2t^{(2)})^3}=0.
-\]
-A separate interval Gershgorin/Rosen certificate checks
-every asymmetric firm design in $[0,1]^3$ and every
-$g\in[0,1]$, followed by uniform government payoff signs.
-The frozen SU policy upper envelope uses 4,000
-closed rational depth cells. No baseline root or Rosen
-bound is mechanically transferred into this variant.
-
-\subsection{Auditable artifacts and proof-assistant boundary}
-
-The auditable programs include
-\begin{itemize}
-\item \path{verification/v2b_stage04a_krawczyk_cleanroom.py};
-\item \path{verification/v2b_alt_quadratic_rosen_interval.py};
-\item \path{verification/v2b_alt_quadratic_policy_interval.py};
-\item \path{verification/v2b_stage06_pareto_holdout.py}.
-\end{itemize}
-They contain exact interval targets, successful inclusion
-checks, and positive welfare enclosures.
-The source manifest and exact theorem mapping reside at
-\path{production/freeze_manifest.json} and
-\path{production/THEOREM_CERTIFICATE_MAP.md}.
-Both interval pipelines rely on trusted SymPy and mpmath
-arithmetic kernels. CI success verifies that the archived
-programs ran, not the academic priority of this result.
-
-The separate Lean 4 program
-\path{formal/V2bWelfareCore.lean} proves four strict
-\emph{pointwise rational} welfare comparisons in the
-nonlinear model at specified rational \emph{design proxies}.
-It does not prove those proxies are the actual Nash
-roots, nor formally certify the Cournot game,
-the all-$g$ continuation or the government's entire
-subgame-perfect equilibrium. Those claims rest on the
-separately stated analytic and rational-interval arguments.
+The reversal in Propositions~\ref{prop:rejection}
+and \ref{prop:frozen} is a controlled contrast between
+\emph{one original private-design game} and a
+\emph{strategy-restricted forecast} evaluated under the
+same government decision sequence and design-cost accounting.
+It is not an experiment in which standards accidentally alter
+the entirety of product quality, and it is not an
+endogenous full-equilibrium result of the frozen design
+restrictions themselves.
