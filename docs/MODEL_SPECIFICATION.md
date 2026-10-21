@@ -1,5 +1,8 @@
 # Model specification (CURRENT: depth fixed through IS accession)
 
+> **HISTORICAL V1 ONLY — NOT THE CURRENT V2b SPECIFICATION.** For all V2b research/manuscript work use the [Stage 8 canonical V2b freeze](V2B_THEORY_FREEZE_2026-10-21_v1.md). The V1 minimum-product-homogeneity constraint z≥g and demand matrix here are superseded and MUST NOT be mixed into the V2b independent technical-compatibility g and residual-design x model.
+
+
 ## Players and timing
 A, B, C are ex ante symmetric sovereigns. Firms 1, 2, 3 are respectively headquartered in A, B, C. Each sells in every national market. Representative consumers and demand are symmetric across markets.
 
