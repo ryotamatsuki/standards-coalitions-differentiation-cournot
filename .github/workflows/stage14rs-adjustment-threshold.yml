@@ -1,0 +1,21 @@
+name: Stage14RS single-extension exact consent threshold
+on:
+  pull_request:
+    paths:
+      - 'verification/stage14rs_adjustment_cost.py'
+      - '.github/workflows/stage14rs-adjustment-threshold.yml'
+  push:
+    branches:
+      - research/stage14rs-one-extension-adjustment-frictions-20261022
+permissions:
+  contents: read
+jobs:
+  local-consent-crossing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independent standard-library Fraction interval verification
+        run: python verification/stage14rs_adjustment_cost.py
