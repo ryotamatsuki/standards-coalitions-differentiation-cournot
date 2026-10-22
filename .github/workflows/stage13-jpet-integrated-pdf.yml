@@ -29,7 +29,7 @@ jobs:
           test -s manuscript/stage13_proof_supplement.tex
           test -s manuscript/stage13_figure3_tikz.tex
           ! grep -Eq 'LaTeX Warning: (Citation|Reference).*undefined|There were undefined references|Overfull \\hbox' manuscript/stage13_jpet_integrated.log
-          pdfinfo manuscript/stage13_jpet_integrated.pdf | grep -E '^Pages:'
+          grep -E 'Output written on stage13_jpet_integrated\.pdf \([0-9]+ pages,' manuscript/stage13_jpet_integrated.log
       - uses: actions/upload-artifact@v4
         with:
           name: stage13-jpet-integrated-pdf
