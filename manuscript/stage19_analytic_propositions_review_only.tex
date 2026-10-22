@@ -1,0 +1,108 @@
+% Stage19 REVIEW INSERT ONLY. Not wired into current manuscript/Freeze.
+% This is not a publication-priority certificate.
+% Prerequisites: amsmath, amsthm, amssymb, proposition/proof environments.
+\subsection{Strategic residual design and optimal harmonization depth}
+
+Write
+\[
+\alpha=2-\eta,\quad \beta=1-\rho,\quad \delta=\rho-\eta,\quad
+t=\delta g+\beta y,\quad b=\rho g+\beta y,\quad
+L=\alpha+2t,\quad N=\tfrac92+3b.
+\]
+For a symmetric grand-agreement continuation, each country's Cournot-stage
+welfare including its home firm's worldwide profits and once-paid design cost is
+\[
+ \mathcal W(g,y)=\frac{Nd^2}{L^2}
+ -\frac{\kappa}{2}(1-y)^2
+ -\frac{\lambda}{2}(y-z)^2.
+\]
+The private firm's unilateral Nash first-order condition is
+\[
+ \kappa(1-y^N)-\lambda(y^N-z)=
+ \frac{6\beta\alpha d^2}{(\alpha-t)L^3}.
+\]
+When $\lambda=0$ the cost specification reduces to the original V2b model.
+
+\begin{proposition}[Excess private residual similarity]
+Suppose $d>0$, $2/5<\eta\le\rho<1$, $\lambda\ge0$,
+and the full three-firm post-policy design Nash is unique, interior,
+and symmetric at every grand-agreement depth $g\in[0,1]$.
+If
+\[
+ \kappa+\lambda>
+ \frac{180(1-\rho)^2d^2}{(2-\eta)^4},
+\]
+then the unique symmetric constrained social planner's design at a
+\emph{fixed} $g$ satisfies $y^P(g)<y^N(g)$ for all $g$.
+\end{proposition}
+\begin{proof}
+Differentiating $\mathcal W$ along a simultaneous common-design perturbation
+and substituting the PRIVATE unilateral Nash first-order condition yields
+\[
+ \mathcal W_y(g,y^N)
+ =\frac{\beta d^2}{L^3}
+ \left(3L-18-12b+\frac{6\alpha}{\alpha-t}\right).
+\]
+Since $0\le t\le1-\eta$, $0\le b\le1$,
+$L\le4-3\eta$, and $\alpha-t\ge1$, the bracket is at most
+$6-15\eta<0$. Furthermore,
+\[
+ \mathcal W_{yy}=
+ \frac{24\beta^2d^2(N-L)}{L^4}-(\kappa+\lambda)
+ \le \frac{180\beta^2d^2}{\alpha^4}-(\kappa+\lambda)<0.
+\]
+The strictly concave symmetric planner's welfare therefore has its
+unique maximizer strictly to the left of the interior Nash design.
+The planner's symmetric restriction is essential: the claim is not an
+unrestricted optimum over three asymmetric design indices.
+\end{proof}
+
+\begin{proposition}[Adverse endogenous-design effect on sovereign depth]
+Under the conditions of the preceding proposition, assume additionally
+$\rho>\eta$ and a regular interior Nash branch satisfying
+$K=\kappa+\lambda-\beta G(t)>0$, where
+\[
+ G(t)=\frac{6\beta\alpha d^2(5\alpha-8t)}
+ {(\alpha-t)^2(\alpha+2t)^4}.
+\]
+Then
+\[
+ \frac{dy^N}{dg}=\frac{\delta G(t)}{K}>0,
+ \qquad
+ \frac{d}{dg}\mathcal W(g,y^N(g))
+ =\mathcal W_g(g,y^N)+\mathcal W_y(g,y^N)y^N_g
+ <\mathcal W_g(g,y^N).
+\]
+\end{proposition}
+\begin{proof}
+Differentiate the firm's unilateral Nash condition implicitly;
+$5\alpha-8t\ge2+3\eta>0$, so $G>0$.
+The numerator $\delta G$ and denominator $K$ are strictly positive.
+The previous proposition's exact welfare-derivative inequality gives
+$\mathcal W_y(g,y^N)<0$, hence the second displayed strict inequality.
+The frozen-design partial derivative is evaluated at the \emph{same}
+Nash design. No ranking of different optimizing government depths is
+asserted without separately imposing and solving the participation constraints.
+\end{proof}
+
+\paragraph{Connection to government optimization.}
+With the original bilateral-first, inherited-depth accession procedure,
+the third-country participation margin is
+$\Phi(g)=W_C^{IS}(g)-W_C^{SU}(g)$.
+An interior constrained government optimum satisfies the appropriate
+KKT conditions; when $\Phi$ uniquely crosses zero with negative slope
+and $W_A^{IS}$ is increasing over the accepted depth interval, the
+optimal proposal is the outsider's binding threshold under a
+weak-acceptance tie convention.
+The certified canonical illustration $\lambda=5$ in Draft PR \#18
+has $g^*\in(0.05433320681,0.05433320682)$.
+This is an exact algebraic root characterization, not a radical
+closed-form formula for arbitrary primitives. The economic novelty
+of the integrated mechanism remains to be cleared against prior literature.
+
+
+% Main-paper integration marker: the network-vs-technical-substitution
+% propositions and proofs are authored separately in
+% manuscript/stage19_network_externalities_review_only.tex.
+% Integrate that section BEFORE the government-optimal-depth theorem
+% when building the new reviewed full-paper draft; do not compile old freeze.

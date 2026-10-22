@@ -1,0 +1,21 @@
+name: Stage19 network externality analytical signs
+on:
+  pull_request:
+    paths:
+      - verification/stage19_network_externality_derivatives.py
+      - .github/workflows/stage19-network-externality.yml
+  push:
+    branches:
+      - research/stage19-joint-depth-design-fullpaper-20261022
+permissions:
+  contents: read
+jobs:
+  network-analytic-signs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact rational eta effects and rho/eta sign trichotomy
+        run: python verification/stage19_network_externality_derivatives.py

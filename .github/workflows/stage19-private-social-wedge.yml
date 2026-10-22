@@ -1,0 +1,21 @@
+name: Stage19 private-social design distortion and policy feedback
+on:
+  pull_request:
+    paths:
+      - 'verification/stage19_private_social_design_wedge.py'
+      - '.github/workflows/stage19-private-social-wedge.yml'
+  push:
+    branches:
+      - research/stage19-joint-depth-design-fullpaper-20261022
+permissions:
+  contents: read
+jobs:
+  exact-inequality-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact Fraction inequalities and Stage18 optimal-depth welfare wedge
+        run: python verification/stage19_private_social_design_wedge.py
