@@ -4,6 +4,7 @@
 \usepackage{amsmath,amssymb,amsthm,mathtools}
 \usepackage{booktabs,tabularx,array,graphicx}
 \usepackage{float}
+\usepackage{needspace}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,fit,shapes.geometric}
 \usepackage{geometry}
@@ -270,6 +271,7 @@ By Lemma~\ref{lem:incidence}, $\mu_{\F}=D>0$ but $\mu_{\N}=D-\loss<0$. Lemma~\re
 
 Both treatments preserve the economic primitives, governments' welfare objectives, and the proposal and voting rules. They differ in whether firms' post-policy designs may respond, and thus in their \emph{induced government payoff functions}. The local theorem does not rule out agreement at another depth; Theorem~\ref{thm:open} closes this gap for the benchmark and a neighborhood. Section~\ref{sec:institution} examines the direct-grand alternative.
 
+\Needspace{10\baselineskip}
 \begin{theorem}[An open primitive region with different government-optimal outcomes]\label{thm:open}
 There exists a nonempty open neighborhood $\mathcal U$ of
 \begin{equation}\label{eq:theta}
@@ -326,7 +328,7 @@ Network intensity & $\rho=1$, $\eta=6/7$ cutoff and restricted $\rho<1$ strip & 
 
 \subsection{An interpretable numerical illustration}
 At $\theta_0$ the no-agreement symmetric private design is $z\simeq0.7185927073$. We obtain $D\simeq0.0067679241$, $\loss\simeq0.0150697441$ and $\mu_{\N}\simeq-0.0083018200$. For the same policy depth $g=0.05$, all values below are \emph{national welfare differences} from the corresponding bilateral, outsider, or fragmentation alternatives. Table~\ref{tab:effects} uses an independently evaluated Cournot--design Nash continuation and illustrates magnitudes and signs; it does not replace the rigorous all-depth argument.
-\begin{table}[ht]
+\begin{table}[H]
 \centering\small
 \caption{Government welfare comparisons at $g=0.05$ (uncalibrated model units)}\label{tab:effects}
 \begin{tabular}{lrrr}
