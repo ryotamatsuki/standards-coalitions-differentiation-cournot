@@ -5,7 +5,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap,BoundaryNorm
 ROOT=Path(__file__).resolve().parent
-D=np.load(ROOT.parent/'figure3_boundary_aware_map.npz')
+D=np.load(ROOT/'rerun_outputs/figure3_boundary_aware_map.npz')
 ks,es,F,N=D['kappas'],D['etas'],D['F'],D['N']
 cmap=ListedColormap(['#dcdcdc','#eec378','#598bbb','#fafafa'])
 norm=BoundaryNorm([-.5,.5,1.5,2.5,3.5],4)
@@ -21,5 +21,5 @@ for ax,arr,title in zip(axs,[F,N],['(a) Frozen design','(b) Endogenous design'])
  ax.set_yticks([.742,.750,.758,.766,.772])
  ax.tick_params(labelsize=8)
 axs[0].set_ylabel(r'Network effect $\eta$',fontsize=9)
-fig.savefig(ROOT/'figure3_v05_corrected.png',dpi=350,bbox_inches='tight')
-fig.savefig(ROOT/'figure3_v05_corrected.pdf',bbox_inches='tight')
+fig.savefig(ROOT/'rerun_outputs/figure3_v05_corrected.png',dpi=350,bbox_inches='tight')
+fig.savefig(ROOT/'rerun_outputs/figure3_v05_corrected.pdf',bbox_inches='tight')

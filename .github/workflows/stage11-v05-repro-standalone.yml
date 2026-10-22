@@ -1,0 +1,32 @@
+name: Stage11 v0.5 standalone package reproducibility
+on:
+  push:
+    branches:
+      - fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
+    paths:
+      - "stage11_v05_package/**"
+      - ".github/workflows/stage11-v05-repro-standalone.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  standalone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numeric dependencies
+        run: python -m pip install "numpy==2.3.5" "scipy==1.17.0" "matplotlib==3.10.8"
+      - name: Smoke and archived checksum tests
+        run: python stage11_v05_package/run_reproducibility.py --mode smoke
+      - name: Recompute all 41x41 cells, IS and SW checks
+        run: OPENBLAS_NUM_THREADS=1 python stage11_v05_package/run_reproducibility.py --mode full
+      - name: Upload numerical replay logs and arrays
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage11-v05-repro-output
+          path: stage11_v05_package/verification/rerun_outputs/

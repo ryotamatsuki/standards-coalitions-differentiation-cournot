@@ -108,9 +108,9 @@ def classify(cell,tr,extra=False):
   return {'result':'SW','max_gain':0.0,'g':0.0,'n_roots':len(roots),'n_probes':len(cell.cache),'ambiguous_probes':len(ambiguous)}
 
 def main():
-  source=np.load(ROOT/'stage25_jpet_v04_deliverables'/'figure3_data_41x41.npz')
+  source=np.load(ROOT/'input_v04'/'figure3_data_41x41.npz')
   ks=source['ks']; es=source['es']; oldF=source['F']; oldN=source['N']
-  outdir=ROOT/'stage11_repair';outdir.mkdir(exist_ok=True)
+  outdir=ROOT/'rerun_outputs';outdir.mkdir(exist_ok=True)
   outF=np.full((len(es),len(ks)),3,dtype=int);outN=np.full_like(outF,3)
   ledger=[];counts=Counter();start=time.time()
   codes={'SW':0,'SU':1,'IS':2,'UN':3}

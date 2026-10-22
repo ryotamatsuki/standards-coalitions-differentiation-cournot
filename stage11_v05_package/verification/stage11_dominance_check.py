@@ -4,7 +4,7 @@ import json, pathlib, numpy as np
 from scipy.optimize import minimize_scalar
 from stage11_fix_classifier import Cell
 R=pathlib.Path(__file__).resolve().parent
-outdir=R/'stage11_repair'
+outdir=R/'rerun_outputs'
 ledger=json.loads((outdir/'figure3_candidate_ledger.json').read_text())
 checked=[]; switched=[]; mins=[]
 for n,p in enumerate(ledger):
