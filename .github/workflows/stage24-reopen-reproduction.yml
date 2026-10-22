@@ -1,0 +1,93 @@
+name: Stage24 Stage14 exact all-depth rerun gate
+on:
+  push:
+    branches:
+      - research/stage24-reopen-three-gates-20261022
+  pull_request:
+    paths:
+      - '.github/workflows/stage24-reopen-reproduction.yml'
+      - 'verification/stage24_*'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  baseline-krawczyk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Stage14 base all-depth independent Krawczyk
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p stage24-rerun-logs
+          { echo "GITHUB_SHA=$GITHUB_SHA"; git rev-parse HEAD; python --version; python -m pip freeze; sha256sum verification/v2b_stage04a_krawczyk_cleanroom.py verification/requirements_v2b_interval.txt; python -u verification/v2b_stage04a_krawczyk_cleanroom.py; } 2>&1 | tee stage24-rerun-logs/baseline-krawczyk.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage24-baseline-krawczyk
+          path: stage24-rerun-logs/
+  baseline-interval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Original continuous all-depth interval
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p stage24-rerun-logs
+          { echo "GITHUB_SHA=$GITHUB_SHA"; git rev-parse HEAD; python --version; sha256sum verification/v2b_interval_reversal_certificate.py; python -u verification/v2b_interval_reversal_certificate.py; } 2>&1 | tee stage24-rerun-logs/baseline-interval.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage24-baseline-interval
+          path: stage24-rerun-logs/
+  full-strategy-rosen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Stage14 global asymmetric firm-design Rosen
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p stage24-rerun-logs
+          { echo "GITHUB_SHA=$GITHUB_SHA"; git rev-parse HEAD; python --version; sha256sum verification/v2b_alt_quadratic_rosen_interval.py; python -u verification/v2b_alt_quadratic_rosen_interval.py; } 2>&1 | tee stage24-rerun-logs/full-strategy-rosen.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage24-full-strategy-rosen
+          path: stage24-rerun-logs/
+  global-policy-and-frozen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r verification/requirements_v2b_interval.txt
+      - name: Stage14 continuous-depth SU/IS vote and frozen IS
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p stage24-rerun-logs
+          { echo "GITHUB_SHA=$GITHUB_SHA"; git rev-parse HEAD; python --version; sha256sum verification/v2b_alt_quadratic_policy_interval.py; python -u verification/v2b_alt_quadratic_policy_interval.py; } 2>&1 | tee stage24-rerun-logs/global-policy-and-frozen.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: stage24-global-policy-and-frozen
+          path: stage24-rerun-logs/
