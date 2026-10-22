@@ -1,0 +1,99 @@
+% Stage20: RESEARCH-ONLY mathematical result, not a three-regime theorem.
+% Needs amsmath, amssymb, amsthm and proposition/proof environments.
+\subsection{Can bilateral standards unions be government-optimal?}
+
+Let $s$ denote national welfare in fragmentation,
+$m(g)$ and $o(g)$ the member and outsider national welfare
+under a bilateral standards union, and $i(g)$ the common
+national welfare under a fully participating standards union.
+Every payoff is computed after the firms' true design-Nash
+and fulfilled-expectations Cournot continuation. The
+bilateral-first inherited-depth game has an internationally
+accepted outcome only when
+\[
+ i(g)\geq\max\{s,m(g),o(g)\}.
+\]
+A terminal bilateral union is feasible when
+\[
+ m(g)\geq s,\quad
+ \bigl(i(g)<m(g)\ \text{or}\ i(g)<o(g)\bigr).
+\]
+In particular, $m(g)>s$ does not establish a \emph{government-
+optimal} bilateral union; the proposer may choose another
+depth that induces profitable multilateral accession.
+
+\begin{proposition}[Global multilateral dominance around balanced
+network and substitution effects]
+Fix an admissible parameter configuration satisfying
+$\rho_0=\eta_0\in(0,1)$, $d>0$, $\kappa>0$, $\lambda\geq0$.
+Suppose the post-policy full three-firm design Nash is
+symmetric, uniquely interior, and regular, and equilibrium
+quantities are strictly positive with strict uniform margins
+over the full compact policy domain. Then the government's
+unique optimal depth and final coalition are
+\[
+ g^*=1,\qquad {\rm regime}={\rm IS}.
+\]
+Moreover, there exists an open neighborhood of the
+configuration in primitive parameter space in which the
+unique optimal government policy remains $g^*=1$ and
+the final coalition remains IS; SU and SW are never optimal
+there (under weak acceptance at exact indifference).
+\end{proposition}
+\begin{proof}
+The realized Cournot matrix is
+$M=I+(\rho-\eta)H+(1-\rho)X$.
+At $\eta=\rho$ it is independent of $H$, and consequently
+of the government's coalition and depth for any fixed
+firm-design profile. The private firm's worldwide profit and
+design cost are therefore independent of the government's
+history. Uniqueness implies all histories have the same
+symmetric equilibrium product design $\bar x$ and quantities
+\[
+q_0=\frac{d}{2-\eta+2(1-\rho)\bar x}>0.
+\]
+Because consumer surplus is $q^\top Bq/2$, introducing
+one compatibility edge of depth $g$ adds precisely
+$\rho g q_0^2$ to consumer surplus per country while
+all firm incomes remain unchanged. Therefore
+\[
+W_i^{SW}=s,\qquad W_i^{SU}(g)=s+\rho gq_0^2,\qquad
+W_i^{IS}(g)=s+3\rho gq_0^2.
+\]
+These formulae hold for ALL countries, including the
+SU outsider. Grand accession at $g=1$ is strictly
+acceptable because $i(1)-m(1)=i(1)-o(1)
+=2\rho q_0^2>0$, and $i(1)-s=3\rho q_0^2>0$.
+Also
+\[
+i(1)-\sup_{0\le g\le1}m(g)
+=2\rho q_0^2>0,\qquad
+\frac{di(g)}{dg}=3\rho q_0^2>0.
+\]
+Hence accepted IS at full depth strictly dominates
+every conceivable terminal SU payoff and fragmentation,
+and is uniquely optimal among IS offers.
+Under the stated strict regularity, the firms' Nash
+continuations and national payoffs vary continuously
+with the primitives and jointly continuously
+differentiably with depth uniformly over the compact
+policy domain. Each of the displayed strict margins
+and the strictly positive $\inf_{g\in[0,1]}i_g$
+persists in some common neighborhood.
+The same globally optimal depth and regime follow
+throughout that neighborhood.
+\end{proof}
+
+\paragraph{Nonresult to disclose.}
+The theorem does not exclude SU in ALL other admissible
+parameter configurations. A deterministic floating-point
+scan of 300{,}000 configurations (140 depths each, seed 21)
+reported 208{,}606 configurations with valid numerical
+roots at all 140 tested depths, and **no case** in which
+terminal SU exceeded both SW and the accepted IS
+proposal envelope. This is numerical counterexample
+search, NOT a proof of global nonexistence.
+Some apparent bilateral winners in the high-network
+region use invalid negative-output continuations at
+other depths, and must not be claimed as equilibria.
+A full three-region SW--SU--IS theorem is unproved.
