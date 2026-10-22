@@ -1,3 +1,30 @@
+# Stage13R-L current manuscript QA — 23 October 2026
+
+**Current literature-integrated canonical draft in PR #33:** `manuscript/stage13rl_jpet_revised.tex`, compiled `manuscript/stage13rl_jpet_revised.pdf` (**22 pages**); source parent PR #32 HEAD `4532486e4929ba3d228229d76264c059ee3a6852`.
+
+**New successful source QA and PDF build:** [GitHub Actions #39863273352](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39863273352), 20/20 reference-to-citation mapping PASS, all 45 scientific proof/formula environments unchanged, same proof supplement, zero undefined or duplicate citations and zero overfull boxes. The compiled PDF was saved **only to the independent literature branch**, not PR #32 or main.
+
+**Exact current output identity (CI artifact ID `12462472951` / branch's committed blobs):**
+
+| Current file | Size (bytes) | Git Blob SHA-1 |
+|---|---:|---|
+| `manuscript/stage13rl_jpet_revised.pdf` | **572,923** | `2593ef595fb52ff4be3ec7d7228b9f9dc4ac085f` |
+| `manuscript/stage13r_figure1.pdf` (inherited unchanged) | 97,582 | `9977c9a04ce0a59c5bcd561e855cc81322dd9d0a` |
+| `manuscript/stage13r_figure2.pdf` (inherited unchanged) | 150,696 | `44d631aaf5c3a02929370e065cd9672b3fa8a2ab` |
+| `manuscript/stage13r_figure3.pdf` (inherited unchanged) | 107,883 | `60da45c9356e540f2f0a304958bf25eb8f5ec6e2` |
+
+**Visually inspected updated pages:** 1–3, 9–10, 13–14, 19–22. Theorem 4 still starts page 9, Table 2 is on page 10 before its complete explanation, Table 3 is on page 19 and the subsequent formula/where definition is uninterrupted. Full bibliography is on pages 21–22, complete and readable. Nine new references and eleven originals have actual support in Model, Related Literature, Introduction or unchanged proof supplement.
+
+**Author-held Stage14 blockers unchanged:** verified author metadata/ORCID and declarations (funding, COI, AI use, acknowledgment/ethics), deposited immutable source/code archive, actual portal-generated PDF and explicit approval. No paper submission or merge is authorized.
+
+The detailed new source/version and QA ledger is [`STAGE13RL_REFERENCE_INTEGRATION_AND_QA.md`](STAGE13RL_REFERENCE_INTEGRATION_AND_QA.md).
+
+---
+
+## Historical Stage13R QA (before the additional nine references)
+
+**The following older 21-page PDF sizes, hashes and run numbers describe the earlier Stage13R artifact only; they are retained to preserve the audit trail and are NOT the current literature-integrated manuscript.**
+
 # Stage13R JPET hostile-referee revision — final post-revision quality assurance
 
 **Date:** 2026-10-23 JST. **Input:** 18-item adversarial review, Draft PR #31 (Stage13 20-page working manuscript). **Implemented output:** Stage13R Draft PR #32; `manuscript/stage13r_jpet_revised.tex`, `manuscript/stage13r_proof_supplement.tex`, and `manuscript/stage13r_figure3_tikz.tex`. Prior Stage13 manuscript, numerical/scientific code, frozen theory, main unchanged.
