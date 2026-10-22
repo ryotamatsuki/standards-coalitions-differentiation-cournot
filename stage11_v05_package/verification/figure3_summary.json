@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "F:SW": 765,
+    "N:SW": 1047,
+    "F:changed": 7,
+    "F:IS": 916,
+    "N:changed": 4,
+    "N:IS": 634
+  },
+  "runtime": 157.32383966445923,
+  "method": "geometric near-zero probes, sign-change bracketing, and candidate government-payoff comparison; not formal global optimality certification"
+}

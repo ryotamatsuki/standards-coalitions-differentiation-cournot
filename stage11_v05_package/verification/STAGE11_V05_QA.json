@@ -1,0 +1,56 @@
+{
+  "final_status": "PASS for explicitly bounded Stage11 major repairs M1-M3; paper remains working draft, Stage12 not authorized",
+  "figure3": {
+    "source_misclassified_SW_fixed": 11,
+    "panel_changes": {
+      "F": 7,
+      "N": 4
+    },
+    "class_counts": {
+      "frozen_SW": 765,
+      "frozen_IS": 916,
+      "endogenous_SW": 1047,
+      "endogenous_IS": 634
+    },
+    "numeric_IS_dominance_checks": {
+      "checked": 1550,
+      "not_confirmed": 0,
+      "min_domination_margin": 3.967743602961704e-05
+    },
+    "center": {
+      "frozen": "IS",
+      "endogenous": "SW"
+    },
+    "continuous_global_phase_certified": false,
+    "residual_limitation": "Numerical search brackets observed roots and samples g near zero, but does not certify absence of every unobserved acceptance window in all 1681 cells."
+  },
+  "proof": {
+    "model_welfare_bridge": "integrated",
+    "full_cube_Nash": "Rosen sufficient inequality and existence/uniqueness explicitly written",
+    "all_depth": "Krawczyk definitions, 1000 interval scope, derivative bounds and government existence in supplement",
+    "C2": "exact face and local restricted strip quadratic proof integrated",
+    "stage11_replay_source": "immutable PR27 log and code, not rerun by current script"
+  },
+  "exposition": {
+    "private_differentiation": "explicit x similarity and 1-x costly differentiation",
+    "votes": "sequenced approval and off-path ties",
+    "related_literature": "specific nonpriority and narrow result"
+  },
+  "latex": {
+    "page_count": 20,
+    "compile_warnings": 0,
+    "sha256": {
+      "stage25_jpet_v05.pdf": "d5c6ec202b25175039db7c54a3142e653f39f33832f04d6aee3741438ca02b77",
+      "stage25_jpet_v05.tex": "b12b5a0735649c14d59aa4a8d6a2376072078c596c483e71fc02dcbca56a3980",
+      "stage11_proof_supplement.tex": "0521ea4c8d1ebdd4157ce9ecd88304fcce6837ad62693f440ce44f9d5575e1a9",
+      "figure3_v05_tikz.tex": "6ddee6d402cc6c3e4d56ea87ccf15f19372c852aaa6b785e2e51b8a3badd453e",
+      "figure3_boundary_aware_map.npz": "6b1c3b8e11e2a215838837dae3a6dcdb39b71b2fce9fea31cf35874f3d25646b",
+      "dominance_check.json": "4d303b2434d8030039e2b40dde658631dc2746749f0dc3c2dc161487e255d655"
+    }
+  },
+  "remaining_nonblocking": [
+    "Literature supplemental source access gaps explicitly not certified",
+    "Figure3 outside center is exploratory and not an exact all-parameter theorem",
+    "author must conduct final journal/AI disclosure checks at Stage14"
+  ]
+}
