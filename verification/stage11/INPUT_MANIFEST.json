@@ -1,0 +1,94 @@
+{
+  "audit_date_jst": "2026-10-22",
+  "source_repository_commit": "1146745c548734370de190899ac43370649a3c29",
+  "workflow_v2_9_commit": "338677e9566e6bf63a455de81da4ac47153b4e69",
+  "library_source": {
+    "library_file_id": "libfile_d8c8c24927b881919512b21d14a2c67a",
+    "version_id": "2"
+  },
+  "zip_sha256": "e575386578b115f1c0e8b03125640c2ba89444178cd7b9cccfb45b01d3b472c7",
+  "files": [
+    {
+      "name": "FIGURE3_V04_REVIEW_QA.md",
+      "bytes": 3976,
+      "sha256": "396e46245bc630de2189f195d265ffd06016232c1769ee5bd6404841eca6da49",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "README.md",
+      "bytes": 1427,
+      "sha256": "74afbe4071659c4c1535b7f64469a77deff7865c2c447b92bcdefee4764727ac",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "SHA256SUMS.json",
+      "bytes": 1186,
+      "sha256": "2d0bbd381c7d4ad3bd322e8cee08326f349d8f26fd1bb72a4714a9e723f25855",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "figure3_data_41x41.npz",
+      "bytes": 1933,
+      "sha256": "8f13c9b5d127cb57ca375dac78302c2f77a107581f692b8990ad1c8c05ea0d28",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "figure3_depth_convergence_641.json",
+      "bytes": 6690,
+      "sha256": "a9e840be613635cde67886ab7d6a85cc1e7292103074aa8e8cb5d07cfae6dbee",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "figure3_design_nash_spotchecks.json",
+      "bytes": 263,
+      "sha256": "45a008b8b5049c50afa9897987300592ded274c3fb4254a42f5d7aa2cfbbe18d",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "figure3_plot_source.py",
+      "bytes": 3034,
+      "sha256": "5f0155cb2f662873b6d0844e71015bf7091ad6608aec7160481c6a2afa6f8275",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "figure3_recompute_v04.py",
+      "bytes": 2287,
+      "sha256": "baa36ef72f0cd7d56e61b2a3f32b00a0540a61c72fdda44e738ef37f483dc887",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "figure3_v04_kappa_eta_phase.pdf",
+      "bytes": 23450,
+      "sha256": "c8f385b9152005725baf147f7fc9702a29bcb6e4d054ddb03d58a4d8c790d79d",
+      "git_manuscript_byte_match": true
+    },
+    {
+      "name": "figure3_v04_kappa_eta_phase.png",
+      "bytes": 96830,
+      "sha256": "e574a6e5a0a3170809f24b54f12ba8303bf3de3e640077dbe9dafea309a553bc",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "phase_model_functions.py",
+      "bytes": 3617,
+      "sha256": "fc81c06bcc1871e2590354d0ec08b50c2e043113ae4e3afcdbee1786a25f086e",
+      "git_manuscript_byte_match": null
+    },
+    {
+      "name": "stage25_jpet_v04.pdf",
+      "bytes": 485409,
+      "sha256": "06f7e717a0c49c1bfcbd71cccceffd8c0dca893fd67dafba572d288a87952e6b",
+      "git_manuscript_byte_match": true
+    },
+    {
+      "name": "stage25_jpet_v04.tex",
+      "bytes": 58513,
+      "sha256": "4d42ee2c30e72e9a7f81f4eed6847d8e73870b76f3b87f94abea72ebbd99572b",
+      "git_manuscript_byte_match": true
+    }
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39"
+  }
+}

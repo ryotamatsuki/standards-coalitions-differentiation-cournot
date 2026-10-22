@@ -1,0 +1,4 @@
+PASS: global rho=1 selection eta<=6/7 -> SW, eta>6/7 -> IS; SU never optimal
+PASS: explicit accepted grand depth min(1,2*(1-8theta)) defeats every SU offer
+PASS: strict quadratic gap at threshold and nonzero network-strength transversality
+SCOPE: original rho<1 endogenous-design no-SU region follows by smooth/compact proof in reviews; not a universal theorem

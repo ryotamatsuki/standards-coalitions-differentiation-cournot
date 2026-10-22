@@ -1,0 +1,11 @@
+{
+  "samples": 240,
+  "min_x": 0.636925469553685,
+  "max_x": 0.8670392725833088,
+  "min_q": 0.5722762418717655,
+  "max_foc_residual": 3.089195566019498e-14,
+  "errors": [],
+  "n_errors": 0,
+  "sufficient_Rosen_bound_peak": 0.6197616041316487,
+  "kappa_min": 0.7
+}
