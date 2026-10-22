@@ -66,21 +66,23 @@ jobs:
       - name: Commit reproducible final PDFs on revision branch only
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add manuscript/stage13r_jpet_revised.pdf manuscript/stage13r_figure1.pdf manuscript/stage13r_figure2.pdf manuscript/stage13r_figure3.pdf
-          if ! git diff --cached --quiet; then
+          # Preserve files just built in the runner while refreshing the branch.
+          # Mixed reset avoids trying to merge two independently built binary PDFs.
+          for attempt in 1 2 3 4; do
+            git fetch origin revision/stage13r-jpet-full-response-20261023
+            git reset --mixed origin/revision/stage13r-jpet-full-response-20261023
+            git add manuscript/stage13r_jpet_revised.pdf manuscript/stage13r_figure1.pdf manuscript/stage13r_figure2.pdf manuscript/stage13r_figure3.pdf
+            if git diff --cached --quiet; then
+              echo "PDFs already identical to the current branch"
+              exit 0
+            fi
             git commit -m "Build Stage13R revised article and standalone PDF figures"
-            # Editorial files may have advanced the branch while the TeX build ran.
-            # Rebase the generated-binary commit on the current branch head.
-            for attempt in 1 2 3; do
-              git fetch origin revision/stage13r-jpet-full-response-20261023
-              git rebase origin/revision/stage13r-jpet-full-response-20261023
-              if git push origin HEAD:revision/stage13r-jpet-full-response-20261023; then
-                exit 0
-              fi
-              sleep 2
-            done
-            echo "Could not commit compiled artwork after three fast-forward retries"
-            exit 1
-          fi
+            if git push origin HEAD:revision/stage13r-jpet-full-response-20261023; then
+              exit 0
+            fi
+          done
+          echo "Could not commit refreshed PDF artwork after four retries"
+          exit 1
