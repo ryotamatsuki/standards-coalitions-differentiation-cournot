@@ -1,0 +1,21 @@
+name: Stage21 exact missing-middle no-SU theorem
+on:
+  pull_request:
+    paths:
+      - 'verification/stage21_no_su_phase_theorem.py'
+      - '.github/workflows/stage21-missing-middle.yml'
+  push:
+    branches:
+      - research/stage21-no-su-near-design-limit-20261022
+permissions:
+  contents: read
+jobs:
+  exact-face-and-critical-identity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check strict rational payoff identities and explicit accepted IS witness
+        run: python verification/stage21_no_su_phase_theorem.py
