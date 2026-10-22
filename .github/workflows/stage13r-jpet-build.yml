@@ -48,7 +48,7 @@ jobs:
             test -s "manuscript/${name}.pdf"
             head -c 5 "manuscript/${name}.pdf" | grep -q '%PDF-'
           done
-          if grep -Eq '(LaTeX Warning:.*(undefined|Citation)|Overfull \\\\hbox|Reference .* undefined|Citation .* undefined)' manuscript/stage13r_jpet_revised.log; then
+          if grep -Fq 'Overfull \hbox' manuscript/stage13r_jpet_revised.log || grep -Eq '(LaTeX Warning:.*undefined|Package natbib Warning:.*(multiply defined|undefined)|Reference .* undefined|Citation .* undefined)' manuscript/stage13r_jpet_revised.log; then
             grep -En '(Warning|Overfull|undefined)' manuscript/stage13r_jpet_revised.log || true
             exit 1
           fi
