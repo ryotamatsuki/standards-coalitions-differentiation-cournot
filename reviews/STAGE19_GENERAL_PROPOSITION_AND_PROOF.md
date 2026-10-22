@@ -53,3 +53,13 @@ The enclosing intervals come from an independent Python standard-library Fractio
 
 ## New versus old
 The previous Stage18 root is a fixed-primitive Nash-depth institutional theorem. Propositions 1-2 introduce transparent PRIMITIVE inequalities valid on a parameter class and include the original lambda=0 model. This is an analytic generality advance within the model, but established predecessor literature also studies design social inefficiency and externality feedback. Publication-level novelty: CONDITIONAL/UNRESOLVED.
+
+
+## Essential addendum: network externalities and endogenous government depth
+The full-paper mechanism MUST separately analyze eta (network willingness-to-pay) and rho (technical substitutability). In the fulfilled-expectations Cournot matrix M=I+[rho H+(1-rho)X]-eta H, the net standardization substitution coefficient is delta=rho-eta, NOT rho or eta alone. For a positive interior symmetric IS Nash, when 5alpha-8t>0 and D=kappa+lambda-beta G>0, y_g=delta G/D, producing the CONDITIONAL rho>eta / rho=eta / rho<eta sign trichotomy.
+
+At fixed policy depth and fixed historically installed reference z, A_eta>0 and y_eta=-A_eta/D<0, because A=6 beta alpha d²/[(alpha-t)(alpha+2t)^3] and A_eta=A[-1/alpha+(1-g)/(alpha-t)+3(1+2g)/(alpha+2t)]>0. Under z=zSW(eta), z_eta<0 and y_eta=(lambda z_eta-A_eta)/D<0. These two experiments MUST NOT be conflated.
+
+The full policy optimum (if outsider vote Phi=0 binds) satisfies g*_eta=-Phi_eta/Phi_g and y*_eta=y_eta+y_g*g*_eta, with Phi evaluated at distinct Nash design paths for SU and IS. No global sign for g*_eta is established. The original extended V2b does NOT automatically possess a valid positive quantity equilibrium on all of eta>rho: high-network cases are LOCAL/REGULARITY-CONDITIONAL.
+
+For formal theorem text, proof identities, model-semantics and local eta diagnostics see STAGE19_NETWORK_EXTERNALITY_MECHANISM.md; for review-only LaTeX see ../manuscript/stage19_network_externalities_review_only.tex. Network dependence is CENTRAL to the full-paper question, not an Appendix-only robustness check.
