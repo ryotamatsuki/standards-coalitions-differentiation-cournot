@@ -1,0 +1,21 @@
+name: Stage18 unique analytic government-optimal depth
+on:
+  pull_request:
+    paths:
+      - 'verification/stage18_optimal_depth_interval_certificate.py'
+      - '.github/workflows/stage18-optimal-depth.yml'
+  push:
+    branches:
+      - research/stage18-analytic-government-optimum-20261022
+permissions:
+  contents: read
+jobs:
+  exact-optimal-depth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Global policy-domain Fraction/Krawczyk certification
+        run: python verification/stage18_optimal_depth_interval_certificate.py
