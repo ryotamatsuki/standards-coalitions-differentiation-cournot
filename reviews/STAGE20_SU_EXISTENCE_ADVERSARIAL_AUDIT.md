@@ -39,8 +39,8 @@ Stand-alone locally executed reproducible `/mnt/data/scan_su_audit.py` and `/mnt
 
 Result JSON, independently re-run:
   attempted parameter draws = 300000
-  fully grid-valid at ALL 140 depths = 208606
-  some SU feasible across the full search = 3696
+  fully grid-valid at ALL 140 depths = 190388
+  some SU feasible across the full search = 3429
   fully grid-valid SU actually beating both SW and IS = **ZERO**
   best SU-minus-IS margin among fully grid-valid draws = -0.0000775680978
 
@@ -60,3 +60,7 @@ One cannot restrict the government menu post hoc to positive-interior g or decla
 Does there exist any economically admissible original-V2b primitive vector and a subgame-perfect proposer offer for which final terminal SU strictly beats SW and the optimal attainable terminal IS? Neither a SU witness nor a universal impossibility theorem has been established. The model may have a **missing middle** due to zero treaty-entry costs and a symmetric three-country consumer surplus channel, but this is a HYPOTHESIS, not a result. Proving it would require a symbolic dominance reduction or global interval verification over a justified primitive box, with proper parameter-space coverage, all-depth terminal Nash and tie/attainment analysis.
 
 **Publication gate:** The author REQUESTED A PROOF, and an unconditional yes/no proof is not delivered. Report **OPEN** rather than retroactively relabeling broad samples as a theorem. If an admissible SU region is never rigorously produced, the three-category headline MUST NOT be published as proved; the two-regime SW-versus-IS selection may be an alternate agenda-dependent economic theorem. No extra primitive, manuscript/main/Freeze mutation or journal submission.
+
+
+## Correction (2026-10-22): strict interior numerical search gate
+The FIRST run mistakenly treated a symmetric IS firm-design output y=0 as passing an interior strategy check. A fresh full 300000-draw seeded rerun, changing the admissibility condition from y>=0 to **0<y<1** and requiring 0<u,v<1 on every sampled depth, yields **190388** fully 140-point grid-valid draws, **3429** draws with some SU-feasible offer, and **zero** fully grid-valid SU-optimal winners. Prior counts 208606 and 3696 are superseded. Numerical Newton and FOC checks cannot establish full all-g Nash optimality; the stress search is explicitly NOT proof.
