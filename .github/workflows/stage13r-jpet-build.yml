@@ -71,5 +71,16 @@ jobs:
           git add manuscript/stage13r_jpet_revised.pdf manuscript/stage13r_figure1.pdf manuscript/stage13r_figure2.pdf manuscript/stage13r_figure3.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Build Stage13R revised article and standalone PDF figures"
-            git push origin HEAD:revision/stage13r-jpet-full-response-20261023
+            # Editorial files may have advanced the branch while the TeX build ran.
+            # Rebase the generated-binary commit on the current branch head.
+            for attempt in 1 2 3; do
+              git fetch origin revision/stage13r-jpet-full-response-20261023
+              git rebase origin/revision/stage13r-jpet-full-response-20261023
+              if git push origin HEAD:revision/stage13r-jpet-full-response-20261023; then
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Could not commit compiled artwork after three fast-forward retries"
+            exit 1
           fi
