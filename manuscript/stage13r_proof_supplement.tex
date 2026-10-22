@@ -1,0 +1,137 @@
+% Stage11 manuscript-facing, human-readable mathematical verification supplement.
+% Stage11 source and replay evidence are immutable in PR #27 / commit 54ac8389f2c45d56b2e587a62c62f226cc121f95.
+\section{Full-continuation admissibility and Nash uniqueness}\label{app:regularity}
+The continuation arguments must cover unilateral deviations in the entire design cube, not only a symmetric stationary solution.  Here we provide a sufficient global-domain argument for the benchmark and its small open neighborhood. Put $\alpha=2-\eta$, $\beta=1-\rho$, and suppose $0<\eta<\rho<1$. The matrix $X(x)$ is affine in $x\in[0,1]^3$. At the eight vertices, up to permutation of coordinates, zero, one, two or three entries of $x$ equal one. The corresponding determinants of $X$ are $1,1/2,0,0$, respectively. Every two-by-two principal minor is $1-X_{ij}^2\ge0$, and every diagonal minor is one; consequently all vertex matrices are positive semidefinite. Every interior $X(x)$ is a convex combination of these vertex matrices, hence is positive semidefinite. The matrices $H^{\SW}$, $H^{\SU}(g)$ and $H^{\IS}(g)$ are also positive semidefinite for all $g\in[0,1]$, by their spectra $(1,1,1)$, $(1+g,1-g,1)$ and $(1+2g,1-g,1-g)$ respectively. Thus $B=\rho H+\beta X\succeq0$ for every continuation and every unilateral design deviation. This ensures concavity of the conditional quadratic consumer problem, not strict convexity of its dual at every corner.
+
+Write $M=\alpha I+N$, where $N$ has nonnegative off-diagonal entries, zero diagonal and row sums at most $2(1-\eta)$. At fixed policy and designs, the fulfilled quantity equation is equivalent to
+\begin{equation}\label{eq:boundfixed}
+q=\mathcal T(q):=\frac d\alpha\mathbf1-\frac1\alpha Nq,\qquad
+\frac{\|N\|_\infty}{\alpha}\leq\frac{2(1-\eta)}{2-\eta}<1.
+\end{equation}
+Moreover $\mathcal T$ maps the cube $[\underline q,\overline q]^3$ into itself, where $\overline q=d/\alpha$ and $\underline q=\overline q\,[1-2(1-\eta)/\alpha]>0$. Consequently Banach's contraction theorem yields a unique positive quantity continuation at every history and every $x\in[0,1]^3$. We also obtain $\|M^{-1}\|_\infty\leq1/\eta$ and $\|q\|_\infty\leq d/\alpha$.
+
+For the unilateral firm first-order condition $F_i=\Pi_{i,x_i}$, let $E_j=M_{x_j}$ (it has $\beta/2$ in the two pairs of entries incident to firm $j$). Direct differentiation gives
+\begin{align}\label{eq:appendixF}
+q_{x_j}&=-M^{-1}E_jq,\\
+q_{x_jx_k}&=M^{-1}E_jM^{-1}E_kq+M^{-1}E_kM^{-1}E_jq,\nonumber\\
+F_i&=6q_i(q_{x_i})_i+\kappa(1-x_i),\nonumber\\
+J_{ij}&=6\{(q_{x_i})_i(q_{x_j})_i+q_i(q_{x_ix_j})_i\}-\kappa\mathbf1\{i=j\}.\nonumber
+\end{align}
+These expressions differentiate one firm's payoff holding the other two designs fixed; they are not derivatives of a jointly optimized cartel. The preceding norm bounds imply $\|q_{x_j}\|_\infty\le\beta d/(\eta\alpha)$ and $\|q_{x_jx_k}\|_\infty\le2\beta^2d/(\eta^2\alpha)$, whence $|J_{ij}+\kappa\mathbf1\{i=j\}|\le18\beta^2d^2/(\eta^2\alpha^2)$. Therefore
+\begin{equation}\label{eq:rosenbound}
+\boxed{\ \kappa>\frac{54(1-\rho)^2d^2}{\eta^2(2-\eta)^2}\ }
+\end{equation}
+makes the symmetric part of $J$ uniformly negative definite on the complete three-firm design cube. Each own payoff is strictly concave in its own design, a Nash equilibrium exists on the compact strategy cube, and Rosen's diagonal strict concavity and the implied strong monotonicity ensure uniqueness \citep{Rosen1965}. An interior root of $F(x,g)=0$ satisfying the above conditions is therefore the unique genuine Nash equilibrium, rather than merely a root of symmetric FOCs. At $\theta_0=(d,\eta,\rho,\kappa)=(1,379/500,9/10,1701/2000)$ the exact strict margin in \eqref{eq:rosenbound} is $989813109503/4103248806000>0$. The separately recorded interval root inclusions show the unique equilibrium is interior for each $g\in[0,1]$ in the three policy regimes. All bounds and interior inclusions remain strict on a sufficiently small neighborhood of $\theta_0$.
+
+\section{All-depth computer-assisted bounds and government optimization}\label{app:interval}
+We identify the computational objects, what is proved by computer assistance, and how those objects imply the governmental theorem. For each continuation $r\in\{\SU,\IS\}$ and depth $g$, the economic object remains the full three-firm private Nash equilibrium satisfying the unilateral conditions $F^r(x,g)=0$ in \eqref{eq:appendixF}. The computational proof exploits policy symmetry only \emph{after} the full-game global Nash uniqueness argument \eqref{eq:rosenbound}. In $\SU$, permutation of incumbent firms $A,B$ preserves each firm's objectives and the unique Nash, so $x_A=x_B=u$ and $x_C=v$; the certified two-variable system is $F_A(u,u,v,g)=F_C(u,u,v,g)=0$. By exchangeability $F_B=F_A$, hence the lifted design $(u,u,v)$ satisfies all three unilateral FOCs, including the incumbent's asymmetric deviations. In $\IS$, all three firms are exchangeable, so their unique Nash has $(x_A,x_B,x_C)=(y,y,y)$; certifying the scalar \emph{unilateral} condition $F_A(y,y,y,g)=0$ similarly certifies the three original FOCs. In both reductions the derivatives are private unilateral derivatives holding the other firms' designs fixed, not cooperative symmetric-path profit derivatives. Strict concavity and Rosen uniqueness on the entire strategy cube then establish that each interior lifted stationary profile is the unique \emph{full three-firm Nash}, including against unilateral off-symmetry deviations.
+
+The interval inclusion approach follows standard verified-computation principles \citep{Rump2010}. Unlike a depth grid, it bounds the continuation at \emph{every real depth}. The proof divides $g\in[0,1]$ into 1,000 adjacent outward-enclosed intervals $G$. In $\SU$ it constructs a two-dimensional design box $X_G=(U_G,V_G)$, encloses the Jacobian of the reduced system, and applies the two-dimensional Krawczyk inclusion, with preconditioner $A$ obtained only as a numerical approximation. The inclusion step is
+\begin{equation}\label{eq:kraw}
+\mathcal K(X_G,G)=x_c-AF(x_c,G)+\bigl(I-AF_x(X_G,G)\bigr)(X_G-x_c)\ \subset\ \operatorname{int}X_G.
+\end{equation}
+For $\IS$, the implementation instead uses a \emph{scalar interval-Newton} inclusion:
+\begin{equation}\label{eq:scalarnewton}
+y_c-\frac{f(y_c,G)}{f_y(Y_G,G)}\subset\operatorname{int}Y_G,
+\qquad \sup f_y(Y_G,G)<0.
+\end{equation}
+Thus the source routine named \texttt{krawczyk\_SU} certifies the reduced $2\times2$ bilateral system while the routine \texttt{krawczyk\_IS} certifies the scalar integration system by interval Newton. Both occur in \path{verification/v2b_stage04a_krawczyk_cleanroom.py}. These two inclusion checks, nonsingularity and the analytically independent full-cube uniqueness bound establish the lifted interior \emph{three-firm} Nash continuations for all $g$ in every $G$. Outward interval arithmetic certifies signs; floating-point root-finders supply candidate box centers only. Implicit differentiation of the reduced certified roots, followed by lifting into the full-government welfare functions, encloses
+\begin{equation}\label{eq:totalder}
+x_g=-F_x^{-1}F_g,\qquad
+\frac{dW_i}{dg}=W_{i,g}+W_{i,x}\,x_g.
+\end{equation}
+The distinct verification tasks and economic implications are summarized in Table~\ref{tab:certificate}. The resulting upper enclosures, uniformly over every real depth $g\in[0,1]$, are
+\begin{equation}\label{eq:certmargins}
+\frac{d m_{\N}}{dg}<-0.007970192997334808,\qquad
+\frac{d(i_{\N}-o_{\N})}{dg}<-0.015038883337750794.
+\end{equation}
+These are strict upper bounds for derivatives, not sampled empirical observations. Because $m_{\N}(0)-s=i_{\N}(0)-o_{\N}(0)=0$, integration shows $m_{\N}(g)<s$ and $i_{\N}(g)<o_{\N}(g)$ at every $g>0$. Thus neither an initially accepted substantive bilateral proposal nor inherited-depth accession can survive the baseline governmental voting procedure at any positive depth.
+
+For the frozen-design game, the separate outward interval evaluation at $g=1/20$ certifies that a proposed integrated arrangement is strictly approved and that its national welfare is larger than the global bilateral envelope:
+\begin{equation}\label{eq:frozensup}
+\begin{split}
+i_{\F}(1/20)&>2.441397037346308,\\
+s&<2.422078421738269,\\
+\sup_{g\in[0,1]}m_{\F}(g)&<2.423573564131729,\\
+i_{\F}(1/20)-o_{\F}(1/20)&>0.0002346166230648035.
+\end{split}
+\end{equation}
+The incumbent vote margin is also strictly positive in the same enclosure. The set of admissible integrated depths
+\begin{equation}\label{eq:closedfeasible}
+\mathcal G_{\IS}=\{g\in[0,1]:i(g)\ge\max[s,m(g),o(g)]\}
+\end{equation}
+is closed because the welfare continuations are continuous. It contains $g=1/20$ in the frozen benchmark, so $i(g)$ attains a maximum on $\mathcal G_{\IS}$. The candidate welfare in \eqref{eq:frozensup} exceeds every terminal $\SU$ payoff and $\SW$, not only the payoffs at the same depth. Hence the maximizing accepted IS depth implements a genuine proposer-optimal integrated governmental equilibrium. Similarly, $\{g:i(g)\ge s\}$ is closed for the direct-grand counterfactual; the separate interval certificate establishes $i_{\N}(1/20)-s>0.0169346278736$, proving existence of an accepted positive-depth direct offer without equating the two negotiation agendas.
+
+The open-neighborhood conclusion does not depend on Figure~\ref{fig:phase}. Uniform negative derivative bounds \eqref{eq:certmargins} persist by a finite-cover implicit-function argument on the compact $g$ interval. Shrinking to one common primitive neighborhood preserves frozen acceptance at $1/20$, its strict gap over the continuous global bilateral envelope, and the endogenous direct-grand Pareto gain. Integrating preserved derivative margins establishes the all-depth failure even for $g\downarrow0$. This yields a nonempty qualitative open set of $(d,\eta,\rho,\kappa)$ around $\theta_0$; an explicit rectangular radius is not certified.
+
+\paragraph{Immutable replication map and scope.}
+A separately tracked replication index \path{replication/STAGE13R_REPRODUCIBILITY.md} lists the environment, exact expected outputs, figure search provenance, file hashes and publication-release checks. The original certificate sources remain at the immutable 22 October 2026 Stage 11 audited commit \texttt{54ac8389f2c45d56b2e587a62c62f226cc121f95} (PR~\#27), are:
+\begin{itemize}\setlength\itemsep{1pt}
+\item Full-depth interval source: \path{verification/v2b_stage04a_krawczyk_cleanroom.py}; successful independent replay: \path{verification/stage11/canonical_global_replay.log}.
+\item Direct-grand and frozen welfare source: \path{verification/v2b_stage06_pareto_holdout.py}; replay: \path{verification/stage11/pareto_replay.log}.
+\item Independent derivative audit: \path{verification/stage11/independent_matrix_audit.py}. Dependency hashes are in that directory.
+\end{itemize}
+The commands, run from the repository root, are
+\begin{quote}\small\ttfamily
+python verification/v2b\_stage04a\_krawczyk\_cleanroom.py\\
+python verification/v2b\_stage06\_pareto\_holdout.py
+\end{quote}
+A successful replay certifies the scalar interval targets and root inclusions reported above, not an arbitrary two-dimensional phase plot, an alternative bargaining protocol, or a Lean/Coq/Isabelle proof.
+
+\begin{table}[htbp]
+\centering\scriptsize
+\caption{Objects, certified domains and economic uses at the reference primitives. The inequalities are conservative outward roundings; full interval values and replay instructions appear in the replication package.}\label{tab:certificate}
+\renewcommand{\arraystretch}{1.17}
+\begin{tabularx}{\linewidth}{@{}p{.19\linewidth}p{.34\linewidth}X@{}}
+\toprule
+Object & Mathematical certificate and domain & Governmental implication\\
+\midrule
+Firm Nash & Full three-firm strict concavity/uniqueness on the design cube & Reduced roots represent the full continuation\\
+$\SU$ continuation & Two-variable Krawczyk inclusion, every $g\in[0,1]$ & Member and outsider payoffs and derivatives\\
+$\IS$ continuation & Scalar interval-Newton inclusion, every $g\in[0,1]$ & Integrated payoff and derivative\\
+$m'_{\N}$ & Strictly below $-0.00797$ at every depth & $m_{\N}(g)<s$ for $g>0$\\
+$(i_{\N}-o_{\N})'$ & Strictly below $-0.01503$ at every depth & Outsider vetoes inherited-depth enlargement\\
+Frozen $\IS$ offer & At $g=1/20$, $i_{\F}>2.4413970373$ and $i_{\F}-o_{\F}>0.0002346166$ & Accepted integrated offer\\
+Frozen alternatives & $s<2.4220784218$ and $\sup_{g}m_{\F}<2.4235735642$ & Integrated offer beats every bilateral alternative\\
+Direct $\IS$ under Nash & $i_{\N}(1/20)-s>0.0169346278$ & Feasible direct-grand Pareto improvement\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section{The network face and the restricted strategic-design strip}\label{app:networkfull}
+The global exact cutoff applies at $\rho=1$, where strategic design is inactive ($x_i=1$). Let $\vartheta=(1-\eta)/(2-\eta)$, $E=d^2/(2-\eta)^2$. From the explicit national welfare formulas in \eqref{eq:face},
+\begin{equation}\label{eq:networkpoly}
+m(g)-s=E\frac{g(1-8\vartheta-4\vartheta^2g)}{(1+\vartheta g)^2},\qquad
+ i(g)-o(g)=-E\frac{gP(\vartheta,g)}{(1+\vartheta g)^2(1+2\vartheta g)^2},
+\end{equation}
+where
+\[
+P(\vartheta,g)=14\vartheta^4g^3+(42\vartheta^3+\vartheta^2)g^2+\vartheta(45\vartheta-2)g+16\vartheta-2.
+\]
+For $\vartheta\ge1/8$ ($\eta\le6/7$), both expressions are strictly negative for $g>0$, hence the bilateral-first game always returns fragmentation. For $0<\vartheta<1/8$, set $v=1-8\vartheta$ and $h=\min\{1,2v\}$. Since $m(g)-s\le E v$ for every $g$, it suffices to exhibit $i(h)-s>Ev$ together with $i(h)>m(h),o(h)$. When $\vartheta\le1/16$, $h=1$ gives $i(1)\ge160E/27>11E/2\ge\max\{m(1),o(1)\}$ and $i(1)-s\ge77E/54>Ev$. For $1/16<\vartheta<1/8$, substitution $\vartheta=(1-v)/8$, $h=2v$ yields the exact strictly positive rational expressions
+\begin{align*}
+\frac{i(h)-s-Ev}{E}&=\frac{v(4+19v+24v^2-5v^3-2v^4)}{Q(v)},\\
+\frac{i(h)-o(h)}{E}&=\frac{v^2(280+492v-83v^2-240v^3+42v^4+28v^5-7v^6)}{R(v)},\\
+\frac{i(h)-m(h)}{E}&=\frac{v(192+304v+132v^2-77v^3-48v^4+6v^5+4v^6-v^7)}{R(v)},
+\end{align*}
+with $Q(v)=2(v-2)^2(v+1)^2>0$ and $R(v)=Q(v)(v^2-v-4)^2>0$. For $0<v<1/2$ the positive constant terms dominate the absolute values of the negative higher powers (for example $5v^3+2v^4<3/4<4$), yielding strict positivity. Thus an accepted integrated proposal dominates the entire possible SU envelope, and the closed-feasible-set argument above guarantees an optimal IS choice. No SU is globally optimal anywhere on the design-inactive face.
+
+For completeness, the restricted, genuinely active-design continuation near $\rho=1$ follows from a quadratic sign argument rather than from the face threshold alone. Fix $d,\kappa>0$ and a compact $\eta$ interval strictly inside $(0,1)$ containing $6/7$. At $\rho=1$, the full firm Jacobian is $-\kappa I$ and quantities are regular, but the cost-minimizing design $x_i=1$ lies on the boundary. For $\beta=1-\rho>0$ small, the unilateral FOC implies
+\[
+1-x_i=\frac{6\beta q_i^0 a_i(g)}{\kappa}+O(\beta^2)>0,\qquad
+a_i(g):=-\lim_{\beta\downarrow0}\frac{(q_{x_i})_i}{\beta}>0.
+\]
+The positive coefficients follow from the inverse quantity matrix at the $\rho=1$ face, uniformly on a compact interior network interval and $g\in[0,1]$. Thus the smooth unconstrained continuation moves \emph{into} the cube for sufficiently small $\beta>0$, with the original optimum still on the boundary at $\beta=0$. The full Nash regularity and implicit-function argument then ensure unique smooth interior continuations for small positive $\beta$ at every depth. Define $\mu(\eta,\rho)=\partial_g[m(g)-s]_{g=0}$. At the critical face point $p_0=(6/7,1)$, $\mu(p_0)=0$ and $\partial_\eta\mu(p_0)=2401d^2/512>0$; therefore the implicit-function theorem supplies a unique local cutoff $\eta_c(\rho)$. Write $\Delta_m(g,p)=m(g,p)-s(p)$, $\Delta_a(g,p)=i(g,p)-o(g,p)$, $\Delta_i(g,p)=i(g,p)-s(p)$ and $\Delta_b(g,p)=i(g,p)-m(g,p)$. These payoff-gap symbols distinguish the transition argument from the Cournot matrix $M$, the firm Jacobian $J$ and the compatibility matrix $H$. The edge-count lemma gives $\partial_g\Delta_a(0,p)=2\mu(p)$, and exact face differentiation at $p_0$ yields
+\begin{align*}
+\Delta_m(g,p_0)&=-\frac{Eg^2}{16(1+g/8)^2},\\
+\Delta_a(g,p_0)&=-\frac{Eg^2(29/64+25g/256+7g^2/2048)}{(1+g/8)^2(1+g/4)^2},\\
+\partial_g\Delta_i(0,p_0)&=\partial_g\Delta_b(0,p_0)=3E/4>0.
+\end{align*}
+Consequently, by uniform strict negativity away from zero and continuity of second derivatives, there are positive constants $a,b,c,B,\varepsilon$ in a neighborhood of $p_0$ such that for $0\le g\le\varepsilon$,
+\begin{equation}\label{eq:quadraticstrip}
+\begin{aligned}
+\Delta_m(g,p)&\le\mu(p)g-ag^2, & \Delta_a(g,p)&\le2\mu(p)g-bg^2,\\
+\Delta_a(g,p)&\ge2\mu(p)g-Bg^2,& \Delta_i(g,p),\Delta_b(g,p)&\ge cg,
+\end{aligned}
+\end{equation}
+while $\Delta_m$ and $\Delta_a$ remain negative for $g\ge\varepsilon$ near $p_0$. If $\mu\le0$, every positive-depth proposal fails. If $\mu>0$, choose $h=\mu/B\le\varepsilon$. Then $V(h)\ge\mu^2/B>0$, $J(h),H(h)>0$, while $\sup_g \Delta_m(g,p)\le\mu^2/(4a)$. Since $J(h)\ge c\mu/B$ is first-order in $\mu$, it strictly exceeds the second-order maximum bilateral gain for sufficiently small $\mu>0$. The feasible integrated proposal therefore dominates all bilateral offers. Strict margins on compact $\eta$ subintervals away from $6/7$ and a finite open cover complete the restricted strip argument; it is not an unrestricted claim for arbitrary $\rho,\eta,\kappa$.
