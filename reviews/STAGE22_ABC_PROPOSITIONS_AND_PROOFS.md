@@ -160,6 +160,22 @@ For eta>6/7 (0<theta_N<1/8), choose h=min{1,2(1-8theta_N)}>0. Stage21's exact ra
 
 **Endogenous-design extension (Stage21):** for any compact eta interval strictly inside (0,1) straddling 6/7, and fixed d,kappa>0, there is a rho_bar<1 and a smooth implicit eta_c(rho) with eta_c(1)=6/7 such that for rho_bar<rho<1 (so beta>0 and firms ACTUALLY redesign strategically), the same SW-versus-IS and absent-SU classification survives. The proof uses strong-monotonicity/IFT at beta=0, uniform strict margins away from eta_c and a quadratic Taylor argument near the transition, where m-s and outsider joining payoff are negative of order g² at the critical point and the accepted grand gain is first-order in the positive marginal perturbation. See Stage21 exact proof; eta_c(rho) is NOT generally equal to 6/7 and no explicit formula is yet available. This does **not** cover arbitrary rho or cost ratios.
 
+
+### New explicit first-order slope of the endogenous-design network phase boundary
+An additional boundary derivative is available without setting d or kappa to one. Write beta=1-rho and let mu(eta,beta)=m_g(0,eta,beta)-s_g(0)=m_g(0,eta,beta), where the firms play their true original lambda=0 Nash. At beta=0, z=1 and every design feedback in mu has order O(beta²) because the design response x_g=O(beta) and its national welfare gradient is O(beta). For first-order beta calculations, t=beta*z=beta+O(beta²). The fixed-design part is
+
+ D(eta,beta)=d²[ (1-beta)/(alpha+2beta)²
+  -(1-beta-eta){2(1+2beta)/(alpha+2beta)³+
+              6alpha/[(alpha-beta)(alpha+2beta)³]} ]+O(beta²).
+
+At the critical p0=(eta=6/7,beta=0), exact symbolic differentiation yields
+ mu_eta(p0)=2401 d²/512>0,
+ mu_beta(p0)=10339 d²/2048>0.
+Since mu(eta_c(beta),beta)=0, the IFT gives the explicit primitive cutoff expansion
+ **eta_c(beta)=6/7 -(211/196) beta + O(beta²)**
+or **eta_c(rho)=6/7 +(211/196)(rho-1)+O((1-rho)²)** for rho↑1.
+The linear coefficient is independent of kappa,d; the privately induced residual-design effect starts at quadratic order in beta and its effect on the exact cutoff need not vanish beyond first order. This is a LOCAL boundary expansion, not an explicit global eta_c formula for arbitrary rho.
+
 ## Proposition hierarchy and publishability warnings
 
 - A core *causal reversal* and B protocol boundary should be combined in ONE main theorem with Lemma1 and Lemma2. Their general local assumptions use mu,nu and are not an unconditional all-primitive SPNE classification. The separately certified all-depth theta0 + open-neighborhood statement supplies a genuine equilibrium-type result; no explicit neighborhood radius exists.
