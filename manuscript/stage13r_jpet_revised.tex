@@ -314,10 +314,10 @@ Table~\ref{tab:map} distinguishes the main reversal from the institutional and p
 \toprule
 Result & Proven environment or condition & Inference and scope limit \\
 \midrule
-Local reversal & $0<D<\mathcal L$, regular design Nash; additional outsider slope conditions & Frozen design gives positive consent slopes; endogenous design reverses both. \emph{Local} in $g$. \\
-Global regime & Certified all-depth inequalities at $\theta_0$ and a nonempty open primitive neighborhood & $\SW$ with design Nash versus government-optimal $\IS$ with frozen design. Specific inherited-depth protocol; not coalition-proof. \\
-Direct-grand & $\mu_{\N}<0<2\mu_{\N}+\nu_{\N}$ & Direct $\IS$ can benefit all at the same small $g$; procedural boundary, not a general new coalition theorem. \\
-Design costs & $\lambda_c\in(0.93538,0.93539)$ at $\theta_0$ & Unique \emph{local} consent cutoff; no global $\lambda$ regime classification. \\
+Theorem~\ref{thm:local}: local reversal & $0<D<\mathcal L$, regular design Nash; additional outsider slope conditions & Frozen design gives positive consent slopes; endogenous design reverses both. \emph{Local} in $g$. \\
+Theorem~\ref{thm:open}: global regime & Certified all-depth inequalities at $\theta_0$ and a nonempty open primitive neighborhood & $\SW$ with design Nash versus government-optimal $\IS$ with frozen design. Specific inherited-depth protocol; not coalition-proof. \\
+Proposition~\ref{prop:direct}: direct-grand & $\mu_{\N}<0<2\mu_{\N}+\nu_{\N}$ & Direct $\IS$ can benefit all at the same small $g$; procedural boundary, not a general new coalition theorem. \\
+Proposition~\ref{prop:lambda}: design costs & $\lambda_c\in(0.93538,0.93539)$ at $\theta_0$ & Unique \emph{local} consent cutoff; no global $\lambda$ regime classification. \\
 Network intensity & $\rho=1$, $\eta=6/7$ cutoff and restricted $\rho<1$ strip & Exact global regimes on the design-inactive face; only restricted nearby endogenous extension. \\
 \bottomrule
 \end{tabularx}
@@ -343,7 +343,7 @@ Figure~\ref{fig:phase} compares numerical searches under both design treatments 
 
 \begin{figure}[H]
 \centering
-\resizebox{0.98\linewidth}{!}{\input{stage13_figure3_tikz.tex}}
+\resizebox{0.98\linewidth}{!}{\input{stage13r_figure3_tikz.tex}}
 \caption{Numerical search outcomes with frozen designs (left) and endogenous designs (right), for $d=1$, $\rho=0.9$ and $\lambda=0$. Dark shading: an accepted integrated candidate dominates computed bilateral candidates. Light shading: no profitable accepted offer found. In-panel labels denote search outcomes, not proven regimes. The star marks the separately certified benchmark $(\kappa,\eta)=(0.8505,0.758)$. No optimal bilateral candidate was identified. Boundaries are exploratory; no certified neighborhood is plotted.}
 \label{fig:phase}
 \end{figure}
@@ -421,7 +421,16 @@ Because $CS=\tfrac12q^\top Bq$, its total fixed-design derivative is
 \end{equation}
 The home firm of a member receives operating profit $3q_A^2$, so its fixed-design derivative is $6q_0(dq_A/dg)$. Combining it with \eqref{eq:CSder} gives \eqref{eq:D}. The outsider profit derivative $6q_0(dq_C/dg)$ similarly gives \eqref{eq:nuF}.
 
-For clarity on the key correction, differentiating national welfare with respect to design $x_j$ differentiates both $B$ and quantities $q=dM^{-1}\vect{1}$. The $A$-firm FOC is $\partial_{x_A}\Pi_A=0$ at a private Nash but $\partial_{x_B}\Pi_A$ and $\partial_{x_C}\Pi_A$ need not vanish, nor does $\partial_{x_A}CS$. Direct differentiation and substitution of \eqref{eq:root} yield \eqref{eq:Wgrad}--\eqref{eq:CV}. Consequently the induced loss contains \emph{both} $C(2u'+v')$ and $V(u'+v')$, with the \emph{plus sign} shown in \eqref{eq:loss}. This expression supplies the welfare-incidence bridge used in the main theorem.
+At the symmetric no-agreement Nash, a unilateral increase in $x_j$ changes the quantities according to
+\begin{equation}\label{eq:designQuantityBridge}
+(q_{x_j})_j=-\frac{\beta\alpha q_0}{PL},\qquad
+(q_{x_j})_k=-\frac{\beta(\alpha-2t)q_0}{2PL}\quad(k\ne j).
+\end{equation}
+Differentiating both $B$ and $q=dM^{-1}\vect{1}$ in consumer surplus yields $\partial_{x_j}CS=-C$. At the private Nash, the resident firm's own-profit derivative vanishes for its own design, whereas for $k\ne j$,
+\begin{equation}\label{eq:crossProfitBridge}
+\partial_{x_k}\Pi_j=6q_0(q_{x_k})_j=-V.
+\end{equation}
+Domestic consumer surplus plus resident worldwide profits therefore gives \eqref{eq:Wgrad}--\eqref{eq:CV}. The chain rule supplies \eqref{eq:loss}, where the \emph{positive} rival-profit term $V(u'+v')$ enters the induced loss.
 
 \section{Design-friction response and the critical coefficient}\label{app:lambda}
 At $\theta_0$ and the unadjusted $\SW$ symmetric Nash let the diagonal and off-diagonal elements of $J(0)$ be $\ell$ and $\chi$. For the $AB$ edge, the forcing vector $f=(p,p,r)^{\top}$ is
@@ -449,9 +458,15 @@ o(g)&=E\left[\frac{1+g}{(1+\vartheta g)^2}+\tfrac72\right],\\
 i(g)&=E\frac{\tfrac92+3g}{(1+2\vartheta g)^2}.
 \end{split}
 \end{equation}
-The exact global face classification and near-$\rho=1$ active-design continuation are established in Appendix~\ref{app:networkfull}. On the restricted local strip the cutoff has the expansion $\eta_c(\rho)=6/7+(211/196)(\rho-1)+O((1-\rho)^2)$; this is not a formula for arbitrary $\rho$.
+For fixed $d,\kappa>0$ with $0<\eta<1$, the restricted near-face cutoff obeys $\eta_c(\rho)=6/7+(211/196)(\rho-1)+O((1-\rho)^2)$. Writing $t=(1-\rho)z$, the derivative with respect to $\rho$ at $\rho=1$ is $-1$ because $z=1$ on that face, while the induced-design loss is $O((1-\rho)^2)$. Direct differentiation of $\mu=\partial_g(m-s)|_{g=0}$ at $(\eta,\rho)=(6/7,1)$ yields
+\begin{equation}\label{eq:faceCutoffDerivative}
+\partial_\eta\mu=\frac{2401d^2}{512},\quad
+\partial_\rho\mu=-\frac{2401d^2}{512}\frac{211}{196},
+\quad \eta_c'(1)=-\frac{\mu_\rho}{\mu_\eta}=\frac{211}{196}.
+\end{equation}
+Appendix~\ref{app:networkfull} supplies the exact face comparison and restricted active-design argument. This expansion does not apply to arbitrary $\rho$ or to Figure~\ref{fig:phase}'s $\rho=0.9$ slice.
 
-\input{stage13_proof_supplement.tex}
+\input{stage13r_proof_supplement.tex}
 
 \section*{Declarations (working-draft placeholders)}
 \noindent\textbf{Funding and conflicts:} To be confirmed by the author before submission.\\
@@ -460,6 +475,8 @@ The exact global face classification and near-$\rho=1$ active-design continuatio
 \textbf{Research status:} This draft has not been externally peer reviewed, and no final journal submission decision has been taken.
 
 \begin{thebibliography}{99}\footnotesize\setlength{\itemsep}{1pt}
+\bibitem[Rosen(1965)]{Rosen1965} Rosen, J. B. (1965). Existence and uniqueness of equilibrium points for concave $N$-person games. \emph{Econometrica}, 33, 520--534. \url{https://doi.org/10.2307/1911749}.
+\bibitem[Rump(2010)]{Rump2010} Rump, S. M. (2010). Verification methods: Rigorous results using floating-point arithmetic. \emph{Acta Numerica}, 19, 287--449. \url{https://doi.org/10.1017/S096249291000005X}.
 \bibitem[Buccella, Fanti and Gori(2023)]{Buccella2023} Buccella, D., Fanti, L., and Gori, L. (2023). Strategic product compatibility in network industries. \emph{Journal of Economics}, 140, 141--168. \url{https://doi.org/10.1007/s00712-023-00834-x}.
 \bibitem[Cheng and Huang(2025)]{Cheng2025} Cheng, Y.-L., and Huang, H.-Y. (2025). Quality competition and product compatibility in network industries. \emph{Journal of Economics}, 145, 31--57. \url{https://doi.org/10.1007/s00712-024-00896-5}.
 \bibitem[Costinot(2008)]{Costinot2008} Costinot, A. (2008). A comparative institutional analysis of agreements on product standards. \emph{Journal of International Economics}, 75, 197--213. \url{https://doi.org/10.1016/j.jinteco.2007.11.004}.
