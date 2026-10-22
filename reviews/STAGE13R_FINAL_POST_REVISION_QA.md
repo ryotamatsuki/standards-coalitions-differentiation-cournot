@@ -23,29 +23,34 @@ The seventeen scholarly/editorial/technical issue responses (#01–#17) are impl
 | 13R-13 | Simplify network-boundary discussion, closest literature, direct-grand boundary and Conclusion | EDIT PASS |
 | 13R-14 | Figure3 in-panel labels **IS candidate / No offer found**; caption/text explicitly withdraw 2D exact partition; graph polygons unchanged | RENDER+SCOPE PASS |
 | 13R-15 | Shorten Figure1 explanatory caption; keep original causal sequence and Figure2 | EDIT+RENDER PASS |
-| 13R-16 | Main results table crossrefs to theorem/proposition labels and two-step Table2 national-acceptance explanation | EDIT+RENDER PASS |
+| 13R-16 | Table 2 fixed-placement float and intact explanatory sentence on page 10; Table 3 fixed in Appendix E, equation/where bridge intact on page 19; Theorem 4 starts on page 9 | **PDF VISUAL + READING-ORDER PASS** |
 | 13R-17 | `replication/STAGE13R_REPRODUCIBILITY.md` pins source commit, numerical vs exact scope, code/hashes, versions, commands, expected outputs; final deposited version link must be inserted when author publishes archive | EVIDENCE INDEX PASS; RELEASE PENDING |
 | 13R-18 | `submission/STAGE13R_AUTHOR_INPUTS_AND_PACKAGE_BLOCKERS.md` and conspicuous in-manuscript confirmation placeholders; generates Figure1--3 separately as vector PDFs | TECHNICAL PACKAGING PASS; **AUTHOR DECLARATIONS PENDING** |
 
-## Reproducibility of *final checked-in* graphics and PDF
-Latest successful GitHub Actions job: **39843182651**:
-https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39843182651
+## Final post-layout QA: source, build, placement, and exact PDF identity
 
-- All steps SUCCESS: wrapper generator, integrated LaTeX compile, three standalone figure PDF compiles, strict checking for Overfull hbox, duplicate/undefined citations/refs, publication of workflow artifacts and branch binary sync.
-- Actual 21-page updated manuscript `manuscript/stage13r_jpet_revised.pdf`; PDF size **560,196 bytes**.
-- Independently downloaded the **exact final successful run artifact ZIP** and checked byte-identical Git Blob SHA for all 4 PDFs against the live Draft PR #32 head tree:
+**Current manuscript revision:** the source layout fixes entered at commits `ea18f8cbc5f7329cc1ef08f8f0159feb6e40f4d3` and `30af5cd9102c647c7a2742d0740c696cb1ee8353` on Draft PR #32. The final dedicated build tested source commit **`30af5cd9102c647c7a2742d0740c696cb1ee8353`**, GitHub Actions run **39857593056**, whose entire job, four PDF compiles, strict reference/Overfull test, artifact upload, and branch PDF synchronization all returned **SUCCESS**.
 
-| File | Size | Verified Git Blob SHA |
+- Execution and log: https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39857593056
+- Generated run artifact: `stage13r-jpet-revised-paper-and-vector-figures`, ID **12460496115**; the downloaded archive contains the 21-page main PDF, 3 standalone vector figure PDFs, and the LaTeX build log.
+- Exact binary-check target: live Draft PR #32 branch head **`44d0c30959cfb542e38d796b40307155e389da1c`** *before the QA-only metadata update*. The four PDF Git blob identities below match that branch's Git tree byte for byte, using the exact downloaded successful-run artifact (`SHA1("blob " + bytesize + "\\0" + filebytes)`). Revisions to this QA markdown after that commit do not alter the PDF blobs. Verify any later scientific/TeX/figure source changes against a new build.
+
+| Checked-in PDF | Exact size (bytes) | Git Blob SHA-1, artifact and branch verified |
 |---|---:|---|
-| `manuscript/stage13r_jpet_revised.pdf` | 560196 | `19285a8cea5adfc50aa63a0e0390e3d1fd844350` |
-| `manuscript/stage13r_figure1.pdf` | 103981 | `a8c50e73ff5efe473e64a6170d34d0cfa1e43fac` |
-| `manuscript/stage13r_figure2.pdf` | 150696 | `c4f2039906205c0133c9b5f3eba4947542afc141` |
-| `manuscript/stage13r_figure3.pdf` | 103857 | `db5ff551a10bf71a0e079549e17f6ab4c0b03463` |
+| `manuscript/stage13r_jpet_revised.pdf` | **559,425** | `ad0d9477caab52c6a8f252511cc527c7c3f05c3a` |
+| `manuscript/stage13r_figure1.pdf` | **97,582** | `9977c9a04ce0a59c5bcd561e855cc81322dd9d0a` |
+| `manuscript/stage13r_figure2.pdf` | **150,696** | `44d631aaf5c3a02929370e065cd9672b3fa8a2ab` |
+| `manuscript/stage13r_figure3.pdf` | **107,883** | `60da45c9356e540f2f0a304958bf25eb8f5ec6e2` |
 
-- Parsed final `stage13r_jpet_revised.log`: no Overfull hbox, undefined citation/reference, or duplicated natbib citation; CI independently enforced this.
-- Page rendering was visually inspected, including first page, numerical Figure3 page 11, appendix certificate, and declarations/last bibliography. Main source has 3 figures, 2 tables and exactly one `\end{document}`.
-- The workflow had **initial failures** (duplicate stale source fragment, incomplete draft paragraph, then binary push races); each was repaired and the latest *full* run passed, rather than treating past failures as PASS.
-- Scientific model and underlying code are unchanged. No new theorem claim; numerical Figure3 is **exploratory** only.
+**PDF-level visual and reading-order inspection, completed on the rebuilt article:**
+
+1. **Theorem 4:** `\\Needspace{10\\baselineskip}` in the main TeX keeps the theorem heading and initial substantive lines together. The printed theorem begins at the top of **page 9**; it no longer leaves "There" stranded at the bottom of page 8.
+2. **Table 2 (13R-16):** `\\begin{table}[H]` in the main TeX anchors the welfare table between its complete introductory paragraph and its complete explanation. Page **10** reads "At g=0.05, integration improves every country's welfare relative to fragmentation under either design treatment" continuously **after** the table; no intervening float splits that sentence. Both text extraction and page image were reviewed.
+3. **Table 3 (certificate):** `\\begin{table}[H]` in the Appendix E source anchors the certificate at the end of Appendix E on **page 19**, ahead of the Appendix F header. Page **19** presents equation (43) immediately followed by its polynomial "where" definition with **no intervening table**, unlike the old float.
+4. Standalone vector Figures 1–3 compile successfully; Figure 3 retains the explicitly exploratory "IS candidate" / "No offer found" scope. There were no changes to coefficient data, Nash conditions, certified intervals, primitive-space theorem scope, or scientific computation code.
+5. CI parsing of LaTeX output reports **no unresolved citations/references, multiply defined natbib entries, or overfull boxes**. Pages 9, 10, 18 and 19 were separately rendered/inspected; manuscript length remains **21 pages**.
+
+**Status of two additional layout/QA findings from the subsequent independent review:** RESOLVED. The earlier sizes (560196 and 559422 bytes) and earlier blob IDs are superseded; they must not be cited as proof of identity for the revised article.
 
 ## Submission blockers — do not fake PASS
 1. Author-verified full name, research affiliation, correspondence email, ORCID.
