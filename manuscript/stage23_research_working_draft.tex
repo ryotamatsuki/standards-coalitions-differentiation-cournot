@@ -1,0 +1,56 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\title{International Standards Coalitions and Endogenous Product Design\\\large Stage 23 Research Working Draft --- NOT FOR SUBMISSION}
+\date{22 October 2026}
+\newtheorem{proposition}{Proposition}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the possibility that governments fail to implement welfare-improving technical standards because firms redesign unstandardized attributes after a policy agreement. Within a three-country fulfilled-expectations Cournot environment, we isolate a national-welfare incidence channel that can reverse government participation constraints when firm designs are optimized rather than fixed. Inherited-depth bilateral accession may fail while a direct multilateral offer succeeds. This document is a research working draft: neither novelty priority nor fresh all-depth computational verification is certified.
+\end{abstract}
+\section{Environment and government protocol}
+Three symmetric countries each host a firm that serves every country. Government technical compatibility links are represented by matrix $H$, with unit diagonal and off-diagonal elements zero under fragmentation ($SW$), one bilateral edge at depth $g$ under $SU$, and all three edges at depth $g\in[0,1]$ under $IS$. A firm's residual similarity is $x_i\in[0,1]$, and $X_{ij}=(x_i+x_j)/2$ for $i\ne j$, $X_{ii}=1$. With distinct network intensity $\eta$ and technical substitution weight $\rho$,
+\[
+ B=\rho H+(1-\rho)X,\quad M=I+B-\eta H,\quad Mq=d\mathbf1.
+\]
+At the positive Cournot/fulfilled-expectations outcome, $p_i-c=q_i$, $CS=\frac12q^\top Bq$, and country $i$ evaluates its consumer surplus plus its home firm's world profit:
+\[
+ \Pi_i=3q_i^2-\frac{\kappa}{2}(1-x_i)^2,\qquad W_i=CS+\Pi_i.
+\]
+This is the core model with $\lambda=0$. The $\lambda(x_i-z)^2/2$ adjustment-cost extension is separate. Government A proposes a bilateral AB depth inherited by C if it accedes; B, then C and the incumbents, have weak-acceptance voting rights. The protocol does not permit C to renegotiate the original technical depth.
+
+\section{Candidate theorem: private redesign and national consent}
+At $g=0$ let $\mu$ be a country's marginal welfare change from an incident technical edge, and $\nu$ from the nonincident edge. Permutation symmetry gives $m'(0)=\mu$, $o'(0)=\nu$, $i'(0)=2\mu+\nu$ and $(i-o)'(0)=2\mu$. Put $\alpha=2-\eta$, $\beta=1-\rho$, $\delta=\rho-\eta$, $t=\beta z$, $P=\alpha-t$, and $L=\alpha+2t$. The fixed-design bilateral-member effect is
+\[
+ D=\frac{\rho d^2}{L^2}-\frac{\delta d^2}{L^3}\left(2(1+2t)+\frac{6\alpha}{P}\right).
+\]
+Endogenous design additionally induces a national incidence loss
+\[
+ \mathcal L=C(2u'+v')+V(u'+v'),\quad C=\frac{\beta d^2(\eta+2t)}{L^3},\quad
+ V=\frac{3\beta d^2(\alpha-2t)}{P L^3}.
+\]
+The own firm's design FOC does not eliminate consumer or rival-design effects on its worldwide profits. Hence $\mu_N=D-\mathcal L$ and $\mu_F=D$. The corrected expression has a PLUS sign before $V(u'+v')$, repairing the sign error historically found in PR9.
+\begin{proposition}[Local controlled participation reversal]
+Assume regular unique interior continuation, $0<D<\mathcal L$, $\nu_N>-2\mu_N$ and $\nu_F>-D$. Then for sufficiently small positive depth frozen design supports inherited-depth $IS$ consent, while endogenous design obstructs inherited-depth bilateral and accession votes despite $i_N(g)>s$.
+\end{proposition}
+This follows directly from the symmetry derivatives and continuity; it is a LOCAL statement. Historical Stage14 interval certificates report global endogenous nonformation at $(d,\eta,\rho,\kappa)=(1,0.758,0.9,0.8505)$ and frozen-design government-optimal positive $IS$ on a nonempty open neighborhood; fresh Stage23 all-depth replay is not completed.
+
+\section{Protocol and policy boundaries}
+If $\mu_N<0<2\mu_N+\nu_N$, a direct $IS$ offer with rejection to $SW$ is strictly Pareto-improving and unanimously approved for small depth; original inherited-depth accession fails because the outsider compares $IS$ with $SU$, not $SW$. This is agenda dependence, NOT coalition-proof fragmentation. The $\lambda$ extension has a reported unique LOCAL marginal-consent threshold $\lambda_c\simeq0.935389$; it is not an unrestricted global equilibrium threshold. On the $\rho=1$ face residual design is inactive and exact algebra gives $SW$ for $\eta\le6/7$, $IS$ for $\eta>6/7$, and no globally optimal $SU$; a restricted genuinely endogenous $\rho<1$ strip is argued in Stage21, but not an unrestricted theorem.
+
+\section{Numerical witness and limitations}
+A new independent Stage23 Nash/Cournot reconstruction at $g=.05$ gives, for frozen designs, $(m-s,i-o,i-s)=(0.000272382,0.000234617,0.019318616)$. Reoptimizing firms produces $(-0.000473474,-0.001246547,0.016934628)$. It also recovers $D=0.0067679241288$, $\mathcal L=0.0150697441253$. These finite-depth checks are not exact all-depth certificates. The grand-agreement benefit is about 0.7 percent of baseline national welfare in this uncalibrated example.
+
+\section{Positioning and interim research decision}
+Government coalitions with compatibility and network effects are established in Gandal and Shy (2001) and Klimenko (2009). Product-design adjustment under regulatory agreements was explicitly studied by Grossman, McCalman and Staiger (2021). Firm compatibility endogeneity and veto noncompatibility were studied by Buccella, Fanti and Gori (2023) and Cheng and Huang (2025). The possible independent residue here is a controlled \emph{country welfare incidence and government-SPNE regime reversal}, not the generic presence of design endogeneity, veto, or incompatibility. Access to published numbered Cheng--Huang propositions and the Buccella horizontal-differentiation supplement is incomplete. Nor should the fixed-depth bilateral protocol be claimed to describe generic ISO consensus standard-setting.
+
+\medskip\noindent\textbf{Research decision: REOPEN.} Mathematical and economic plausibility support preservation as a working draft, but substantive predecessor absorption, fresh global certificate replay, and institutional fit must be resolved before recommending a credible journal submission.
+\begin{thebibliography}{9}\small
+\bibitem{gs} Gandal, N., and Shy, O. (2001), Standardization policy and international trade. \emph{J. Int. Econ.} 53, 363--383. doi:10.1016/S0022-1996(00)00067-2.
+\bibitem{kl} Klimenko, M. (2009), Policies and international trade agreements on technical compatibility for industries with network externalities. \emph{J. Int. Econ.} 77, 151--166. doi:10.1016/j.jinteco.2008.08.005.
+\bibitem{gms} Grossman, G., McCalman, P., and Staiger, R. (2021), The New Economics of Trade Agreements. \emph{Econometrica} 89, 215--249. doi:10.3982/ECTA17536.
+\bibitem{bfg} Buccella, D., Fanti, L., and Gori, L. (2023), Strategic product compatibility in network industries. \emph{J. Econ.} 140, 141--168. doi:10.1007/s00712-023-00834-x.
+\bibitem{ch} Cheng, Y.-L., and Huang, H.-Y. (2025), Quality competition and product compatibility in network industries. \emph{J. Econ.} 145, 31--57. doi:10.1007/s00712-024-00896-5.
+\end{thebibliography}
+\end{document}
