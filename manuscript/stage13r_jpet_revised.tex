@@ -282,23 +282,23 @@ in the four-dimensional baseline primitive parameter space such that the followi
 \end{enumerate}
 This does not assert an explicit radius for $\mathcal U$, an all-parameter global classification, or coalition-proof fragmentation.
 \end{theorem}
-\begin{proof}[Proof architecture and certified bounds]
-At $\theta_0$, the reproducible all-depth interval proof described in Appendix~\ref{app:interval} establishes, for $g\in[0,1]$, strict derivative \emph{upper} bounds
+\begin{proof}[Three-step argument]
+\emph{Step 1: the full firm Nash continuation.} Appendix~\ref{app:regularity} establishes positive Cournot quantities and a unique design Nash on the full strategy cube; symmetry then permits SU's two-dimensional and IS's scalar reductions. Appendix~\ref{app:interval} encloses the interior roots for every depth and lifts them to all firms.
+
+\emph{Step 2: the government-optimal agreements.} Interval arithmetic bounds the endogenous welfare derivatives uniformly for every $g\in[0,1]$:
 \begin{equation}\label{eq:cert}
-\frac{dm_{\N}}{dg}<-0.0079701929973,\qquad
-\frac{d(i_{\N}-o_{\N})}{dg}<-0.0150388833377.
+\frac{dm_{\N}}{dg}<-0.00797,\qquad
+\frac{d(i_{\N}-o_{\N})}{dg}<-0.01503.
 \end{equation}
-The underlying checks include the unique full-firm Nash continuation, positive quantities, regularity and enclosure of the derivative along the full policy-depth interval; they are not merely a local FOC calculation. Integrating from $g=0$, where all regime welfare levels coincide, yields $m_{\N}(g)<s$ and $i_{\N}(g)<o_{\N}(g)$ at every $g>0$. Thus neither an accepted $\SU$ nor an enlargement to $\IS$ survives the original voting conditions; optimizing over the full depth menu returns $\SW$.
-
-For the frozen-design game, the previously certified all-depth bilateral payoff bound and the strictly feasible integrated candidate at $g=1/20$ give
+Because $m_{\N}(0)-s=i_{\N}(0)-o_{\N}(0)=0$, integration implies $m_{\N}(g)<s$ and $i_{\N}(g)<o_{\N}(g)$ for all $g>0$. C therefore vetoes accession, and B, anticipating a stand-alone bilateral payoff below fragmentation, rejects the initial proposal at every positive depth. Under frozen designs, a feasible integrated offer at $g=1/20$ obeys
 \begin{equation}\label{eq:frozenCert}
- i_{\F}(1/20)>2.4413970373,
-\quad s<2.4220784218,
-\quad\sup_{0\le g\le1}m_{\F}(g)<2.4235735642,
+i_{\F}(1/20)>2.4413970373,\quad
+s<2.4220784218,\quad
+\sup_{0\le g\le1}m_{\F}(g)<2.4235735642.
 \end{equation}
-while $i_{\F}(1/20)>o_{\F}(1/20)$ and $i_{\F}(1/20)>m_{\F}(1/20)$ strictly. The candidate is accepted, beats $\SW$, and beats the entire terminal bilateral payoff envelope, so an optimal accepted positive-depth integrated offer exists. Separately the actual endogenous integrated outcome at $g=1/20$ satisfies $i_{\N}(1/20)-s>0.0169346278736$.
+It strictly passes the incumbent and outsider votes and dominates both fragmentation and every possible terminal bilateral payoff. The accepted integrated-depth set is closed in $[0,1]$; continuous integrated welfare therefore attains a government-optimal maximum on it. The endogenous direct-grand alternative also gives $i_{\N}(1/20)-s>0.0169346278$.
 
-The all-depth strict inequalities, positive-output margins and uniform full-cube equilibrium-uniqueness/regularity margins survive under sufficiently small primitive perturbations. A finite-cover implicit-function argument, continuity of derivatives on a compact depth interval, and the maximum theorem preserve strict negative endogenous slopes and the strict frozen integrated-versus-bilateral envelope gap. The local no-agreement and positive-depth inequalities thereby hold on some common \emph{open} neighborhood $\mathcal U$. The existence assertion is qualitative; no explicit primitive box is supplied. Appendix~\ref{app:interval} identifies the certified mathematical objects, interval algorithm, and immutable reproduction artifacts, which form part of the manuscript-facing proof package.
+\emph{Step 3: a nonempty open primitive neighborhood.} The positive-output and full-cube Nash regularity bounds, negative depth-derivative margins and strict frozen integrated-versus-bilateral envelope comparison are preserved uniformly under sufficiently small primitive perturbations. The implicit-function theorem, compactness of the depth interval and a finite cover then establish the asserted nonempty open neighborhood $\mathcal U$. No explicit numerical radius is claimed; Appendix~\ref{app:interval} gives the objects certified by interval arithmetic.
 \end{proof}
 
 The local inequality $0<D<\loss$ identifies the mechanism; the all-depth derivative certificate excludes any compensating inherited-depth proposal. Continuity extends the strict inequalities to an unquantified primitive neighborhood, not to other governmental agendas, demand classes, or country counts.
