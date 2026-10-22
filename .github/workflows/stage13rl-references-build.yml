@@ -1,0 +1,66 @@
+name: Stage13R-L journal references and PDF quality assurance
+on:
+  push:
+    branches:
+      - literature/stage13rl-reference-integration-20261023
+    paths:
+      - manuscript/stage13rl_jpet_revised.tex
+      - scripts/stage13rl_citation_scope_qa.py
+      - .github/workflows/stage13rl-references-build.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refs_and_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check bibliography mapping and frozen scientific blocks
+        run: python scripts/stage13rl_citation_scope_qa.py
+      - name: Build literature-integrated article (3-pass latexmk)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13rl_jpet_revised.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Check PDF signature, unresolved references, and overfull lines
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s manuscript/stage13rl_jpet_revised.pdf
+          head -c 5 manuscript/stage13rl_jpet_revised.pdf | grep -q '%PDF-'
+          if grep -Fq 'Overfull \hbox' manuscript/stage13rl_jpet_revised.log || grep -Eq '(LaTeX Warning:.*undefined|Package natbib Warning:.*(multiply defined|undefined)|Reference .* undefined|Citation .* undefined)' manuscript/stage13rl_jpet_revised.log; then
+            grep -En '(Overfull|Warning|undefined|multiply defined)' manuscript/stage13rl_jpet_revised.log || true
+            exit 1
+          fi
+          grep -E 'Output written on ' manuscript/stage13rl_jpet_revised.log | tail -1
+      - name: Upload final PDF with exact build log
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage13rl-jpet-literature-integrated-pdf
+          path: |
+            manuscript/stage13rl_jpet_revised.pdf
+            manuscript/stage13rl_jpet_revised.log
+      - name: Publish PDF on this literature branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin literature/stage13rl-reference-integration-20261023
+            git reset --mixed origin/literature/stage13rl-reference-integration-20261023
+            git add manuscript/stage13rl_jpet_revised.pdf
+            if git diff --cached --quiet; then
+              echo "No change to checked-in PDF"
+              exit 0
+            fi
+            git commit -m "Build Stage13R-L literature-integrated JPET manuscript PDF"
+            if git push origin HEAD:literature/stage13rl-reference-integration-20261023; then
+              exit 0
+            fi
+          done
+          echo "Unable to publish PDF without rebasing binary contents" >&2
+          exit 1
