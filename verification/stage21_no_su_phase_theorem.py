@@ -34,7 +34,7 @@ for n in range(1,11):
     assert B*(i-o)==v*v*(280+492*v-83*v*v-240*v**3+42*v**4+28*v**5-7*v**6)
     assert B*(i-m)==v*(192+304*v+132*v*v-77*v**3-48*v**4+6*v**5+4*v**6-v**7)
 u=Q(1,2)
-assert 5*u**3+2*u**4 < Q(3,4) < 4
+assert 5*u**3+2*u**4 <= Q(3,4) < 4
 assert 83*u*u+240*u**3+7*u**6 < 51 < 280
 assert 77*u**3+48*u**4+u**7 < 13 < 192
 # Critical eta=6/7 => theta=1/8, second-order strictly negative.
