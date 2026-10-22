@@ -77,8 +77,8 @@
       "blob_sha1": "3210bcd4b79b4a6b24f0551b9b76758f119598ee"
     },
     "verification/verify_v05.py": {
-      "size": 4415,
-      "blob_sha1": "6a206ea7a72c63b1958c603f84438dd1d5a5cdfc"
+      "size": 4739,
+      "blob_sha1": "71c4c394e67d306ef147044791a96df987d4f238"
     },
     "verification/build_log.txt": {
       "size": 12863,

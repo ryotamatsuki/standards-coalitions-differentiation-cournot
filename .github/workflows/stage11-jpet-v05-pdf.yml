@@ -30,5 +30,7 @@ jobs:
           git add manuscript/stage25_jpet_v05.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Build Stage11 corrected v0.5 manuscript PDF"
+            git fetch origin fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
+            git rebase origin/fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
             git push origin HEAD:fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
           fi
