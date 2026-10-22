@@ -1,0 +1,88 @@
+name: Stage13R JPET revised manuscript and separate vector figures
+on:
+  push:
+    branches:
+      - revision/stage13r-jpet-full-response-20261023
+    paths:
+      - 'manuscript/stage13r*'
+      - 'scripts/stage13r_export_figures.py'
+      - '.github/workflows/stage13r-jpet-build.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate standalone vector-figure wrappers
+        run: python scripts/stage13r_export_figures.py
+      - name: Compile original theory manuscript with the updated supplement
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13r_jpet_revised.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Compile Figure 1 as independent vector PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13r_figure1.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Compile Figure 2 as independent vector PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13r_figure2.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Compile Figure 3 as independent vector PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13r_figure3.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Check outputs and manuscript warnings
+        shell: bash
+        run: |
+          set -euo pipefail
+          for name in stage13r_jpet_revised stage13r_figure1 stage13r_figure2 stage13r_figure3; do
+            test -s "manuscript/${name}.pdf"
+            head -c 5 "manuscript/${name}.pdf" | grep -q '%PDF-'
+          done
+          if grep -Fq 'Overfull \hbox' manuscript/stage13r_jpet_revised.log || grep -Eq '(LaTeX Warning:.*undefined|Package natbib Warning:.*(multiply defined|undefined)|Reference .* undefined|Citation .* undefined)' manuscript/stage13r_jpet_revised.log; then
+            grep -En '(Warning|Overfull|undefined)' manuscript/stage13r_jpet_revised.log || true
+            exit 1
+          fi
+          grep -E 'Output written on ' manuscript/stage13r_jpet_revised.log | tail -1
+      - name: Save revised paper and individual figure PDFs
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage13r-jpet-revised-paper-and-vector-figures
+          path: |
+            manuscript/stage13r_jpet_revised.pdf
+            manuscript/stage13r_figure1.pdf
+            manuscript/stage13r_figure2.pdf
+            manuscript/stage13r_figure3.pdf
+            manuscript/stage13r_jpet_revised.log
+      - name: Commit reproducible final PDFs on revision branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Preserve files just built in the runner while refreshing the branch.
+          # Mixed reset avoids trying to merge two independently built binary PDFs.
+          for attempt in 1 2 3 4; do
+            git fetch origin revision/stage13r-jpet-full-response-20261023
+            git reset --mixed origin/revision/stage13r-jpet-full-response-20261023
+            git add manuscript/stage13r_jpet_revised.pdf manuscript/stage13r_figure1.pdf manuscript/stage13r_figure2.pdf manuscript/stage13r_figure3.pdf
+            if git diff --cached --quiet; then
+              echo "PDFs already identical to the current branch"
+              exit 0
+            fi
+            git commit -m "Build Stage13R revised article and standalone PDF figures"
+            if git push origin HEAD:revision/stage13r-jpet-full-response-20261023; then
+              exit 0
+            fi
+          done
+          echo "Could not commit refreshed PDF artwork after four retries"
+          exit 1
