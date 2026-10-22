@@ -1,0 +1,23 @@
+name: Stage23 independent local audit
+on:
+  push:
+    paths:
+      - 'verification/stage23_independent_reconstruction.py'
+      - '.github/workflows/stage23-working-draft-audit.yml'
+  pull_request:
+    paths:
+      - 'verification/stage23_independent_reconstruction.py'
+      - '.github/workflows/stage23-working-draft-audit.yml'
+  workflow_dispatch:
+jobs:
+  independent-local-reconstruction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install independent checker
+        run: python -m pip install numpy scipy sympy
+      - name: Local reconstruction only (not full-depth certificate)
+        run: python verification/stage23_independent_reconstruction.py
