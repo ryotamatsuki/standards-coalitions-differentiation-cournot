@@ -1,0 +1,219 @@
+% Stage21 REVIEW ONLY: exact global rho=1 phase theorem and
+% local endogenous-product-design missing-middle extension.
+% Requires amsmath, amssymb, amsthm.
+\section{An analytic missing-middle theorem for standards coalitions}
+\label{sec:missing-middle}
+
+Let $s$, $m(g)$, $o(g)$ and $i(g)$ denote the endogenous
+continuation national payoffs for fragmentation, member of the
+bilateral agreement, outsider to the bilateral agreement,
+and grand standards respectively. Weak accession votes are
+accepted on equality. In the inherited-depth extensive-form
+game, a grand continuation is acceptable at $g$ if
+$i(g)\ge\max\{s,m(g),o(g)\}$, whereas terminal SU requires
+$m(g)\ge s$ and failure of at least one expansion vote.
+This classification anticipates later accession in country B's
+initial decision.
+
+\begin{proposition}[No optimal bilateral union, and a network threshold]
+\label{prop:no-SU-face}
+Maintain the original three-country Cournot game, with $d>0$,
+$\kappa>0$, no ex-post architecture adjustment friction
+($\lambda=0$), $\rho=1$ and $0<\eta<1$. Then the sole
+government-optimal terminal regime is
+\[
+ {\rm SW}\quad\text{if }0<\eta\le6/7,\qquad
+ {\rm IS}\quad\text{if }6/7<\eta<1.
+\]
+SU is never proposer-optimal. For $\eta>6/7$ there exists
+an explicitly constructed strictly acceptable IS offer
+whose proposer's payoff EXCEEDS that under every
+possible terminal SU, at every alternative depth.
+\end{proposition}
+\begin{proof}
+When $\rho=1$, $\beta=1-\rho=0$. Every firm minimizes its
+once-paid design cost at $x_i=1$ independent of government
+history. Put
+\[
+ a=2-\eta,\quad
+ \theta=\frac{1-\eta}{2-\eta}\in(0,1/2),\quad
+ D=\frac{d^2}{a^2}>0.
+\]
+Solving the fulfilled Cournot equations gives
+\[
+ s=\frac92D,\quad
+ m(g)=D\left\{\frac{4+g}{(1+\theta g)^2}+\frac12\right\},
+\quad
+ o(g)=D\left\{\frac{1+g}{(1+\theta g)^2}+\frac72\right\},
+\quad
+ i(g)=D\frac{\frac92+3g}{(1+2\theta g)^2}.
+\]
+In particular,
+\[
+ m(g)-s=
+ D\frac{g(1-8\theta-4\theta^2g)}{(1+\theta g)^2}.
+\]
+If $\theta\ge1/8$ (equivalently $\eta\le6/7$), then
+$m(g)<s$ at every $g>0$. Moreover,
+\[
+ i(g)-o(g)=-D\frac{gP(\theta,g)}
+ {(1+\theta g)^2(1+2\theta g)^2},
+\]
+where
+\[
+ P=14\theta^4g^3+(42\theta^3+\theta^2)g^2+
+ \theta(45\theta-2)g+(16\theta-2).
+\]
+Every term is nonnegative if $\theta\ge1/8$, and the
+linear term is strictly positive for $g>0$, whence
+$i(g)<o(g)$. SU is not initially acceptable, and
+C blocks every IS accession: SW is the sole final regime.
+
+Now suppose $0<\theta<1/8$ and write $v=1-8\theta>0$.
+For every bilateral depth, $m(g)-s\le Dv$.
+Choose the grand-offer depth
+\[
+ h=\min\{1,\,2v\}.
+\]
+We claim that $i(h)>s+Dv$, $i(h)>o(h)$ and $i(h)>m(h)$.
+For $\theta\le1/16$, $h=1$. At that depth,
+both $m(1)$ and $o(1)$ are bounded above by $11D/2$,
+whereas $i(1)\ge160D/27>11D/2$ and
+$i(1)-s\ge77D/54>Dv$.
+
+For $1/16<\theta<1/8$, use $0<v<1/2$ and $h=2v$.
+Set $A(v)=2(v-2)^2(v+1)^2$ and
+$B(v)=A(v)(v^2-v-4)^2$, both positive. Exact algebra gives
+\[
+ \frac{i(h)-s-Dv}{D}
+ =\frac{v(4+19v+24v^2-5v^3-2v^4)}{A(v)}>0,
+\]
+\[
+ \frac{i(h)-o(h)}{D}
+ =\frac{v^2(280+492v-83v^2-240v^3+
+           42v^4+28v^5-7v^6)}{B(v)}>0,
+\]
+\[
+ \frac{i(h)-m(h)}{D}
+ =\frac{v(192+304v+132v^2-77v^3-
+          48v^4+6v^5+4v^6-v^7)}{B(v)}>0.
+\]
+Indeed on $0<v<1/2$, the three collections of negative
+higher-order monomials are bounded, respectively, by
+$5v^3+2v^4<3/4<4$,
+$83v^2+240v^3+7v^6<51<280$,
+and $77v^3+48v^4+v^7<13<192$.
+Thus this one accepted grand offer strictly outperforms
+\emph{every} terminal bilateral outcome at any depth
+and outperforms SW. The feasible IS set is nonempty and
+closed in compact $[0,1]$ under weak-vote acceptance,
+so an optimal IS depth is attained. It must prevail
+over all SU and SW alternatives.
+\end{proof}
+
+\begin{proposition}[The missing middle persists under endogenous designs]
+\label{prop:no-SU-endogenous}
+Fix $d>0$, $\kappa>0$, $\lambda=0$ and any compact network
+interval $K=[\eta_-,\eta_+]\Subset(0,1)$ with
+$\eta_-<6/7<\eta_+$. There exist $\bar\rho<1$ and a
+continuously differentiable threshold $\eta_c(\rho)$,
+$\eta_c(1)=6/7$, such that for $\bar\rho<\rho<1$
+and $\eta\in K$, the original firm's design Nash is unique,
+interior and regular in every policy continuation and
+\[
+ \eta\le\eta_c(\rho)\implies {\rm SW},\qquad
+ \eta>\eta_c(\rho)\implies {\rm IS}.
+\]
+In particular SU is never the government-optimal terminal
+regime throughout this genuine endogenous-design parameter
+strip.
+\end{proposition}
+\begin{proof}
+At $\rho=1$ the full three-firm design pseudo-gradient is
+$F_i=\kappa(1-x_i)$ and $F_x=-\kappa I_3$,
+while all fulfilled Cournot quantities are positive with a
+common strict nonsingularity margin over $K\times[0,1]$
+and the three regimes. By compactness, a sufficiently small
+$\beta=1-\rho>0$ preserves uniformly strict own concavity,
+strong monotonicity, positive output, and a unique smooth
+symmetric-by-permutation Nash continuation, now with
+$0<x_i<1$; the unilateral design benefit has a strictly
+inward gradient at the former boundary $x_i=1$.
+Uniformly across the compact strategy cube, these conclusions
+follow by continuity of the full Jacobian from $-\kappa I_3$.
+
+All decisive sign inequalities in Proposition
+\ref{prop:no-SU-face} persist for compact $\eta$ subsets
+strictly above or below $6/7$: on the lower side, use
+negative derivatives at $g=0$ as well as negative levels
+for $g$ bounded away from zero; on the upper side, the
+explicit grand-offer witness $h(\eta)$ has strict
+accession and global SU-payoff-dominance margins.
+
+It remains to cover the transition. Let $p=(\eta,\rho)$,
+\[
+ M(g,p)=m(g,p)-s(p),\quad
+ V(g,p)=i(g,p)-o(g,p),\quad
+ J(g,p)=i(g,p)-s(p),\quad
+ H(g,p)=i(g,p)-m(g,p),
+\]
+and $\mu(p)=M_g(0,p)$. All four functions vanish
+at $g=0$, and three-country edge symmetry supplies the
+exact identity $V_g(0,p)=2\mu(p)$.
+At $p_0=(6/7,1)$, $a=8/7$, $D=d^2/a^2$, one obtains
+\[
+ M(g,p_0)=-D\frac{g^2}{16(1+g/8)^2},\qquad
+ V(g,p_0)=-D\frac{g^2(29/64+25g/256+7g^2/2048)}
+ {(1+g/8)^2(1+g/4)^2},
+\]
+and $J_g(0,p_0)=H_g(0,p_0)=3D/4>0$.
+Moreover
+\[
+ \mu(p_0)=0,\qquad
+ \partial_\eta\mu(p_0)=\frac{8d^2}{(8/7)^4}
+ =\frac{2401d^2}{512}>0.
+\]
+The implicit function theorem therefore defines a smooth
+unique $\eta_c(\rho)$ locally with
+$\mathrm{sign}\,\mu=\mathrm{sign}(\eta-\eta_c(\rho))$.
+
+Uniform negativity of the quadratic terms at $p_0$,
+continuity of the Hessians and compact negativity away
+from $g=0$ yield constants $a_0,b_0,B_0,c_0,\epsilon>0$
+on a common primitive neighborhood for which
+\[
+ M(g,p)\le\mu(p)g-a_0g^2,\quad
+ 2\mu(p)g-B_0g^2\le V(g,p)
+ \le2\mu(p)g-b_0g^2,\quad
+ J(g,p),H(g,p)\ge c_0g
+\]
+for $0\le g\le\epsilon$, while
+$M(g,p),V(g,p)<0$ on $\epsilon\le g\le1$.
+If $\mu\le0$, no positive-depth SU offer can win and
+the outsider vetoes any IS accession: SW obtains.
+If $\mu>0$, choose $h=\mu/B_0\le\epsilon$.
+Then $V(h)\ge\mu^2/B_0>0$, $J(h),H(h)\ge c_0h>0$:
+the IS proposal is strictly accepted. Across ALL bilateral
+depths, $M(g,p)\le\mu^2/(4a_0)$; but
+$J(h)\ge c_0\mu/B_0>\mu^2/(4a_0)$
+after shrinking the primitive neighborhood.
+Hence the accepted grand offer dominates every SU,
+irrespective of its depth or actual veto status.
+Weak-vote closedness and continuity give an attained
+global IS optimal depth. An ordinary finite-cover argument
+unifies these critical and away-from-critical neighborhoods
+over $K$, completing the result.
+\end{proof}
+
+\paragraph{Scope.}
+This is a rigorous two-regime theorem with strategic
+endogenous firm differentiation for $\rho<1$ in a
+nontrivial parameter strip. It is NOT the unrestricted
+claim that SU can never be optimal for every
+$\rho,\eta,\kappa,d$; nor does it characterize corner
+Cournot equilibria outside the maintained model's
+interior domain. The explicit grand depth $h$ is a
+winning witness, not necessarily the maximizing depth.
+Publication priority remains subject to close
+proposition-level comparison with previous standards
+coalition and network-effect models.
