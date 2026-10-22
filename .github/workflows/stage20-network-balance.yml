@@ -1,0 +1,21 @@
+name: Stage20 exact network-balance regime endpoint
+on:
+  pull_request:
+    paths:
+      - 'verification/stage20_eta_equals_rho_exact.py'
+      - '.github/workflows/stage20-network-balance.yml'
+  push:
+    branches:
+      - research/stage20-three-regime-phase-diagram-gate-20261022
+permissions:
+  contents: read
+jobs:
+  exact-network-balance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact Fraction proof regression eta equals rho
+        run: python verification/stage20_eta_equals_rho_exact.py

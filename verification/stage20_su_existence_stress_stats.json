@@ -1,0 +1,28 @@
+{
+  "status": "NUMERICAL_DIAGNOSTIC_NOT_PROOF",
+  "date": "2026-10-22",
+  "seed": 21,
+  "draws": 300000,
+  "g_points_per_draw": 140,
+  "fully_grid_valid": 190388,
+  "draws_with_some_su_feasible": 3429,
+  "fully_grid_valid_draws_with_strict_su_winner": 0,
+  "largest_su_minus_is_gap_among_fully_grid_valid": -0.00007756809782266672,
+  "search_distribution": {
+    "rho": "uniform(0.08,0.9999)",
+    "eta": "uniform(0.03,min(0.995,(2+2*rho)/3-0.0005))",
+    "kappa": "loguniform(0.09,100)",
+    "lambda": "20% exactly zero, otherwise loguniform(1e-6,1000)",
+    "depths": "j/70 and 10^(-7+7j/70) for j=1,...,70"
+  },
+  "false_positive_example": {
+    "rho": 0.1277387512862338,
+    "eta": 0.6982418631994138,
+    "kappa": 22.564679990169232,
+    "lambda": 34.13851912129799,
+    "su_outsider_q_at_g_0_76666667": 0.007610306577315158,
+    "su_interior_newton_at_g_0_8": "fails; no admissible symmetric interior continuation verified"
+  },
+  "limits": "Nash roots sampled numerically, not continuous-domain interval certification; zero observed SU-optimal settings is not a universal nonexistence theorem; eta cap and solver failures reduce coverage. Passing 140 sampled interior FOC roots still does NOT verify global unilateral optimality, uniqueness or unsampled depths.",
+  "audit_correction": "The first 300k draw run mistakenly allowed symmetric IS design y=0 as a valid interior root; the corrected filter enforces 0<y,u,v<1 at EVERY sampled depth and rejects y=0."
+}
