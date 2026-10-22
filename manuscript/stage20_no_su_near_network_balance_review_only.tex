@@ -97,3 +97,7 @@ Some apparent bilateral winners in the high-network
 region use invalid negative-output continuations at
 other depths, and must not be claimed as equilibria.
 A full three-region SW--SU--IS theorem is unproved.
+
+
+## Correction (2026-10-22): strict interior numerical search gate
+The FIRST run mistakenly treated a symmetric IS firm-design output y=0 as passing an interior strategy check. A fresh full 300000-draw seeded rerun, changing the admissibility condition from y>=0 to **0<y<1** and requiring 0<u,v<1 on every sampled depth, yields **190388** fully 140-point grid-valid draws, **3429** draws with some SU-feasible offer, and **zero** fully grid-valid SU-optimal winners. Prior counts 208606 and 3696 are superseded. Numerical Newton and FOC checks cannot establish full all-g Nash optimality; the stress search is explicitly NOT proof.
