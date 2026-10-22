@@ -1,0 +1,36 @@
+name: Stage11 JPET v0.5 manuscript PDF
+on:
+  push:
+    branches:
+      - fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
+    paths:
+      - 'manuscript/stage25_jpet_v05.tex'
+      - 'manuscript/stage11_proof_supplement.tex'
+      - 'manuscript/figure3_v05_tikz.tex'
+      - '.github/workflows/stage11-jpet-v05-pdf.yml'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile article and appendices
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage25_jpet_v05.tex
+          working_directory: manuscript
+          latexmk_use_xelatex: false
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Verify PDF and commit to draft branch
+        run: |
+          test -s manuscript/stage25_jpet_v05.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manuscript/stage25_jpet_v05.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Build Stage11 corrected v0.5 manuscript PDF"
+            git fetch origin fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
+            git rebase origin/fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
+            git push origin HEAD:fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
+          fi

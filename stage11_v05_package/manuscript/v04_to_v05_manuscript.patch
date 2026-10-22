@@ -1,0 +1,215 @@
+--- v04.tex
++++ v05.tex
+@@ -5,7 +5,7 @@
+ \usepackage{booktabs,tabularx,array,graphicx}
+ \usepackage{float}
+ \usepackage{tikz}
+-\usetikzlibrary{arrows.meta,positioning,calc,fit}
++\usetikzlibrary{arrows.meta,positioning,calc,fit,shapes.geometric}
+ \usepackage{geometry}
+ \usepackage{microtype}
+ \usepackage{setspace}
+@@ -24,7 +24,7 @@
+ \newcommand{\loss}{\mathcal L}\newcommand{\vect}[1]{\boldsymbol{#1}}
+ \title{Endogenous Product Design and Participation in\\ International Compatibility Agreements}
+ \author{Review working draft---author details withheld}
+-\date{22 October 2026\quad |\quad Stage 25, version 0.4\quad |\quad \textbf{Not for submission}}
++\date{22 October 2026\quad |\quad Stage 25, version 0.5 (Stage 11 repairs)\quad |\quad \textbf{Not for submission}}
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+@@ -51,11 +51,11 @@
+ 
+ The institutional restriction is deliberate. The initial bilateral proposal specifies a compatibility depth that a later entrant may accept or reject but cannot revise in the same accession round. This separates accession to an existing specification from negotiation of a newly specified multilateral interface. Larger standard-setting committees can face distributive bargaining frictions \citep{Simcoe2012}; nevertheless, the model \emph{does not} prove that this procedure is endogenously optimal, that technical specifications cannot be amended in practice, or that direct multilateral negotiation is unavailable in every standards organization. The direct-proposal counterfactual is used expressly to reveal this limitation.
+ 
+-The paper uses a timing diagram, a causal sign-decomposition diagram, compact tables, and a carefully delimited numerical phase map to distinguish the economic mechanism from the domain of its proof. Our approach is a specialized public-economic-theory contribution: the causal mechanism concerns a national participation constraint, not the invention of a new oligopoly equilibrium concept. The strongest comparison is with government standards coalitions \citep{Takarada2020,Kawabata2021} and regulatory agreements involving privately chosen product characteristics \citep{Grossman2021}. Section~\ref{sec:model} defines the primitives; Sections~\ref{sec:equilibrium}--\ref{sec:global} derive the national-incidence channel and equilibrium contrast; Section~\ref{sec:institution} compares negotiation routes; Section~\ref{sec:boundaries} identifies the limits of cost and network-intensity results. Longer algebra and the verification map are collected in the Appendix.
++The economic object of interest is national consent after privately chosen design, rather than a new oligopoly equilibrium concept. This controlled comparison identifies a possible failure of fixed-product policy appraisal: a government can approve an agreement under frozen product differentiation while rejecting it after the induced private Nash redesign. The strongest comparison is with government standards coalitions \citep{Takarada2020,Kawabata2021} and regulatory agreements involving privately chosen product characteristics \citep{Grossman2021}. Section~\ref{sec:model} defines the primitives; Sections~\ref{sec:equilibrium}--\ref{sec:global} derive the national-incidence channel and equilibrium contrast; Section~\ref{sec:institution} compares negotiation routes; Section~\ref{sec:boundaries} identifies the limits of cost and network-intensity results. Longer algebra and the verification map are collected in the Appendix.
+ 
+ \section{Economic environment and the accession protocol}\label{sec:model}
+ \subsection{Three countries, compatibility, and residual design}
+-There are three symmetric countries $A,B,C$, each with one firm. All three firms sell in each of three identical segmented national markets. Each firm chooses a residual product characteristic $x_i\in[0,1]$; a larger $x_i$ is a higher level of the model's residual attribute, and $1-x_i$ is the reverse scale of the \emph{same} attribute, not another decision variable. The compatibility arrangement is a separate government choice.
++There are three symmetric countries $A,B,C$, each with one firm. All three firms sell in each of three identical segmented national markets. Each firm chooses the degree $x_i\in[0,1]$ of residual product similarity, namely how much of the product architecture outside the publicly harmonized interface is left common across goods. Equivalently, $1-x_i$ measures the intensity of \emph{costly private differentiation}; it is the reverse scale of this same choice, not a second attribute. Firms can save development costs by raising $x_i$, but doing so changes product substitution and their Cournot profits. The compatibility arrangement is a separate government choice: $g$ specifies the publicly agreed technical depth, whereas $x_i$ describes privately chosen differentiation in the residual design space. This intentionally parsimonious linear relationship between firms' characteristics and pairwise similarity is a modeling assumption, not a universal engineering identity.
+ 
+ Let $g\in[0,1]$ denote the proposed depth of common compatibility and write $H$ for the country-link matrix: $H_{ii}=1$ and $H_{ij}=0$ under fragmentation $\SW$, $H_{AB}=H_{BA}=g$ with other off-diagonal entries zero under bilateral compatibility $\SU$, and $H_{ij}=g$ for every $i\ne j$ under integrated compatibility $\IS$. Define $X_{ii}=1$ and $X_{ij}=(x_i+x_j)/2$ for $i\ne j$. The cross-product matrix and fulfilled-expectations Cournot matrix are
+ \begin{equation}\label{eq:matrices}
+@@ -68,13 +68,13 @@
+ U(q;\bar q)=(c+d)\vect{1}^{\top}q-\tfrac12q^{\top}Bq+\eta q^{\top}H\bar q,\qquad
+ p=(c+d)\vect{1}-Bq+\eta H\bar q.
+ \end{equation}
+-The matrix $B$ is symmetric. We maintain the regular range in which the underlying consumer problem and subsequent interior outputs are well-defined. Consumers and firms take network expectations as fixed during a unilateral quantity deviation; expectations are fulfilled at equilibrium. Every firm's constant marginal production cost is $c$ and $d>0$ is the net-demand intercept.
++The matrix $B$ is symmetric and positive semidefinite on the full strategy cube for the maintained $0\le\rho\le1$; Appendix~\ref{app:regularity} proves this from the matrices' vertices. At the benchmark $0<\eta<\rho<1$ and the sufficient full-cube Rosen bound holds, delivering positive Cournot quantities and a unique private-design Nash continuation (Appendix~\ref{app:regularity}). Consumers and firms take network expectations as fixed during a unilateral quantity deviation; expectations are fulfilled at equilibrium. Every firm's constant marginal production cost is $c$ and $d>0$ is the net-demand intercept.
+ 
+ In the baseline, firm $i$ bears a one-time design cost
+ \begin{equation}\label{eq:cost}
+ K_i(x_i)=\tfrac{\kappa}{2}(1-x_i)^2,\qquad\kappa>0.
+ \end{equation}
+-The optional curvature $\lambda(x_i-z)^2/2$ is introduced only in Section~\ref{sec:boundaries}; it is not part of the baseline result. Because each firm sells in three identical markets, its worldwide operating profit is $3q_i^2$ in the fulfilled interior Cournot equilibrium derived below. The resulting net profit and each country's national welfare are
++The quadratic cost is the expense of developing proprietary differentiation $1-x_i$: as $x_i$ increases toward one, firms economize on differentiation effort while their products become more alike. Hence the Nash redesign response includes a genuine private cost-saving incentive. The optional curvature $\lambda(x_i-z)^2/2$ is introduced only in Section~\ref{sec:boundaries}; it is not part of the baseline result. Because each firm sells in three identical markets, its worldwide operating profit is $3q_i^2$ in the fulfilled interior Cournot equilibrium derived below. The resulting net profit and each country's national welfare are
+ \begin{equation}\label{eq:welfare}
+ \Pi_i=3q_i^2-K_i(x_i),\qquad CS=\tfrac12q^{\top}Bq,\qquad W_i=CS+\Pi_i.
+ \end{equation}
+@@ -83,7 +83,7 @@
+ \subsection{Timing, government choices, and the consent inequalities}
+ The game is solved by backward induction. The policy stage specifies $H$ and the depth $g$; firms then choose $x_i$ simultaneously and noncooperatively; finally they choose Cournot quantities in their destination markets. We assume unique positive-output continuation equilibria when deriving differentiable reduced-form payoffs and explicitly restrict global claims to the certified region.
+ 
+-At the policy level, country $A$ initiates an $AB$ bilateral proposal at depth $g\in[0,1]$. Country $B$ chooses whether to accept, anticipating the specified later accession opportunity. Country $C$ may then join at the \emph{same inherited depth}; accession requires the approval of $C$ and incumbents. When indifferent, a government accepts. Depth is set at the initial proposal and is not reoptimized upon accession within this game. Country $A$ selects its initial offer to maximize the welfare resulting from the actual continuation game. A later direct three-country negotiation is not part of this baseline protocol.
++At the policy level, country $A$ initiates an $AB$ bilateral proposal at depth $g\in[0,1]$. Country $B$ chooses whether to accept, anticipating the specified later accession opportunity. Country $C$ may then join at the \emph{same inherited depth}; accession requires the approval of $C$ and incumbents. Accession approval is implemented as a sequence of perfectly observed yes/no decisions by C, A, and B, each conditional on preceding approvals. Every government is required to vote yes when its eventual payoff is unchanged, including at off-path histories and when its ballot would otherwise be nonpivotal; a strict preference for rejection is needed for a veto. Depth is set at the initial proposal and is not reoptimized upon accession within this game. Country $A$ selects its initial offer to maximize the welfare resulting from the actual continuation game. A later direct three-country negotiation is not part of this baseline protocol.
+ 
+ For policy regime $r\in\{\SW,\SU,\IS\}$ write $x^r(g)$ for the actual firm Nash equilibrium and $W^r(g)$ for the resulting national welfare. Define, with symmetry,
+ \begin{align}\label{eq:payoffs}
+@@ -97,7 +97,7 @@
+ \SU\text{ at }g &: \quad m(g)\ge s\text{ and at least one enlargement vote fails},\nonumber\\
+ \SW &: \quad\text{otherwise}.\nonumber
+ \end{align}
+-These conditions describe the baseline extensive-form outcome; they are \emph{not} the core of the unrestricted coalition-formation game. In particular, positive $i(g)-s$ alone never proves acceptance under inherited-depth enlargement.
++Indeed, after B accepts an AB offer, C compares $i(g)$ with $o(g)$, and the incumbent voters compare $i(g)$ with $m(g)$; B anticipates this accession subgame and compares either its final $i(g)$ or $m(g)$ with $s$. Thus unanimous enlargement followed by initial acceptance occurs exactly when $i(g)\ge\max\{s,m(g),o(g)\}$. The tie convention applies at every subgame, not just on the equilibrium path. These conditions describe the baseline extensive-form outcome; they are \emph{not} the core of the unrestricted coalition-formation game. In particular, positive $i(g)-s$ alone never proves acceptance under inherited-depth enlargement.
+ 
+ Figure~\ref{fig:timing} separates the governmental proposal and voting tree from the firm and market continuations used to evaluate each terminal regime. The latter are solved first when computing the former by backward induction.
+ 
+@@ -138,7 +138,7 @@
+ \begin{equation}\label{eq:cournot}
+ M q=d\vect{1},\qquad q=d M^{-1}\vect{1},
+ \end{equation}
+-provided $M$ is invertible and $q\gg0$. The expression defines outputs conditional on policy $H$ and design $x$. It is the interior continuation formula, not by itself a global design-equilibrium certificate.
++provided $M$ is invertible and $q\gg0$. The expression defines outputs conditional on policy $H$ and design $x$. It is the interior continuation formula, not by itself a global design-equilibrium certificate. For $E_j=M_{x_j}$, unilateral private-design differentiation gives $q_{x_j}=-M^{-1}E_jq$ and $F_i=6q_i(q_{x_i})_i+\kappa(1-x_i)$. This is the own-firm FOC holding all rival designs fixed; the full-cube Nash uniqueness and boundary-deviation conditions are supplied in Appendix~\ref{app:regularity}.
+ 
+ Write the useful abbreviations
+ \begin{equation}\label{eq:abbrev}
+@@ -281,7 +281,7 @@
+ This does not assert an explicit radius for $\mathcal U$, an all-parameter global classification, or coalition-proof fragmentation.
+ \end{theorem}
+ \begin{proof}[Proof architecture and certified bounds]
+-At $\theta_0$, the historical Stage-14 all-depth interval certificates establish, for $g\in[0,1]$, strict derivative \emph{upper} bounds
++At $\theta_0$, the reproducible all-depth interval proof described in Appendix~\ref{app:interval} establishes, for $g\in[0,1]$, strict derivative \emph{upper} bounds
+ \begin{equation}\label{eq:cert}
+ \frac{dm_{\N}}{dg}<-0.0079701929973,\qquad
+ \frac{d(i_{\N}-o_{\N})}{dg}<-0.0150388833377.
+@@ -296,7 +296,7 @@
+ \end{equation}
+ while $i_{\F}(1/20)>o_{\F}(1/20)$ and $i_{\F}(1/20)>m_{\F}(1/20)$ strictly. The candidate is accepted, beats $\SW$, and beats the entire terminal bilateral payoff envelope, so an optimal accepted positive-depth integrated offer exists. Separately the actual endogenous integrated outcome at $g=1/20$ satisfies $i_{\N}(1/20)-s>0.0169346278736$.
+ 
+-The all-depth strict inequalities, positive-output margins and uniform full-cube equilibrium-uniqueness/regularity margins survive under sufficiently small primitive perturbations. A finite-cover implicit-function argument, continuity of derivatives on a compact depth interval, and the maximum theorem preserve strict negative endogenous slopes and the strict frozen integrated-versus-bilateral envelope gap. The local no-agreement and positive-depth inequalities thereby hold on some common \emph{open} neighborhood $\mathcal U$. The existence assertion is qualitative; no explicit primitive box is supplied. The complete numerical certification targets, algorithms, and audit provenance must be supplied as machine-readable supplementary material at submission (Appendix~\ref{app:cert}).
++The all-depth strict inequalities, positive-output margins and uniform full-cube equilibrium-uniqueness/regularity margins survive under sufficiently small primitive perturbations. A finite-cover implicit-function argument, continuity of derivatives on a compact depth interval, and the maximum theorem preserve strict negative endogenous slopes and the strict frozen integrated-versus-bilateral envelope gap. The local no-agreement and positive-depth inequalities thereby hold on some common \emph{open} neighborhood $\mathcal U$. The existence assertion is qualitative; no explicit primitive box is supplied. Appendix~\ref{app:interval} identifies the certified mathematical objects, interval algorithm, and immutable reproduction artifacts, which form part of the manuscript-facing proof package.
+ \end{proof}
+ 
+ \paragraph{Why this is stronger than a calibrated sign example.}
+@@ -323,7 +323,7 @@
+ \end{table}
+ 
+ \subsection{An interpretable numerical illustration}
+-At $\theta_0$ the no-agreement symmetric private design is $z\simeq0.7185927073$. We obtain $D\simeq0.0067679241$, $\loss\simeq0.0150697441$ and $\mu_{\N}\simeq-0.0083018200$. For the same policy depth $g=0.05$, all values below are \emph{national welfare differences} from the corresponding bilateral, outsider, or fragmentation alternatives. Table~\ref{tab:effects} is based on the independently reconstructed Stage-23 equilibrium evaluator and is shown to explain magnitudes and signs; it does not replace the rigorous all-depth argument.
++At $\theta_0$ the no-agreement symmetric private design is $z\simeq0.7185927073$. We obtain $D\simeq0.0067679241$, $\loss\simeq0.0150697441$ and $\mu_{\N}\simeq-0.0083018200$. For the same policy depth $g=0.05$, all values below are \emph{national welfare differences} from the corresponding bilateral, outsider, or fragmentation alternatives. Table~\ref{tab:effects} uses an independently evaluated Cournot--design Nash continuation and illustrates magnitudes and signs; it does not replace the rigorous all-depth argument.
+ \begin{table}[ht]
+ \centering\small
+ \caption{Government welfare comparisons at $g=0.05$ (uncalibrated model units)}\label{tab:effects}
+@@ -338,15 +338,15 @@
+ \end{table}
+ The endogenous direct grand gain corresponds to approximately $0.70\%$ of the baseline welfare level in these \emph{non-calibrated} model units. We make no empirical claim that real-world gains have this size. The analytically relevant observation is the opposition between a positive grand gain and negative consent margins in the inherited-depth sequence.
+ 
+-Figure~\ref{fig:phase} maps the government-optimal terminal regime in the $(\kappa,\eta)$ plane, holding $d=1$, $\rho=0.9$ and the governmental voting procedure fixed. In Panel~(a), firms' designs are frozen at each parameter pair's own fragmentation Nash level $z(\kappa,\eta)$; in Panel~(b), firms reoptimize those designs following the anticipated policy choice. Both panels optimize the initiating government's depth $g$ over the same admissible policy menu. At the certified benchmark star, frozen design supports $\IS$ while endogenous design leads to $\SW$. This controlled comparison, rather than the exact appearance of a boundary line, is the figure's economic point. The plot is a numerical illustration on a $(41\times41)$ parameter lattice, with denser government-depth exploration near regime changes; it is not a two-dimensional interval-certificate theorem.
+-
+-\paragraph{Why a bilateral-only region is not identified in this numerical slice.}
+-At any \emph{specified} depth, a bilateral $\SU$ requires $m(g)\ge s$ and at least one failed enlargement vote (either $i(g)<m(g)$ or $i(g)<o(g)$). Yet these inequalities establish only a \emph{terminal outcome conditional on the proposed depth}; they do not imply that the initiating government optimally selects such a depth instead of another depth yielding $\IS$. This distinction is numerically material. A coarse depth grid initially suggested very narrow $\SU$ bands, but in the updated search every such cell was reclassified as $\SW$ or $\IS$ once the $g$ grid was refined to 321 points. All 28 cells whose classifications changed between the 81-point and 321-point depth searches retained the refined classification on a 641-point recheck. We therefore do not display a verified $\SU$ region in Figure~\ref{fig:phase}. Its absence from this finite numerical slice is \emph{not} a proof that $\SU$ cannot arise under other primitive parameters or even between sampled points. No closed-form phase boundary, global two-dimensional parameter theorem, or absence-of-$\SU$ theorem is claimed.
++Figure~\ref{fig:phase} illustrates numerical changes in the initiating government's preferred terminal arrangement on a common $(\kappa,\eta)$ slice. Every point uses its own fragmentation Nash reference $z(\kappa,\eta)$, with $d=1$, $\rho=0.9$ and the identical inherited-depth voting game in both panels. Because acceptance windows can be extremely narrow near $g=0$, a uniform depth grid can misclassify policies. We therefore use logarithmic probes near zero, bracket observed zeros of $i-s$, $i-m$, $i-o$, and $m-s$, and compare accepted proposals with locally optimized bilateral payoff candidates. The displayed IS-colored cells contain an accepted proposal that exceeds the computed bilateral envelope in the implemented numerical search. Gray cells are best interpreted as \emph{no profitable accepted offer found by this numerical search}, rather than a rigorous all-depth rejection certificate. Accordingly, only the separately marked reference point and the nonexplicit open set of Theorem~\ref{thm:open} have the formal equilibrium guarantee stated in this article. Exact phase boundaries for the entire displayed rectangle are not asserted.
++
++\paragraph{Why no bilateral-only regime appears in this numerical slice.}
++A bilateral arrangement can be sustained at a particular $g$ if $m(g)\ge s$ and at least one enlargement vote fails. But this does not make $\SU$ the initial proposer's best offer: another depth may satisfy all three integration votes and provide a larger national payoff. Narrow apparent $\SU$ bands produced by coarse discretization disappear when additional accepted $\IS$ depths are examined. The updated $41\times41$ numerical slice identifies no government-preferred $\SU$ cell. This is a feature of the illustrated candidate search, \emph{not} an analytically proved exclusion of bilateral agreements for arbitrary primitive parameters.
+ 
+ \begin{figure}[H]
+ \centering
+-\includegraphics[width=0.96\linewidth]{figure3_v04_kappa_eta_phase.pdf}
+-\caption{Numerical government-regime map in the $(\kappa,\eta)$ plane. Both panels solve the same inherited-depth governmental game with $d=1$, $\rho=0.9$, and $\lambda=0$. Panel (a) fixes each parameter pair's private design at its own no-agreement Nash level; panel (b) allows Nash redesign after policy. Gray indicates fragmentation ($\SW$), blue a three-country agreement ($\IS$). A bilateral-only regime ($\SU$) was not detected in this refined slice. The star is the certified reference pair $(0.8505,0.758)$. Boundaries are numerical approximations, not theorem-certified phase curves.}
++\resizebox{0.98\linewidth}{!}{\input{figure3_v05_tikz.tex}}
++\caption{Numerical candidate government regimes on the $(\kappa,\eta)$ slice. Both panels use $d=1$, $\rho=0.9$, $\lambda=0$ and the same inherited-depth accession game. Panel (a) freezes residual designs at each point's fragmentation Nash; panel (b) permits Nash redesign. Gray: no profitable agreement identified (SW candidate); blue: accepted proposer-improving IS candidate dominates the computed bilateral envelope. No optimal SU was identified. The star denotes the separately certified benchmark $(0.8505,0.758)$. Boundaries remain exploratory, not exact phase curves.}
+ \label{fig:phase}
+ \end{figure}
+ 
+@@ -359,7 +359,7 @@
+ Suppose the endogenous continuation is regular and $\mu_{\N}<0<2\mu_{\N}+\nu_{\N}$. Then at every sufficiently small positive depth the baseline inherited-depth votes prevent a bilateral-first path from producing integration, while a \emph{direct} integrated proposal at the same depth is strictly Pareto-improving and accepted against fragmentation. At $\theta_0$, the baseline game returns fragmentation at every depth and at least one positive-depth direct proposal is strictly acceptable.
+ \end{proposition}
+ \begin{proof}
+-From Lemma~\ref{lem:edges}, $m_{\N}'(0)=\mu_{\N}<0$ and $[i_{\N}-o_{\N}]'(0)=2\mu_{\N}<0$, whereas $i_{\N}'(0)=2\mu_{\N}+\nu_{\N}>0$. All level gaps start at zero, yielding the local result. At $\theta_0$, Theorem~\ref{thm:open} establishes global failure under inherited depth, while the certified inequality $i_{\N}(1/20)>s$ establishes an accepted direct alternative. Existence of an optimal accepted direct offer follows from the compact policy menu and the maintained weak-acceptance rule.
++From Lemma~\ref{lem:edges}, $m_{\N}'(0)=\mu_{\N}<0$ and $[i_{\N}-o_{\N}]'(0)=2\mu_{\N}<0$, whereas $i_{\N}'(0)=2\mu_{\N}+\nu_{\N}>0$. All level gaps start at zero, yielding the local result. At $\theta_0$, Theorem~\ref{thm:open} establishes global failure under inherited depth, while the certified inequality $i_{\N}(1/20)>s$ establishes an accepted direct alternative. The feasible direct-offer set $\{g\in[0,1]:i_{\N}(g)\ge s\}$ is closed, and the continuous payoff reaches a maximum on it; this is the requisite existence argument, not compactness of a discontinuous overall terminal-payoff map alone.
+ \end{proof}
+ 
+ \paragraph{Interpreting the restriction.}
+@@ -391,27 +391,8 @@
+ At the certified primitive root, $Q_\lambda=-J(0)+\lambda I$ is a strictly diagonally dominant nonsingular $M$-matrix with $Q_\lambda^{-1}$ componentwise positive and positive forcing $f=(p,p,r)$. The equilibrium response is $Q_\lambda^{-1}f$ and satisfies $d(Q_\lambda^{-1}f)/d\lambda=-Q_\lambda^{-2}f\ll0$. Since $C,V>0$, the induced loss is positive, strictly decreasing, and tends to zero. Its value at zero exceeds $D>0$. The intermediate value theorem and strict monotonicity yield a unique threshold; the cited interval is from exact arithmetic. Lemma~\ref{lem:edges} turns the sign of $D-\loss(\lambda)$ into the first-order member and outsider vote signs. The result does not equate local vote feasibility with globally government-optimal $\IS$.
+ \end{proof}
+ 
+-\subsection{A network boundary, and what it cannot establish}
+-At $\rho=1$ the residual design $x_i$ drops out of cross-product compatibility and the baseline optimum is $x_i=1$ everywhere. Therefore this boundary is \emph{not} itself an example of private redesign. Nevertheless, the government game is analytically tractable and illustrates an exact boundary to the agreement regime.
+-
+-Set $\vartheta=(1-\eta)/(2-\eta)$ and $E=d^2/(2-\eta)^2$. Direct solution yields
+-\begin{equation}\label{eq:face}
+-\begin{split}
+-s&=\tfrac92E,\\
+-m(g)&=E\left[\frac{4+g}{(1+\vartheta g)^2}+\tfrac12\right],\\
+-o(g)&=E\left[\frac{1+g}{(1+\vartheta g)^2}+\tfrac72\right],\\
+-i(g)&=E\frac{\tfrac92+3g}{(1+2\vartheta g)^2}.
+-\end{split}
+-\end{equation}
+-In particular,
+-\begin{equation}\label{eq:faceSign}
+-m(g)-s=E\frac{g(1-8\vartheta-4\vartheta^2g)}{(1+\vartheta g)^2}.
+-\end{equation}
+-The certified complete government-regime comparison on this \emph{limiting family} selects $\SW$ for $\eta\le6/7$ and a government-optimal $\IS$ for $\eta>6/7$; a positive-depth $\SU$ is never the optimal terminal regime. A restricted strip with genuinely active design exists for $\rho<1$ sufficiently close to 1 and has an implicit cutoff $\eta_c(\rho)$ with $\eta_c(1)=6/7$. The local expansion from earlier analysis is
+-\begin{equation}\label{eq:cutoffExpansion}
+-\eta_c(\rho)=\frac67+\frac{211}{196}(\rho-1)+O\big((1-\rho)^2\big),\quad \rho\uparrow1.
+-\end{equation}
+-No universal cutoff $6/7$ is claimed when $\rho<1$; no result here classifies arbitrary market primitives. This network boundary is secondary to the national-incidence mechanism.
++\subsection{The nonstrategic network face and an active-design boundary}
++When $\rho=1$, the privately chosen residual design does not affect compatibility and its optimum is $x_i=1$. A complete analytic comparison of the same inherited-depth government game then yields $\SW$ for $\eta\le6/7$ and government-optimal $\IS$ for $\eta>6/7$, with no government-optimal terminal $\SU$. This is a useful limiting-case check rather than a case of strategic redesign. Under the additional strict regularity assumptions and for $\rho<1$ sufficiently close to one, a restricted active-design strip inherits a local cutoff $\eta_c(\rho)$ and the same direct $\SW$--$\IS$ transition. Appendix~\ref{app:networkfull} provides the welfare formulas and the quadratic transition proof; it does not assert the result for arbitrary $\rho$ or for the Figure~\ref{fig:phase} slice ($\rho=0.9$).
+ 
+ \section{Relationship to the literature and interpretation}\label{sec:literature}
+ \citet{GandalShy2001} and \citet{Klimenko2009} develop international approaches to compatibility, network effects and strategic standards. In national standards policy, \citet{Costinot2008} shows how institutional rules affect the welfare consequences of domestic standards. Most directly, \citet{Takarada2020} studies regional and multilateral standards coalitions in a three-country model and finds that globally desirable cooperation need not be coalition-stable. \citet{Kawabata2021} establishes that harmonization in a deep regional trade agreement can impede multilateral free trade with an international standard. These are economic predecessors of our institutional comparison: failure of multilateral standardization is \emph{not} new per se.
+@@ -420,7 +401,7 @@
+ 
+ On the firm side, \citet{Buccella2023} characterizes compatibility strategies and endogenous choices in network industries, while \citet{Cheng2025} analyzes product quality, compatibility and veto. Their competitive incentive channels are relevant predecessors, but their verified main games place compatibility choice with firms, not with three welfare-maximizing governments followed by separate residual private design. In particular, a firm's compatibility cost or veto should not be identified with a government's consent constraint, or with the adjustment cost $\lambda$ in our extension. Details and unresolved full-text supplemental comparisons remain documented in the accompanying research ledger, rather than restated as unqualified priority claims.
+ 
+-An editor can still reasonably ask whether deriving a negative national incidence in this specific oligopoly adds enough economics beyond familiar investment and institutional commitment problems. Our answer cannot rest merely on a new derivative formula or the phrase ``compatibility may fail.'' The substantive increment is the controlled counterfactual and its globally certified regime switch: the same group of governments, with the same depth menu, reaches different agreement outcomes because private design changes the payoff from participation. The direct-grand case in Proposition~\ref{prop:direct} expressly states the limit of that finding.
++Relative to standards-coalition and regulatory-design predecessors, the contribution is the controlled national participation comparison: without altering the government protocol, privately chosen costly differentiation changes both consent constraints and the proposer-optimal terminal agreement. The government-by-government incidence decomposition identifies why a fixed-product appraisal can give the wrong policy prediction. Proposition~\ref{prop:direct} isolates the institutional boundary by permitting a direct grand offer while retaining the same firm equilibrium.
+ 
+ \section{Conclusion}
+ International compatibility agreements can change firms' privately optimal residual product characteristics, not merely the attractiveness of their current products. The resulting design Nash can alter national welfare through domestic consumers and the home firm's worldwide earnings, and in a precisely characterized region it reverses governmental consent relative to a fixed-design benchmark. The sign reversal survives as a government-optimal regime difference on a certified nonempty open region of the model's baseline primitive parameters.
+@@ -464,18 +445,19 @@
+ \]
+ Solving gives \eqref{eq:lambdaResp} and $\Delta_\lambda=(A_\lambda+\chi)(A_\lambda-2\chi)>0$. The strictly diagonally dominant nonsingular $M$-matrix argument in Proposition~\ref{prop:lambda} establishes monotonicity. At equality $\lambda=\lambda_c$ the first derivative vanishes; second-order terms must be analyzed before assigning a regime.
+ 
+-\section{Exact network-face identities and statement scope}\label{app:network}
+-On the limiting $\rho=1$ family, $\beta=0$ and residual private characteristics cannot affect $B$. Formulae \eqref{eq:face} solve the actual bilateral and integrated firm-production continuations. The numerator in \eqref{eq:faceSign} shows that a positive-depth bilateral offer is unprofitable when $\vartheta\ge1/8$, equivalently $\eta\le6/7$. The separate outsider-accession polynomial inequalities and, for $\eta>6/7$, the constructed accepted integrated offer beating the entire bilateral envelope are recorded in the certified Stage-21 theorem file. For $\rho<1$ close to 1, smooth Nash continuation plus uniform strict inequalities away from the boundary and a local second-order check yield the stated restricted endogenous strip. These are different mathematical claims: the exact face threshold is global on that face, while the continuation to active design is local in $\rho$ and does not have an arbitrary-$\rho$ formula.
+-
+-\section{Computer-assisted global verification: auditable mapping}\label{app:cert}
+-Theorem~\ref{thm:open} incorporates \emph{previously obtained} all-depth certifications rather than claiming a new independent interval proof in this manuscript. The following records (relative to the relevant Stage-14, Stage-22, or Stage-23 repository directory), frozen at the corresponding earlier GitHub commit, must accompany the submission package and be checked against the precise text of the theorem:
+-\begin{itemize}
+-\item Stage 14, \texttt{canonical\_global\_rerun.log}: full-depth Krawczyk/derivative sign bounds and equilibrium regularity targets under $\theta_0$.
+-\item Stage 14, \texttt{pareto\_rerun.log}: exact enclosure of the direct integrated Pareto gain and frozen-design alternatives.
+-\item Stage 22, \texttt{STAGE22\_ABC\_PROPOSITIONS\_AND\_PROOFS.md}: theorem scope, center-primitive open-set proof and the analytic Jacobian/invariance bridges.
+-\item Stage 23, \texttt{stage23\_independent\_reconstruction.py}: clean-room local Nash/Cournot reconstruction, \texttt{stage23\_local\_reconstruction\_log.json}, and archived GitHub Actions run reproducing the historical all-depth code.
+-\end{itemize}
+-The interval proof must certify a \emph{full} private-design Nash rather than just a symmetric stationary root, positive Cournot quantities throughout $g\in[0,1]$, and uniform negative welfare-gap slopes. The open-neighborhood inference additionally uses uniform strict margins; an isolated positive/negative numerical calculation cannot replace it. All records should be incorporated into an immutable supplementary archive before submission. The source and article presently remain a \emph{research working draft}, not a submission-certified proof package.
++\section{Exact network-face welfare formulas}\label{app:network}
++On the $\rho=1$ face, let $\vartheta=(1-\eta)/(2-\eta)$ and $E=d^2/(2-\eta)^2$. Firms choose $x_i=1$. Cournot inversion yields
++\begin{equation}\label{eq:face}
++\begin{split}
++s&=\tfrac92 E,\\
++m(g)&=E\left[\frac{4+g}{(1+\vartheta g)^2}+\tfrac12\right],\\
++o(g)&=E\left[\frac{1+g}{(1+\vartheta g)^2}+\tfrac72\right],\\
++i(g)&=E\frac{\tfrac92+3g}{(1+2\vartheta g)^2}.
++\end{split}
++\end{equation}
++The exact global face classification and near-$\rho=1$ active-design continuation are established in Appendix~\ref{app:networkfull}. On the restricted local strip the cutoff has the expansion $\eta_c(\rho)=6/7+(211/196)(\rho-1)+O((1-\rho)^2)$; this is not a formula for arbitrary $\rho$.
++
++\input{stage11_proof_supplement.tex}
+ 
+ \section*{Declarations (working-draft placeholders)}
+ \noindent\textbf{Funding and conflicts:} To be confirmed by the author before submission.\\
+@@ -483,7 +465,7 @@
+ \textbf{Use of AI assistance:} Material assistance in manuscript drafting and mathematical verification must be accurately disclosed under the eventual journal's current policy; all substantive results require author review and responsibility.\\
+ \textbf{Research status:} This draft has not been externally peer reviewed, and no final journal submission decision has been taken.
+ 
+-\begin{thebibliography}{99}\small
++\begin{thebibliography}{99}\footnotesize\setlength{\itemsep}{1pt}
+ \bibitem[Buccella, Fanti and Gori(2023)]{Buccella2023} Buccella, D., Fanti, L., and Gori, L. (2023). Strategic product compatibility in network industries. \emph{Journal of Economics}, 140, 141--168. \url{https://doi.org/10.1007/s00712-023-00834-x}.
+ \bibitem[Cheng and Huang(2025)]{Cheng2025} Cheng, Y.-L., and Huang, H.-Y. (2025). Quality competition and product compatibility in network industries. \emph{Journal of Economics}, 145, 31--57. \url{https://doi.org/10.1007/s00712-024-00896-5}.
+ \bibitem[Costinot(2008)]{Costinot2008} Costinot, A. (2008). A comparative institutional analysis of agreements on product standards. \emph{Journal of International Economics}, 75, 197--213. \url{https://doi.org/10.1016/j.jinteco.2007.11.004}.
