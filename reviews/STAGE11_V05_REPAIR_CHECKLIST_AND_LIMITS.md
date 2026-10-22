@@ -17,7 +17,7 @@
 | M3: bargaining implementation | Article §2 voting and §6, supplement | Sequential publicly observed C,A,B votes; mandatory yes on indifference including off-path; inherited g; direct grand rejection option separately SW | **PASS** |
 | M3: focused priority & economic value | Introduction/related literature | Generic standards stumbling block and regulatory-endogenous-design known; *controlled Nash-to-national-consent and all-depth same-game comparison* is contribution; no independent new regionalism claim | **PASS within literature limits** |
 | Post-edit compilation/layout | Manuscript and supplement, corrected Figure3 | Local pdflatex twice; **20 pages, zero warnings/undefined refs/overfull boxes**. Full contact sheet and Figure3 page inspected. CI GitHub workflow added for branch-built PDF; only call CI passed when run confirms. | **PASS locally; CI result separate** |
-| Formal Stage11 closure, then Stage12 | This checklist | No new primitives or proof claim; final Stage11 re-review of *this exact revised source and PDF* still required before advancing to formal Stage12 | **Stage11 re-review required** |
+| Formal Stage11 closure, then Stage12 | This checklist | No new primitives or proof claim; revised-source Stage11 hostile re-review completed in `reviews/STAGE11_V05_POST_REPAIR_REVIEW_AND_GATE.md`; eligible for formal Stage12, not for immediate submission | **Stage11 re-review completed; see `reviews/STAGE11_V05_POST_REPAIR_REVIEW_AND_GATE.md`; formal Stage12 remains separate** |
 
 ## 11-error numerical regression details
 
@@ -37,4 +37,4 @@ Local user-downloadable reproducible ZIP `V2b_Stage11_Repaired_v05_full_package.
 2. **Certain BFG/CH and Klimenko full supplements remain inaccessible in historical priority comparisons.** No direct absorber was identified in inspected results; missing access is not priority proof. Unbounded new literature search not a required Stage11 repair.
 3. **Author review and final journal submission checks** (bibliography/citation and AI disclosure, ORCID, funding/conflicts) are separate downstream gates. No external JPET acceptance implied.
 
-**Provisional repair verdict: M1–M3 substantively addressed without model extension; retain Stage11 re-review gate and do not claim full global phase certification or stage12/submission GO.**
+**Final bounded repair verdict: M1–M3 addressed and re-reviewed (`reviews/STAGE11_V05_POST_REPAIR_REVIEW_AND_GATE.md`); Stage11 repair gate GO to formal Stage12. Do not claim full global phase certification, Stage12 decision or journal submission approval.**
