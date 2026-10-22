@@ -1,0 +1,97 @@
+% Stage11 manuscript-facing theorem and interval proof supplement.
+% Audited source/replay SHA: 54ac8389f2c45d56b2e587a62c62f226cc121f95
+\section{Full-cube domain and Nash admissibility}\label{app:regularity}
+The proofs require all unilateral deviations, not merely symmetric stationary conditions. Put $\alpha=2-\eta$, $\beta=1-\rho$ and suppose $0<\eta<\rho<1$. The design interaction matrix $X(x)$ is affine on $x\in[0,1]^3$. Its eight binary-vertex matrices are positive semidefinite (the diagonal entries are one and every principal minor is nonnegative); convexity of the positive-semidefinite cone then implies $X(x)\succeq0$ throughout the cube. The policy matrix $H$ is positive semidefinite under fragmentation, SU and IS, with respective spectra $(1,1,1)$, $(1+g,1-g,1)$ and $(1+2g,1-g,1-g)$. Thus $B=\rho H+\beta X$ is positive semidefinite throughout all admissible design and policy histories. This guarantees consumer-payoff concavity, not strict definiteness at every corner.
+
+Write $M=\alpha I+N$. The off-diagonal entries of $N$ are nonnegative, its diagonal vanishes, and every row sum is at most $2(1-\eta)$. The quantity equilibrium satisfies
+\begin{equation}\label{eq:boundfixed}
+q=\frac{d}{\alpha}\mathbf1-\frac1{\alpha}Nq,\qquad
+\frac{\|N\|_\infty}{\alpha}\leq\frac{2(1-\eta)}{2-\eta}<1.
+\end{equation}
+The right-hand side is a strict contraction taking the closed cube $[\underline q,\overline q]^3$ into itself, where $\overline q=d/\alpha$ and $\underline q=\overline q[1-2(1-\eta)/\alpha]>0$. Consequently each policy/design profile generates a unique strictly positive quantity continuation, including all asymmetric unilateral deviations. Moreover $\|M^{-1}\|_\infty\le1/\eta$ and $\|q\|_\infty\le d/\alpha$.
+
+For $E_j=M_{x_j}$, each matrix $E_j$ has $\beta/2$ on the two pairs of off-diagonal entries incident to firm $j$. Differentiating the actual unilateral private-profit system gives
+\begin{align}\label{eq:appendixF}
+q_{x_j}&=-M^{-1}E_jq,\nonumber\\
+q_{x_jx_k}&=M^{-1}E_jM^{-1}E_kq+M^{-1}E_kM^{-1}E_jq,\nonumber\\
+F_i&=\Pi_{i,x_i}=6q_i(q_{x_i})_i+\kappa(1-x_i),\\
+J_{ij}&=6[(q_{x_i})_i(q_{x_j})_i+q_i(q_{x_ix_j})_i]-\kappa\mathbf1\{i=j\}.\nonumber
+\end{align}
+This differentiates a firm's profit holding rival designs fixed, not a jointly optimized symmetric-firm objective. The matrix norms imply $\|q_{x_i}\|_\infty\le\beta d/(\eta\alpha)$ and $\|q_{x_ix_j}\|_\infty\le2\beta^2d/(\eta^2\alpha)$, so
+$|J_{ij}+\kappa\mathbf1\{i=j\}|\le18\beta^2d^2/(\eta^2\alpha^2)$. Thus the sufficient condition
+\begin{equation}\label{eq:rosenbound}
+\kappa>\frac{54(1-\rho)^2d^2}{\eta^2(2-\eta)^2}
+\end{equation}
+makes the symmetric part of the pseudo-gradient Jacobian uniformly negative definite on the complete asymmetric design cube. Since each own-profit objective is continuous and strictly concave on a compact interval, a Nash equilibrium exists; strict diagonal concavity/strong monotonicity guarantees uniqueness. Every verified interior root of $F=0$ is consequently the unique genuine full-three-firm Nash. At the exact reference parameters the margin is $989813109503/4103248806000>0$. Uniform interior root inclusions across all $g\in[0,1]$ and continuity extend this to a common open primitive neighborhood.
+
+\section{All-depth interval certificate and government choice}\label{app:interval}
+The computer-assisted part proves specified interval inequalities rather than extrapolating a finite policy grid. At every continuation regime $r\in\{\SU,\IS\}$, the unknown is the full private Nash $x^r(g)$ solving $F^r(x,g)=0$. The source partitions $g\in[0,1]$ into 1,000 adjacent, outward-rounded parameter intervals $G$. For each $G$ it computes an interval enclosure $X_G$, approximate-center preconditioner $A$, and checks the inclusion
+\begin{equation}\label{eq:kraw}
+\mathcal K(X_G,G)=x_c-AF(x_c,G)+[I-AF_x(X_G,G)](X_G-x_c)
+\subset\operatorname{int}X_G.
+\end{equation}
+The interval inclusion establishes existence and local nonsingularity for each depth, while the independent full-cube uniqueness result identifies the global Nash. Floating-point roots locate candidate boxes but are not treated as proof of their validity. Implicit differentiation then computes interval enclosures for
+\begin{equation}\label{eq:totalder}
+x_g=-F_x^{-1}F_g,\qquad
+\frac{dW_i}{dg}=W_{i,g}+W_{i,x}x_g.
+\end{equation}
+Across every real $g$ in the entire unit interval, the replay certifies the strict upper bounds
+\begin{equation}\label{eq:certmargins}
+m'_{\N}(g)<-0.007970192997334808,\qquad
+[i_{\N}(g)-o_{\N}(g)]'<-0.015038883337750794.
+\end{equation}
+At $g=0$ both gaps vanish. Integration proves $m_{\N}(g)<s$ and $i_{\N}(g)<o_{\N}(g)$ at all positive depths, including those between numerical sampling locations. Thus the original bilateral-first inherited-depth government procedure returns substantive fragmentation for any proposed positive $g$.
+
+For frozen designs, outward interval evaluation of $g=1/20$ and an all-depth SU bound gives
+\begin{equation}\label{eq:frozensup}
+\begin{aligned}
+i_{\F}(1/20)&>2.441397037346308,&
+s&<2.422078421738269,\\
+\sup_{g\in[0,1]}m_{\F}(g)&<2.423573564131729,&
+i_{\F}(1/20)-o_{\F}(1/20)&>0.0002346166230648035.
+\end{aligned}
+\end{equation}
+The incumbent widening margin is also strictly positive. The set
+\begin{equation}\label{eq:closedfeasible}
+\mathcal G_{\IS}=\{g\in[0,1]:i(g)\ge\max\{s,m(g),o(g)\}\}
+\end{equation}
+is a closed subset of the compact policy interval, because reduced welfare is continuous. It includes the strictly accepted frozen witness. Consequently $i$ attains a maximum on it, and that maximum exceeds the entire SU payoff envelope and SW; it is a genuine government-optimal IS offer, not merely an attractive conditional allocation. For direct-grand negotiation, the feasible set $\{g:i(g)\ge s\}$ is likewise closed. The independent Pareto replay confirms $i_{\N}(1/20)-s>0.0169346278736$, yielding a positive-depth directly acceptable grand agreement without identifying the two agendas.
+
+Uniform strict quantity and Rosen margins and compact depth coverage preserve smooth Nash paths under small perturbations of $(d,\eta,\rho,\kappa)$. The implicit-function theorem and finite-cover compactness preserve the uniform negative derivative inequalities (with weakened but still strict constants), as well as the strict frozen IS dominance and direct-grand Pareto margins. This yields a nonempty qualitative open neighborhood of the reference primitives; it does not certify an explicit rectangular radius.
+
+\paragraph{Immutable reproduction map.}
+The 1000-interval source is \path{verification/v2b_stage04a_krawczyk_cleanroom.py}, with independently successful Stage-11 replay \path{verification/stage11/canonical_global_replay.log}. The frozen/direct-grand welfare enclosures come from \path{verification/v2b_stage06_pareto_holdout.py}, with replay \path{verification/stage11/pareto_replay.log}. Full-three-firm matrix checks are \path{verification/stage11/independent_matrix_audit.py}. Their hashes and dependency versions are recorded in Stage-11 commit \texttt{54ac8389f2c45d56b2e587a62c62f226cc121f95} (PR~\#27). Run the two historical verification scripts from the repository root. This is an interval-assisted proof of the stated one-dimensional targets, not formal verification of the whole $(\kappa,\eta)$ plane or unrestricted bargaining.
+
+\section{Network face and genuinely active-design strip}\label{app:networkfull}
+The exact global cutoff belongs to the face $\rho=1$, where private residual design is inactive and $x_i=1$. Let $\vartheta=(1-\eta)/(2-\eta)$ and $E=d^2/(2-\eta)^2$. Direct substitution into \eqref{eq:face} yields
+\begin{equation}\label{eq:networkpoly}
+m(g)-s=E\frac{g(1-8\vartheta-4\vartheta^2g)}{(1+\vartheta g)^2},\quad
+i(g)-o(g)=-E\frac{gP(\vartheta,g)}{(1+\vartheta g)^2(1+2\vartheta g)^2},
+\end{equation}
+where
+\[
+P(\vartheta,g)=14\vartheta^4g^3+(42\vartheta^3+\vartheta^2)g^2
++\vartheta(45\vartheta-2)g+16\vartheta-2.
+\]
+For $\vartheta\ge1/8$ (equivalently $\eta\le6/7$) both member acceptance and outsider accession margins are strictly negative for any positive depth, proving SW. For $0<\vartheta<1/8$ set $v=1-8\vartheta>0$ and $h=\min\{1,2v\}$. The bilateral envelope obeys $\sup_g(m(g)-s)\le Ev$. When $\vartheta\le1/16$, $h=1$ gives $i(1)\ge160E/27>11E/2\ge\max\{m(1),o(1)\}$ and $i(1)-s\ge77E/54>Ev$. When $1/16<\vartheta<1/8$ ($0<v<1/2$), write $Q(v)=2(v-2)^2(v+1)^2$ and $R(v)=Q(v)(v^2-v-4)^2$; substitution gives
+\begin{align*}
+\frac{i(h)-s-Ev}{E}&=\frac{v(4+19v+24v^2-5v^3-2v^4)}{Q(v)},\\
+\frac{i(h)-o(h)}{E}&=\frac{v^2(280+492v-83v^2-240v^3+42v^4+28v^5-7v^6)}{R(v)},\\
+\frac{i(h)-m(h)}{E}&=\frac{v(192+304v+132v^2-77v^3-48v^4+6v^5+4v^6-v^7)}{R(v)}.
+\end{align*}
+Each numerator is strictly positive for $0<v<1/2$: the nonnegative lower-degree terms dominate the total absolute value of the higher-degree negative terms (in the first line $5v^3+2v^4<3/4<4$, with analogous elementary inequalities for the remaining polynomials). Hence the accepted IS witness dominates the entire SU envelope and SW. Closed-set maximization yields government-optimal IS; no SU is optimal anywhere on this $\rho=1$ face.
+
+The asserted **restricted** continuation to active design for $\rho<1$ close to one uses additional uniform regularity rather than claiming the face result globally. Fix $d,\kappa>0$ and a compact $\eta$ interval inside $(0,1)$ that straddles $6/7$. At $\rho=1$ the firm Jacobian is $-\kappa I$ and output is uniformly regular. For sufficiently small positive $\beta=1-\rho$, firm FOCs are inward-pointing and strictly monotone and their unique roots form smooth interior Nash continuations for all depths. Set $p=(\eta,\rho)$ and $\mu(p)=[m(g,p)-s(p)]'_0$. At $p_0=(6/7,1)$, $\mu=0$ and $\partial_\eta\mu=2401d^2/512>0$. Hence a unique local $C^1$ cutoff $\eta_c(\rho)$ solves $\mu=0$. Write $M=m-s$, $V=i-o$, $J=i-s$ and $H=i-m$. Three-edge symmetry gives $V_g(0,p)=2\mu(p)$, and on the critical face $p_0$
+\begin{align*}
+M(g,p_0)&=-\frac{Eg^2}{16(1+g/8)^2},\\
+V(g,p_0)&=-\frac{Eg^2(29/64+25g/256+7g^2/2048)}{(1+g/8)^2(1+g/4)^2},\\
+J_g(0,p_0)&=H_g(0,p_0)=3E/4>0.
+\end{align*}
+Continuity of second derivatives and strict away-from-zero margins therefore provide $a,b,c,B,\varepsilon>0$ on a neighborhood of $p_0$ such that
+\begin{equation}\label{eq:quadraticstrip}
+\begin{aligned}
+M(g,p)&\le\mu g-ag^2,&V(g,p)&\le2\mu g-bg^2,\\
+V(g,p)&\ge2\mu g-Bg^2,&J(g,p),H(g,p)&\ge cg
+\end{aligned}
+\end{equation}
+for $0\le g\le\varepsilon$, while $M,V<0$ for $\varepsilon\le g\le1$. If $\mu\le0$, every positive-depth offer fails. If $\mu>0$, set $h=\mu/B\le\varepsilon$. Then $V(h)\ge\mu^2/B>0$ and $J(h),H(h)>0$, while $\sup_g M(g,p)\le\mu^2/(4a)$. Since $J(h)\ge c\mu/B$ dominates that second-order bilateral envelope for sufficiently small $\mu$, accepted IS again wins. Uniform strict margins away from $\eta=6/7$ and a finite compact cover extend the conclusion to the stated restricted near-face strip. This is not an all-$\rho$ or arbitrary-parameter classification.
