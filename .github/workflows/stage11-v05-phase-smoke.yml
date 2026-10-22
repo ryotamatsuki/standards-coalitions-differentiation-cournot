@@ -1,0 +1,21 @@
+name: Stage11 v0.5 Figure3 regression smoke
+on:
+  push:
+    branches:
+      - fix/stage11-jpet-v05-proof-phase-and-exposition-20261022
+    paths:
+      - 'verification/stage11_v05/recompute_phase_candidates.py'
+      - 'verification/stage11_v05/smoke_phase.py'
+      - '.github/workflows/stage11-v05-phase-smoke.yml'
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install scientific dependencies
+        run: python -m pip install numpy scipy matplotlib
+      - name: Reproduce eleven error cases and canonical center
+        run: OPENBLAS_NUM_THREADS=1 python verification/stage11_v05/smoke_phase.py
