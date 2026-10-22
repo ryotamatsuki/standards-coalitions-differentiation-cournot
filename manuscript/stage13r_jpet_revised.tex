@@ -129,7 +129,7 @@ Figure~\ref{fig:timing} separates the governmental proposal and voting tree from
 \draw[arrow] (q.east) -- (w.west);
 \draw[arrow] (w.east) -- (v.west);
 \end{tikzpicture}
-\caption{Game timing and the role of continuation payoffs. Governments specify a possible compatibility pattern and depth; for each contemplated terminal pattern firms select residual designs before Cournot competition. Governments anticipate these continuation payoffs when voting. The baseline does not permit renegotiation of $g$ at accession.}
+\caption{Government timing and continuation payoffs. A proposes bilateral depth and B anticipates accession; entrant and incumbents approve enlargement at the inherited depth. Firms then choose designs and quantities at each terminal policy pattern, and governments anticipate the resulting national welfare.}
 \label{fig:timing}
 \end{figure}
 
@@ -468,13 +468,18 @@ Appendix~\ref{app:networkfull} supplies the exact face comparison and restricted
 
 \input{stage13r_proof_supplement.tex}
 
-\section*{Declarations (working-draft placeholders)}
-\noindent\textbf{Funding and conflicts:} To be confirmed by the author before submission.\\
-\textbf{Data and code availability:} Public research repository and reproducibility files will be linked to the exact frozen release upon submission.\\
-\textbf{Use of AI assistance:} Material assistance in manuscript drafting and mathematical verification must be accurately disclosed under the eventual journal's current policy; all substantive results require author review and responsibility.\\
-\textbf{Research status:} This draft has not been externally peer reviewed, and no final journal submission decision has been taken.
+\section*{Declarations (author verification required before submission)}
+\noindent\textbf{Identity, affiliation and correspondence:} [AUTHOR-CONFIRMED legal name, research affiliation or independent-researcher designation, contact email and ORCID].\\
+\textbf{Funding:} [AUTHOR TO CONFIRM all actual funding sources, institutional resources, grant identifiers and any applicable employment restrictions, or their truthful absence].\\
+\textbf{Conflicts of interest:} [AUTHOR-CONFIRMED interests or accurate absence declaration].\\
+\textbf{Data and code availability:} Computational sources, numerical outputs and reproduction instructions are maintained at \url{https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot}; [FINAL IMMUTABLE ARCHIVE URL/DOI, manuscript commit and certificate source revision TO BE INSERTED]. No claim that generated numerical arrays constitute an empirical dataset is made.\\
+\textbf{Generative AI assistance:} [AUTHOR TO VERIFY names of tools, tasks, human review performed and journal-compliant disclosure; do not claim unperformed independent author checks].\\
+\textbf{Acknowledgments and research ethics:} [AUTHOR TO CONFIRM actual contributors/permissions and required declarations].\\
+\textbf{Research status:} Working paper only; the author declarations and live submission-form QA remain outstanding.
 
 \begin{thebibliography}{99}\footnotesize\setlength{\itemsep}{1pt}
+\bibitem[Rosen(1965)]{Rosen1965} Rosen, J. B. (1965). Existence and uniqueness of equilibrium points for concave $N$-person games. \emph{Econometrica}, 33, 520--534. \url{https://doi.org/10.2307/1911749}.
+\bibitem[Rump(2010)]{Rump2010} Rump, S. M. (2010). Verification methods: Rigorous results using floating-point arithmetic. \emph{Acta Numerica}, 19, 287--449. \url{https://doi.org/10.1017/S096249291000005X}.
 \bibitem[Rosen(1965)]{Rosen1965} Rosen, J. B. (1965). Existence and uniqueness of equilibrium points for concave $N$-person games. \emph{Econometrica}, 33, 520--534. \url{https://doi.org/10.2307/1911749}.
 \bibitem[Rump(2010)]{Rump2010} Rump, S. M. (2010). Verification methods: Rigorous results using floating-point arithmetic. \emph{Acta Numerica}, 19, 287--449. \url{https://doi.org/10.1017/S096249291000005X}.
 \bibitem[Buccella, Fanti and Gori(2023)]{Buccella2023} Buccella, D., Fanti, L., and Gori, L. (2023). Strategic product compatibility in network industries. \emph{Journal of Economics}, 140, 141--168. \url{https://doi.org/10.1007/s00712-023-00834-x}.
@@ -547,10 +552,10 @@ Table~\ref{tab:map} distinguishes the main reversal from the institutional and p
 \toprule
 Result & Proven environment or condition & Inference and scope limit \\
 \midrule
-Local reversal & $0<D<\mathcal L$, regular design Nash; additional outsider slope conditions & Frozen design gives positive consent slopes; endogenous design reverses both. \emph{Local} in $g$. \\
-Global regime & Certified all-depth inequalities at $\theta_0$ and a nonempty open primitive neighborhood & $\SW$ with design Nash versus government-optimal $\IS$ with frozen design. Specific inherited-depth protocol; not coalition-proof. \\
-Direct-grand & $\mu_{\N}<0<2\mu_{\N}+\nu_{\N}$ & Direct $\IS$ can benefit all at the same small $g$; procedural boundary, not a general new coalition theorem. \\
-Design costs & $\lambda_c\in(0.93538,0.93539)$ at $\theta_0$ & Unique \emph{local} consent cutoff; no global $\lambda$ regime classification. \\
+Theorem~\ref{thm:local}: local reversal & $0<D<\mathcal L$, regular design Nash; additional outsider slope conditions & Frozen design gives positive consent slopes; endogenous design reverses both. \emph{Local} in $g$. \\
+Theorem~\ref{thm:open}: global regime & Certified all-depth inequalities at $\theta_0$ and a nonempty open primitive neighborhood & $\SW$ with design Nash versus government-optimal $\IS$ with frozen design. Specific inherited-depth protocol; not coalition-proof. \\
+Proposition~\ref{prop:direct}: direct-grand & $\mu_{\N}<0<2\mu_{\N}+\nu_{\N}$ & Direct $\IS$ can benefit all at the same small $g$; procedural boundary, not a general new coalition theorem. \\
+Proposition~\ref{prop:lambda}: design costs & $\lambda_c\in(0.93538,0.93539)$ at $\theta_0$ & Unique \emph{local} consent cutoff; no global $\lambda$ regime classification. \\
 Network intensity & $\rho=1$, $\eta=6/7$ cutoff and restricted $\rho<1$ strip & Exact global regimes on the design-inactive face; only restricted nearby endogenous extension. \\
 \bottomrule
 \end{tabularx}
@@ -578,7 +583,7 @@ A bilateral agreement may pass consent votes at one depth but lose to an integra
 
 \begin{figure}[H]
 \centering
-\resizebox{0.98\linewidth}{!}{\input{stage13_figure3_tikz.tex}}
+\resizebox{0.98\linewidth}{!}{\input{stage13r_figure3_tikz.tex}}
 \caption{Numerical candidate government regimes on the $(\kappa,\eta)$ slice. Both panels use $d=1$, $\rho=0.9$, $\lambda=0$ and the same inherited-depth accession game. Panel (a) freezes residual designs at each point's fragmentation Nash; panel (b) permits Nash redesign. Gray: no profitable agreement identified (SW candidate); blue: accepted proposer-improving IS candidate dominates the computed bilateral envelope. No optimal SU was identified. The star denotes the separately certified benchmark $(0.8505,0.758)$. Boundaries remain exploratory, not exact phase curves.}
 \label{fig:phase}
 \end{figure}
@@ -690,7 +695,7 @@ i(g)&=E\frac{\tfrac92+3g}{(1+2\vartheta g)^2}.
 \end{equation}
 The exact global face classification and near-$\rho=1$ active-design continuation are established in Appendix~\ref{app:networkfull}. On the restricted local strip the cutoff has the expansion $\eta_c(\rho)=6/7+(211/196)(\rho-1)+O((1-\rho)^2)$; this is not a formula for arbitrary $\rho$.
 
-\input{stage13_proof_supplement.tex}
+\input{stage13r_proof_supplement.tex}
 
 \section*{Declarations (working-draft placeholders)}
 \noindent\textbf{Funding and conflicts:} To be confirmed by the author before submission.\\
