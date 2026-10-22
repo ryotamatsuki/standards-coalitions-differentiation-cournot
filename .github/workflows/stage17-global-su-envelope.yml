@@ -1,0 +1,22 @@
+name: Stage17 global bilateral-envelope theorem
+on:
+  pull_request:
+    paths:
+      - 'verification/stage17_global_su_envelope.py'
+      - 'verification/stage16_fixed_depth_certificate.py'
+      - '.github/workflows/stage17-global-su-envelope.yml'
+  push:
+    branches:
+      - audit/stage17-global-regime-dominance-priority-20261022
+permissions:
+  contents: read
+jobs:
+  all-depth-bilateral-interval-proof:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Exact global SU interval proof vs certified accepted grand standard
+        run: python verification/stage17_global_su_envelope.py
