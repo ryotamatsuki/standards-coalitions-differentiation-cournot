@@ -1,0 +1,47 @@
+name: Stage13 JPET integrated manuscript PDF
+on:
+  push:
+    branches:
+      - manuscript/stage13-jpet-integrated-20261022
+    paths:
+      - 'manuscript/stage13_jpet_integrated.tex'
+      - 'manuscript/stage13_proof_supplement.tex'
+      - 'manuscript/stage13_figure3_tikz.tex'
+      - '.github/workflows/stage13-jpet-integrated-pdf.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile twice and resolve all references
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13_jpet_integrated.tex
+          working_directory: manuscript
+          latexmk_use_xelatex: false
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Verify output and source consistency
+        run: |
+          test -s manuscript/stage13_jpet_integrated.pdf
+          test -s manuscript/stage13_proof_supplement.tex
+          test -s manuscript/stage13_figure3_tikz.tex
+          ! grep -Eq 'LaTeX Warning: (Citation|Reference).*undefined|There were undefined references|Overfull \\hbox' manuscript/stage13_jpet_integrated.log
+          pdfinfo manuscript/stage13_jpet_integrated.pdf | grep -E '^Pages:'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: stage13-jpet-integrated-pdf
+          path: |
+            manuscript/stage13_jpet_integrated.pdf
+            manuscript/stage13_jpet_integrated.log
+      - name: Persist compiled working PDF on Stage13 branch only
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manuscript/stage13_jpet_integrated.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Build Stage13 JPET integrated manuscript PDF"
+            git push origin HEAD:manuscript/stage13-jpet-integrated-20261022
+          fi
