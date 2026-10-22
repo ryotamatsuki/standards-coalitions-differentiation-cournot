@@ -1,0 +1,22 @@
+{
+  "verified_current_turn": true,
+  "run_environment": "Python 3.13.5, NumPy 2.3.5, SymPy 1.14.0, SciPy",
+  "source_stage22_sha": "d8e76f9f865f3e5a0573ae4df342367a9ddfbe39",
+  "sw_z": 0.7185927073221112,
+  "g": 0.05,
+  "frozen": {
+    "m_s": 0.0002723816370884258,
+    "i_o": 0.00023461666824431404,
+    "i_s": 0.019318615645242954
+  },
+  "endogenous": {
+    "m_s": -0.00047347417138166037,
+    "i_o": -0.0012465472341340877,
+    "i_s": 0.016934627905352606
+  },
+  "D": 0.006767924128844804,
+  "loss": 0.015069744125257696,
+  "mu": -0.008301819996412892,
+  "eta_face_check": "SymPy symbolic PASS",
+  "global_stage14_fresh_rerun": "UNVERIFIED"
+}
