@@ -1,0 +1,27 @@
+{
+  "scope": "exact local algebra at symmetric SW, not full-depth Nash existence",
+  "sympy": "1.14.0",
+  "tests": {
+    "CS_x0": true,
+    "W_A_x0": true,
+    "CS_x1": true,
+    "W_A_x1": true,
+    "CS_x2": true,
+    "W_A_x2": true,
+    "J_00": true,
+    "J_01": true,
+    "J_02": true,
+    "forcing_0": true,
+    "J_10": true,
+    "J_11": true,
+    "J_12": true,
+    "forcing_1": true,
+    "J_20": true,
+    "J_21": true,
+    "J_22": true,
+    "forcing_2": true,
+    "fixed_member_D": true,
+    "loss_plus_sign": true
+  },
+  "all_pass": true
+}

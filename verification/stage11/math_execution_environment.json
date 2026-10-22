@@ -1,0 +1,15 @@
+{
+  "repository_source_sha": "1146745c548734370de190899ac43370649a3c29",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "sympy": "1.14.0",
+  "mpmath": "1.3.0",
+  "sha256": {
+    "verification/v2b_stage04a_krawczyk_cleanroom.py": "25c92e800a255ddfd0712f3a9095f83a2a69c70addcf0d16f75fc7b65289fd74",
+    "verification/v2b_stage06_pareto_holdout.py": "7134e55cd6dcb3e3f0f6cc8af27c698240364c4f0670ef37c0324231b4757a28",
+    "verification/stage14rs_adjustment_cost.py": "37f6499df67b4fd5e37b937b1c8849c3a6e253b79c9feacfeb4f7d32519c6ebb",
+    "verification/stage21_no_su_phase_theorem.py": "fae8bad965b3f5d9324e6e52556b7bdbf883c7240a790122d199c30dd243f752",
+    "verification/stage11/independent_matrix_audit.py": "3c97f3413c7066b515f9cc23b93491e3cc69eadce0c497794f64b306adfa8c5b"
+  }
+}

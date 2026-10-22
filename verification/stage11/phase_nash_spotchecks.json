@@ -1,0 +1,1298 @@
+[
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.0,
+    "regime": "SU",
+    "x": [
+      0.6635879913248958,
+      0.6635879913248957,
+      0.6635879913248958
+    ],
+    "q_min": 0.7190532436258608,
+    "B_eigen_min": 0.9336412008675103,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.6671766775428415,
+    "symmetric_J_eigen_max": -0.6181644658168961
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.0,
+    "regime": "IS",
+    "x": [
+      0.6635879913248958,
+      0.6635879913248957,
+      0.6635879913248958
+    ],
+    "q_min": 0.7190532436258608,
+    "B_eigen_min": 0.9336412008675103,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.6671766775428415,
+    "symmetric_J_eigen_max": -0.6181644658168961
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.0001,
+    "regime": "SU",
+    "x": [
+      0.6635962299421897,
+      0.6635962299421897,
+      0.6635924303280841
+    ],
+    "q_min": 0.7190438604553412,
+    "B_eigen_min": 0.933550377005781,
+    "foc_residual": 5.551115123125783e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.6671773220287548,
+    "symmetric_J_eigen_max": -0.618167132082507
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.0001,
+    "regime": "IS",
+    "x": [
+      0.6636089069542693,
+      0.6636089069542692,
+      0.6636089069542693
+    ],
+    "q_min": 0.7190347428815363,
+    "B_eigen_min": 0.9335491093045727,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.6671798862364099,
+    "symmetric_J_eigen_max": -0.6181724643060006
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.05,
+    "regime": "SU",
+    "x": [
+      0.6676487344126323,
+      0.6676487344126321,
+      0.6657891352571335
+    ],
+    "q_min": 0.7143958900589018,
+    "B_eigen_min": 0.8882351265587368,
+    "foc_residual": 1.1102230246251565e-16,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.6674954274574038,
+    "symmetric_J_eigen_max": -0.6194782009320241
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.05,
+    "regime": "IS",
+    "x": [
+      0.6737645821841384,
+      0.6737645821841381,
+      0.6737645821841383
+    ],
+    "q_min": 0.7099484785631405,
+    "B_eigen_min": 0.8876235417815863,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.6687299315354044,
+    "symmetric_J_eigen_max": -0.6220320409174993
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.25,
+    "regime": "SU",
+    "x": [
+      0.682780622894328,
+      0.682780622894328,
+      0.6742437203938373
+    ],
+    "q_min": 0.6964246423569678,
+    "B_eigen_min": 0.706721937710567,
+    "foc_residual": 1.1102230246251565e-16,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.6687042917562886,
+    "symmetric_J_eigen_max": -0.6243695358146665
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.25,
+    "regime": "IS",
+    "x": [
+      0.7095002427889451,
+      0.709500242788945,
+      0.7095002427889452
+    ],
+    "q_min": 0.6761782183827715,
+    "B_eigen_min": 0.7040499757211056,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.6740556677853506,
+    "symmetric_J_eigen_max": -0.635219910859425
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.75,
+    "regime": "SU",
+    "x": [
+      0.7139368433242271,
+      0.7139368433242271,
+      0.693249283538282
+    ],
+    "q_min": 0.6555938798107858,
+    "B_eigen_min": 0.25360631566757696,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.6713319902631734,
+    "symmetric_J_eigen_max": -0.6344927926613276
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 0.75,
+    "regime": "IS",
+    "x": [
+      0.773907934413243,
+      0.773907934413243,
+      0.7739079344132431
+    ],
+    "q_min": 0.6061408418853516,
+    "B_eigen_min": 0.2476092065586757,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 1.1102230246251565e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.6831342094413132,
+    "symmetric_J_eigen_max": -0.6573426312269232
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 1.0,
+    "regime": "SU",
+    "x": [
+      0.7265350718268077,
+      0.7265350718268074,
+      0.7017859268219948
+    ],
+    "q_min": 0.6370832944189123,
+    "B_eigen_min": 0.027346492817319212,
+    "foc_residual": 1.3877787807814457e-16,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 1.1102230246251565e-15,
+    "own_profit_second_derivative_max": -0.6724718347159389,
+    "symmetric_J_eigen_max": -0.6386627271112422
+  },
+  {
+    "eta": 0.742,
+    "kappa": 0.7,
+    "g": 1.0,
+    "regime": "IS",
+    "x": [
+      0.7970917520472384,
+      0.7970917520472384,
+      0.7970917520472384
+    ],
+    "q_min": 0.5768947812071977,
+    "B_eigen_min": 0.020290824795275903,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 1.1102230246251565e-16,
+    "own_profit_second_derivative_max": -0.6862425652858386,
+    "symmetric_J_eigen_max": -0.6647572887119899
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.0,
+    "regime": "SU",
+    "x": [
+      0.768942324737165,
+      0.7689423247371647,
+      0.768942324737165
+    ],
+    "q_min": 0.7236997741459962,
+    "B_eigen_min": 0.9231057675262835,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 7.771561172376096e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -1.0162043031679486,
+    "symmetric_J_eigen_max": -0.9657299806402033
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.0,
+    "regime": "IS",
+    "x": [
+      0.768942324737165,
+      0.7689423247371647,
+      0.768942324737165
+    ],
+    "q_min": 0.7236997741459962,
+    "B_eigen_min": 0.9231057675262835,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 7.771561172376096e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -1.0162043031679486,
+    "symmetric_J_eigen_max": -0.9657299806402033
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.0001,
+    "regime": "SU",
+    "x": [
+      0.7689467490154543,
+      0.7689467490154541,
+      0.7689446452878373
+    ],
+    "q_min": 0.7236922104864237,
+    "B_eigen_min": 0.9230153250984544,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 7.771561172376096e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -1.0162048043320788,
+    "symmetric_J_eigen_max": -0.9657321307438644
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.0001,
+    "regime": "IS",
+    "x": [
+      0.7689534936082352,
+      0.768953493608235,
+      0.7689534936082353
+    ],
+    "q_min": 0.7236851967407861,
+    "B_eigen_min": 0.9230146506391764,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 7.771561172376096e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -1.0162068988810158,
+    "symmetric_J_eigen_max": -0.9657364307667905
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.05,
+    "regime": "SU",
+    "x": [
+      0.7711295997444826,
+      0.7711295997444824,
+      0.7700957659878758
+    ],
+    "q_min": 0.7199391899128851,
+    "B_eigen_min": 0.8778870400255518,
+    "foc_residual": 2.220446049250313e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -1.0164528818443688,
+    "symmetric_J_eigen_max": -0.9667928845879901
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.05,
+    "regime": "IS",
+    "x": [
+      0.774413005859534,
+      0.7744130058595338,
+      0.7744130058595341
+    ],
+    "q_min": 0.7164952827815825,
+    "B_eigen_min": 0.8775586994140467,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 7.771561172376096e-16,
+    "unilateral_max_profit_gain": 8.881784197001252e-16,
+    "own_profit_second_derivative_max": -1.0174707142871304,
+    "symmetric_J_eigen_max": -0.9688740572961454
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.25,
+    "regime": "SU",
+    "x": [
+      0.7794005333393683,
+      0.7794005333393681,
+      0.7745772262890215
+    ],
+    "q_min": 0.7053097801734439,
+    "B_eigen_min": 0.6970599466660634,
+    "foc_residual": 2.498001805406602e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -1.0174086737925945,
+    "symmetric_J_eigen_max": -0.9708132261133002
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.25,
+    "regime": "IS",
+    "x": [
+      0.7942169872081185,
+      0.7942169872081184,
+      0.7942169872081186
+    ],
+    "q_min": 0.6892542653213791,
+    "B_eigen_min": 0.6955783012791881,
+    "foc_residual": 2.7755575615628914e-16,
+    "seed_max_difference": 4.440892098500626e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -1.0219700922064647,
+    "symmetric_J_eigen_max": -0.9799940811496856
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.75,
+    "regime": "SU",
+    "x": [
+      0.7971003995447029,
+      0.7971003995447028,
+      0.7849417120039037
+    ],
+    "q_min": 0.6713826181256188,
+    "B_eigen_min": 0.2452899600455296,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 1.3322676295501878e-15,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -1.0195586487714026,
+    "symmetric_J_eigen_max": -0.9794678265256785
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 0.75,
+    "regime": "IS",
+    "x": [
+      0.8324379208511093,
+      0.8324379208511092,
+      0.8324379208511093
+    ],
+    "q_min": 0.6303232436092642,
+    "B_eigen_min": 0.24175620791488903,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 1.1102230246251565e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -1.0302688663999673,
+    "symmetric_J_eigen_max": -1.0002365681157068
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 1.0,
+    "regime": "SU",
+    "x": [
+      0.8045652540324869,
+      0.8045652540324868,
+      0.7897251715106984
+    ],
+    "q_min": 0.6556911067677416,
+    "B_eigen_min": 0.01954347459675171,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 1.6653345369377348e-15,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -1.0205227355069955,
+    "symmetric_J_eigen_max": -0.9831732438661002
+  },
+  {
+    "eta": 0.772,
+    "kappa": 1.05,
+    "g": 1.0,
+    "regime": "IS",
+    "x": [
+      0.8470951700084999,
+      0.8470951700084999,
+      0.8470951700085
+    ],
+    "q_min": 0.6048073594385462,
+    "B_eigen_min": 0.015290482999150092,
+    "foc_residual": 1.1102230246251565e-16,
+    "seed_max_difference": 1.1102230246251565e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -1.033318732431637,
+    "symmetric_J_eigen_max": -1.0075520965694391
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.0,
+    "regime": "SU",
+    "x": [
+      0.7185927073221113,
+      0.7185927073221113,
+      0.7185927073221114
+    ],
+    "q_min": 0.7216472682419358,
+    "B_eigen_min": 0.9281407292677888,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.8171400389446379,
+    "symmetric_J_eigen_max": -0.7673235922141461
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.0,
+    "regime": "IS",
+    "x": [
+      0.7185927073221113,
+      0.7185927073221113,
+      0.7185927073221114
+    ],
+    "q_min": 0.7216472682419358,
+    "B_eigen_min": 0.9281407292677888,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.8171400389446379,
+    "symmetric_J_eigen_max": -0.7673235922141461
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.0001,
+    "regime": "SU",
+    "x": [
+      0.7185987881901104,
+      0.7185987881901104,
+      0.718595937758356
+    ],
+    "q_min": 0.7216388555131492,
+    "B_eigen_min": 0.9280501211809887,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.817140606704461,
+    "symmetric_J_eigen_max": -0.7673259850966335
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.0001,
+    "regime": "IS",
+    "x": [
+      0.7186080991139235,
+      0.7186080991139233,
+      0.7186080991139236
+    ],
+    "q_min": 0.7216308754791748,
+    "B_eigen_min": 0.928049190088607,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.8171429233339402,
+    "symmetric_J_eigen_max": -0.7673307706243245
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.05,
+    "regime": "SU",
+    "x": [
+      0.7215947994723613,
+      0.7215947994723612,
+      0.7201966831047684
+    ],
+    "q_min": 0.7174677546040827,
+    "B_eigen_min": 0.882840520052764,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.8174212836421457,
+    "symmetric_J_eigen_max": -0.7685047312343897
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.05,
+    "regime": "IS",
+    "x": [
+      0.7261090036059448,
+      0.7261090036059445,
+      0.7261090036059449
+    ],
+    "q_min": 0.71356104171163,
+    "B_eigen_min": 0.8823890996394055,
+    "foc_residual": 2.498001805406602e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.818542281195719,
+    "symmetric_J_eigen_max": -0.770809871508867
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.25,
+    "regime": "SU",
+    "x": [
+      0.732870343261889,
+      0.7328703432618888,
+      0.7263964419767905
+    ],
+    "q_min": 0.7012690361116738,
+    "B_eigen_min": 0.701712965673811,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.8184959432883344,
+    "symmetric_J_eigen_max": -0.7729400155877357
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.25,
+    "regime": "IS",
+    "x": [
+      0.7529413155950158,
+      0.7529413155950155,
+      0.7529413155950156
+    ],
+    "q_min": 0.6832522678672852,
+    "B_eigen_min": 0.6997058684404982,
+    "foc_residual": 1.1102230246251565e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.8234435613487273,
+    "symmetric_J_eigen_max": -0.7829347915267756
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.75,
+    "regime": "SU",
+    "x": [
+      0.7565707746032937,
+      0.7565707746032936,
+      0.7405502564168726
+    ],
+    "q_min": 0.6640569240745674,
+    "B_eigen_min": 0.249342922539671,
+    "foc_residual": 1.1102230246251565e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 8.881784197001252e-16,
+    "own_profit_second_derivative_max": -0.8208756100571065,
+    "symmetric_J_eigen_max": -0.7823151712021371
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 0.75,
+    "regime": "IS",
+    "x": [
+      0.8030978503240863,
+      0.8030978503240862,
+      0.8030978503240863
+    ],
+    "q_min": 0.6189575928198746,
+    "B_eigen_min": 0.2446902149675913,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.8321563267654531,
+    "symmetric_J_eigen_max": -0.8041782813219045
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 1.0,
+    "regime": "SU",
+    "x": [
+      0.7663721338383501,
+      0.76637213383835,
+      0.7470013864670146
+    ],
+    "q_min": 0.6470057439978552,
+    "B_eigen_min": 0.02336278661616492,
+    "foc_residual": 1.1102230246251565e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.8219264278794683,
+    "symmetric_J_eigen_max": -0.786257281409296
+  },
+  {
+    "eta": 0.758,
+    "kappa": 0.8505,
+    "g": 1.0,
+    "regime": "IS",
+    "x": [
+      0.8217646396837829,
+      0.8217646396837828,
+      0.8217646396837829
+    ],
+    "q_min": 0.5915924322505828,
+    "B_eigen_min": 0.017823536031621574,
+    "foc_residual": 5.551115123125783e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.8352524140928401,
+    "symmetric_J_eigen_max": -0.8115860583450308
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.0,
+    "regime": "SU",
+    "x": [
+      0.7482092342718353,
+      0.748209234271835,
+      0.7482092342718354
+    ],
+    "q_min": 0.7196098780873852,
+    "B_eigen_min": 0.9251790765728165,
+    "foc_residual": 2.220446049250313e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9119870753567121,
+    "symmetric_J_eigen_max": -0.8626857241874001
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.0,
+    "regime": "IS",
+    "x": [
+      0.7482092342718353,
+      0.748209234271835,
+      0.7482092342718354
+    ],
+    "q_min": 0.7196098780873852,
+    "B_eigen_min": 0.9251790765728165,
+    "foc_residual": 2.220446049250313e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9119870753567121,
+    "symmetric_J_eigen_max": -0.8626857241874001
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.0001,
+    "regime": "SU",
+    "x": [
+      0.7482145201757633,
+      0.7482145201757631,
+      0.7482120204458006
+    ],
+    "q_min": 0.7196016760234706,
+    "B_eigen_min": 0.9250885479824238,
+    "foc_residual": 2.220446049250313e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 8.881784197001252e-16,
+    "own_profit_second_derivative_max": -0.911987615743231,
+    "symmetric_J_eigen_max": -0.8626880252436934
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.0001,
+    "regime": "IS",
+    "x": [
+      0.7482225919396059,
+      0.7482225919396059,
+      0.7482225919396062
+    ],
+    "q_min": 0.7195939955407927,
+    "B_eigen_min": 0.9250877408060394,
+    "foc_residual": 2.498001805406602e-16,
+    "seed_max_difference": 8.881784197001252e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.911989851266157,
+    "symmetric_J_eigen_max": -0.8626926271378549
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.05,
+    "regime": "SU",
+    "x": [
+      0.7508197402056142,
+      0.7508197402056138,
+      0.7495931624087493
+    ],
+    "q_min": 0.7155341453822708,
+    "B_eigen_min": 0.8799180259794386,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9122548758984101,
+    "symmetric_J_eigen_max": -0.8638219985832599
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.05,
+    "regime": "IS",
+    "x": [
+      0.7547382147542787,
+      0.7547382147542785,
+      0.7547382147542787
+    ],
+    "q_min": 0.7117702962223337,
+    "B_eigen_min": 0.8795261785245719,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.9133380178532148,
+    "symmetric_J_eigen_max": -0.8660418591533398
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.25,
+    "regime": "SU",
+    "x": [
+      0.7606404224048844,
+      0.7606404224048842,
+      0.7549523144589586
+    ],
+    "q_min": 0.6997213359513992,
+    "B_eigen_min": 0.6989359577595113,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 4.440892098500626e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.9132802773793274,
+    "symmetric_J_eigen_max": -0.8680970906775561
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.25,
+    "regime": "IS",
+    "x": [
+      0.7781426001410388,
+      0.7781426001410385,
+      0.7781426001410388
+    ],
+    "q_min": 0.6823011331553195,
+    "B_eigen_min": 0.6971857399858963,
+    "foc_residual": 2.7755575615628914e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.918082601412952,
+    "symmetric_J_eigen_max": -0.8777710783773338
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.75,
+    "regime": "SU",
+    "x": [
+      0.7813667324199056,
+      0.7813667324199054,
+      0.7672430989223916
+    ],
+    "q_min": 0.6633026159157265,
+    "B_eigen_min": 0.2468633267580097,
+    "foc_residual": 1.3877787807814457e-16,
+    "seed_max_difference": 8.881784197001252e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.9155625261643361,
+    "symmetric_J_eigen_max": -0.8771770903847191
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 0.75,
+    "regime": "IS",
+    "x": [
+      0.8222835046558324,
+      0.8222835046558324,
+      0.8222835046558326
+    ],
+    "q_min": 0.6194034187620098,
+    "B_eigen_min": 0.2427716495344164,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.9266038781468928,
+    "symmetric_J_eigen_max": -0.8985380335198425
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 1.0,
+    "regime": "SU",
+    "x": [
+      0.7899731860044015,
+      0.7899731860044014,
+      0.7728693410499443
+    ],
+    "q_min": 0.6465742312154743,
+    "B_eigen_min": 0.021002681399559797,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 1.2212453270876722e-15,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9165753098413391,
+    "symmetric_J_eigen_max": -0.8810129574312636
+  },
+  {
+    "eta": 0.76,
+    "kappa": 0.945,
+    "g": 1.0,
+    "regime": "IS",
+    "x": [
+      0.8388390967884353,
+      0.8388390967884353,
+      0.8388390967884353
+    ],
+    "q_min": 0.59249855846912,
+    "B_eigen_min": 0.0161160903211561,
+    "foc_residual": 5.551115123125783e-17,
+    "seed_max_difference": 1.1102230246251565e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.9296589775133771,
+    "symmetric_J_eigen_max": -0.9058466840883264
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.0,
+    "regime": "SU",
+    "x": [
+      0.7483825536346143,
+      0.7483825536346141,
+      0.7483825536346144
+    ],
+    "q_min": 0.7172692928807133,
+    "B_eigen_min": 0.9251617446365386,
+    "foc_residual": 2.498001805406602e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.9036667528367369,
+    "symmetric_J_eigen_max": -0.8550073773863235
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.0,
+    "regime": "IS",
+    "x": [
+      0.7483825536346143,
+      0.7483825536346141,
+      0.7483825536346144
+    ],
+    "q_min": 0.7172692928807133,
+    "B_eigen_min": 0.9251617446365386,
+    "foc_residual": 2.498001805406602e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.9036667528367369,
+    "symmetric_J_eigen_max": -0.8550073773863235
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.0001,
+    "regime": "SU",
+    "x": [
+      0.7483879870669544,
+      0.7483879870669543,
+      0.7483854168133144
+    ],
+    "q_min": 0.7172608859632378,
+    "B_eigen_min": 0.925071201293305,
+    "foc_residual": 3.0531133177191805e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.9036673013373685,
+    "symmetric_J_eigen_max": -0.855009712996588
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.0001,
+    "regime": "IS",
+    "x": [
+      0.7483962833461253,
+      0.7483962833461251,
+      0.7483962833461254
+    ],
+    "q_min": 0.7172530121965491,
+    "B_eigen_min": 0.9250703716653875,
+    "foc_residual": 2.498001805406602e-16,
+    "seed_max_difference": 6.661338147750939e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.9036695702439076,
+    "symmetric_J_eigen_max": -0.8550143839891674
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.05,
+    "regime": "SU",
+    "x": [
+      0.7510649941236603,
+      0.7510649941236602,
+      0.7498044725911837
+    ],
+    "q_min": 0.713092485453854,
+    "B_eigen_min": 0.8798935005876335,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.9039385081282456,
+    "symmetric_J_eigen_max": -0.8561603130079997
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.05,
+    "regime": "IS",
+    "x": [
+      0.755089156555507,
+      0.7550891565555068,
+      0.755089156555507
+    ],
+    "q_min": 0.7092360391443254,
+    "B_eigen_min": 0.8794910843444488,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9050368592885748,
+    "symmetric_J_eigen_max": -0.8584112520787844
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.25,
+    "regime": "SU",
+    "x": [
+      0.7611391854253012,
+      0.7611391854253011,
+      0.7553059177080043
+    ],
+    "q_min": 0.6969010990724972,
+    "B_eigen_min": 0.6988860814574698,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9049778286180493,
+    "symmetric_J_eigen_max": -0.8604908172437863
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.25,
+    "regime": "IS",
+    "x": [
+      0.779059701191635,
+      0.7790597011916349,
+      0.779059701191635
+    ],
+    "q_min": 0.6790885820654545,
+    "B_eigen_min": 0.6970940298808361,
+    "foc_residual": 5.551115123125783e-17,
+    "seed_max_difference": 4.440892098500626e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.9098320033949299,
+    "symmetric_J_eigen_max": -0.8702643228315519
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.75,
+    "regime": "SU",
+    "x": [
+      0.7823017118416192,
+      0.7823017118416191,
+      0.7678950157108039
+    ],
+    "q_min": 0.6596911080962826,
+    "B_eigen_min": 0.24676982881583764,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 8.881784197001252e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.907284179241382,
+    "symmetric_J_eigen_max": -0.8696495216019
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 0.75,
+    "regime": "IS",
+    "x": [
+      0.823952013808166,
+      0.823952013808166,
+      0.823952013808166
+    ],
+    "q_min": 0.6149908688010585,
+    "B_eigen_min": 0.2426047986191828,
+    "foc_residual": 2.7755575615628914e-17,
+    "seed_max_difference": 1.1102230246251565e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9183746146174844,
+    "symmetric_J_eigen_max": -0.8910725535265711
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 1.0,
+    "regime": "SU",
+    "x": [
+      0.7910422966655738,
+      0.7910422966655738,
+      0.7736452290017338
+    ],
+    "q_min": 0.6426362790785957,
+    "B_eigen_min": 0.02089577033344292,
+    "foc_residual": 5.551115123125783e-17,
+    "seed_max_difference": 1.2212453270876722e-15,
+    "unilateral_max_profit_gain": 8.881784197001252e-16,
+    "own_profit_second_derivative_max": -0.9083046574151385,
+    "symmetric_J_eigen_max": -0.8735023237620014
+  },
+  {
+    "eta": 0.7555,
+    "kappa": 0.93625,
+    "g": 1.0,
+    "regime": "IS",
+    "x": [
+      0.8406725872276984,
+      0.8406725872276984,
+      0.8406725872276986
+    ],
+    "q_min": 0.5876702604159559,
+    "B_eigen_min": 0.015932741277230045,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 1.1102230246251565e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.9214141353180644,
+    "symmetric_J_eigen_max": -0.8983353212156953
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.0,
+    "regime": "SU",
+    "x": [
+      0.6945210465549821,
+      0.694521046554982,
+      0.6945210465549821
+    ],
+    "q_min": 0.7260032989881879,
+    "B_eigen_min": 0.9305478953445013,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.7620985145047648,
+    "symmetric_J_eigen_max": -0.7111016841695791
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.0,
+    "regime": "IS",
+    "x": [
+      0.6945210465549821,
+      0.694521046554982,
+      0.6945210465549821
+    ],
+    "q_min": 0.7260032989881879,
+    "B_eigen_min": 0.9305478953445013,
+    "foc_residual": 1.942890293094024e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.7620985145047648,
+    "symmetric_J_eigen_max": -0.7111016841695791
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.0001,
+    "regime": "SU",
+    "x": [
+      0.6945275888873617,
+      0.6945275888873615,
+      0.6945245456942396
+    ],
+    "q_min": 0.7259949510894671,
+    "B_eigen_min": 0.9304572411112638,
+    "foc_residual": 1.3877787807814457e-16,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.762099095409222,
+    "symmetric_J_eigen_max": -0.7111041122961131
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.0001,
+    "regime": "IS",
+    "x": [
+      0.6945376299454741,
+      0.6945376299454741,
+      0.6945376299454741
+    ],
+    "q_min": 0.7259869510611142,
+    "B_eigen_min": 0.9304562370054522,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.7621014397160597,
+    "symmetric_J_eigen_max": -0.7111089683075017
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.05,
+    "regime": "SU",
+    "x": [
+      0.6977513435046676,
+      0.6977513435046675,
+      0.6962582573643823
+    ],
+    "q_min": 0.7218559029831806,
+    "B_eigen_min": 0.8852248656495335,
+    "foc_residual": 1.3877787807814457e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.762386251118127,
+    "symmetric_J_eigen_max": -0.7123003032829412
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.05,
+    "regime": "IS",
+    "x": [
+      0.7026190264889369,
+      0.7026190264889368,
+      0.7026190264889369
+    ],
+    "q_min": 0.7179401293904054,
+    "B_eigen_min": 0.8847380973511056,
+    "foc_residual": 8.326672684688674e-17,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 6.661338147750939e-16,
+    "own_profit_second_derivative_max": -0.7635206010610358,
+    "symmetric_J_eigen_max": -0.7146393619865852
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.25,
+    "regime": "SU",
+    "x": [
+      0.7098915279101169,
+      0.7098915279101168,
+      0.7029697180208138
+    ],
+    "q_min": 0.7057797583365548,
+    "B_eigen_min": 0.7040108472089882,
+    "foc_residual": 1.1102230246251565e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 0.0,
+    "own_profit_second_derivative_max": -0.7634853729663361,
+    "symmetric_J_eigen_max": -0.7168028018525249
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.25,
+    "regime": "IS",
+    "x": [
+      0.7315280955657194,
+      0.7315280955657194,
+      0.7315280955657194
+    ],
+    "q_min": 0.6877316017731968,
+    "B_eigen_min": 0.7018471904434279,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 5.551115123125783e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.7684918459742206,
+    "symmetric_J_eigen_max": -0.7269455412882392
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.75,
+    "regime": "SU",
+    "x": [
+      0.7354606805614406,
+      0.7354606805614405,
+      0.71827434844676
+    ],
+    "q_min": 0.6688346491428108,
+    "B_eigen_min": 0.251453931943856,
+    "foc_residual": 1.6653345369377348e-16,
+    "seed_max_difference": 4.440892098500626e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.7659174795822967,
+    "symmetric_J_eigen_max": -0.7263293265382428
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 0.75,
+    "regime": "IS",
+    "x": [
+      0.7856099118140307,
+      0.7856099118140307,
+      0.7856099118140307
+    ],
+    "q_min": 0.6236855894951786,
+    "B_eigen_min": 0.2464390088185967,
+    "foc_residual": 2.7755575615628914e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 4.440892098500626e-16,
+    "own_profit_second_derivative_max": -0.7773374669230422,
+    "symmetric_J_eigen_max": -0.7485336486220178
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 1.0,
+    "regime": "SU",
+    "x": [
+      0.7460641530557416,
+      0.7460641530557414,
+      0.7252431715103318
+    ],
+    "q_min": 0.6518973803865177,
+    "B_eigen_min": 0.025393584694425875,
+    "foc_residual": 1.3877787807814457e-16,
+    "seed_max_difference": 3.3306690738754696e-16,
+    "unilateral_max_profit_gain": 8.881784197001252e-16,
+    "own_profit_second_derivative_max": -0.7669908051407472,
+    "symmetric_J_eigen_max": -0.7303393346157621
+  },
+  {
+    "eta": 0.7615,
+    "kappa": 0.79625,
+    "g": 1.0,
+    "regime": "IS",
+    "x": [
+      0.8057715402108416,
+      0.8057715402108416,
+      0.8057715402108416
+    ],
+    "q_min": 0.5964258673976159,
+    "B_eigen_min": 0.01942284597891586,
+    "foc_residual": 2.7755575615628914e-17,
+    "seed_max_difference": 2.220446049250313e-16,
+    "unilateral_max_profit_gain": 2.220446049250313e-16,
+    "own_profit_second_derivative_max": -0.780485567647919,
+    "symmetric_J_eigen_max": -0.7560768465861
+  }
+]
