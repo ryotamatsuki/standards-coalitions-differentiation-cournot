@@ -17,7 +17,7 @@ At canonical (d,eta,rho,kappa)=(1,0.758,0.9,0.8505), z=0.7185927073221112:
 - Independently reconstructed origin D=+0.0067679241288, L=+0.0150697441253, mu=D-L=-0.0083018199964; u'=+0.0608102317352, v'=+0.0323048168863.
 - SymPy EXACT identities rechecked: rho=1 face m-s factorization, i-o polynomial expression and eta=6/7 strict quadratic signs; d(mu)/d(eta)=2401*d^2/512 and d(mu)/d(beta)=10339*d^2/2048 at the critical face; cutoff beta slope = -211/196. These are VERIFIED mathematical identities (assuming model expressions), not all-depth Nash certification.
 
-Historical independent Stage14 interval log reports `KRAWCZYK SIGN CERT SUCCESS accepted=1000 splits=0` and uniform upper bounds `m_g < -0.0079701929973`, `(i-o)_g < -0.0150388833377`. Frozen all-depth comparator reports accepted positive IS and upper SU-envelope. This code was inspected via connector, and GitHub Stage22-associated historical Actions report success. **Stage23 DID NOT re-execute the complete Stage14 interval source in this runtime** because the connected GitHub source was not cloned/mounted; historical log and CI are VERIFIED AS RECORDS, fresh exact replay UNVERIFIED. Do NOT equate finite-depth reconstruction with full certification. Stage18 global lambda=5 theorem is inherited, not independently rerun.
+Historical independent Stage14 interval log reports `KRAWCZYK SIGN CERT SUCCESS accepted=1000 splits=0` and uniform upper bounds `m_g < -0.0079701929973`, `(i-o)_g < -0.0150388833377`. Frozen all-depth comparator reports accepted positive IS and upper SU-envelope. This code was inspected via connector, and GitHub Stage22-associated historical Actions report success. **Stage23 **DID re-execute the original Stage4A full-depth Krawczyk/Rosen source through GitHub Actions on the Stage23 head**; the current CI evidence is linked below. The local container did not clone or re-run this code independently, and no new independently authored global interval algorithm was implemented. Distinguish successful CI reproduction of the existing code from a complete line-by-line independent proof audit. Do NOT equate finite-depth reconstruction with full certification. Stage18 global lambda=5 theorem is inherited, not independently rerun.
 
 ## Four-axis research assessment
 - STRUCTURE: CONDITIONAL — known ingredients (network/Cournot, endogenous private design, standard coalitions), with a materially specified government-before-design and three-country inherited-depth accession combination.
@@ -28,7 +28,7 @@ Historical independent Stage14 interval log reports `KRAWCZYK SIGN CERT SUCCESS 
 ## Research quality scorecard
 | Axis | Gate | Evidence and limitation |
 |---|---|---|
-| Mathematical Correctness | CONDITIONAL | Fresh local reproduction, earlier exact logs; no fresh global replay |
+| Mathematical Correctness | CONDITIONAL | Fresh local reconstruction, plus successful GitHub full-depth Krawczyk replay on Stage23 SHA; line-by-line interval-proof audit remains |
 | Structural Novelty | CONDITIONAL | Coherent distinct staging; antecedent design/standards already present |
 | Mechanism Novelty | CONDITIONAL | Controlled fixed-x versus endogenous-x country consent reversal |
 | Proposition Novelty | UNVERIFIED | Cheng-Huang final numbered text and additional general theories incomplete |
@@ -40,6 +40,19 @@ Historical independent Stage14 interval log reports `KRAWCZYK SIGN CERT SUCCESS 
 | Submission Readiness | FAIL | No Stage23 final full manuscript nor Stage23 all-depth rerun, and literature gate open |
 
 ## Explicit decision
-**REOPEN, not STOP:** no independent mathematical contradiction or demonstrated full predecessor absorption was identified. This does not justify a preemptive GO. Necessary minimal actions: (1) complete published Cheng-Huang numbered results and Buccella online horizontal-differentiation supplement absorption map; (2) replay Stage14 all-depth Krawczyk on exact Stage22 SHA with environment, logs, and SHA256; (3) provide institutional foundation or a tiny alternate veto/depth-renegotiation sensitivity, without changing main model; (4) after the above, editor-level significance gate. No unconditional generalization is demanded.
+**REOPEN, not STOP:** no independent mathematical contradiction or demonstrated full predecessor absorption was identified. This does not justify a preemptive GO. Necessary minimal actions: (1) complete published Cheng-Huang numbered results and Buccella online horizontal-differentiation supplement absorption map; (2) archive the NEW Stage23 GitHub Actions full-depth replay log and formally inspect all proof assumptions, boundaries, and source SHA256; (3) provide institutional foundation or a tiny alternate veto/depth-renegotiation sensitivity, without changing main model; (4) after the above, editor-level significance gate. No unconditional generalization is demanded.
 
 **Question:** Does this research offer a sufficiently novel and economically meaningful theoretical contribution, considering its complete model structure, strategic mechanisms, propositions, and implications, to justify submission to a credible peer-reviewed economics journal? **NOT YET VERIFIED** (corresponding to **REOPEN**).
+
+## Stage23 current-head exact all-depth CI rerun — NEW EVIDENCE (2026-10-22)
+
+This section supersedes the earlier 'fresh replay UNVERIFIED' label **for CI execution only**. On GitHub Actions Stage23 head `47c438e991122dcaad597ad46d09327e0e5e45e8`, the original Stage4A independent Krawczyk workflow **completed successfully**: [run 39738980678](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39738980678), job 119691340931. Decoded Actions job log gives:
+
+```
+INDEPENDENT PROFIT DEVIATION PASS: max FOC error 6.802372276570878e-10
+KRAWCZYK SIGN CERT SUCCESS accepted= 1000 splits= 0 max upper derivatives= -0.007970192997334808 -0.015038883337750794 seconds= 10.939080222000001
+FROZEN CERT SUCCESS C lower gain= 0.0002346166230648035 IS lower= 2.441397037346308 SW upper= 2.4220784217382687 SU upper= 2.423573564131729
+PASS: adversarial stage 4A independent method, all g∈[0,1]
+```
+
+Also [Stage23 local reconstruction run 39738980649](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39738980649) succeeded, with frozen vs endogenous signs and exact rho=1 face identities. [Stage14 mechanism run 39738980808](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39738980808) and [continuous-depth certificate run 39738980852](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39738980852) succeeded. **This is a VERIFIED rerun of the existing certificate on the Stage23 GitHub source, not a wholly new independent proof.** Fresh validation of assumptions and source-to-inequality coverage is still CONDITIONAL. The 2026-10-22 nonlinear alternative check separately reported an original frozen-design C-vote FAIL at g=.05 before proving an existential coalition reversal at g=.005; it is not a main-model counterexample.
