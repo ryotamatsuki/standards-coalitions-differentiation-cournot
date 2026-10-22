@@ -20,7 +20,9 @@ jobs:
           python-version: '3.12'
       - name: Install numeric dependencies
         run: python -m pip install "numpy==2.3.5" "scipy==1.17.0" "matplotlib==3.10.8"
-      - name: Smoke and archived checksum tests
+      - name: Current patched-package integrity
+        run: python stage11_v05_package/verify_github_package.py
+      - name: Smoke and numerical regression tests
         run: python stage11_v05_package/run_reproducibility.py --mode smoke
       - name: Recompute all 41x41 cells, IS and SW checks
         run: OPENBLAS_NUM_THREADS=1 python stage11_v05_package/run_reproducibility.py --mode full

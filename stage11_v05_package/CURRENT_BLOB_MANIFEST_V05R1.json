@@ -1,0 +1,112 @@
+{
+  "schema": "GitBlobSHA1V1",
+  "date": "2026-10-22",
+  "base_commit": "ba354b458d741bd72c4f8d73c9631911d1621cf2",
+  "description": "Repaired standalone Stage11 v0.5 current Git contents. Historical SOURCE_FILE_HASHES.json records the original 23-file ZIP and is intentionally unchanged.",
+  "files": {
+    "manuscript/stage25_jpet_v05.tex": {
+      "size": 57747,
+      "blob_sha1": "941650a6e03ece27d5f827c30f410d192cd7c990"
+    },
+    "manuscript/stage25_jpet_v05.pdf": {
+      "size": 528951,
+      "blob_sha1": "1f055df4250bb01a37b72954b0947ed305ea1001"
+    },
+    "manuscript/stage11_proof_supplement.tex": {
+      "size": 14754,
+      "blob_sha1": "e23a55fae27ff3344b14b3d2ed6faa9697bf4753"
+    },
+    "manuscript/figure3_v05_tikz.tex": {
+      "size": 3556,
+      "blob_sha1": "7be73e00626ccb368e36f0658cda572ca567a165"
+    },
+    "manuscript/v04_to_v05_manuscript.patch": {
+      "size": 35897,
+      "blob_sha1": "55803143b1f3999e7caa46e3662c9b54ad47d144"
+    },
+    "figures/figure3_v05_corrected.png": {
+      "size": 80645,
+      "blob_sha1": "68a9c12e9b228e615f1dcad339e177a80ccfb9c4"
+    },
+    "figures/figure3_v05_corrected.pdf": {
+      "size": 19674,
+      "blob_sha1": "03301e1ca817f80d88cb21357ce4b7a67000c889"
+    },
+    "verification/stage11_fix_classifier.py": {
+      "size": 6833,
+      "blob_sha1": "1bba2a3a033525a7ae7d7ea4a657d776c2d7910d"
+    },
+    "verification/stage11_dominance_check.py": {
+      "size": 1802,
+      "blob_sha1": "10b55b46b8316ae1acee92a6901672503df18b98"
+    },
+    "verification/stress_swcells.py": {
+      "size": 951,
+      "blob_sha1": "ab0849310474825778e33bb70ecf10affa1f9915"
+    },
+    "verification/phase_funcs.py": {
+      "size": 3617,
+      "blob_sha1": "e8ab69e242d44b895043c5b2e548aced9ab38fab"
+    },
+    "verification/figure3_boundary_aware_map.npz": {
+      "size": 1377,
+      "blob_sha1": "c1ef581f03e6f014c5485205c3cf2e5dfdf44743"
+    },
+    "verification/figure3_candidate_ledger.json": {
+      "size": 869482,
+      "blob_sha1": "af80b993f631872993ffbfbc5a883c5fd736a840"
+    },
+    "verification/figure3_summary.json": {
+      "size": 316,
+      "blob_sha1": "67086d0edc408665651c33de970d0e3cce25b008"
+    },
+    "verification/regression_cases.json": {
+      "size": 822,
+      "blob_sha1": "c74c4709ab604e9f0453f83929ff685699cf7b73"
+    },
+    "verification/dominance_check.json": {
+      "size": 339396,
+      "blob_sha1": "e05752852cedfbe8f14841e270c6a8aa30fb08bb"
+    },
+    "verification/extra_SW_stress.json": {
+      "size": 84,
+      "blob_sha1": "de47b9982d6c2ada0a6cc6ec0027abb4dda859a7"
+    },
+    "verification/STAGE11_V05_QA.json": {
+      "size": 2460,
+      "blob_sha1": "3210bcd4b79b4a6b24f0551b9b76758f119598ee"
+    },
+    "verification/verify_v05.py": {
+      "size": 4415,
+      "blob_sha1": "6a206ea7a72c63b1958c603f84438dd1d5a5cdfc"
+    },
+    "verification/build_log.txt": {
+      "size": 12863,
+      "blob_sha1": "1f270d0301ac7bcaa5c475d019f3c18f0367761d"
+    },
+    "verification/plot_figure3_v05.py": {
+      "size": 1264,
+      "blob_sha1": "596c8d5147b2a42aa9b95b7cec7ec77ee37fd9b3"
+    },
+    "README.md": {
+      "size": 2903,
+      "blob_sha1": "e7e36d72046b1de2a664db86ffddb655a24900c9"
+    },
+    "MANIFEST_SHA256.json": {
+      "size": 3208,
+      "blob_sha1": "98961fb3ea829c6ba9b50800fe33836a8493e8e0"
+    },
+    "run_reproducibility.py": {
+      "size": 3236,
+      "blob_sha1": "f20554a46c6701c58f6c75efe12cc47adbf0d4c1"
+    },
+    "verification/input_v04/figure3_data_41x41.npz": {
+      "size": 1933,
+      "blob_sha1": "38fc6204665975a2490082cd26d50c3a3ab1225f"
+    },
+    "REPRODUCIBILITY.md": {
+      "size": 2551,
+      "blob_sha1": "63780558cae0ce610d52ff8a24db7a7cd89e75a1"
+    }
+  }
+}
