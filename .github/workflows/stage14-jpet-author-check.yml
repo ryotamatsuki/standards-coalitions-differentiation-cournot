@@ -1,0 +1,62 @@
+name: JPET Stage14 final author-check proof (NOT SUBMITTED)
+on:
+  push:
+    branches:
+      - submission/stage14-jpet-author-check-20261023
+    paths:
+      - manuscript/JPET_submission_author_check.tex
+      - scripts/stage14_jpet_submission_proof_qa.py
+      - .github/workflows/stage14-jpet-author-check.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  compile_and_check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Assert unchanged science, 20 citations and pending author declarations
+        run: python scripts/stage14_jpet_submission_proof_qa.py
+      - name: Build final author-check PDF (LaTeX)
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: JPET_submission_author_check.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Verify exact final compilation log
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s manuscript/JPET_submission_author_check.pdf
+          grep -q '%PDF-' <(head -c 5 manuscript/JPET_submission_author_check.pdf)
+          if grep -Fq 'Overfull \hbox' manuscript/JPET_submission_author_check.log || grep -Eq '(Citation .* undefined|Reference .* undefined|multiply defined)' manuscript/JPET_submission_author_check.log; then
+            grep -En '(Overfull|undefined|multiply defined)' manuscript/JPET_submission_author_check.log || true
+            exit 1
+          fi
+          grep 'Output written on' manuscript/JPET_submission_author_check.log | tail -1
+      - name: Upload exact pre-submission author-check proof PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: JPET-STAGE14-AUTHOR-CHECK-NOT-SUBMITTED
+          path: |
+            manuscript/JPET_submission_author_check.pdf
+            manuscript/JPET_submission_author_check.log
+      - name: Commit only final author-check proof PDF on isolated Stage14 branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=submission/stage14-jpet-author-check-20261023
+          test "$GITHUB_REF_NAME" = "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for iteration in 1 2 3; do
+            git fetch origin "$branch"
+            git reset --mixed "origin/$branch"
+            git add manuscript/JPET_submission_author_check.pdf
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Build author-check JPET PDF, subject to declaration confirmation"
+            if git push origin "HEAD:$branch"; then exit 0; fi
+          done
+          exit 1
