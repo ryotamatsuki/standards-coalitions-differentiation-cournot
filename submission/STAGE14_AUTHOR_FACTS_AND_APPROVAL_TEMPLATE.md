@@ -8,10 +8,10 @@ Use this JSON shape as a starting point (store as an untracked local file; **nev
 
 ```json
 {
-  "author_name": "",
-  "affiliation_or_independent_status": "",
-  "correspondence_email": "",
-  "orcid": "",
+  "author_name": "Ryota Matsuki",
+  "affiliation_or_independent_status": "Independent Researcher, Matsuyama, Ehime, Japan",
+  "correspondence_email": "ryota.matsuki@gmail.com",
+  "orcid": "0009-0005-2329-531X",
   "funding_statement": "",
   "conflicts_statement": "",
   "data_code_availability_statement": "",
@@ -22,7 +22,15 @@ Use this JSON shape as a starting point (store as an untracked local file; **nev
 }
 ```
 
-## Author decision points — no defaults are assumed
+## Verified historical author details (carried forward on request)
+
+- Prior ERE and JRS author records establish the author name **Ryota Matsuki**.
+- Earlier author profile explicitly confirmed **Independent Researcher, Matsuyama, Ehime, Japan**, the corresponding email **ryota.matsuki@gmail.com**, and ORCID **0009-0005-2329-531X**. These four items are prefilled as author metadata; they are not guesses from GitHub identity and do not claim that a workplace sponsored or authorized the work.
+- In the earlier JRS submission, **no research funding** and **no conflict of interest** were confirmed **for that JRS paper**. Those statements cannot automatically certify V2b, so `funding_statement` and `conflicts_statement` below remain blank. The author should review each declaration for this project.
+- Prior articles did contain AI-use disclosures but the exact tools, years, scope and validation history for V2b must be verified independently, especially because the present project used AI for research, mathematical/code audits and prose.
+- No postal street address or phone number is carried into the publicly shared repository.
+
+## Author decision points — historical author fields prefilled, V2b project declarations still unverified
 
 1. **Author and affiliation.** Confirm legal scholarly name and actual affiliation **at the time of research**, or a truthful independent-researcher designation. Do not imply an employer endorses the research without permission. Confirm email and ORCID (Wiley JPET current guidelines request ORCID).
 2. **Funding and institutional resources.** Identify funding bodies, amounts/IDs if applicable, actual equipment/institutional support and absence or presence of financial support. If work touches public-service employment or activities, resolve any relevant disclosure and permission questions with the competent authority; no affiliation/clearance can be inferred from repository history.
