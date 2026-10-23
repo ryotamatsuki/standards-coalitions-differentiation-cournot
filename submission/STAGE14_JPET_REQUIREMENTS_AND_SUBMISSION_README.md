@@ -1,0 +1,37 @@
+# Stage 14 — JPET submission-package preparation (NOT YET AUTHORIZED)
+
+**Status: conditional PREPARED, not SUBMISSION READY.** This directory and the GitHub Actions artifact contain a *draft preflight copy* of the manuscript and explicit unresolved declarations. DO NOT upload this artifact as-is to JPET. The editor has not reviewed or accepted the manuscript; nothing has been sent to the journal.
+
+## Latest official author requirements checked 2026-10-23
+
+1. The current [JPET Wiley author instructions](https://onlinelibrary.wiley.com/page/journal/14679779/homepage/forauthors.html) state that new manuscripts use **Wiley Research Exchange** (`submission.wiley.com/journal/JPET` and `authors.wiley.com/journal/JPET`). Older, indexed pages point to ScholarOne; those are historical and must not be treated as the controlling current workflow.
+2. Initial submissions use **Free Format**, without compulsory NJD LaTeX conversion. Main document may be LaTeX, PDF, LyX or Word. When uploading a LaTeX Main Document choose **Main Document – LaTeX .tex File**, additionally provide the corresponding **Main Document – LaTeX PDF**; files called through `\input` must be uploaded as **LaTeX Supplementary File**. A supported ZIP of source dependencies is possible under [Wiley submission help](https://authors.wiley.com/help/submitting-your-manuscript.html), but verify the actual designations in the portal.
+3. Current guide requests a short title, author names and actual affiliations, corresponding author contact/ORCID, abstract of <=250 words, no more than seven keywords, declarations (funding, COI, data code availability, ethics where relevant), source/figure quality. Main guide also says a **structured Abstract (intro/methods/results/conclusion)**, whereas some Wiley-hosted JPET published articles and historical JPET author instructions use traditional unstructured abstracts. Our Abstract is logically structured but not labeled; **confirm actual upload requirements before changing**. Do not invent journal clearance.
+4. Review is **single-anonymized**, so author identification in a verified submission version is normal. No legitimate author-identifying data may be invented or borrowed from a repository alias. All coauthors, if any, must consent.
+5. Wiley's journal AI policy: material assistance by LLMs in developing manuscript content must be disclosed **in Methods or Acknowledgments** with real details and author accountability; simple language-polishing tools are treated differently. The local metadata render utility places this disclosure in **Acknowledgments**; author must provide true tool/task/human review specifics.
+6. Figure files/legends and technical supplemental proof must be clearly distinguished from the main TeX input files. `stage13r_figure3_tikz.tex` and `stage13r_proof_supplement.tex` are compile-critical inputs. Figure 1 and 2 are inline TikZ in current TeX; three figure PDF exports are provided as supplemental assets where the portal asks for separated high-quality images. These exports are **not** assumed to meet post-acceptance illustration requirements; Wiley prefers electronic separate figures and discourages LaTeX-only figure code in final production.
+7. Journal states **no submission fee**; paid open access is an option *after acceptance*, not a mandatory initial submission charge. Confirm any future contractual terms before selecting an option.
+8. Supporting proof material is integrated into current TeX via `\input{stage13r_proof_supplement.tex}`, not an independent unverified theorem. User-facing reproducibility and theory references remain linked to source snapshot. A mutable Github default branch is not an immutable research archive.
+
+## Current manuscript and exact source composition
+
+The controlling source is `manuscript/stage13rl_jpet_revised.tex` on PR #35 (built on PR #34 at `492605b5938e857137a6721eb22150f294d84835`). It retains Stage13R-M's new economic significance, whole-depth theorem and Table 1 [H] layout. Stage14 changes **only two subject–verb agreements**: `Kawabata and Takarada ... establish`, `Grossman et al. ... study`.
+
+Journal submission-ready TeX **has not been rendered** because confirmed author name, affiliation, email, ORCID, funding/COI/ethics/AI statements, immutable archive information and final author approval are absent. The paper therefore deliberately retains first-page `Not for submission` and author-verification placeholder Declarations.
+
+## How to construct private final files AFTER author approval
+
+1. Fill every fact in `STAGE14_AUTHOR_FACTS_AND_APPROVAL_TEMPLATE.md`. Store completed JSON privately **outside this repository**. Independently verify any governmental-employment or institutional-affiliation permissions if applicable, without inferring authorization.
+2. Deposit code/evidence under a versioned immutable DOI/archive; verify the relevant exact Git commit/certificate files and include a truthful identifier in the data/code statement.
+3. Run `python scripts/stage14_render_submission.py /private/author_facts.json --output-dir /private/jpet_ready`. This refuses incomplete facts or false/absent author content sign-off and writes the author-named TeX to the **private** output location without changing the public branch.
+4. Run `cd /private/jpet_ready && latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode stage14_jpet_submission.tex`. Inspect the produced PDF page by page (particularly new title/Declarations/Acknowledgments, theorem/table floats, page count, citations and after converting to portal-generated PDF).
+5. Before upload, confirm the true abstract presentation, consent/funding/ethics questions, actual presence of figures/inputs, file classifications, ORCID metadata, any coauthors and editor/reviewer fields requested in the live portal. **Do not click Submit without a separate, explicit decision.**
+
+## Locked content and verification
+
+- Preflight script: `python scripts/stage14_submission_preflight.py` checks all scientific source unchanged against exact PR #34 input and exactly **two** English agreement corrections. All 20 references, 2 input TeX files, theorem/proof and figure/table environments preserved.
+- `python scripts/stage14_submission_preflight.py --package` additionally verifies compiled PDF/log and builds `submission/JPET_STAGE14_PREFLIGHT_DO_NOT_SUBMIT.zip`. Its manifest records the actual PDF size, sha256 and full Git blob SHA, build-source HEAD and three explicit `false` readiness flags.
+- CI workflow `stage14-jpet-preflight.yml` packages PDFs/TeX/input files and uploads artifact only, publishing its rebuilt review PDF **only to the new Stage14 branch**. No submission to Wiley.
+- Do not rerun expensive numerical proofs solely for the two grammar corrections; they remain preserved source assets. Source-to-PDF and GitHub blob consistency checked separately.
+
+**Independent remaining decisions:** author facts/disclosures, public immutable archive (if chosen), any required employer/third-party permissions, live portal-generated PDF and final user approval. No new theory, figures or numerical claims have been added.
