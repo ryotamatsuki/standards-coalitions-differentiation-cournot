@@ -52,10 +52,14 @@ def main():
     for a,b in grammar:
         assert old.count(a) == 1, f"Baseline no longer matches sole grammar edit: {a}"
         expected = expected.replace(a,b)
-    assert new == expected, "Stage14 must contain ONLY the two approved grammar agreements vs PR #34 HEAD"
+    author_old = r"\author{Review working draft---author details withheld}"
+    author_new = r"\author{Ryota Matsuki\\Independent Researcher, Matsuyama, Ehime, Japan\\\texttt{ryota.matsuki@gmail.com}\\ORCID: 0009-0005-2329-531X}"
+    assert expected.count(author_old) == 1
+    expected = expected.replace(author_old, author_new)
+    assert new == expected, "Stage14 must contain ONLY the two approved grammar agreements plus author-byline metadata vs PR #34 HEAD"
     assert r"\begin{table}[H]" + "\n" + r"\centering\footnotesize" + "\n" + \
         r"\caption{Hierarchy, proven domains, and limits of the results}\label{tab:map}" in new
-    assert "Review working draft---author details withheld" in new
+    assert "Ryota Matsuki" in new and "0009-0005-2329-531X" in new
     assert r"\textbf{Not for submission}" in new
     assert "[AUTHOR-CONFIRMED" in new and "[FINAL IMMUTABLE ARCHIVE" in new
     assert all((ROOT / f).exists() for f in REQUIRED_COMPANIONS)
@@ -77,7 +81,7 @@ def main():
     assert (ROOT/"scripts/stage14_render_submission.py").exists()
     txt = (ROOT / "submission/STAGE14_AUTHOR_FACTS_AND_APPROVAL_TEMPLATE.md").read_text()
     assert '"author_approved_contents": false' in txt, "Do not implicitly authorize author declarations"
-    print("PASS: two language fixes only, model/proofs/figures/tables/bibliography unchanged, 20/20 citations")
+    print("PASS: two grammar fixes and verified author title metadata only, model/proofs/figures/tables/bibliography unchanged, 20/20 citations")
     print("AUTHOR GATE: BLOCKED until personal attestation, immutable archive, live submission confirmation")
 
     if opts.package:
