@@ -9,7 +9,7 @@ baseline=subprocess.check_output(["git","show",BASE+":manuscript/stage13rl_jpet_
 present=(root/TEX).read_text()
 def normalize(t):
     t=re.sub(r"\\date\{[^\n]*\}",r"\\date{NORMALIZED}",t,count=1)
-    t=re.sub(r"\\begin\{abstract\}[\s\S]*?\\end\{abstract\}",r"\begin{abstract}NORMALIZED\end{abstract}",t,count=1)
+    t=re.sub(r"\\begin\{abstract\}[\s\S]*?\\end\{abstract\}","ABSTRACT_NORMALIZED",t,count=1)
     t=re.sub(r"\\section\*\{Declarations[^\n]*[\s\S]*?(?=\\begin\{thebibliography\})","DECLARATIONS_NORMALIZED\n\n",t,count=1)
     return t
 assert normalize(present)==normalize(baseline), "Unexpected change outside title-date/structured abstract/declarations"
