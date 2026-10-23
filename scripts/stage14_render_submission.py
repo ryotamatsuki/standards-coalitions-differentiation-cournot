@@ -84,7 +84,7 @@ def declarations_tex(data):
 
 def render(data: dict, outdir: Path):
     src = TEX.read_text(encoding="utf-8")
-    orig_author = r"\author{Review working draft---author details withheld}"
+    orig_author = r"\author{Ryota Matsuki\\Independent Researcher, Matsuyama, Ehime, Japan\\\texttt{ryota.matsuki@gmail.com}\\ORCID: 0009-0005-2329-531X}"
     orig_date = r"\date{23 October 2026\quad |\quad Stage 13R-M economic-significance editorial revision\quad |\quad \textbf{Not for submission}}"
     if src.count(orig_author) != 1 or src.count(orig_date) != 1:
         raise ValueError("Canonical source changed: author/date replacement anchors do not match.")
