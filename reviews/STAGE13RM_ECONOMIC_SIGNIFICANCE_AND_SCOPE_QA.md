@@ -168,8 +168,8 @@ No WTO/TBT source was newly cited. Existing `Simcoe2012` already gives a bounded
 - New workflow `.github/workflows/stage13rm-economic-significance-build.yml` triggers only on the editorial branch and commits only `manuscript/stage13rl_jpet_revised.pdf` to `editorial/stage13rm-economic-significance-20261023`, never to the parent PR #33 or main.
 - Dedicated GitHub Actions run **39880887967**: https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39880887967. Every stage completed **SUCCESS**, including strict source-scope comparison, latexmk, log QA, artifact upload and branch PDF commit.
 
-## PDF identity and direct page-image verification
-- PDF: `manuscript/stage13rl_jpet_revised.pdf`, **22 pages** and **574,053 bytes**.
+## Historical initial Stage13R-M PDF identity and page-image verification (before Table 1 placement correction)
+- Historical initial Stage13R-M PDF: `manuscript/stage13rl_jpet_revised.pdf`, **22 pages** and **574,053 bytes** (superseded; current blob is in the correction record above).
 - Complete Git Blob SHA-1: **`15778b46f8ca6f466b4a81cdaf2a4ffe17bedbbe`**.
 - Exact successful build ZIP: `stage13rm-economic-significance-pdf`, artifact **12470059131**, SHA256 `a1bd974d24e908ed90144dfaee1c7ad7c0e86f33d425ca64260a2d5982f52ffd`.
 - The actual extracted CI PDF had 574,053 bytes and Git blob `15778b46...`, which equals GitHub's stored binary blob for the same path in PR #34 HEAD immediately after CI. **Byte identity PASS**; the old 572,923-byte/22-page PDF from PR #33 is historical, not this revision.
