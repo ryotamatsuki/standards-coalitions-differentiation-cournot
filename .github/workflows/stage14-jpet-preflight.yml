@@ -1,0 +1,68 @@
+name: Stage14 JPET submission-package preflight — NOT SUBMITTED
+on:
+  push:
+    branches:
+      - submission/stage14-jpet-finalization-20261023
+    paths:
+      - manuscript/stage13rl_jpet_revised.tex
+      - scripts/stage14_submission_preflight.py
+      - scripts/stage14_render_submission.py
+      - .github/workflows/stage14-jpet-preflight.yml
+      - submission/STAGE14_AUTHOR_FACTS_AND_APPROVAL_TEMPLATE.md
+      - submission/STAGE14_JPET_REQUIREMENTS_AND_SUBMISSION_README.md
+      - submission/STAGE14_COVER_LETTER_DRAFT.md
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  submission_preflight_not_authorized:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reject scientific changes and verify 20 references and all inputs
+        run: python scripts/stage14_submission_preflight.py
+      - name: Compile unchanged-theory canonical working review PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13rl_jpet_revised.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Verify LaTeX log and create reproducible PRE-SUBMISSION package
+        shell: bash
+        run: |
+          set -euo pipefail
+          head -c 5 manuscript/stage13rl_jpet_revised.pdf | grep -q '%PDF-'
+          if grep -Fq 'Overfull \hbox' manuscript/stage13rl_jpet_revised.log || grep -Eq '(LaTeX Warning:.*undefined|Package natbib Warning:.*(multiply defined|undefined)|Reference .* undefined|Citation .* undefined)' manuscript/stage13rl_jpet_revised.log; then
+            grep -En '(Overfull|Warning|undefined|multiply defined)' manuscript/stage13rl_jpet_revised.log || true
+            exit 1
+          fi
+          python scripts/stage14_submission_preflight.py --package
+          grep -E 'Output written on ' manuscript/stage13rl_jpet_revised.log | tail -1
+      - name: Upload draft PDF, log and UNAPPROVED source ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage14-jpet-PREFLIGHT-NOT-FOR-SUBMISSION
+          path: |
+            manuscript/stage13rl_jpet_revised.pdf
+            manuscript/stage13rl_jpet_revised.log
+            submission/JPET_STAGE14_PREFLIGHT_DO_NOT_SUBMIT.zip
+      - name: Update compiled PDF ONLY on the new Stage14 branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          b='submission/stage14-jpet-finalization-20261023'
+          test "$GITHUB_REF_NAME" = "$b"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin "$b"
+            git reset --mixed "origin/$b"
+            git add manuscript/stage13rl_jpet_revised.pdf
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m 'Build Stage14 JPET preflight PDF (author facts unconfirmed)'
+            if git push origin "HEAD:$b"; then exit 0; fi
+          done
+          echo 'PDF could not be published on Stage14 branch' >&2
+          exit 1
