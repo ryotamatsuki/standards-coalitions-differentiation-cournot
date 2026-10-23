@@ -1,5 +1,21 @@
 # Stage13R-M current canonical manuscript QA — 23 October 2026
 
+## 2026-10-23 Stage13R-M Table 1 placement correction — FINAL PASS
+
+An independent PDF review identified a pre-existing float-order defect: `Table 1` (`tab:map`) was inserted at the top of page 10 between the words “a finite cover then establish” (page 9) and “the asserted nonempty open neighborhood” (page 10), splitting the final sentence of the proof of Theorem 4. This flaw predates Stage13R-M and was missed in prior layout QA.
+
+**Minimal source fix:** Change only the `tab:map` float header from `\\begin{table}[tbp]` to `\\begin{table}[H]` in `manuscript/stage13rl_jpet_revised.tex`. All Table 1 values and text, theorem/proof text, mathematical environments, figures, bibliography and the economic-significance revision remain identical. Source edit commit `d0b742f01212418ace3c6b49f399c559f6d8a4d3`. The editorial QA script was tightened to require exactly this Table 1 `[H]` float and normalize **only that exact table header** while comparing the otherwise unchanged full source against PR #33's fixed input; script update `79cc21a295dbe019ac1af1ab5a17c51fb479b59e`.
+
+**Successful dedicated rebuild and artifact QA:** GitHub Actions run [`39882473382`](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39882473382), all steps SUCCESS (source-level exclusions, bibliography, latexmk, log diagnostics, PDF artifact publication, isolated-branch PDF commit). The superseded intermediate run `39882467176` failed as expected under the older QA script before its one-position exception was added; it is **not** the final verification run.
+
+**Current authoritative PDF after this fix:** `manuscript/stage13rl_jpet_revised.pdf` on PR #34, **22 pages**, **574,053 bytes**, **complete Git Blob SHA-1 `943d27b473fdf8039cb3d410a1d59aae4d6443af`**, SHA-256 of raw PDF `1707e4699228c86f4b58fbf494c7175b39900821e91faf5c8ae4f6a51af28468`. Workflow ZIP artifact `12470973368`, archived ZIP sha256 `10948f7fd9a4a58d57f1a8bf92bfe0529ce5f41a2540b6ed01a1d9661ab65cd7`. Actual extracted artifact PDF and GitHub committed PDF have the same full SHA-1 Git blob and exact byte size. The old PR #34 PDF also happened to have **574,053 bytes** but had a **different SHA** (`15778b46f8ca6f466b4a81cdaf2a4ffe17bedbbe`); that binary is historical and must not be distributed as the new PDF.
+
+**Image and text-order inspection:** Full page images of pages 9–11 checked, with page 10 text order independently inspected using `pdftotext -layout`. Theorem 4's proof continues at top of page 10, **finishes before the explanatory Table 1 lead-in paragraph and Table 1 itself**. The end of the proof still spans the ordinary page 9–10 boundary, but **no table interrupts the proof or its sentence**. Table 1 and Table 2 now appear on page 10 after the proof. Zero unresolved/multiply-defined citations/references or Overfull hbox found in exact compiled log. Page count is unchanged. The prior Theorem 4 heading, Table 2 and Table 3 placement safeguards remain unaffected.
+
+**Conclusion:** The sole Table 1 float-placement regression is corrected. Previous editorial and scientific invariance checks continue to PASS. PR remains Draft, unmerged and unsubmitted. Stage13R-M editorial/layout gate PASS; Stage14 author/archival/portal/submission gates remain distinct.
+
+
+
 **Current Draft PR #34** ([economic-significance editorial revision](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/pull/34)) is based on **PR #33** frozen HEAD `51f5494d616167894e351cd226aadc8f9036cdf8`; work branch `editorial/stage13rm-economic-significance-20261023`.
 
 **Canonical paper source and PDF** remain `manuscript/stage13rl_jpet_revised.tex` and `manuscript/stage13rl_jpet_revised.pdf`; the TeX is the revised Stage13R-M version **inside PR #34 only**, not the earlier PR #33 13R-L version of the same path. The main Abstract and all mathematical statements, supplement, numeric scripts, figure source/PDFs and full bibliography remain identical to Stage13R-L. Revised prose is confined to Introduction, Related Literature and Conclusion, plus the version label.
