@@ -1,27 +1,32 @@
-# JPET Stage 14 Final Polish — submission author-check proof
+# JPET Stage 14 Final Disclosures — research, authorship and reproducibility QA
 
-Date: 2026-10-23. **Source and page-layout technical QA: PASS. Actual journal submission readiness: BLOCKED pending author declarations and consent.**
+Updated **23 October 2026**, based on user-confirmed V2b funding and conflicts and a review of the prior V2b research history.
 
-## Source
-Baseline Stage14 PR #35 complete HEAD `cbe47a3777fdd193289eff0583f9d5d8d16e43d1`. New Draft PR #36 contains `manuscript/JPET_submission_author_check.tex` and PDF. Changed ONLY the first-page version/date line, Abstract heading structure (Introduction / Methods / Results / Conclusion; original scientific propositions preserved), and final declaration/acknowledgment block. Automated `scripts/stage14_jpet_submission_proof_qa.py` verifies entire intervening manuscript byte-for-byte unchanged, exact 20/20 references, immutable original proof-supplement/figure3 input, and prevents silent adoption of V2b funding/COI declarations.
+## Assessment
 
-The title carries the already-confirmed Ryota Matsuki / Independent Researcher, Matsuyama, Ehime, Japan / email / ORCID details. No employer affiliation is claimed.
+**Economics and scientific manuscript locked; author declarations funding and COI complete; AI research/method/visual disclosures updated.** No final upload to Wiley and no merger to base. The remaining final steps are author review of this version and the Research Exchange publisher-generated preview and specific author confirmations of originality/other submissions/permissions as applicable.
 
-## Exact technical verification
+## Grounded disclosure contents
 
-- Local `latexmk` three-pass build: success, 23 pages; external GitHub CI build: [#39914237814](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39914237814) full SUCCESS. Original initial regex-only script failure was fixed and is superseded.
-- Canonical committed GitHub PDF: `manuscript/JPET_submission_author_check.pdf`, **23 pages**, **594,246 bytes**, Git blob SHA-1 **`1c564f78db81f01282430dff3fea6571f40adac0`**, raw PDF SHA-256 **`38a020b4827a6a7abb5a83d33c0228ebad2d41198ea5bf63d92a3d64987ba381`**.
-- Canonical source `manuscript/JPET_submission_author_check.tex`: **61,568 bytes**, Git blob SHA-1 **`bd7c15e8b1ce8e18abfc633a821fc43529ab7cb0`**, raw SHA-256 **`900c12709d89e0b91a1dd00eeddfb00c9f03acb5565bcc206f33a985caa3adf4`**.
-- Workflow artifact ID **12484386827**: actual extracted PDF's complete Git blob ID verified identical to committed GitHub PDF. Local and CI-generated PDFs have different bytes because of LaTeX toolchain differences; final distributed ZIP uses the **verified CI PDF**.
-- All 23 GitHub CI PDF pages rendered; focus visual inspection on pp.1–2 (title, structured abstract, intro), pp.9–11 (theorem proof, Tables 1/2, Figure 3), pp.21–23 (funding/COI, data/code, ethics, AI disclosure, 20 references). Zero reported Overfull hboxes, undefined citations, missing references. Table 1 remains after the final proof sentence, not interleaved into it.
-- Download package contains the exact approved-CI PDF, main LaTeX source, 2 input TeX files, 3 vector figure PDFs, author-check guide, cover-letter draft and SHA256 file manifest.
+- **Funding:** user personally confirms no external funding for V2b. Manuscript says: `The author received no external funding for this research.`
+- **Competing interests:** user personally confirms no competing interests for V2b. Manuscript says: `The author declares no competing interests.`
+- **AI research workflow:** Research ideas, specifications, theorem/proof strategies, sym/numeric/interval-code development and debugging, screening sources, simulated adversarial reviews and revisions/rejections of incorrect proposed results were AI-assisted through OpenAI ChatGPT (2026), under author direction. Separate Acknowledgments disclose English drafting/editing and LaTeX development. Three figure legends explicitly identify AI-assisted LaTeX/TikZ layout.
+- **Independent human checks:** `reviews/AUTHOR_INTELLECTUAL_CONTRIBUTION_RECORD_V2B_2026-10-21.md` states that **no author-independent reproduction of all derivations or numerical proofs is documented**. The manuscript does not claim it, and specifically distinguishes reproducible code from independent refereeing/formal verification.
+- **Wiley policy:** [JPET author guidance](https://onlinelibrary.wiley.com/page/journal/14679779/homepage/forauthors.html) requires transparent AI manuscript-development disclosure; [Wiley guidance](https://www.wiley.com/en-us/publishing/article/ai-guidelines) places research-method/coding/literature help with research methods, prose editing in Acknowledgments, and AI-influenced figure creation in captions.
+- **Other tools:** OpenAI ChatGPT is directly supported by past interactions. Other model/tool vendor names and versions are not invented.
+- **Research ethics/data availability:** Theoretical/computational, no empirical dataset or human participant study; code linked to fixed public Git SHA `cbe47a3777fdd193289eff0583f9d5d8d16e43d1`.
 
-## Remaining, required author input
+## Unchanged scientific material
 
-- V2b research funding / institutional support (prior unrelated JRS `none` does not establish V2b fact);
-- V2b competing interests;
-- Exact AI disclosure wording and any omitted acknowledgments; author review of proofs, numerical artifacts, citations and manuscript;
-- Originality / no active overlapping submission, any necessary reproduction or institutional permissions, final author approval, and live Wiley Research Exchange-generated review PDF.
-- The author-check PDF contains explicit italicized confirmation prompts. **It is not suitable for upload unchanged**. A dated, stable GitHub code commit URL is already in the data availability statement; JPET current requirements do not demand a DOI as a universal prerequisite.
+The source lock `scripts/stage14_jpet_submission_proof_qa.py` normalizes only (a) the draft date, (b) Abstract's structural labels, (c) declarations and AI methods/Acknowledgments, and (d) **exactly three AI figure-layout provenance suffixes**. It verifies that the resulting complete scientific body matches Stage14 preflight parent `cbe47a3777fdd193289eff0583f9d5d8d16e43d1`. The original proof supplement and Figure3 TikZ input files match the baseline, and all 20 bibliography entries remain cited. No model parameters, equations, inequalities, manuscript results, proofs, numerical source or figure data changed.
 
-**Stop rule:** no claims of submission readiness or click on Submit until statements are personally verified and incorporated, then a newly built PDF is inspected. No journal submission or merge occurred.
+## Technical PDF review (local and GitHub)
+
+- GitHub source `manuscript/JPET_submission_author_check.tex`, Git blob SHA-1 `372b8bfaebf38db3f70802bc506caa9d32891af5` (final AI prose plus confirmed funding/COI), 62,076 source bytes.
+- Local exact-source LaTeX build **PASS**, 23 pages; no undefined citation, unresolved reference, or Overfull hbox warning. Full PDF compilation and pdfinfo checked.
+- Layout: checked the first page and all changed-end pages 20–23; AI methods disclosure fits entirely on page 21; declarations and acknowledgments begin cleanly on page 22; 20-entry reference list ends page 23. Existing table placement around Theorem 4 remains unchanged.
+- The branch's dedicated GitHub CI run is evaluated independently. Any successful CI-generated PDF hash must be compared against the GitHub stored binary; LaTeX builds may differ in bytes across TeXLive environments.
+
+## Journal upload status
+
+**No journal upload performed.** The following are portal/author actions, not missing scientific analysis: inspect final proof and ensure the prose describes the author's intended research conduct; confirm originality and no concurrent duplicate submissions; ensure any workplace permissions/reused figures and metadata are accurate; upload required main TeX/PDF and two input TeX files; inspect journal-generated PDF; explicitly authorize and execute final Submit. The author has already confirmed the funding/COI facts, so do not ask again.
