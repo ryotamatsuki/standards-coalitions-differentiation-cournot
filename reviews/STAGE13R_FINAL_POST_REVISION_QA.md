@@ -1,12 +1,39 @@
-# Stage13R-L current manuscript QA — 23 October 2026
+# Stage13R-M current canonical manuscript QA — 23 October 2026
 
-**Current literature-integrated canonical draft in PR #33:** `manuscript/stage13rl_jpet_revised.tex`, compiled `manuscript/stage13rl_jpet_revised.pdf` (**22 pages**); source parent PR #32 HEAD `4532486e4929ba3d228229d76264c059ee3a6852`.
+**Current Draft PR #34** ([economic-significance editorial revision](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/pull/34)) is based on **PR #33** frozen HEAD `51f5494d616167894e351cd226aadc8f9036cdf8`; work branch `editorial/stage13rm-economic-significance-20261023`.
 
-**New successful source QA and PDF build:** [GitHub Actions #39863273352](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39863273352), 20/20 reference-to-citation mapping PASS, all 45 scientific proof/formula environments unchanged, same proof supplement, zero undefined or duplicate citations and zero overfull boxes. The compiled PDF was saved **only to the independent literature branch**, not PR #32 or main.
+**Canonical paper source and PDF** remain `manuscript/stage13rl_jpet_revised.tex` and `manuscript/stage13rl_jpet_revised.pdf`; the TeX is the revised Stage13R-M version **inside PR #34 only**, not the earlier PR #33 13R-L version of the same path. The main Abstract and all mathematical statements, supplement, numeric scripts, figure source/PDFs and full bibliography remain identical to Stage13R-L. Revised prose is confined to Introduction, Related Literature and Conclusion, plus the version label.
 
-**Exact current output identity (CI artifact ID `12462472951` / branch's committed blobs):**
+**Dedicated all-green build:** [GitHub Actions #39880887967](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39880887967), source workflow commit `f23b83fb10b11fd27413f39a59b1b242a9c92099`, PDF-only commit `e540b1ec2d8fca8ba3ba6c5ffdcf7c3b025c8b6a`. The Stage13R-M baseline-locked QA passed: edited prose-only sections, 20/20 citations, unchanged Abstract, bibliography, all proof/formula/table/figure content and immutable scientific files. The LaTeX build/log checks returned zero unresolved citations/references, multiply defined citations, and Overfull hbox warnings.
 
-| Current file | Size (bytes) | Git Blob SHA-1 |
+**Current exact PDF, confirmed from successful-run ZIP and committed GitHub blob:**
+
+| File | Exact size (bytes) | Complete Git Blob SHA-1 |
+|---|---:|---|
+| `manuscript/stage13rl_jpet_revised.pdf` | **574,053** | **`15778b46f8ca6f466b4a81cdaf2a4ffe17bedbbe`** |
+| `manuscript/stage13r_figure1.pdf` (unchanged) | 97,582 | `9977c9a04ce0a59c5bcd561e855cc81322dd9d0a` |
+| `manuscript/stage13r_figure2.pdf` (unchanged) | 150,696 | `44d631aaf5c3a02929370e065cd9672b3fa8a2ab` |
+| `manuscript/stage13r_figure3.pdf` (unchanged) | 107,883 | `60da45c9356e540f2f0a304958bf25eb8f5ec6e2` |
+
+**Run artifact:** `stage13rm-economic-significance-pdf`, ID **12470059131**, artifact ZIP SHA256 `a1bd974d24e908ed90144dfaee1c7ad7c0e86f33d425ca64260a2d5982f52ffd`. The extracted PDF has the exact recorded 574,053 bytes and Blob SHA above; same bytes verified in PR #34's Git tree. PDF remains **22 pages**. This supersedes PR #33's **572,923-byte** PDF, which remains a historical output.
+
+**Page-image verification on the current PDF:** Abstract/Introduction pp. **1–2**, Related Literature and Conclusion pp. **13–14**, References pp. **21–22**, Theorem 4 pp. **9–10**, Table 2 p. **10**, and Table 3 pp. **18–19**. Theorem 4 heading remains with its initial text on p.9; Table 2 is followed by its complete sentence; Table 3 is not inserted between a formula and its defining “where” text. Readable bibliography, no new float/paragraph/layout regression.
+
+**Full change ledger and Q1–Q6 independent scope audit:** [`STAGE13RM_ECONOMIC_SIGNIFICANCE_AND_SCOPE_QA.md`](STAGE13RM_ECONOMIC_SIGNIFICANCE_AND_SCOPE_QA.md).
+
+**Submission blockers remain unchanged:** factual author information/declared funding, conflicts, ethics and AI use; immutable code/data archive and complete source version; live journal portal and portal-generated PDF checks; express author approval. This editorial pass does not authorize submission, claim new mathematics, certify full theory novelty or establish real-world quantitative importance.
+
+---
+
+# Historical Stage13R-L manuscript QA — 23 October 2026
+
+**Historical literature-integrated canonical draft in PR #33:** `manuscript/stage13rl_jpet_revised.tex`, compiled `manuscript/stage13rl_jpet_revised.pdf` (**22 pages**); source parent PR #32 HEAD `4532486e4929ba3d228229d76264c059ee3a6852`.
+
+**Historical successful Stage13R-L source QA and PDF build:** [GitHub Actions #39863273352](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39863273352), 20/20 reference-to-citation mapping PASS, all 45 scientific proof/formula environments unchanged, same proof supplement, zero undefined or duplicate citations and zero overfull boxes. The compiled PDF was saved **only to the independent literature branch**, not PR #32 or main.
+
+**Historical Stage13R-L output identity (CI artifact ID `12462472951` / branch's committed blobs):**
+
+| Historical file | Size (bytes) | Git Blob SHA-1 |
 |---|---:|---|
 | `manuscript/stage13rl_jpet_revised.pdf` | **572,923** | `2593ef595fb52ff4be3ec7d7228b9f9dc4ac085f` |
 | `manuscript/stage13r_figure1.pdf` (inherited unchanged) | 97,582 | `9977c9a04ce0a59c5bcd561e855cc81322dd9d0a` |
