@@ -1,0 +1,65 @@
+name: Stage13R-M economic significance editorial build
+on:
+  push:
+    branches:
+      - editorial/stage13rm-economic-significance-20261023
+    paths:
+      - manuscript/stage13rl_jpet_revised.tex
+      - scripts/stage13rm_scope_qa.py
+      - .github/workflows/stage13rm-economic-significance-build.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  editorial_pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Verify exact Stage13R-L comparison and unchanged scientific source
+        run: python scripts/stage13rm_scope_qa.py
+      - name: Rebuild canonical journal PDF with latexmk
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: stage13rl_jpet_revised.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Assert no missing citation/reference, duplicate natbib entry or overfull text
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s manuscript/stage13rl_jpet_revised.pdf
+          head -c 5 manuscript/stage13rl_jpet_revised.pdf | grep -q '%PDF-'
+          if grep -Fq 'Overfull \hbox' manuscript/stage13rl_jpet_revised.log || grep -Eq '(LaTeX Warning:.*undefined|Package natbib Warning:.*(multiply defined|undefined)|Reference .* undefined|Citation .* undefined)' manuscript/stage13rl_jpet_revised.log; then
+            grep -En '(Overfull|Warning|undefined|multiply defined)' manuscript/stage13rl_jpet_revised.log || true
+            exit 1
+          fi
+          grep 'Output written on ' manuscript/stage13rl_jpet_revised.log | tail -1
+      - name: Upload exact compiled PDF and log
+        uses: actions/upload-artifact@v4
+        with:
+          name: stage13rm-economic-significance-pdf
+          path: |
+            manuscript/stage13rl_jpet_revised.pdf
+            manuscript/stage13rl_jpet_revised.log
+      - name: Commit PDF exclusively to Stage13R-M editorial branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch='editorial/stage13rm-economic-significance-20261023'
+          test "$GITHUB_REF_NAME" = "$branch"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3; do
+            git fetch origin "$branch"
+            git reset --mixed "origin/$branch"
+            git add manuscript/stage13rl_jpet_revised.pdf
+            if git diff --cached --quiet; then
+              echo 'No updated PDF to commit'; exit 0
+            fi
+            git commit -m "Build Stage13R-M editorial canonical PDF"
+            if git push origin "HEAD:$branch"; then exit 0; fi
+          done
+          echo 'PDF branch publication failed' >&2
+          exit 1
