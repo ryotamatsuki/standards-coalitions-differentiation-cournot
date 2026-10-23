@@ -25,7 +25,7 @@ assert r"\textbf{Competing interests.} The author declares no competing interest
 assert "[Author to confirm" not in present and "[Author to review and confirm" not in present
 assert present.count(r"\emph{Figure layout generated with AI-assisted LaTeX/TikZ code.}") == 3
 assert r"\section*{Use of generative AI in the research process}" in present
-assert "not independent human verification" in present
+assert "do not constitute independent human validation" in present
 assert "not on language-model outputs as evidence" in present
 assert "cbe47a3777fdd193289eff0583f9d5d8d16e43d1" in present
 for f in ("stage13r_proof_supplement.tex","stage13r_figure3_tikz.tex"):
