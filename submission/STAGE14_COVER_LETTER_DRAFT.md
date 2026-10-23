@@ -16,7 +16,10 @@ We believe the paper's controlled design-response comparison and the distinction
 
 Sincerely,
 
-**[AUTHOR-CONFIRMED full name, affiliation or independent status, corresponding email, ORCID]**
+Ryota Matsuki  
+Independent Researcher, Matsuyama, Ehime, Japan  
+ryota.matsuki@gmail.com  
+ORCID: 0009-0005-2329-531X
 
 ---
 Drafting note: The mathematically proven all-depth statement belongs only to the certified benchmark/open neighborhood, and the direct-grand comparison is a counterfactual. Do not change “a computer-assisted proof establishes” into a blanket empirical or global claim. Do not describe this as accepted, submitted, or endorsed by any government or employer.
