@@ -1,0 +1,80 @@
+name: JPET final layout-only proof and submission bundle
+on:
+  push:
+    branches:
+      - submission/jpet-final-layout-graphics-disclosure-20261023
+    paths:
+      - manuscript/JPET_submission_author_check.tex
+      - scripts/jpet_final_layout_qa.py
+      - scripts/jpet_final_layout_package.py
+      - .github/workflows/jpet-final-layout.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  editorial_layout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout complete history for frozen-source comparison
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Assert frozen scientific contents, references and vector figures
+        run: python scripts/jpet_final_layout_qa.py
+      - name: Compile updated manuscript with ONLY external figure PDFs
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: JPET_submission_author_check.tex
+          working_directory: manuscript
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Check compiled exact document, refs, scientific figure files
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('manuscript/JPET_submission_author_check.pdf')
+          log=Path('manuscript/JPET_submission_author_check.log').read_text(errors='replace')
+          assert p.read_bytes()[:5]==b'%PDF-' and p.stat().st_size>100000
+          fail=['Overfull \\hbox', 'There were undefined citations', 'There were undefined references', 'multiply defined', 'Fatal error occurred', 'LaTeX Error']
+          assert not any(s in log for s in fail), [s for s in fail if s in log]
+          match=re.findall(r'Output written on .*?\((\d+) pages',log)
+          assert match and 15<=int(match[-1])<=40
+          print('PASS final PDF',match[-1],'pages;',p.stat().st_size,'bytes')
+          PY
+      - name: Build self-contained source-plus-PDF ZIP with hashes
+        run: python scripts/jpet_final_layout_package.py
+      - name: Archive exact files as immutable run artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JPET-FINAL-LAYOUT-20261023-NOT-SUBMITTED
+          path: |
+            manuscript/JPET_submission_final.pdf
+            manuscript/JPET_submission_final.tex
+            manuscript/stage13r_figure1.pdf
+            manuscript/stage13r_figure2.pdf
+            manuscript/stage13r_figure3.pdf
+            submission/JPET_V2b_final_layout_submission.zip
+            manuscript/JPET_submission_author_check.log
+      - name: Commit final PDF, matching main TeX and package to isolated branch ONLY
+        shell: bash
+        run: |
+          set -euo pipefail
+          branch=submission/jpet-final-layout-graphics-disclosure-20261023
+          test "$GITHUB_REF_NAME" = "$branch"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for attempt in 1 2 3; do
+            git fetch origin "$branch"
+            git reset --mixed "origin/$branch"
+            git add \
+              manuscript/JPET_submission_author_check.pdf \
+              manuscript/JPET_submission_final.pdf \
+              manuscript/JPET_submission_final.tex \
+              submission/JPET_V2b_final_layout_submission.zip
+            if git diff --cached --quiet; then exit 0; fi
+            git commit -m "Build JPET final external-vector-figures PDF and self-contained source ZIP"
+            if git push origin "HEAD:$branch"; then exit 0; fi
+          done
+          exit 1

@@ -5,8 +5,6 @@
 \usepackage{booktabs,tabularx,array,graphicx}
 \usepackage{float}
 \usepackage{needspace}
-\usepackage{tikz}
-\usetikzlibrary{arrows.meta,positioning,calc,fit,shapes.geometric}
 \usepackage{geometry}
 \usepackage{microtype}
 \usepackage{setspace}
@@ -106,30 +104,7 @@ Figure~\ref{fig:timing} separates the governmental proposal and voting tree from
 
 \begin{figure}[tbp]
 \centering
-\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
-    gov/.style={draw=black!70,rounded corners=1.5pt,align=center,
-      text width=3.05cm,minimum height=0.92cm,font=\footnotesize,inner sep=3pt},
-    econ/.style={draw=black!50,align=center,text width=3.05cm,
-      minimum height=0.85cm,font=\footnotesize,inner sep=3pt},
-    arrow/.style={-{Latex[length=2mm]},line width=.45pt}]
-\node[anchor=west,font=\small\bfseries] at (0,1.05) {(a) Government proposal and accession};
-\node[gov] (a) at (1.52,0) {$A$ proposes $AB$\\compatibility depth $g$};
-\node[gov] (b) at (5.15,0) {$B$ votes, anticipating\\possible accession};
-\node[gov] (c) at (8.78,0) {$C$ and incumbents\\vote at inherited $g$};
-\node[gov] (h) at (12.41,0) {Terminal pattern\\$H\in\{\SW,\SU,\IS\}$};
-\draw[arrow] (a.east) -- (b.west);
-\draw[arrow] (b.east) -- (c.west);
-\draw[arrow] (c.east) -- (h.west);
-\node[font=\scriptsize,anchor=west] at (0,-1.06) {If $B$ rejects: $\SW$. If enlargement fails after acceptance: $\SU$.};
-\node[anchor=west,font=\small\bfseries] at (0,-1.75) {(b) Continuation evaluated at every feasible governmental history};
-\node[econ] (x) at (1.52,-2.76) {Firms choose\\residual designs};
-\node[econ] (q) at (5.15,-2.76) {Cournot competition};
-\node[econ] (w) at (8.78,-2.76) {National welfare};
-\node[econ] (v) at (12.41,-2.76) {Government decisions};
-\draw[arrow] (x.east) -- (q.west);
-\draw[arrow] (q.east) -- (w.west);
-\draw[arrow] (w.east) -- (v.west);
-\end{tikzpicture}
+\includegraphics[width=.92\linewidth]{stage13r_figure1.pdf}
 \caption{Government timing and continuation payoffs. A proposes bilateral depth and B anticipates accession; entrant and incumbents approve enlargement at the inherited depth. Firms then choose designs and quantities at each terminal policy pattern, and governments anticipate the resulting national welfare. \emph{Figure layout generated with AI-assisted LaTeX/TikZ code.}}
 \label{fig:timing}
 \end{figure}
@@ -229,28 +204,7 @@ Figure~\ref{fig:mechanism} summarizes the identifying experiment: no policy prim
 
 \begin{figure}[tbp]
 \centering
-\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
-    mech/.style={draw=black!75,rounded corners=1.5pt,align=center,font=\footnotesize,
-       minimum height=0.9cm,text width=3.7cm,inner sep=4pt},
-    answer/.style={draw=black!70,align=center,font=\footnotesize,
-       minimum height=0.9cm,text width=3.7cm,inner sep=4pt},
-    arrow/.style={-{Latex[length=2mm]},line width=.5pt}]
-\node[font=\small,anchor=west] at (-0.05,1.45) {Same government game, demand, primitives and participation rules};
-\node[font=\footnotesize\bfseries,anchor=west] at (-0.05,0.57) {Frozen-design benchmark};
-\node[mech] (f1) at (2.0,-0.20) {Design stays at $x_i=z$\\after policy $g$ changes};
-\node[mech] (f2) at (6.55,-0.20) {Direct national slope\\$\mu_{\F}=D>0$};
-\node[answer] (f3) at (11.1,-0.20) {Member and outsider\\consent slopes positive};
-\draw[arrow] (f1.east) -- (f2.west);
-\draw[arrow] (f2.east) -- (f3.west);
-\node[font=\footnotesize\bfseries,anchor=west] at (-0.05,-1.09) {Endogenous-design Nash};
-\node[mech] (n1) at (2.0,-2.04) {Policy changes firm designs\\$x'_g=-J^{-1}F_g$};
-\node[mech] (n2) at (6.55,-2.04) {National incidence loss\\$\mu_{\N}=D-\mathcal L<0$};
-\node[answer] (n3) at (11.1,-2.04) {Member and outsider\\consent slopes negative};
-\draw[arrow] (n1.east) -- (n2.west);
-\draw[arrow] (n2.east) -- (n3.west);
-\node[font=\scriptsize,align=center] at (6.55,-3.09)
- {Here $0<D<\mathcal L$; outsider accession has slope $2\mu$ by three-country symmetry.};
-\end{tikzpicture}
+\includegraphics[width=.85\linewidth]{stage13r_figure2.pdf}
 \caption{Controlled causal comparison at the no-agreement boundary. Private redesign affects both domestic consumer surplus and the home firm's worldwide profits; the private firm's own first-order condition does not eliminate this national incidence. The diagram summarizes the \emph{local} sign result, not a general theorem of agreement failure under every bargaining protocol. \emph{Figure layout generated with AI-assisted LaTeX/TikZ code.}}
 \label{fig:mechanism}
 \end{figure}
@@ -346,7 +300,7 @@ Figure~\ref{fig:phase} compares numerical searches under both design treatments 
 
 \begin{figure}[H]
 \centering
-\resizebox{0.98\linewidth}{!}{\input{stage13r_figure3_tikz.tex}}
+\includegraphics[width=.98\linewidth]{stage13r_figure3.pdf}
 \caption{Numerical search outcomes with frozen designs (left) and endogenous designs (right), for $d=1$, $\rho=0.9$ and $\lambda=0$. Dark shading: an accepted integrated candidate dominates computed bilateral candidates. Light shading: no profitable accepted offer found. In-panel labels denote search outcomes, not proven regimes. The star marks the separately certified benchmark $(\kappa,\eta)=(0.8505,0.758)$. No optimal bilateral candidate was identified. Boundaries are exploratory; no certified neighborhood is plotted. \emph{Figure layout generated with AI-assisted LaTeX/TikZ code.}}
 \label{fig:phase}
 \end{figure}
@@ -407,6 +361,45 @@ Ignoring an available post-policy private-design response can change the predict
 
 At the benchmark and in a nonempty open primitive neighborhood, a fixed-design assessment supports government-optimal integration whereas endogenous design yields fragmentation at every positive depth under the \emph{same} inherited-depth bilateral-first procedure. Yet a direct integrated offer can improve every country relative to fragmentation, because the rejection alternatives differ. Predicting agreement formation in this setting therefore requires both firms' equilibrium continuation and governments' specified outside options. The model neither selects an optimal bargaining institution nor estimates real-world agreement gains; whether the mechanism is quantitatively important in particular industries remains an empirical question.
 
+\section*{Research workflow and use of generative AI}
+OpenAI ChatGPT (2026) assisted, under the author's direction, in exploring model specifications and conjectures; proposing and critiquing derivations and proofs; developing and debugging symbolic, numerical, and interval-arithmetic verification code; and screening the literature. AI-assisted critiques informed the revision or rejection of candidate claims. The mathematical claims are supported by the derivations and computational certificates reported in the paper and replication materials, rather than by language-model responses. AI-assisted critique is not treated as independent human validation.
+
+\section*{Acknowledgments}
+OpenAI ChatGPT (2026) also assisted with organizing, drafting, restructuring, and editing the English manuscript and preparing LaTeX source and figures. The author determined the research objectives and the scope of the claims and takes responsibility for the final manuscript, mathematical results, references, and computational evidence.
+
+The author received no external funding for this research.
+
+\section*{Declarations}
+\noindent\textbf{Competing interests.} The author declares no competing interests.
+
+\noindent\textbf{Data and code availability.} This theoretical study uses no empirical dataset. Computational verification scripts, numerical results, and reproduction instructions are available in the \href{https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot}{public project repository}. The scientific source versions and computational settings supporting the computer-assisted claims are identified in the replication materials, including the fixed \href{https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/tree/cbe47a3777fdd193289eff0583f9d5d8d16e43d1}{Git commit cbe47a3777fd} (Stage 14 preflight parent). The numerical results are model calculations, not empirical estimates.
+
+\noindent\textbf{Research ethics.} This study develops mathematical theory and performs computational verification. It does not involve human participants or animal subjects. No participant consent or institutional review approval is applicable to that study design.
+
+\begin{thebibliography}{99}\footnotesize\setlength{\itemsep}{1pt}
+\bibitem[Baake and Boom(2001)]{BaakeBoom2001} Baake, P., and Boom, A. (2001). Vertical product differentiation, network externalities, and compatibility decisions. \emph{International Journal of Industrial Organization}, 19(1--2), 267--284. \url{https://doi.org/10.1016/S0167-7187(99)00029-6}.
+\bibitem[Barrett and Yang(2001)]{BarrettYang2001} Barrett, C. B., and Yang, Y.-N. (2001). Rational incompatibility with international product standards. \emph{Journal of International Economics}, 54(1), 171--191. \url{https://doi.org/10.1016/S0022-1996(00)00082-9}.
+\bibitem[Brander and Spencer(2015)]{BranderSpencer2015} Brander, J. A., and Spencer, B. J. (2015). Intra-industry trade with Bertrand and Cournot oligopoly: The role of endogenous horizontal product differentiation. \emph{Research in Economics}, 69(2), 157--165. \url{https://doi.org/10.1016/j.rie.2015.02.007}.
+\bibitem[Buccella, Fanti and Gori(2023)]{Buccella2023} Buccella, D., Fanti, L., and Gori, L. (2023). Strategic product compatibility in network industries. \emph{Journal of Economics}, 140, 141--168. \url{https://doi.org/10.1007/s00712-023-00834-x}.
+\bibitem[Cabral and Salant(2014)]{CabralSalant2014} Cabral, L., and Salant, D. (2014). Evolving technologies and standards regulation. \emph{International Journal of Industrial Organization}, 36, 48--56. \url{https://doi.org/10.1016/j.ijindorg.2013.07.006}.
+\bibitem[Cheng and Huang(2025)]{Cheng2025} Cheng, Y.-L., and Huang, H.-Y. (2025). Quality competition and product compatibility in network industries. \emph{Journal of Economics}, 145, 31--57. \url{https://doi.org/10.1007/s00712-024-00896-5}.
+\bibitem[Costinot(2008)]{Costinot2008} Costinot, A. (2008). A comparative institutional analysis of agreements on product standards. \emph{Journal of International Economics}, 75, 197--213. \url{https://doi.org/10.1016/j.jinteco.2007.11.004}.
+\bibitem[Economides and Flyer(1998)]{EconomidesFlyer1998} Economides, N., and Flyer, F. (1998). Equilibrium coalition structures in markets for network goods. \emph{Annales d'Economie et de Statistique}, 49/50, 361--380. \url{https://www.jstor.org/stable/20076121}.
+\bibitem[Gandal and Shy(2001)]{GandalShy2001} Gandal, N., and Shy, O. (2001). Standardization policy and international trade. \emph{Journal of International Economics}, 53, 363--383. \url{https://doi.org/10.1016/S0022-1996(00)00067-2}.
+\bibitem[Grossman, McCalman and Staiger(2021)]{Grossman2021} Grossman, G. M., McCalman, P., and Staiger, R. W. (2021). The ``new'' economics of trade agreements: From trade liberalization to regulatory convergence? \emph{Econometrica}, 89, 215--249. \url{https://doi.org/10.3982/ECTA17536}.
+\bibitem[Katz and Shapiro(1985)]{KatzShapiro1985} Katz, M. L., and Shapiro, C. (1985). Network externalities, competition, and compatibility. \emph{American Economic Review}, 75(3), 424--440. \url{https://www.jstor.org/stable/1814809}.
+\bibitem[Kawabata and Takarada(2021)]{Kawabata2021} Kawabata, Y., and Takarada, Y. (2021). Deep trade agreements and harmonization of standards. \emph{Southern Economic Journal}, 88, 118--143. \url{https://doi.org/10.1002/soej.12500}.
+\bibitem[Klimenko(2009)]{Klimenko2009} Klimenko, M. (2009). Policies and international trade agreements on technical compatibility for industries with network externalities. \emph{Journal of International Economics}, 77, 151--166. \url{https://doi.org/10.1016/j.jinteco.2008.08.005}.
+\bibitem[Lambertini and Rossini(1998)]{LambertiniRossini1998} Lambertini, L., and Rossini, G. (1998). Vertical differentiation, trade and endogenous common standards. \emph{University of Bologna, Department of Economics, Working Paper 263}. \url{https://doi.org/10.6092/unibo/amsacta/774}.
+\bibitem[Rosen(1965)]{Rosen1965} Rosen, J. B. (1965). Existence and uniqueness of equilibrium points for concave $N$-person games. \emph{Econometrica}, 33, 520--534. \url{https://doi.org/10.2307/1911749}.
+\bibitem[Rump(2010)]{Rump2010} Rump, S. M. (2010). Verification methods: Rigorous results using floating-point arithmetic. \emph{Acta Numerica}, 19, 287--449. \url{https://doi.org/10.1017/S096249291000005X}.
+\bibitem[Simcoe(2012)]{Simcoe2012} Simcoe, T. (2012). Standard setting committees: Consensus governance for shared technology platforms. \emph{American Economic Review}, 102, 305--336. \url{https://doi.org/10.1257/aer.102.1.305}.
+\bibitem[Takarada et~al.(2020)]{Takarada2020} Takarada, Y., Kawabata, Y., Yanase, A., and Kurata, H. (2020). Standards policy and international trade: Multilateralism versus regionalism. \emph{Journal of Public Economic Theory}, 22, 1420--1441. \url{https://doi.org/10.1111/jpet.12425}.
+\bibitem[Takarada and Kawabata(2025)]{TakaradaKawabata2025} Takarada, Y., and Kawabata, Y. (2025). Multilateral versus regional mutual recognition. \emph{Nagoya City University Discussion Paper 701} (February). \url{https://oikono.econ.nagoya-cu.ac.jp/wp-content/uploads/sites/2/2025/02/DP701_Kawabata_February2025.pdf}.
+\bibitem[Zhou, Spencer and Vertinsky(2002)]{ZhouSpencerVertinsky2002} Zhou, D., Spencer, B. J., and Vertinsky, I. (2002). Strategic trade policy with endogenous choice of quality and asymmetric costs. \emph{Journal of International Economics}, 56(1), 205--232. \url{https://doi.org/10.1016/S0022-1996(01)00118-0}.
+\end{thebibliography}
+
+\clearpage
 \appendix
 \section{Cournot inversion and the welfare-derivative bridge}\label{app:bridge}
 At $\SW$ with $x_i=z$, the diagonal of $M$ is $\alpha$ and each off-diagonal entry is $t$. Thus
@@ -473,41 +466,4 @@ Appendix~\ref{app:networkfull} supplies the exact face comparison and restricted
 
 \input{stage13r_proof_supplement.tex}
 
-\section*{Use of generative AI in the research process}
-OpenAI ChatGPT (2026) assisted, under the author's direction, in exploring model specifications and conjectures; proposing and critiquing derivations and proofs; writing and debugging symbolic, numerical, and interval-arithmetic verification code; and screening literature. AI-assisted adversarial assessments led to revisions or rejection of candidate claims. Mathematical results rely on the reported derivations and reproducible computational checks, not language-model responses as evidence. These AI-assisted critiques and code checks do not constitute independent human validation or a complete formal proof.
-
-\section*{Declarations}
-\noindent\textbf{Funding.} The author received no external funding for this research.
-
-\noindent\textbf{Competing interests.} The author declares no competing interests.
-
-\noindent\textbf{Data and code availability.} This theoretical study did not use an empirical dataset. Computational verification scripts, numerical results, and reproduction instructions are available in the \href{https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot}{public project repository}, with the scientific code identified by \href{https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/tree/cbe47a3777fdd193289eff0583f9d5d8d16e43d1}{the immutable commit cbe47a3777fd} (Stage 14 preflight parent). Results of computer-assisted claims depend on the certified assumptions and computational settings described in the manuscript and repository; the numerical results are not empirical estimates.
-
-\noindent\textbf{Research ethics.} This is a mathematical and computational theory study without human participants or animal subjects. No participant consent or institutional review approval is applicable to that study design.
-
-\section*{Acknowledgments}
-OpenAI ChatGPT (2026) also assisted with organizing, drafting, restructuring, and editing the English manuscript and preparing LaTeX source and figures. The author set the research objectives and the scope of the claims and takes responsibility for the accuracy of the final manuscript, mathematical results, references, and computational evidence.
-
-\begin{thebibliography}{99}\footnotesize\setlength{\itemsep}{1pt}
-\bibitem[Baake and Boom(2001)]{BaakeBoom2001} Baake, P., and Boom, A. (2001). Vertical product differentiation, network externalities, and compatibility decisions. \emph{International Journal of Industrial Organization}, 19(1--2), 267--284. \url{https://doi.org/10.1016/S0167-7187(99)00029-6}.
-\bibitem[Barrett and Yang(2001)]{BarrettYang2001} Barrett, C. B., and Yang, Y.-N. (2001). Rational incompatibility with international product standards. \emph{Journal of International Economics}, 54(1), 171--191. \url{https://doi.org/10.1016/S0022-1996(00)00082-9}.
-\bibitem[Brander and Spencer(2015)]{BranderSpencer2015} Brander, J. A., and Spencer, B. J. (2015). Intra-industry trade with Bertrand and Cournot oligopoly: The role of endogenous horizontal product differentiation. \emph{Research in Economics}, 69(2), 157--165. \url{https://doi.org/10.1016/j.rie.2015.02.007}.
-\bibitem[Buccella, Fanti and Gori(2023)]{Buccella2023} Buccella, D., Fanti, L., and Gori, L. (2023). Strategic product compatibility in network industries. \emph{Journal of Economics}, 140, 141--168. \url{https://doi.org/10.1007/s00712-023-00834-x}.
-\bibitem[Cabral and Salant(2014)]{CabralSalant2014} Cabral, L., and Salant, D. (2014). Evolving technologies and standards regulation. \emph{International Journal of Industrial Organization}, 36, 48--56. \url{https://doi.org/10.1016/j.ijindorg.2013.07.006}.
-\bibitem[Cheng and Huang(2025)]{Cheng2025} Cheng, Y.-L., and Huang, H.-Y. (2025). Quality competition and product compatibility in network industries. \emph{Journal of Economics}, 145, 31--57. \url{https://doi.org/10.1007/s00712-024-00896-5}.
-\bibitem[Costinot(2008)]{Costinot2008} Costinot, A. (2008). A comparative institutional analysis of agreements on product standards. \emph{Journal of International Economics}, 75, 197--213. \url{https://doi.org/10.1016/j.jinteco.2007.11.004}.
-\bibitem[Economides and Flyer(1998)]{EconomidesFlyer1998} Economides, N., and Flyer, F. (1998). Equilibrium coalition structures in markets for network goods. \emph{Annales d'Economie et de Statistique}, 49/50, 361--380. \url{https://www.jstor.org/stable/20076121}.
-\bibitem[Gandal and Shy(2001)]{GandalShy2001} Gandal, N., and Shy, O. (2001). Standardization policy and international trade. \emph{Journal of International Economics}, 53, 363--383. \url{https://doi.org/10.1016/S0022-1996(00)00067-2}.
-\bibitem[Grossman, McCalman and Staiger(2021)]{Grossman2021} Grossman, G. M., McCalman, P., and Staiger, R. W. (2021). The ``new'' economics of trade agreements: From trade liberalization to regulatory convergence? \emph{Econometrica}, 89, 215--249. \url{https://doi.org/10.3982/ECTA17536}.
-\bibitem[Katz and Shapiro(1985)]{KatzShapiro1985} Katz, M. L., and Shapiro, C. (1985). Network externalities, competition, and compatibility. \emph{American Economic Review}, 75(3), 424--440. \url{https://www.jstor.org/stable/1814809}.
-\bibitem[Kawabata and Takarada(2021)]{Kawabata2021} Kawabata, Y., and Takarada, Y. (2021). Deep trade agreements and harmonization of standards. \emph{Southern Economic Journal}, 88, 118--143. \url{https://doi.org/10.1002/soej.12500}.
-\bibitem[Klimenko(2009)]{Klimenko2009} Klimenko, M. (2009). Policies and international trade agreements on technical compatibility for industries with network externalities. \emph{Journal of International Economics}, 77, 151--166. \url{https://doi.org/10.1016/j.jinteco.2008.08.005}.
-\bibitem[Lambertini and Rossini(1998)]{LambertiniRossini1998} Lambertini, L., and Rossini, G. (1998). Vertical differentiation, trade and endogenous common standards. \emph{University of Bologna, Department of Economics, Working Paper 263}. \url{https://doi.org/10.6092/unibo/amsacta/774}.
-\bibitem[Rosen(1965)]{Rosen1965} Rosen, J. B. (1965). Existence and uniqueness of equilibrium points for concave $N$-person games. \emph{Econometrica}, 33, 520--534. \url{https://doi.org/10.2307/1911749}.
-\bibitem[Rump(2010)]{Rump2010} Rump, S. M. (2010). Verification methods: Rigorous results using floating-point arithmetic. \emph{Acta Numerica}, 19, 287--449. \url{https://doi.org/10.1017/S096249291000005X}.
-\bibitem[Simcoe(2012)]{Simcoe2012} Simcoe, T. (2012). Standard setting committees: Consensus governance for shared technology platforms. \emph{American Economic Review}, 102, 305--336. \url{https://doi.org/10.1257/aer.102.1.305}.
-\bibitem[Takarada et~al.(2020)]{Takarada2020} Takarada, Y., Kawabata, Y., Yanase, A., and Kurata, H. (2020). Standards policy and international trade: Multilateralism versus regionalism. \emph{Journal of Public Economic Theory}, 22, 1420--1441. \url{https://doi.org/10.1111/jpet.12425}.
-\bibitem[Takarada and Kawabata(2025)]{TakaradaKawabata2025} Takarada, Y., and Kawabata, Y. (2025). Multilateral versus regional mutual recognition. \emph{Nagoya City University Discussion Paper 701} (February). \url{https://oikono.econ.nagoya-cu.ac.jp/wp-content/uploads/sites/2/2025/02/DP701_Kawabata_February2025.pdf}.
-\bibitem[Zhou, Spencer and Vertinsky(2002)]{ZhouSpencerVertinsky2002} Zhou, D., Spencer, B. J., and Vertinsky, I. (2002). Strategic trade policy with endogenous choice of quality and asymmetric costs. \emph{Journal of International Economics}, 56(1), 205--232. \url{https://doi.org/10.1016/S0022-1996(01)00118-0}.
-\end{thebibliography}
 \end{document}
