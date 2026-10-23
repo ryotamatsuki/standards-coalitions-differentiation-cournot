@@ -15,9 +15,9 @@
 
 ## Current manuscript and exact source composition
 
-The controlling source is `manuscript/stage13rl_jpet_revised.tex` on PR #35 (built on PR #34 at `492605b5938e857137a6721eb22150f294d84835`). It retains Stage13R-M's new economic significance, whole-depth theorem and Table 1 [H] layout. Stage14 changes **only two subject–verb agreements**: `Kawabata and Takarada ... establish`, `Grossman et al. ... study`.
+The controlling source is `manuscript/stage13rl_jpet_revised.tex` on PR #35 (built on PR #34 at `492605b5938e857137a6721eb22150f294d84835`). It retains Stage13R-M's new economic significance, whole-depth theorem and Table 1 [H] layout. Stage14 changes **only the confirmed author name/affiliation/email/ORCID title metadata plus two subject–verb agreements**: `Kawabata and Takarada ... establish`, `Grossman et al. ... study`.
 
-Journal submission-ready TeX **has not been rendered** because confirmed author name, affiliation, email, ORCID, funding/COI/ethics/AI statements, immutable archive information and final author approval are absent. The paper therefore deliberately retains first-page `Not for submission` and author-verification placeholder Declarations.
+The prior-conversation author record supplies **Ryota Matsuki**, **Independent Researcher, Matsuyama, Ehime, Japan**, the confirmed corresponding email and ORCID; these are now filled on page 1 in the canonical preflight TeX. Final author-approved submission TeX **has not been rendered** because V2b-specific funding/COI/ethics/AI statements, immutable archive information and author approval remain outstanding. The paper deliberately retains first-page `Not for submission` and author-verification placeholder Declarations. Past JRS no-funding/no-COI responses are historical, not an automatic V2b declaration.
 
 ## How to construct private final files AFTER author approval
 
