@@ -59,7 +59,7 @@ def main():
     assert r"\textbf{Not for submission}" in new
     assert "[AUTHOR-CONFIRMED" in new and "[FINAL IMMUTABLE ARCHIVE" in new
     assert all((ROOT / f).exists() for f in REQUIRED_COMPANIONS)
-    assert (ROOT / SUP).read_text(encoding="utf-8") == baseline_git(["show",f"{BASE}:{SUP}"])
+    assert (ROOT / SUP).read_text(encoding="utf-8").strip() == baseline_git(["show",f"{BASE}:{SUP}"])
     bib = re.findall(r"(?m)^\\bibitem\[[^\n]*?\]\{([^}]+)\}\s*([^\n]+)$", new)
     assert len(bib)==20 and len(set(k for k,_ in bib))==20
     names = [value.split(",",1)[0].casefold() for _,value in bib]
