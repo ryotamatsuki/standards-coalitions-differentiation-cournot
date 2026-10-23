@@ -1,0 +1,516 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,tabularx,array,graphicx}
+\usepackage{float}
+\usepackage{needspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,shapes.geometric}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{hyperref}
+\geometry{margin=1in}
+\setstretch{1.12}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\SW}{\mathrm{SW}}\newcommand{\SU}{\mathrm{SU}}\newcommand{\IS}{\mathrm{IS}}
+\newcommand{\N}{\mathrm{N}}\newcommand{\F}{\mathrm{F}}
+\newcommand{\loss}{\mathcal L}\newcommand{\vect}[1]{\boldsymbol{#1}}
+\title{Endogenous Product Design and Participation in\\ International Compatibility Agreements}
+\author{Ryota Matsuki\\Independent Researcher, Matsuyama, Ehime, Japan\\\texttt{ryota.matsuki@gmail.com}\\ORCID: 0009-0005-2329-531X}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent\textbf{Introduction.} Can firms' product redesign change whether governments agree on compatibility standards?
+
+\noindent\textbf{Methods.} We study three countries whose firms choose costly residual differentiation before competing in quantities. Governments negotiate compatibility through a bilateral-first procedure in which subsequent accession inherits the original depth. We compare this game with a counterfactual that fixes product designs at their no-agreement Nash levels.
+
+\noindent\textbf{Results.} Private redesign affects domestic consumer surplus and the home firm's worldwide profits; these national effects are not eliminated by the firm's own-profit first-order condition. Under explicit sufficient conditions, redesign reverses both a bilateral member's stand-alone welfare gain and the outsider's gain from accession. A computer-assisted proof establishes an open parameter neighborhood in which the government-optimal outcome switches from integration with fixed designs to fragmentation with endogenous designs. Yet a direct multilateral proposal can benefit all three countries.
+
+\noindent\textbf{Conclusion.} The result identifies how private design responses and inherited agreement terms jointly determine national consent, rather than a general obstacle to compatibility cooperation.
+\end{abstract}
+\noindent\textbf{Keywords:} compatibility standards; endogenous product differentiation; national welfare; coalition accession; network externalities; Cournot competition; institutional commitment.\\
+\textbf{JEL:} F13, F15, L13, L15, D62, C72.
+
+\section{Introduction}
+
+Compatibility agreements coordinate a common interface while leaving firms free to choose the remaining features of their products. Governments therefore need to evaluate the products firms will supply \emph{after} an agreement rather than only those available before it. A government values domestic consumer surplus and the worldwide profits of its resident firm, whereas each firm chooses its design to maximize its own profit.
+
+We ask whether this difference in objectives can reverse governments' consent to an agreement \emph{without changing the negotiation procedure}. The model distinguishes publicly negotiated compatibility depth from privately chosen residual differentiation. Holding the demand primitives, national welfare objectives and government proposal/voting rules fixed, we compare endogenous private-design Nash behavior with a counterfactual that fixes designs at their no-agreement Nash levels. The policy treatments therefore generally generate \emph{different government payoff functions}.
+
+The main result concerns the implemented agreement, not just a marginal derivative. On a nonempty open neighborhood of the benchmark primitives, the fixed-design counterfactual supports a government-optimal integrated agreement, whereas endogenous design yields fragmentation at every positive depth under the \emph{same} bilateral-first accession procedure. This is a qualitative difference in predicted agreement formation, not merely in the predicted welfare gains from a given standard. When firms can reoptimize, an assessment that holds residual designs at their no-agreement levels can predict integration where the endogenous-design game instead implements fragmentation. The all-depth result rules out restoring agreement simply by changing the inherited depth. Yet a direct integrated proposal can improve every country's welfare relative to fragmentation. An entrant to an existing bilateral standard compares integration with remaining outside that standard, whereas a direct multilateral proposal is evaluated against fragmentation.
+
+The underlying national incidence is
+\begin{equation}\label{eq:introheadline}
+\left.\frac{\partial m_{\F}(g)}{\partial g}\right|_{g=0}=D>0,\qquad
+\left.\frac{\partial m_{\N}(g)}{\partial g}\right|_{g=0}=D-\loss<0.
+\end{equation}
+Private design optimality cancels the derivative of a firm's own profit with respect to its own design, but not the effects on domestic consumers or the resident firm's profits from rivals' designs. These national-welfare effects can exceed the fixed-design gain. Three-country symmetry then links the resulting reversal of the member's stand-alone bilateral consent margin to a reversal of the outsider's accession margin.
+
+The closest standards-policy predecessor, \citet{Takarada2020}, analyzes standards that reduce negative consumption externalities but impose compliance costs. Its Proposition 2 describes welfare changes under regional harmonization, while Propositions 5--6 connect outsider opposition and core stability with transboundary externalities. Here the decisive comparison holds the \emph{same government procedure fixed} while switching downstream residual-design adjustment on or off; this can remove the member's bilateral welfare gain itself. Our equilibrium concept is a specified extensive-form accession game, not the coalition core. \citet{Kawabata2021} also establish regional obstacles to multilateral harmonization, and \citet{Grossman2021} already study regulatory commitments with endogenous product attributes. The new claim is neither the general possibility of stalled cooperation nor the mere existence of private design choices.
+
+The inherited-depth rule describes accession to an existing specification, not a universal restriction on renegotiation. Governments cannot revise depth during the accession vote; a direct-grand counterfactual identifies this institutional limitation rather than resolving an unrestricted bargaining game. Larger technical committees can face costly coordination \citep{Simcoe2012}, but the model does not derive such costs or claim that its vote order describes every standards organization.
+
+Sections~\ref{sec:model}--\ref{sec:global} develop the model, private Nash incidence, and all-depth result. Section~\ref{sec:institution} isolates the effect of the accession procedure, Section~\ref{sec:boundaries} reports restricted boundaries, and the Appendix supplies proof and computational details.
+
+\section{Economic environment and the accession protocol}\label{sec:model}
+\subsection{Three countries, compatibility, and residual design}
+There are three symmetric countries $A,B,C$, each with one firm. All three firms sell in each of three identical segmented national markets. Each firm chooses the degree $x_i\in[0,1]$ of residual product similarity, namely how much of the product architecture outside the publicly harmonized interface is left common across goods. Equivalently, $1-x_i$ measures the intensity of \emph{costly private differentiation}; it is the reverse scale of this same choice, not a second attribute. Firms can save development costs by raising $x_i$, but doing so changes product substitution and their Cournot profits. The compatibility arrangement is a separate government choice: $g$ specifies the publicly agreed technical depth, whereas $x_i$ describes privately chosen differentiation in the residual design space. This intentionally parsimonious linear relationship between firms' characteristics and pairwise similarity is a modeling assumption, not a universal engineering identity.
+
+Let $g\in[0,1]$ denote the proposed depth of common compatibility and write $H$ for the country-link matrix: $H_{ii}=1$ and $H_{ij}=0$ under fragmentation $\SW$, $H_{AB}=H_{BA}=g$ with other off-diagonal entries zero under bilateral compatibility $\SU$, and $H_{ij}=g$ for every $i\ne j$ under integrated compatibility $\IS$. Define $X_{ii}=1$ and $X_{ij}=(x_i+x_j)/2$ for $i\ne j$. The cross-product matrix and fulfilled-expectations Cournot matrix are
+\begin{equation}\label{eq:matrices}
+B=\rho H+(1-\rho)X,\qquad M=I+B-\eta H,
+\end{equation}
+where $\rho$ weights the public component of substitution and $\eta$ measures the network benefit. A deeper $g$ increases substitution between goods from linked origins through $B$ and expands the cross-good network interaction through $H$. These effects need not improve every country's welfare even with designs fixed. The network quantities are measured \emph{within each destination market}; the same origin-based link pattern applies across the three segmented markets. Thus $g$, $x_i$, $\rho$ and $\eta$ are distinct primitives, not interchangeable indices of differentiation.
+
+Consumers have quasi-linear preferences in differentiated goods and a numeraire. Conditional on the expected quantities $\bar q$ in a single destination market, an integrable quadratic utility yields inverse demands
+\begin{equation}\label{eq:consumer}
+U(q;\bar q)=(c+d)\vect{1}^{\top}q-\tfrac12q^{\top}Bq+\eta q^{\top}H\bar q,\qquad
+p=(c+d)\vect{1}-Bq+\eta H\bar q.
+\end{equation}
+The matrix $B$ is symmetric and positive semidefinite on the full strategy cube for the maintained $0\le\rho\le1$; Appendix~\ref{app:regularity} proves this from the matrices' vertices. At the benchmark $0<\eta<\rho<1$ and the sufficient full-cube Rosen bound holds, delivering positive Cournot quantities and a unique private-design Nash continuation (Appendix~\ref{app:regularity}). Following the fulfilled-expectations approach of \citet{KatzShapiro1985}, quantity deviations hold expected network consumption fixed; in equilibrium, expectations equal the quantities sold in that destination market. This expectation convention motivates the market stage, not the particular quadratic utility, design cost or government accession game. Every firm's constant marginal production cost is $c$ and $d>0$ is the net-demand intercept.
+
+In the baseline, firm $i$ bears a one-time design cost
+\begin{equation}\label{eq:cost}
+K_i(x_i)=\tfrac{\kappa}{2}(1-x_i)^2,\qquad\kappa>0.
+\end{equation}
+The quadratic cost represents the expense of proprietary differentiation $1-x_i$: choosing a larger $x_i$ economizes on that investment but makes the products closer substitutes. \citet{BranderSpencer2015} likewise study costly horizontal differentiation as a strategic response to international oligopoly competition. Here the attribute is \emph{residual} to a government-selected interface standard and is chosen after that policy decision; their study is not the source of our cost function. The optional curvature $\lambda(x_i-z)^2/2$ is introduced only in Section~\ref{sec:boundaries}; it is not part of the baseline result. Because each firm sells in three identical markets, its worldwide operating profit is $3q_i^2$ in the fulfilled interior Cournot equilibrium derived below. The resulting net profit and each country's national welfare are
+\begin{equation}\label{eq:welfare}
+\Pi_i=3q_i^2-K_i(x_i),\qquad CS=\tfrac12q^{\top}Bq,\qquad W_i=CS+\Pi_i.
+\end{equation}
+$CS$ is the consumer surplus of the country's own representative destination market, whereas $\Pi_i$ includes its resident firm's profits in \emph{all three} markets. Symmetry of destination markets justifies the same $CS$ expression for each country, not adding the surplus of three countries to national welfare. The separation between domestic consumers and worldwide firm earnings is essential to the result.
+
+\subsection{Timing, government choices, and the consent inequalities}
+The game is solved by backward induction. The policy stage specifies $H$ and the depth $g$; firms then choose $x_i$ simultaneously and noncooperatively; finally they choose Cournot quantities in their destination markets. We assume unique positive-output continuation equilibria when deriving differentiable reduced-form payoffs and explicitly restrict global claims to the certified region.
+
+At the policy level, country $A$ initiates an $AB$ bilateral proposal at depth $g\in[0,1]$. Country $B$ chooses whether to accept, anticipating the specified later accession opportunity. Country $C$ may then join at the \emph{same inherited depth}; accession requires the approval of $C$ and incumbents. Accession approval is implemented as a sequence of perfectly observed yes/no decisions by C, A, and B, each conditional on preceding approvals. Every government is required to vote yes when its eventual payoff is unchanged, including at off-path histories and when its ballot would otherwise be nonpivotal; a strict preference for rejection is needed for a veto. Depth is set at the initial proposal and is not reoptimized upon accession within this game. Country $A$ selects its initial offer to maximize the welfare resulting from the actual continuation game. A later direct three-country negotiation is not part of this baseline protocol.
+
+For policy regime $r\in\{\SW,\SU,\IS\}$ write $x^r(g)$ for the actual firm Nash equilibrium and $W^r(g)$ for the resulting national welfare. Define, with symmetry,
+\begin{align}\label{eq:payoffs}
+s&=W_A^{\SW}=W_B^{\SW}=W_C^{\SW},\nonumber\\
+m(g)&=W_A^{\SU}=W_B^{\SU},\qquad o(g)=W_C^{\SU},\nonumber\\
+i(g)&=W_A^{\IS}=W_B^{\IS}=W_C^{\IS}.
+\end{align}
+At $g=0$, the regimes coincide, so $m(0)=o(0)=i(0)=s$. The inherited-depth regime rules, including the first member's anticipation of a later accession vote, are
+\begin{align}\label{eq:consent}
+\IS\text{ at }g &: \quad i(g)\ge\max\{s,m(g),o(g)\},\\
+\SU\text{ at }g &: \quad m(g)\ge s\text{ and at least one enlargement vote fails},\nonumber\\
+\SW &: \quad\text{otherwise}.\nonumber
+\end{align}
+Indeed, after B accepts an AB offer, C compares $i(g)$ with $o(g)$, and the incumbent voters compare $i(g)$ with $m(g)$; B anticipates this accession subgame and compares either its final $i(g)$ or $m(g)$ with $s$. Thus unanimous enlargement followed by initial acceptance occurs exactly when $i(g)\ge\max\{s,m(g),o(g)\}$. The tie convention applies at every subgame, not just on the equilibrium path. These conditions describe the baseline extensive-form outcome; they are \emph{not} the core of the unrestricted coalition-formation game. In particular, positive $i(g)-s$ alone never proves acceptance under inherited-depth enlargement.
+
+Figure~\ref{fig:timing} separates the governmental proposal and voting tree from the firm and market continuations used to evaluate each terminal regime. The latter are solved first when computing the former by backward induction.
+
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
+    gov/.style={draw=black!70,rounded corners=1.5pt,align=center,
+      text width=3.05cm,minimum height=0.92cm,font=\footnotesize,inner sep=3pt},
+    econ/.style={draw=black!50,align=center,text width=3.05cm,
+      minimum height=0.85cm,font=\footnotesize,inner sep=3pt},
+    arrow/.style={-{Latex[length=2mm]},line width=.45pt}]
+\node[anchor=west,font=\small\bfseries] at (0,1.05) {(a) Government proposal and accession};
+\node[gov] (a) at (1.52,0) {$A$ proposes $AB$\\compatibility depth $g$};
+\node[gov] (b) at (5.15,0) {$B$ votes, anticipating\\possible accession};
+\node[gov] (c) at (8.78,0) {$C$ and incumbents\\vote at inherited $g$};
+\node[gov] (h) at (12.41,0) {Terminal pattern\\$H\in\{\SW,\SU,\IS\}$};
+\draw[arrow] (a.east) -- (b.west);
+\draw[arrow] (b.east) -- (c.west);
+\draw[arrow] (c.east) -- (h.west);
+\node[font=\scriptsize,anchor=west] at (0,-1.06) {If $B$ rejects: $\SW$. If enlargement fails after acceptance: $\SU$.};
+\node[anchor=west,font=\small\bfseries] at (0,-1.75) {(b) Continuation evaluated at every feasible governmental history};
+\node[econ] (x) at (1.52,-2.76) {Firms choose\\residual designs};
+\node[econ] (q) at (5.15,-2.76) {Cournot competition};
+\node[econ] (w) at (8.78,-2.76) {National welfare};
+\node[econ] (v) at (12.41,-2.76) {Government decisions};
+\draw[arrow] (x.east) -- (q.west);
+\draw[arrow] (q.east) -- (w.west);
+\draw[arrow] (w.east) -- (v.west);
+\end{tikzpicture}
+\caption{Government timing and continuation payoffs. A proposes bilateral depth and B anticipates accession; entrant and incumbents approve enlargement at the inherited depth. Firms then choose designs and quantities at each terminal policy pattern, and governments anticipate the resulting national welfare.}
+\label{fig:timing}
+\end{figure}
+
+\section{Cournot equilibrium and private design response}\label{sec:equilibrium}
+\subsection{Market-stage equilibrium and the no-agreement reference}
+Since $B_{ii}=1$, firm $i$'s Cournot first-order condition at fixed expectations is $p_i-c=q_i$. Imposing fulfilled expectations $\bar q=q$ gives
+\begin{equation}\label{eq:cournot}
+M q=d\vect{1},\qquad q=d M^{-1}\vect{1},
+\end{equation}
+provided $M$ is invertible and $q\gg0$. The expression defines outputs conditional on policy $H$ and design $x$. It is the interior continuation formula, not by itself a global design-equilibrium certificate. For $E_j=M_{x_j}$, unilateral private-design differentiation gives $q_{x_j}=-M^{-1}E_jq$ and $F_i=6q_i(q_{x_i})_i+\kappa(1-x_i)$. This is the own-firm FOC holding all rival designs fixed; the full-cube Nash uniqueness and boundary-deviation conditions are supplied in Appendix~\ref{app:regularity}.
+
+Write the useful abbreviations
+\begin{equation}\label{eq:abbrev}
+\alpha=2-\eta,\quad\beta=1-\rho,\quad\delta=\rho-\eta,\quad
+t=\beta z,\quad P=\alpha-t,\quad L=\alpha+2t.
+\end{equation}
+At fragmentation the symmetric interior design Nash $z$ obeys
+\begin{equation}\label{eq:root}
+\kappa(1-z)=\frac{6\beta\alpha d^2}{(\alpha-t)L^3},\qquad t=\beta z,\qquad q_0=\frac dL.
+\end{equation}
+The solution on the certified branch has $0<z<1$ and $P,L>0$. The derivation uses the \emph{unilateral} firm-design first-order condition; treating the firms as a common social planner would yield a different equation.
+
+\subsection{Private design equilibrium}
+Let $F_i(x;H)=\partial\Pi_i(x;H)/\partial x_i$ be firm $i$'s own design derivative, already anticipating the quantity equilibrium in \eqref{eq:cournot}. The private Nash system is
+\begin{equation}\label{eq:designFOC}
+F_i(x;H)=0\quad (i=A,B,C).
+\end{equation}
+Where the full $3\times3$ Jacobian $J=\partial F/\partial x$ is nonsingular, the equilibrium design response to policy depth is
+\begin{equation}\label{eq:implicit}
+\frac{dx}{dg}=-J^{-1}\frac{\partial F}{\partial g}.
+\end{equation}
+The simultaneous system incorporates all strategic responses: $F_i$ is each firm's \emph{unilateral} first-order condition, not a derivative along a common-design path. While the own-profit derivative with respect to a firm's own equilibrium design vanishes, the effects on consumers and on the home firm's profits from its rivals' redesign need not vanish.
+
+\section{The national-incidence mechanism}\label{sec:mechanism}
+\subsection{Symmetry turns one edge into an accession constraint}
+For the derivative analysis, allow the three compatibility edges $e_{AB}$, $e_{AC}$, $e_{BC}$ to vary separately near zero. The firm continuation and national reduced payoffs inherit the permutation symmetry of the primitive game.
+\begin{lemma}[Edge incidence]\label{lem:edges}
+Assume differentiable, unique symmetric firm continuations at fragmentation. There exist numbers $\mu$ and $\nu$ such that a country's marginal welfare response to an incident compatibility edge is $\mu$, and its response to the remaining nonincident edge is $\nu$. Consequently,
+\begin{equation}\label{eq:edges}
+m'(0)=\mu,\quad o'(0)=\nu,\quad i'(0)=2\mu+\nu,\quad
+[i-o]'(0)=2\mu,\quad [i-m]'(0)=\mu+\nu.
+\end{equation}
+The identities apply separately under endogenous and frozen residual design.
+\end{lemma}
+\begin{proof}
+Differentiate each country's reduced welfare with respect to the three independently variable edges at zero. Permuting country labels leaves the game invariant. For any country, the two incident edges therefore have a common coefficient $\mu$, and the third edge has coefficient $\nu$. A bilateral $AB$ link activates one edge; a common-depth grand standard activates all three. Taking directional derivatives and subtracting gives \eqref{eq:edges}.
+\end{proof}
+
+The significance for accession is that the outsider's marginal incentive to enlarge an existing bilateral standard is twice the member's marginal stand-alone bilateral gain. These are different votes, linked by the symmetric three-country incidence structure.
+
+\subsection{What private redesign subtracts from national welfare}
+In the \emph{frozen-design} counterfactual, firms are constrained to $x_i=z$ at every policy history, where $z$ is their no-agreement Nash design under the same primitives. The cost remains $K_i(z)$ and firms continue to compete in quantities; it is \emph{not} asserted that $z$ is a post-policy design Nash equilibrium. Governments optimize depth under unchanged accession and rejection rules. Subscripts $\F$ and $\N$ denote frozen and endogenous designs; both coincide at $g=0$.
+
+An $AB$ link at fixed $x=z$ yields the bilateral-member national welfare slope
+\begin{equation}\label{eq:D}
+D\equiv\mu_{\F}=
+\frac{\rho d^2}{L^2}-\frac{\delta d^2}{L^3}
+\left(2(1+2t)+\frac{6\alpha}{P}\right).
+\end{equation}
+This combines a direct compatibility-related consumer gain with the effects of output adjustment on consumer surplus and on the home firm's profits. The outsider's frozen-design response is
+\begin{equation}\label{eq:nuF}
+\nu_{\F}=\frac{\rho d^2}{L^2}-\frac{2\delta d^2(1+2t)}{L^3}
++\frac{12\delta d^2t}{PL^3}.
+\end{equation}
+With endogenous design, symmetry of $AB$ implies two relevant slopes, $u'=dx_A^{\SU}/dg|_0=dx_B^{\SU}/dg|_0$ and $v'=dx_C^{\SU}/dg|_0$, determined by \eqref{eq:implicit}.
+
+The derivative of $A$'s \emph{national welfare}, evaluated at the no-agreement private Nash, satisfies
+\begin{equation}\label{eq:Wgrad}
+\partial_{x_A}W_A=-C,\qquad
+\partial_{x_B}W_A=\partial_{x_C}W_A=-(C+V),
+\end{equation}
+where
+\begin{equation}\label{eq:CV}
+C=\frac{\beta d^2(\eta+2t)}{L^3},\qquad
+V=\frac{3\beta d^2(\alpha-2t)}{PL^3}.
+\end{equation}
+Here $C$ summarizes the consumer-side incidence, while $V$ captures the incremental worldwide home-profit response to \emph{other firms'} choices. Neither should be removed by invoking firm $A$'s own-profit FOC.
+
+\begin{lemma}[National-welfare incidence of noncooperative design]\label{lem:incidence}
+Under regular interior firm design Nash and the maintained primitives, the endogenous bilateral-member derivative is
+\begin{equation}\label{eq:loss}
+\mu_{\N}=D-\loss,\qquad
+\loss\equiv C(2u'+v')+V(u'+v').
+\end{equation}
+In particular, $C,V,u',v'>0$ implies $\loss>0$. If $0<D<\loss$, a member gains from a marginal compatibility link under frozen design but loses after noncooperative redesign.
+\end{lemma}
+\begin{proof}
+Apply the chain rule to $W_A(g,x^\SU(g))$ at zero. Its fixed-design part is $D$ by \eqref{eq:D}. The Nash-adjustment part is $\partial_x W_A\cdot(u',u',v')$, which by \eqref{eq:Wgrad} equals $-C(2u'+v')-V(u'+v')$. This establishes \eqref{eq:loss}. Positivity yields the final inequality. The derivative of the own optimized \emph{private profit} with respect to $x_A$ vanishes, but its domestic consumer effect and the response to rivals' designs do not; omitting the $V$ term changes the conclusion and is incorrect.
+\end{proof}
+
+\paragraph{Economic interpretation.}
+Near fragmentation at the benchmark, a deeper bilateral standard reduces the member firms' private return to maintaining costly residual differentiation. Their equilibrium similarity choices rise, and the outsider also adjusts its design (Appendix~\ref{app:lambda}). Firms account for their own design cost and operating profit, but not the resulting change in domestic consumer surplus; their first-order conditions also do not remove the effects of rivals' designs on resident worldwide profits. Both national effects enter the induced loss in \eqref{eq:loss}. When that loss exceeds $D$, the member's \emph{stand-alone} bilateral gain and, by Lemma~\ref{lem:edges}, the outsider's accession margin become negative.
+
+Figure~\ref{fig:mechanism} summarizes the identifying experiment: no policy primitive or government voting rule changes between the frozen and endogenous-design cases.
+
+
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
+    mech/.style={draw=black!75,rounded corners=1.5pt,align=center,font=\footnotesize,
+       minimum height=0.9cm,text width=3.7cm,inner sep=4pt},
+    answer/.style={draw=black!70,align=center,font=\footnotesize,
+       minimum height=0.9cm,text width=3.7cm,inner sep=4pt},
+    arrow/.style={-{Latex[length=2mm]},line width=.5pt}]
+\node[font=\small,anchor=west] at (-0.05,1.45) {Same government game, demand, primitives and participation rules};
+\node[font=\footnotesize\bfseries,anchor=west] at (-0.05,0.57) {Frozen-design benchmark};
+\node[mech] (f1) at (2.0,-0.20) {Design stays at $x_i=z$\\after policy $g$ changes};
+\node[mech] (f2) at (6.55,-0.20) {Direct national slope\\$\mu_{\F}=D>0$};
+\node[answer] (f3) at (11.1,-0.20) {Member and outsider\\consent slopes positive};
+\draw[arrow] (f1.east) -- (f2.west);
+\draw[arrow] (f2.east) -- (f3.west);
+\node[font=\footnotesize\bfseries,anchor=west] at (-0.05,-1.09) {Endogenous-design Nash};
+\node[mech] (n1) at (2.0,-2.04) {Policy changes firm designs\\$x'_g=-J^{-1}F_g$};
+\node[mech] (n2) at (6.55,-2.04) {National incidence loss\\$\mu_{\N}=D-\mathcal L<0$};
+\node[answer] (n3) at (11.1,-2.04) {Member and outsider\\consent slopes negative};
+\draw[arrow] (n1.east) -- (n2.west);
+\draw[arrow] (n2.east) -- (n3.west);
+\node[font=\scriptsize,align=center] at (6.55,-3.09)
+ {Here $0<D<\mathcal L$; outsider accession has slope $2\mu$ by three-country symmetry.};
+\end{tikzpicture}
+\caption{Controlled causal comparison at the no-agreement boundary. Private redesign affects both domestic consumer surplus and the home firm's worldwide profits; the private firm's own first-order condition does not eliminate this national incidence. The diagram summarizes the \emph{local} sign result, not a general theorem of agreement failure under every bargaining protocol.}
+\label{fig:mechanism}
+\end{figure}
+
+\section{Main result: private redesign reverses governmental consent}\label{sec:global}
+The local theorem distinguishes the stand-alone bilateral member margin $m(g)-s$ from the outsider's accession margin $i(g)-o(g)$. The first asks whether a bilateral agreement benefits its members if it remains bilateral; the second asks whether the outsider would accept accession. Neither comparison alone determines the initial vote: country B anticipates the actual accession continuation before accepting or rejecting the proposal. The theorem also checks incumbent widening consent and integrated welfare.
+
+\begin{theorem}[Local controlled participation reversal]\label{thm:local}
+Suppose the firm continuation is regular, unique, interior, and continuously differentiable near fragmentation, and suppose the primitive parameters imply $\beta>0$, $\rho>\eta$, $C,V,u',v'>0$ and
+\begin{equation}\label{eq:conditions}
+0<D<\loss,\qquad \nu_{\N}>-2\mu_{\N},\qquad \nu_{\F}>-D.
+\end{equation}
+For every sufficiently small $g>0$, (a) with frozen design the inherited-depth procedure has affirmative bilateral-member and outsider-accession votes, and an acceptable integrated agreement strictly improves on fragmentation; (b) with endogenous design, the \emph{stand-alone} bilateral-member gain and the outsider-accession condition fail while the hypothetical integrated allocation at the same depth strictly Pareto-improves on fragmentation. The statement is local in $g$; it does not alone establish the government-optimal regime over all depths.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:incidence}, $\mu_{\F}=D>0$ but $\mu_{\N}=D-\loss<0$. Lemma~\ref{lem:edges} gives the frozen outsider accession slope $[i_{\F}-o_{\F}]'(0)=2D>0$ and incumbent widening slope $[i_{\F}-m_{\F}]'(0)=D+\nu_{\F}>0$. The frozen grand benefit slope is $2D+\nu_{\F}>0$. In the endogenous game, $m_{\N}'(0)=\mu_{\N}<0$ and $[i_{\N}-o_{\N}]'(0)=2\mu_{\N}<0$, whereas $i_{\N}'(0)=2\mu_{\N}+\nu_{\N}>0$. Each compared level gap is zero at $g=0$. Strict derivative inequalities and differentiability therefore imply the specified level inequalities for all sufficiently small positive $g$. The government's comparison in \eqref{eq:consent} then produces the stated local voting outcomes.
+\end{proof}
+
+Both treatments preserve the economic primitives, governments' welfare objectives, and the proposal and voting rules. They differ in whether firms' post-policy designs may respond, and thus in their \emph{induced government payoff functions}. The local theorem does not rule out agreement at another depth; Theorem~\ref{thm:open} closes this gap for the benchmark and a neighborhood. Section~\ref{sec:institution} examines the direct-grand alternative.
+
+\Needspace{10\baselineskip}
+\begin{theorem}[An open primitive region with different government-optimal outcomes]\label{thm:open}
+There exists a nonempty open neighborhood $\mathcal U$ of
+\begin{equation}\label{eq:theta}
+\theta_0=(d,\eta,\rho,\kappa)=\left(1,\frac{379}{500},\frac9{10},\frac{1701}{2000}\right)
+\end{equation}
+in the four-dimensional baseline primitive parameter space such that the following hold in the maintained inherited-depth game:
+\begin{enumerate}
+\item With endogenous firm design, every strictly positive-depth proposal fails the original accession procedure; the government-optimal equilibrium regime is fragmentation $\SW$.
+\item With all residual designs fixed at their \emph{same} no-agreement Nash $z$, a strictly positive-depth integrated agreement is approved and yields a higher initiating-country payoff than any terminal bilateral arrangement or fragmentation; hence a government-optimal positive $\IS$ proposal exists.
+\item For these primitives, some hypothetical direct integrated agreement under endogenous design strictly improves the national welfare of all three countries relative to $\SW$.
+\end{enumerate}
+This does not assert an explicit radius for $\mathcal U$, an all-parameter global classification, or coalition-proof fragmentation.
+\end{theorem}
+\begin{proof}[Three-step argument]
+\emph{Step 1: the full firm Nash continuation.} Appendix~\ref{app:regularity} establishes positive Cournot quantities and a unique design Nash on the full strategy cube; symmetry then permits SU's two-dimensional and IS's scalar reductions. Appendix~\ref{app:interval} encloses the interior roots for every depth and lifts them to all firms.
+
+\emph{Step 2: the government-optimal agreements.} Interval arithmetic bounds the endogenous welfare derivatives uniformly for every $g\in[0,1]$:
+\begin{equation}\label{eq:cert}
+\frac{dm_{\N}}{dg}<-0.00797,\qquad
+\frac{d(i_{\N}-o_{\N})}{dg}<-0.01503.
+\end{equation}
+Because $m_{\N}(0)-s=i_{\N}(0)-o_{\N}(0)=0$, integration implies $m_{\N}(g)<s$ and $i_{\N}(g)<o_{\N}(g)$ for all $g>0$. C therefore vetoes accession, and B, anticipating a stand-alone bilateral payoff below fragmentation, rejects the initial proposal at every positive depth. Under frozen designs, a feasible integrated offer at $g=1/20$ obeys
+\begin{equation}\label{eq:frozenCert}
+i_{\F}(1/20)>2.4413970373,\quad
+s<2.4220784218,\quad
+\sup_{0\le g\le1}m_{\F}(g)<2.4235735642.
+\end{equation}
+It strictly passes the incumbent and outsider votes and dominates both fragmentation and every possible terminal bilateral payoff. The accepted integrated-depth set is closed in $[0,1]$; continuous integrated welfare therefore attains a government-optimal maximum on it. The endogenous direct-grand alternative also gives $i_{\N}(1/20)-s>0.0169346278$.
+
+\emph{Step 3: a nonempty open primitive neighborhood.} The positive-output and full-cube Nash regularity bounds, negative depth-derivative margins and strict frozen integrated-versus-bilateral envelope comparison are preserved uniformly under sufficiently small primitive perturbations. The implicit-function theorem, compactness of the depth interval and a finite cover then establish the asserted nonempty open neighborhood $\mathcal U$. No explicit numerical radius is claimed; Appendix~\ref{app:interval} gives the objects certified by interval arithmetic.
+\end{proof}
+
+The local inequality $0<D<\loss$ identifies the mechanism; the all-depth derivative certificate excludes any compensating inherited-depth proposal. Continuity extends the strict inequalities to an unquantified primitive neighborhood, not to other governmental agendas, demand classes, or country counts.
+
+Table~\ref{tab:map} distinguishes the main reversal from the institutional and parameter-boundary results; it also records where the proofs are local, all-depth or restricted to a limiting family.
+
+
+\begin{table}[H]
+\centering\footnotesize
+\caption{Hierarchy, proven domains, and limits of the results}\label{tab:map}
+\renewcommand{\arraystretch}{1.22}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{.18\linewidth}>{\raggedright\arraybackslash}p{.34\linewidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Result & Proven environment or condition & Inference and scope limit \\
+\midrule
+Theorem~\ref{thm:local}: local reversal & $0<D<\mathcal L$, regular design Nash; additional outsider slope conditions & Frozen design gives positive consent slopes; endogenous design reverses both. \emph{Local} in $g$. \\
+Theorem~\ref{thm:open}: global regime & Certified all-depth inequalities at $\theta_0$ and a nonempty open primitive neighborhood & $\SW$ with design Nash versus government-optimal $\IS$ with frozen design. Specific inherited-depth protocol; not coalition-proof. \\
+Proposition~\ref{prop:direct}: direct-grand & $\mu_{\N}<0<2\mu_{\N}+\nu_{\N}$ & Direct $\IS$ can benefit all at the same small $g$; procedural boundary, not a general new coalition theorem. \\
+Proposition~\ref{prop:lambda}: design costs & $\lambda_c\in(0.93538,0.93539)$ at $\theta_0$ & Unique \emph{local} consent cutoff; no global $\lambda$ regime classification. \\
+Network intensity & $\rho=1$, $\eta=6/7$ cutoff and restricted $\rho<1$ strip & Exact global regimes on the design-inactive face; only restricted nearby endogenous extension. \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{An interpretable numerical illustration}
+At $\theta_0$ the no-agreement symmetric private design is $z\simeq0.7185927073$. We obtain $D\simeq0.0067679241$, $\loss\simeq0.0150697441$ and $\mu_{\N}\simeq-0.0083018200$. For the same policy depth $g=0.05$, all values below are \emph{national welfare differences} from the corresponding bilateral, outsider, or fragmentation alternatives. Table~\ref{tab:effects} uses an independently evaluated Cournot--design Nash continuation and illustrates magnitudes and signs; it does not replace the rigorous all-depth argument.
+\begin{table}[H]
+\centering\small
+\caption{Government welfare comparisons at $g=0.05$ (uncalibrated model units)}\label{tab:effects}
+\begin{tabular}{lrrr}
+\toprule
+Firm-design treatment&$m-s$&$i-o$&$i-s$\\
+\midrule
+Frozen at original $z$&$+0.000272382$&$+0.000234617$&$+0.019318616$\\
+Endogenous design Nash&$-0.000473474$&$-0.001246547$&$+0.016934628$\\
+\bottomrule
+\end{tabular}
+\end{table}
+At $g=0.05$, integration improves every country's welfare relative to fragmentation under either design treatment. With endogenous design, however, the outsider prefers the bilateral outside option. Anticipating rejected accession, the initial member rejects the stand-alone bilateral proposal because its payoff is below fragmentation. These are uncalibrated model comparisons, not estimates of gains from real agreements.
+
+Figure~\ref{fig:phase} compares numerical searches under both design treatments on the same $(\kappa,\eta)$ slice; every parameter pair uses its own fragmentation Nash design. An integrated candidate records an accepted proposal dominating \emph{computed} bilateral proposals, while a light-shaded cell records that the search found no profitable accepted offer. Narrow consent windows were probed near zero and at observed margin crossings. Neither category certifies a complete two-dimensional equilibrium partition. The star marks the separately certified benchmark; its all-depth open neighborhood is not plotted. No proposer-optimal bilateral candidate was identified in the search.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.98\linewidth}{!}{\input{stage13r_figure3_tikz.tex}}
+\caption{Numerical search outcomes with frozen designs (left) and endogenous designs (right), for $d=1$, $\rho=0.9$ and $\lambda=0$. Dark shading: an accepted integrated candidate dominates computed bilateral candidates. Light shading: no profitable accepted offer found. In-panel labels denote search outcomes, not proven regimes. The star marks the separately certified benchmark $(\kappa,\eta)=(0.8505,0.758)$. No optimal bilateral candidate was identified. Boundaries are exploratory; no certified neighborhood is plotted.}
+\label{fig:phase}
+\end{figure}
+
+\section{Negotiation routes and the meaning of institutional specificity}\label{sec:institution}
+The bilateral-first inherited-depth procedure restricts agreement formation. A direct grand proposal changes the relevant rejection option and therefore provides a sharp institutional counterfactual; the baseline makes no coalition-proof or bargaining-invariance claim.
+
+Consider an \emph{alternative} governmental agenda permitting a direct $\IS$ offer at depth $g$, with rejection returning all three countries to $\SW$. Firms play exactly the \emph{same} Nash continuation $x^{\IS}(g)$ and the same Cournot game as in the baseline; only the available governmental offer and rejection histories differ. A direct offer is unanimously acceptable when $i_{\N}(g)\ge s$.
+
+\begin{proposition}[Institutional boundary: direct versus inherited-depth agreement]\label{prop:direct}
+Suppose the endogenous continuation is regular and $\mu_{\N}<0<2\mu_{\N}+\nu_{\N}$. Then at every sufficiently small positive depth the baseline inherited-depth votes prevent a bilateral-first path from producing integration, while a \emph{direct} integrated proposal at the same depth is strictly Pareto-improving and accepted against fragmentation. At $\theta_0$, the baseline game returns fragmentation at every depth and at least one positive-depth direct proposal is strictly acceptable.
+\end{proposition}
+\begin{proof}
+From Lemma~\ref{lem:edges}, $m_{\N}'(0)=\mu_{\N}<0$ and $[i_{\N}-o_{\N}]'(0)=2\mu_{\N}<0$, whereas $i_{\N}'(0)=2\mu_{\N}+\nu_{\N}>0$. All level gaps start at zero, yielding the local result. At $\theta_0$, Theorem~\ref{thm:open} establishes global failure under inherited depth, while the certified inequality $i_{\N}(1/20)>s$ establishes an accepted direct alternative. The feasible direct-offer set $\{g\in[0,1]:i_{\N}(g)\ge s\}$ is closed, and the continuous payoff reaches a maximum on it; this is the requisite existence argument, not compactness of a discontinuous overall terminal-payoff map alone.
+\end{proof}
+
+\paragraph{Interpreting the restriction.}
+This comparison holds the firms' Nash continuation fixed and changes the government's available offer and rejection options. It shows that inherited-depth fragmentation can coexist with a unanimously beneficial direct grand agreement. It does not determine which agenda governments would choose if unrestricted direct offers, renegotiation or transfers were available.
+
+A sequential accession institution is appropriate as a conditional model of a previously specified technical arrangement. Its depth $g$ is chosen in the initial proposal rather than fixed from the beginning of time; however, the terms are inherited during a subsequent accession decision. Technical revision might in practice require separate bargaining and compatibility testing. We do not assign such activities a quantitative cost in the baseline and therefore do not claim to derive its institutional commitment endogenously. \citet{Simcoe2012} documents bargaining-related delays in an actual standards committee, lending motivation to treating collective technical coordination as costly but not identifying our exact voting sequence.
+
+If entrants and incumbents could jointly select a different depth $g'$ upon enlargement, a relevant feasibility condition would be $i_{\N}(g')\ge\max\{m_{\N}(g),o_{\N}(g)\}$ with an appropriate rejection continuation. Because $m_{\N}(g)$ and $o_{\N}(g)$ approach $s$ as $g\downarrow0$ whereas $i_{\N}(0.05)>s$ at the certified center, some sufficiently small inherited depth and a renegotiated $g'=0.05$ can satisfy these static consent inequalities. This is a \emph{feasibility comparison}, not a subgame-perfect solution of an unspecified renegotiation game. Transfers, renegotiation costs, binding commitment to future voting, and alternative coalition-formation rules are outside the modeled strategy space.
+
+\section{Two boundaries: design adjustment and network effects}\label{sec:boundaries}
+The main result uses no separate adjustment-cost parameter and holds with $\lambda=0$. Two previously established results delimit its scope. They are presented as conditional supporting analysis, not as independent broad discoveries.
+
+\subsection{Costly redesign and a local consent threshold}
+Let $z$ continue to denote the original no-agreement Nash characteristic and consider the explicit, separate extension
+\begin{equation}\label{eq:lambda}
+K_i(x_i;\lambda)=\frac{\kappa}{2}(1-x_i)^2+\frac{\lambda}{2}(x_i-z)^2,\qquad \lambda\ge0.
+\end{equation}
+Because the adjustment term vanishes to first order at $x_i=z$, the fragmentation Nash is unchanged. At $\theta_0$, let $\ell$ denote the diagonal entry of the design pseudo-gradient Jacobian, $\chi$ its common off-diagonal, and let $(p,p,r)$ be the derivative forcing from the $AB$ edge. The exact formulas are supplied in Appendix~\ref{app:lambda}. For $A_\lambda=\lambda-\ell$ and $\Delta_\lambda=(A_\lambda+\chi)(A_\lambda-2\chi)>0$,
+\begin{equation}\label{eq:lambdaResp}
+u'_\lambda=\frac{A_\lambda p+\chi r}{\Delta_\lambda},\qquad
+v'_\lambda=\frac{2\chi p+(A_\lambda-\chi)r}{\Delta_\lambda}.
+\end{equation}
+Here $u'_\lambda$ denotes the member's design response, whereas $\nu_\lambda$ elsewhere denotes the \emph{outsider welfare} derivative; they are distinct objects.
+
+\begin{proposition}[Unique \emph{local} design-friction cutoff]\label{prop:lambda}
+At $\theta_0$, the marginal induced welfare loss $\loss(\lambda)=C(2u'_\lambda+v'_\lambda)+V(u'_\lambda+v'_\lambda)$ is strictly decreasing in $\lambda\ge0$ and converges to zero. Consequently there is a unique $\lambda_c>0$ satisfying $\loss(\lambda_c)=D$, certified by $0.93538<\lambda_c<0.93539$. The initial member and outsider accession slopes are negative for $0\le\lambda<\lambda_c$ and positive for $\lambda>\lambda_c$, locally near $g=0$, under the existing regularity conditions. No global equilibrium classification is claimed at $\lambda=\lambda_c$ or for all $\lambda>\lambda_c$.
+\end{proposition}
+\begin{proof}
+At the certified primitive root, $Q_\lambda=-J(0)+\lambda I$ is a strictly diagonally dominant nonsingular $M$-matrix with $Q_\lambda^{-1}$ componentwise positive and positive forcing $f=(p,p,r)$. The equilibrium response is $Q_\lambda^{-1}f$ and satisfies $d(Q_\lambda^{-1}f)/d\lambda=-Q_\lambda^{-2}f\ll0$. Since $C,V>0$, the induced loss is positive, strictly decreasing, and tends to zero. Its value at zero exceeds $D>0$. The intermediate value theorem and strict monotonicity yield a unique threshold; the cited interval is from exact arithmetic. Lemma~\ref{lem:edges} turns the sign of $D-\loss(\lambda)$ into the first-order member and outsider vote signs. The result does not equate local vote feasibility with globally government-optimal $\IS$.
+\end{proof}
+
+\subsection{A network-boundary comparison}
+When $\rho=1$, the privately chosen residual design does not affect compatibility and its optimum is $x_i=1$. A complete analytic comparison of the same inherited-depth government game then yields $\SW$ for $\eta\le6/7$ and government-optimal $\IS$ for $\eta>6/7$, with no government-optimal terminal $\SU$. This is a useful limiting-case check rather than a case of strategic redesign. Under the additional strict regularity assumptions and for $\rho<1$ sufficiently close to one, a restricted active-design strip inherits a local cutoff $\eta_c(\rho)$ and the same direct $\SW$--$\IS$ transition. Appendix~\ref{app:networkfull} provides the welfare formulas and the quadratic transition proof; it does not assert the result for arbitrary $\rho$ or for the Figure~\ref{fig:phase} slice ($\rho=0.9$).
+
+\section{Relationship to the literature and interpretation}\label{sec:literature}
+International compatibility standards and their institutional consequences have an established literature. \citet{GandalShy2001} and \citet{Klimenko2009} study international compatibility with network effects; \citet{Costinot2008} examines alternative rules for international product standards. \citet{BarrettYang2001} show that nonconformity with an international standard can be rational. In government-cooperation settings, \citet{Takarada2020}, \citet{Kawabata2021}, and the mutual-recognition discussion paper of \citet{TakaradaKawabata2025} demonstrate why regional arrangements and an outsider's welfare can impede wider agreement. These studies already establish that cooperation can be obstructed and that outsiders' welfare matters. Our comparison instead asks whether allowing \emph{post-policy private redesign}, rather than fixing firms' no-agreement designs, changes agreement formation while the government proposal, inherited-depth and voting rules remain identical.
+
+Private standard coalitions and attribute choices are also established objects of network economics. \citet{EconomidesFlyer1998} analyze firms' technical-standards coalitions under opposing network benefits and product-market competition. \citet{BaakeBoom2001} distinguish intrinsic product quality from compatibility decisions, while \citet{Buccella2023} and \citet{Cheng2025} examine firm-level compatibility and quality incentives, including veto behavior. The distinction between attributes and compatibility is therefore not itself our contribution. We trace the firms' subsequent design Nash response through domestic consumer surplus and the resident firm's profits across markets into two distinct national consent margins: the bilateral member's stand-alone gain and the outsider's incentive to accede. A firm's own-profit design condition does not eliminate these national effects.
+
+Standards and regulatory choices can induce other private responses. \citet{CabralSalant2014} examine standards regulation and private R\&D incentives; \citet{LambertiniRossini1998} study endogenous common standards alongside technology and quality choices in a 1998 working paper. \citet{Grossman2021} analyzes international regulatory cooperation when firms choose product characteristics. Thus neither endogenous product attributes nor the possible conflict between private investment and standards policy originates here. \citet{BranderSpencer2015} provide the related strategic-trade treatment of costly horizontal differentiation, and \citet{ZhouSpencerVertinsky2002} study trade policy with endogenous quality and export-profit consequences. Relative to these precedents, the controlled contribution is a reversal of the \emph{implemented agreement} when an available private-design response is omitted from an otherwise identical government procedure. At the certified benchmark and in a nonempty open neighborhood, the reversal survives the entire positive-depth menu, not merely a marginal comparison. The direct-grand counterfactual makes the role of the entrant's rejection option explicit; it does not establish a universal failure of multilateral cooperation.
+
+\section{Conclusion}
+Ignoring an available post-policy private-design response can change the predicted formation of a compatibility agreement, not merely its predicted welfare gain. Firms optimize their own profits, but their residual redesign affects domestic consumers and the resident firm's worldwide earnings through rivals' choices. These national effects can reverse both the stand-alone bilateral-member gain and the outsider's incentive to accede.
+
+At the benchmark and in a nonempty open primitive neighborhood, a fixed-design assessment supports government-optimal integration whereas endogenous design yields fragmentation at every positive depth under the \emph{same} inherited-depth bilateral-first procedure. Yet a direct integrated offer can improve every country relative to fragmentation, because the rejection alternatives differ. Predicting agreement formation in this setting therefore requires both firms' equilibrium continuation and governments' specified outside options. The model neither selects an optimal bargaining institution nor estimates real-world agreement gains; whether the mechanism is quantitatively important in particular industries remains an empirical question.
+
+\appendix
+\section{Cournot inversion and the welfare-derivative bridge}\label{app:bridge}
+At $\SW$ with $x_i=z$, the diagonal of $M$ is $\alpha$ and each off-diagonal entry is $t$. Thus
+\begin{equation}\label{eq:inv}
+M=P I+t\vect{1}\vect{1}^{\top},\qquad
+M^{-1}=\frac1P\left(I-\frac{t}{L}\vect{1}\vect{1}^{\top}\right),\qquad q_0=\frac dL.
+\end{equation}
+Activating edge $AB$ while holding all $x=z$ changes $M$ in positions $(A,B)$ and $(B,A)$ by $\delta=\rho-\eta$. Differentiating $Mq=d\vect 1$ yields
+\begin{equation}\label{eq:quantityDer}
+\left.\frac{dq}{dg}\right|_{x=z,g=0}=-M^{-1}M_gq_0
+=\left(-\frac{\delta\alpha q_0}{PL},-\frac{\delta\alpha q_0}{PL},\frac{2\delta t q_0}{PL}\right)^\top.
+\end{equation}
+Because $CS=\tfrac12q^\top Bq$, its total fixed-design derivative is
+\begin{equation}\label{eq:CSder}
+\left.\frac{dCS}{dg}\right|_{x=z,g=0}
+=\frac{\rho d^2}{L^2}-\frac{2\delta(1+2t)d^2}{L^3}.
+\end{equation}
+The home firm of a member receives operating profit $3q_A^2$, so its fixed-design derivative is $6q_0(dq_A/dg)$. Combining it with \eqref{eq:CSder} gives \eqref{eq:D}. The outsider profit derivative $6q_0(dq_C/dg)$ similarly gives \eqref{eq:nuF}.
+
+At the symmetric no-agreement Nash, a unilateral increase in $x_j$ changes the quantities according to
+\begin{equation}\label{eq:designQuantityBridge}
+(q_{x_j})_j=-\frac{\beta\alpha q_0}{PL},\qquad
+(q_{x_j})_k=-\frac{\beta(\alpha-2t)q_0}{2PL}\quad(k\ne j).
+\end{equation}
+Differentiating both $B$ and $q=dM^{-1}\vect{1}$ in consumer surplus yields $\partial_{x_j}CS=-C$. At the private Nash, the resident firm's own-profit derivative vanishes for its own design, whereas for $k\ne j$,
+\begin{equation}\label{eq:crossProfitBridge}
+\partial_{x_k}\Pi_j=6q_0(q_{x_k})_j=-V.
+\end{equation}
+Domestic consumer surplus plus resident worldwide profits therefore gives \eqref{eq:Wgrad}--\eqref{eq:CV}. The chain rule supplies \eqref{eq:loss}, where the \emph{positive} rival-profit term $V(u'+v')$ enters the induced loss.
+
+\section{Design-friction response and the critical coefficient}\label{app:lambda}
+At $\theta_0$ and the unadjusted $\SW$ symmetric Nash let the diagonal and off-diagonal elements of $J(0)$ be $\ell$ and $\chi$. For the $AB$ edge, the forcing vector $f=(p,p,r)^{\top}$ is
+\begin{align}
+\ell&=-\kappa+\frac{6\beta^2d^2(\alpha-2t)(2\alpha+t)}{P^2L^4},
+&\chi&=\frac{3\beta^2d^2(3\alpha-2t)}{PL^4},\\
+p&=\frac{6\delta\beta d^2(\alpha-2t)(2\alpha+t)}{P^2L^4},
+&r&=\frac{6\delta\beta d^2(\alpha^2-2\alpha t+4t^2)}{P^2L^4}.
+\end{align}
+At the exact interval bracket for the original $z$, $\ell<0$, $\chi,p,r>0$ and $-\ell>2\chi$. In the adjustment-cost extension $-J(\lambda)=-J(0)+\lambda I$, so
+\[
+\begin{pmatrix} A_\lambda-\chi &-\chi\\ -2\chi&A_\lambda\end{pmatrix}
+\begin{pmatrix}u'_\lambda\\v'_\lambda\end{pmatrix}=
+\begin{pmatrix}p\\r\end{pmatrix},\qquad A_\lambda=\lambda-\ell.
+\]
+Solving gives \eqref{eq:lambdaResp} and $\Delta_\lambda=(A_\lambda+\chi)(A_\lambda-2\chi)>0$. The strictly diagonally dominant nonsingular $M$-matrix argument in Proposition~\ref{prop:lambda} establishes monotonicity. At equality $\lambda=\lambda_c$ the first derivative vanishes; second-order terms must be analyzed before assigning a regime.
+
+\section{Exact network-face welfare formulas}\label{app:network}
+On the $\rho=1$ face, let $\vartheta=(1-\eta)/(2-\eta)$ and $E=d^2/(2-\eta)^2$. Firms choose $x_i=1$. Cournot inversion yields
+\begin{equation}\label{eq:face}
+\begin{split}
+s&=\tfrac92 E,\\
+m(g)&=E\left[\frac{4+g}{(1+\vartheta g)^2}+\tfrac12\right],\\
+o(g)&=E\left[\frac{1+g}{(1+\vartheta g)^2}+\tfrac72\right],\\
+i(g)&=E\frac{\tfrac92+3g}{(1+2\vartheta g)^2}.
+\end{split}
+\end{equation}
+For fixed $d,\kappa>0$ with $0<\eta<1$, the restricted near-face cutoff obeys $\eta_c(\rho)=6/7+(211/196)(\rho-1)+O((1-\rho)^2)$. Writing $t=(1-\rho)z$, the derivative with respect to $\rho$ at $\rho=1$ is $-1$ because $z=1$ on that face, while the induced-design loss is $O((1-\rho)^2)$. Direct differentiation of $\mu=\partial_g(m-s)|_{g=0}$ at $(\eta,\rho)=(6/7,1)$ yields
+\begin{equation}\label{eq:faceCutoffDerivative}
+\partial_\eta\mu=\frac{2401d^2}{512},\quad
+\partial_\rho\mu=-\frac{2401d^2}{512}\frac{211}{196},
+\quad \eta_c'(1)=-\frac{\mu_\rho}{\mu_\eta}=\frac{211}{196}.
+\end{equation}
+Appendix~\ref{app:networkfull} supplies the exact face comparison and restricted active-design argument. This expansion does not apply to arbitrary $\rho$ or to Figure~\ref{fig:phase}'s $\rho=0.9$ slice.
+
+\input{stage13r_proof_supplement.tex}
+
+\section*{Declarations}
+\noindent\textbf{Funding.} \textit{[Author to confirm: no specific external funding, or identify actual funders and relevant institutional support.]}
+
+\noindent\textbf{Competing interests.} \textit{[Author to confirm: no competing interests, or provide an accurate declaration.]}
+
+\noindent\textbf{Data and code availability.} This theoretical study did not use an empirical dataset. Computational verification scripts, numerical results, and reproduction instructions are available in the \href{https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot}{public project repository}, with the scientific code identified by \href{https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/tree/cbe47a3777fdd193289eff0583f9d5d8d16e43d1}{the immutable commit cbe47a3777fd} (Stage 14 preflight parent). Results of computer-assisted claims depend on the certified assumptions and computational settings described in the manuscript and repository; the numerical results are not empirical estimates.
+
+\noindent\textbf{Research ethics.} This is a mathematical and computational theory study without human participants or animal subjects. No participant consent or institutional review approval is applicable to that study design.
+
+\section*{Acknowledgments}
+The author used OpenAI ChatGPT to assist with literature discovery, model and manuscript development, mathematical and source cross-checks, code development and review, and English drafting and editing. Reproducibility scripts, explicit proofs, interval checks and source comparisons were used in assessing claims. AI outputs do not constitute independent evidence; the author remains responsible for all claims, citations, calculations and manuscript content. \textit{[Author to review and confirm the scope and accuracy of this declaration and any additional acknowledgments before submission.]}
+
+\begin{thebibliography}{99}\footnotesize\setlength{\itemsep}{1pt}
+\bibitem[Baake and Boom(2001)]{BaakeBoom2001} Baake, P., and Boom, A. (2001). Vertical product differentiation, network externalities, and compatibility decisions. \emph{International Journal of Industrial Organization}, 19(1--2), 267--284. \url{https://doi.org/10.1016/S0167-7187(99)00029-6}.
+\bibitem[Barrett and Yang(2001)]{BarrettYang2001} Barrett, C. B., and Yang, Y.-N. (2001). Rational incompatibility with international product standards. \emph{Journal of International Economics}, 54(1), 171--191. \url{https://doi.org/10.1016/S0022-1996(00)00082-9}.
+\bibitem[Brander and Spencer(2015)]{BranderSpencer2015} Brander, J. A., and Spencer, B. J. (2015). Intra-industry trade with Bertrand and Cournot oligopoly: The role of endogenous horizontal product differentiation. \emph{Research in Economics}, 69(2), 157--165. \url{https://doi.org/10.1016/j.rie.2015.02.007}.
+\bibitem[Buccella, Fanti and Gori(2023)]{Buccella2023} Buccella, D., Fanti, L., and Gori, L. (2023). Strategic product compatibility in network industries. \emph{Journal of Economics}, 140, 141--168. \url{https://doi.org/10.1007/s00712-023-00834-x}.
+\bibitem[Cabral and Salant(2014)]{CabralSalant2014} Cabral, L., and Salant, D. (2014). Evolving technologies and standards regulation. \emph{International Journal of Industrial Organization}, 36, 48--56. \url{https://doi.org/10.1016/j.ijindorg.2013.07.006}.
+\bibitem[Cheng and Huang(2025)]{Cheng2025} Cheng, Y.-L., and Huang, H.-Y. (2025). Quality competition and product compatibility in network industries. \emph{Journal of Economics}, 145, 31--57. \url{https://doi.org/10.1007/s00712-024-00896-5}.
+\bibitem[Costinot(2008)]{Costinot2008} Costinot, A. (2008). A comparative institutional analysis of agreements on product standards. \emph{Journal of International Economics}, 75, 197--213. \url{https://doi.org/10.1016/j.jinteco.2007.11.004}.
+\bibitem[Economides and Flyer(1998)]{EconomidesFlyer1998} Economides, N., and Flyer, F. (1998). Equilibrium coalition structures in markets for network goods. \emph{Annales d'Economie et de Statistique}, 49/50, 361--380. \url{https://www.jstor.org/stable/20076121}.
+\bibitem[Gandal and Shy(2001)]{GandalShy2001} Gandal, N., and Shy, O. (2001). Standardization policy and international trade. \emph{Journal of International Economics}, 53, 363--383. \url{https://doi.org/10.1016/S0022-1996(00)00067-2}.
+\bibitem[Grossman, McCalman and Staiger(2021)]{Grossman2021} Grossman, G. M., McCalman, P., and Staiger, R. W. (2021). The ``new'' economics of trade agreements: From trade liberalization to regulatory convergence? \emph{Econometrica}, 89, 215--249. \url{https://doi.org/10.3982/ECTA17536}.
+\bibitem[Katz and Shapiro(1985)]{KatzShapiro1985} Katz, M. L., and Shapiro, C. (1985). Network externalities, competition, and compatibility. \emph{American Economic Review}, 75(3), 424--440. \url{https://www.jstor.org/stable/1814809}.
+\bibitem[Kawabata and Takarada(2021)]{Kawabata2021} Kawabata, Y., and Takarada, Y. (2021). Deep trade agreements and harmonization of standards. \emph{Southern Economic Journal}, 88, 118--143. \url{https://doi.org/10.1002/soej.12500}.
+\bibitem[Klimenko(2009)]{Klimenko2009} Klimenko, M. (2009). Policies and international trade agreements on technical compatibility for industries with network externalities. \emph{Journal of International Economics}, 77, 151--166. \url{https://doi.org/10.1016/j.jinteco.2008.08.005}.
+\bibitem[Lambertini and Rossini(1998)]{LambertiniRossini1998} Lambertini, L., and Rossini, G. (1998). Vertical differentiation, trade and endogenous common standards. \emph{University of Bologna, Department of Economics, Working Paper 263}. \url{https://doi.org/10.6092/unibo/amsacta/774}.
+\bibitem[Rosen(1965)]{Rosen1965} Rosen, J. B. (1965). Existence and uniqueness of equilibrium points for concave $N$-person games. \emph{Econometrica}, 33, 520--534. \url{https://doi.org/10.2307/1911749}.
+\bibitem[Rump(2010)]{Rump2010} Rump, S. M. (2010). Verification methods: Rigorous results using floating-point arithmetic. \emph{Acta Numerica}, 19, 287--449. \url{https://doi.org/10.1017/S096249291000005X}.
+\bibitem[Simcoe(2012)]{Simcoe2012} Simcoe, T. (2012). Standard setting committees: Consensus governance for shared technology platforms. \emph{American Economic Review}, 102, 305--336. \url{https://doi.org/10.1257/aer.102.1.305}.
+\bibitem[Takarada et~al.(2020)]{Takarada2020} Takarada, Y., Kawabata, Y., Yanase, A., and Kurata, H. (2020). Standards policy and international trade: Multilateralism versus regionalism. \emph{Journal of Public Economic Theory}, 22, 1420--1441. \url{https://doi.org/10.1111/jpet.12425}.
+\bibitem[Takarada and Kawabata(2025)]{TakaradaKawabata2025} Takarada, Y., and Kawabata, Y. (2025). Multilateral versus regional mutual recognition. \emph{Nagoya City University Discussion Paper 701} (February). \url{https://oikono.econ.nagoya-cu.ac.jp/wp-content/uploads/sites/2/2025/02/DP701_Kawabata_February2025.pdf}.
+\bibitem[Zhou, Spencer and Vertinsky(2002)]{ZhouSpencerVertinsky2002} Zhou, D., Spencer, B. J., and Vertinsky, I. (2002). Strategic trade policy with endogenous choice of quality and asymmetric costs. \emph{Journal of International Economics}, 56(1), 205--232. \url{https://doi.org/10.1016/S0022-1996(01)00118-0}.
+\end{thebibliography}
+\end{document}
