@@ -22,7 +22,7 @@ An independent PDF review identified a pre-existing float-order defect: `Table 1
 
 **Dedicated all-green build:** [GitHub Actions #39880887967](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/39880887967), source workflow commit `f23b83fb10b11fd27413f39a59b1b242a9c92099`, PDF-only commit `e540b1ec2d8fca8ba3ba6c5ffdcf7c3b025c8b6a`. The Stage13R-M baseline-locked QA passed: edited prose-only sections, 20/20 citations, unchanged Abstract, bibliography, all proof/formula/table/figure content and immutable scientific files. The LaTeX build/log checks returned zero unresolved citations/references, multiply defined citations, and Overfull hbox warnings.
 
-**Current exact PDF, confirmed from successful-run ZIP and committed GitHub blob:**
+**Historical initial Stage13R-M PDF, superseded by the placement-fix version documented above:**
 
 | File | Exact size (bytes) | Complete Git Blob SHA-1 |
 |---|---:|---|
@@ -33,7 +33,7 @@ An independent PDF review identified a pre-existing float-order defect: `Table 1
 
 **Run artifact:** `stage13rm-economic-significance-pdf`, ID **12470059131**, artifact ZIP SHA256 `a1bd974d24e908ed90144dfaee1c7ad7c0e86f33d425ca64260a2d5982f52ffd`. The extracted PDF has the exact recorded 574,053 bytes and Blob SHA above; same bytes verified in PR #34's Git tree. PDF remains **22 pages**. This supersedes PR #33's **572,923-byte** PDF, which remains a historical output.
 
-**Page-image verification on the current PDF:** Abstract/Introduction pp. **1–2**, Related Literature and Conclusion pp. **13–14**, References pp. **21–22**, Theorem 4 pp. **9–10**, Table 2 p. **10**, and Table 3 pp. **18–19**. Theorem 4 heading remains with its initial text on p.9; Table 2 is followed by its complete sentence; Table 3 is not inserted between a formula and its defining “where” text. Readable bibliography, no new float/paragraph/layout regression.
+**Historical initial Stage13R-M PDF image verification (subsequently corrected for Table 1):** Abstract/Introduction pp. **1–2**, Related Literature and Conclusion pp. **13–14**, References pp. **21–22**, Theorem 4 pp. **9–10**, Table 2 p. **10**, and Table 3 pp. **18–19**. Theorem 4 heading remains with its initial text on p.9; Table 2 is followed by its complete sentence; Table 3 is not inserted between a formula and its defining “where” text. Readable bibliography, no new float/paragraph/layout regression.
 
 **Full change ledger and Q1–Q6 independent scope audit:** [`STAGE13RM_ECONOMIC_SIGNIFICANCE_AND_SCOPE_QA.md`](STAGE13RM_ECONOMIC_SIGNIFICANCE_AND_SCOPE_QA.md).
 
