@@ -75,10 +75,11 @@ def declarations_tex(data):
     out += item("Funding", "funding_statement")
     out += item("Conflicts of interest", "conflicts_statement")
     out += item("Data and code availability", "data_code_availability_statement")
-    out += item("Generative AI assistance", "ai_assistance_statement")
     out += item("Research ethics and permissions", "ethics_and_permissions_statement")
+    out += r"\section*{Acknowledgments}" + "\n"
+    out += item("Generative AI assistance", "ai_assistance_statement")
     if (ack := data.get("acknowledgments_statement", "")).strip():
-        out += r"\section*{Acknowledgments}" + "\n" + tex_escape(ack) + "\n\n"
+        out += tex_escape(ack) + "\n\n"
     return out
 
 def render(data: dict, outdir: Path):
