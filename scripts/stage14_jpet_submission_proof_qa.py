@@ -16,8 +16,14 @@ def normalize(t):
     t=re.sub(r"\\section\*\{Declarations[^\n]*[\s\S]*?(?=\\begin\{thebibliography\})","DECLARATIONS_NORMALIZED\n\n",t,count=1)
     return t
 assert normalize(present)==normalize(baseline), "Unexpected change outside title-date/structured abstract/declarations"
-for h in ("Introduction","Methods","Results","Conclusion"):
-    assert r"\textbf{"+h+".}" in present
+ab = re.search(r"\\begin\{abstract\}\n([^\n]+)\n\\end\{abstract\}", present)
+assert ab, "JPET Abstract must be one coherent paragraph without formatting headings"
+abstract_text = ab.group(1)
+assert 140 <= len(abstract_text.split()) <= 250, "Abstract exceeds planned 250-word maximum"
+for h in ("Introduction", "Methods", "Results", "Conclusion"):
+    assert r"\\textbf{" + h + ".}" not in abstract_text, "Section labels must be omitted from the Abstract"
+for phrase in ("three-country", "Cournot competition", "nonempty open parameter neighborhood", "positive-depth menu", "multilateral agreement"):
+    assert phrase in abstract_text, "Essential abstract claim missing: " + phrase
 assert r"\date{}" in present
 assert "Not for submission" not in present
 assert r"\textbf{Funding.} The author received no external funding for this research." in present
