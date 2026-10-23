@@ -14,6 +14,7 @@ original = subprocess.check_output(["git", "show", f"{BASE}:{TEX}"], cwd=ROOT, t
 old_supp = subprocess.check_output(["git", "show", f"{BASE}:{SUP}"], cwd=ROOT, text=True)
 assert supp == old_supp, "Proof supplement edited"
 assert text.count(r"\end{document}") == 1
+assert text.count(r"\begin{table}[H]"+ "\n" + r"\centering\footnotesize"+ "\n" + r"\caption{Hierarchy, proven domains, and limits of the results}\label{tab:map}") == 1, "Table 1 must have [H]"
 assert r"\section{Introduction}" in text
 assert r"\section{Relationship to the literature and interpretation}" in text
 assert r"\section{Conclusion}" in text
@@ -29,6 +30,15 @@ def mask_allowed(s):
         a = s.index(start) + len(start)
         b = s.index(end, a)
         s = s[:a] + "\n% SECTION PROSE ONLY\n" + s[b:]
+    # Sole permitted non-prose correction: Table 1/tab:map float specifier [tbp] -> [H].
+    # Normalize the specified table header only, so any changed table content, position,
+    # math, figures or unrelated float specifiers still fail the byte-comparison.
+    old_map = r"\begin{table}[tbp]" + "\n" + r"\centering\footnotesize" + "\n" + \
+        r"\caption{Hierarchy, proven domains, and limits of the results}\label{tab:map}"
+    new_map = old_map.replace(r"\begin{table}[tbp]", r"\begin{table}[H]")
+    assert s.count(old_map) + s.count(new_map) == 1, \
+        "Exactly one unchanged Table 1/tab:map header is required"
+    s = s.replace(new_map, old_map)
     s = s.replace("Stage 13R-L literature-integrated draft", "STAGE-EDITORIAL-VERSION")
     s = s.replace("Stage 13R-M economic-significance editorial revision", "STAGE-EDITORIAL-VERSION")
     return s
