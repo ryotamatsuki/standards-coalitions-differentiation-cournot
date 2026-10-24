@@ -41,7 +41,6 @@ theorem own_design_quantity_matrix_rows
   · field_simp [hPnz, hLnz]
     <;> ring
   · field_simp [hPnz, hLnz]
-    rw [hSquare]
     field_simp [hLnz]
     <;> ring
 
