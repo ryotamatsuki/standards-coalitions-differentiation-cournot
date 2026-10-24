@@ -42,12 +42,17 @@ jobs:
           lake env lean JPETLocalCalculus.lean
       - name: Verify scientific source and code unchanged on this audit branch
         run: |
-          git diff --name-only 34af29b70f35dd22da2a69873c6832708f9d7c79...HEAD | tee /tmp/changed.txt
-          if grep -Ev '^formal/jpet_audit/|^\.github/workflows/jpet-lean-final-audit\.yml$|^reviews/JPET_FINAL_LEAN_MATHEMATICAL_AUDIT_20261024\.md; then
-            echo "Audit branch modified existing research or manuscript source"
-            exit 1
-          fi
- /tmp/changed.txt; then
-            echo "Audit branch modified existing research or manuscript source"
-            exit 1
-          fi
+          python - <<'PY'
+          import subprocess
+          base = "34af29b70f35dd22da2a69873c6832708f9d7c79"
+          paths = subprocess.check_output(
+              ["git", "diff", "--name-only", base + "...HEAD"], text=True
+          ).splitlines()
+          def allowed(path):
+              return (path.startswith("formal/jpet_audit/")
+                  or path == ".github/workflows/jpet-lean-final-audit.yml"
+                  or path == "reviews/JPET_FINAL_LEAN_MATHEMATICAL_AUDIT_20261024.md")
+          bad = [p for p in paths if not allowed(p)]
+          print("AUDIT FILES:", paths)
+          assert not bad, "Scientific manuscript/code changed: " + repr(bad)
+          PY
