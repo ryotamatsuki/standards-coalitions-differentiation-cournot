@@ -17,7 +17,7 @@ Source `formal/jpet_audit/JPETPrimitiveBridge.lean`:
 - Derive **unilateral design quantity sensitivities** by solving the FULL THREE-ROW symmetric `M q_{x_A}=-M_{x_A}q` system (two distinct row types), with `P=α-t, L=α+2t`; no cartel-path derivative substituted.
 - Verify closed-form C = βd²(η+2t)/L³, V = 3βd²(α−2t)/(P L³), and D from direct consumer plus resident world-operating-profit effects as symbolic rational identities for real primitives with explicitly nonzero denominators.
 
-**CAVEAT:** The Lean source does **not** yet automatically derive the full three-equation firm Nash Jacobian `J`, invert it as a parameterized smooth economic map, prove Rosen full-cube Nash uniqueness, or independently prove via Lean's differentiability rules that every specific CS/firm-profit partial-derivative formula equals the algebraic candidate (the original appendix supplies these analytic steps). In particular, `C,V,D` formula checks are not evidence of a complete kernel-side reconstruction of private Nash best replies.
+**CAVEAT:** The Lean source does **not** automatically derive the full three-equation firm Nash Jacobian `J`, invert it as a parameterized smooth economic map, prove Rosen full-cube Nash uniqueness, or independently prove via Lean's differentiability rules that every specific CS/firm-profit partial-derivative formula equals the algebraic candidate (the original appendix supplies these analytic steps). In particular, `C,V,D` formula checks are not evidence of a complete kernel-side reconstruction of private Nash best replies.
 
 ### Stage 2 — formal conclusion and external-certificate bridge
 
@@ -41,7 +41,7 @@ Source `formal/jpet_audit/JPETLocalCalculus.lean`:
 
 ## Result and stop decision
 
-**Lean KERNEL COMPILE PASS for all three audit modules:** [GitHub Actions #40044618574](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/40044618574), whose Lean kernel-check step completed **successfully**. Its overall workflow status was failure solely because the frozen-source whitelist had not yet permitted this NEW audit report file itself. The whitelist was restricted to this report plus the isolated Lean source and workflow in commit `2d00dbe2c767ed67c94def705143817fb549dce6`, and a complete end-to-end CI re-run is required for final overall GREEN.
+**Lean KERNEL COMPILE PASS for all three audit modules:** [GitHub Actions #40044618574](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/40044618574), whose Lean kernel-check step completed **successfully**. Its overall workflow status was failure solely because the frozen-source whitelist had not yet permitted this NEW audit report file itself. The whitelist was restricted to this report plus the isolated Lean source and workflow in commit `2d00dbe2c767ed67c94def705143817fb549dce6`, and the complete [end-to-end CI #40044899647](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/40044899647) **finished SUCCESS**: Lean kernel, no-holes check, and freeze/changed-file allowlist all passed.
 
 - `JPETAnalyticCore.lean`: 9 kernel-proved theorem declarations (Cournot row, symmetric output, welfare sum derivative, primitive component incidence, edge incidence, local slopes, accession/direct-grand vote, conditional full-depth gap), plus model definitions.
 - `JPETPrimitiveBridge.lean`: 4 universally quantified real-algebra identities with explicit domain restrictions (unilateral Cournot sensitivity matrix rows; C; V; D).
@@ -52,3 +52,13 @@ Source `formal/jpet_audit/JPETLocalCalculus.lean`:
 **Audit outcome: PASS for the precisely bounded analytic/core and conditional theorem-interface checks. FULL MAIN THEOREM LEAN VERIFICATION remains NOT CLAIMED.**
 
 A full Lean proof of all Python interval cells and the unrestricted Nash/coalition theorem is beyond the authorized bounded Stage 1–2 scope; any omitted dependencies are explicitly listed above, not silently changed into assumptions of the economics theorem.
+
+## Final reproducibility and unchanged-source certification
+
+- **PASS, 2026-10-24:** [GitHub Actions run 40044899647](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/40044899647); all steps green. CI installs pinned Lean 4.24.0, retrieves Mathlib 4.24.0, compiles all 3 modules with `lake env lean`, rejects `sorry`/`admit`/`axiom`, and compares all changed file paths against the frozen Stage 14 PR #37 baseline `34af29b70f35dd22da2a69873c6832708f9d7c79`.
+- **18 distinct theorem declarations kernel checked (9 + 4 + 5).** No user-developed unchecked axioms, no sorry/admit and no changes to original `formal/V2bWelfareCore.lean`.
+- Matched paper source stays Git blob **`2e485def8e126c1312fb74ba05b6a7b8bd9e52d9`**. This audit has **no changes** to main TeX, PDF, figures, references, private Nash/interval Python scripts or Theory Freeze.
+- The exact mathematical scope is bounded: the symbolic real-algebra identities, payoff signs from named derivation hypotheses, local actual-level inference, and globally negative derivative → veto implication **are Lean-proven**. The independent proof of original demand quantity sensitivities as derivatives of equilibrium maps, Rosen's full-cube regularity, independent outward interval-cell certification, frozen government-optimal depth envelope and open-primitive-neighborhood theorem remain **outside kernel certification**. These components are proven/recorded by other methods in the article/repo but were not re-certified in Lean here.
+- Author publication action, GitHub merge and external communication: **none**. PR remains **Draft**.
+
+**Final judgment: LEAN AUDIT PASS / FULL-GAME FORMAL VERIFICATION NOT CLAIMED.** No mathematical contradiction was discovered in the audited statements; this is not a substitute for checking the unformalized assumptions, interval implementation and paper-model correspondence.
