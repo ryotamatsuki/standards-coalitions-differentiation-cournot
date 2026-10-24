@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 JPET final pre-submission formal audit -- CURRENT linear residual-design specification.
 NO sorry / admit / axiom. Mathlib pinned to Lean v4.24.0.
@@ -12,7 +14,6 @@ Formal trust boundaries:
   assumptions. Does NOT import externally computed all-depth interval certificates.
 No claim of full Nash existence, all-g interval verification or full SPNE inside Lean.
 -/
-import Mathlib
 
 namespace V2b.JPET
 
