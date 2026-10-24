@@ -1,0 +1,58 @@
+name: JPET final pre-submission Lean math audit
+on:
+  push:
+    branches: [audit/jpet-lean-final-math-20261024]
+    paths:
+      - 'formal/jpet_audit/**'
+      - '.github/workflows/jpet-lean-final-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lean_math_audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install Lean 4 v4.24.0
+        run: |
+          curl --retry 3 -fsSL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.24.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          $HOME/.elan/bin/lean --version
+      - name: Check no sorry or project axioms
+        run: |
+          set -euo pipefail
+          if grep -nE '^[[:space:]]*(sorry|admit|axiom)([[:space:]]|$)' formal/jpet_audit/JPETAnalyticCore.lean formal/jpet_audit/JPETPrimitiveBridge.lean formal/jpet_audit/JPETLocalCalculus.lean; then
+            echo "Forbidden unproved placeholder"
+            exit 1
+          fi
+      - name: Retrieve pinned mathlib and binary cache
+        working-directory: formal/jpet_audit
+        run: |
+          set -euo pipefail
+          lake update
+          lake exe cache get
+      - name: Kernel check current JPET analytic and participation lemmas
+        working-directory: formal/jpet_audit
+        run: |
+          lake env lean JPETAnalyticCore.lean
+          lake env lean JPETPrimitiveBridge.lean
+          lake env lean JPETLocalCalculus.lean
+      - name: Verify scientific source and code unchanged on this audit branch
+        run: |
+          python - <<'PY'
+          import subprocess
+          base = "34af29b70f35dd22da2a69873c6832708f9d7c79"
+          paths = subprocess.check_output(
+              ["git", "diff", "--name-only", base + "...HEAD"], text=True
+          ).splitlines()
+          def allowed(path):
+              return (path.startswith("formal/jpet_audit/")
+                  or path == ".github/workflows/jpet-lean-final-audit.yml"
+                  or path == "reviews/JPET_FINAL_LEAN_MATHEMATICAL_AUDIT_20261024.md")
+          bad = [p for p in paths if not allowed(p)]
+          print("AUDIT FILES:", paths)
+          assert not bad, "Scientific manuscript/code changed: " + repr(bad)
+          PY
