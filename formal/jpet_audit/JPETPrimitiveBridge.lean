@@ -40,8 +40,11 @@ theorem own_design_quantity_matrix_rows
   constructor
   · field_simp [hPnz, hLnz]
     <;> ring
-  · field_simp [hPnz, hLnz]
-    field_simp [hLnz]
+  · have hLnonzero : alpha + t*2 ≠ 0 := by
+      have heq : alpha + t*2 = alpha + 2*t := by ring
+      rw [heq]
+      exact hLnz
+    field_simp [hPnz, hLnz, hLnonzero]
     <;> ring
 
 /-- At the symmetric fragmentation reference, the total domestic CS
