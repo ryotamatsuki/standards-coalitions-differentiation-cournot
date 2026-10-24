@@ -41,6 +41,14 @@ Source `formal/jpet_audit/JPETLocalCalculus.lean`:
 
 ## Result and stop decision
 
-**Compilation: running; do not interpret a source-level proof as verified until the final GitHub CI is GREEN.** Update to the exact CI outcome and per-file theorem list before publication.
+**Lean KERNEL COMPILE PASS for all three audit modules:** [GitHub Actions #40044618574](https://github.com/ryotamatsuki/standards-coalitions-differentiation-cournot/actions/runs/40044618574), whose Lean kernel-check step completed **successfully**. Its overall workflow status was failure solely because the frozen-source whitelist had not yet permitted this NEW audit report file itself. The whitelist was restricted to this report plus the isolated Lean source and workflow in commit `2d00dbe2c767ed67c94def705143817fb549dce6`, and a complete end-to-end CI re-run is required for final overall GREEN.
+
+- `JPETAnalyticCore.lean`: 8 kernel-proved theorem declarations (Cournot row, symmetric output, welfare sum derivative, primitive component incidence, edge incidence, local slopes, accession/direct-grand vote, conditional full-depth gap), plus model definitions.
+- `JPETPrimitiveBridge.lean`: 4 universally quantified real-algebra identities with explicit domain restrictions (unilateral Cournot sensitivity matrix rows; C; V; D).
+- `JPETLocalCalculus.lean`: 4 true calculus/governmental implications (positive right derivative sign; negative right derivative sign; actual local payoff-level comparison; whole-menu derivative negativity -> rejection).
+- No `sorry`, `admit` or project-specific `axiom` statements. Each file actually executed under `lake env lean` with Lean 4.24.0 and mathlib v4.24.0.
+- All three theorem groups **PASS** at their explicitly stated hypotheses; the entire full economic game and numerical interval certificates are **not** formally verified inside Lean.
+
+**Audit outcome: PASS for the precisely bounded analytic/core and conditional theorem-interface checks. FULL MAIN THEOREM LEAN VERIFICATION remains NOT CLAIMED.**
 
 A full Lean proof of all Python interval cells and the unrestricted Nash/coalition theorem is beyond the authorized bounded Stage 1–2 scope; any omitted dependencies are explicitly listed above, not silently changed into assumptions of the economics theorem.
