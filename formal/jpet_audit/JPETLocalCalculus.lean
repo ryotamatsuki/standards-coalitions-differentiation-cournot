@@ -11,6 +11,7 @@ The theorem does NOT assert full-game verification or an interval certificate.
 namespace V2b.JPET
 
 open Filter SignType
+open scoped Topology
 
 /-- Classical calculus: a strictly positive derivative at a zero payoff gap
 implies a strictly positive gap throughout some right neighborhood. -/
