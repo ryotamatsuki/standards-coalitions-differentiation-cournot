@@ -1,3 +1,5 @@
+import Mathlib
+
 /-!
 Stage 1b: symbolic matrix and national-welfare incidence cross-checks.
 
@@ -9,7 +11,6 @@ the algebra in Appendix A given the primitive private-design coupling X_ij
 global Nash selection, Rosen uniqueness and the Python all-depth certificate are
 outside this file.
 -/
-import Mathlib
 
 namespace V2b.JPET
 
