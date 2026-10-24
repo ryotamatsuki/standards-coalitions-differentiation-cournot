@@ -89,4 +89,52 @@ theorem local_economic_participation_reversal
     · linarith
     · linarith
 
+/-- From derivative negativity on the OPEN full policy interval, continuity
+on the closed interval and f(0)=0, derive strict rejection at EVERY g>0.
+No numerical search approximation is assumed inside this proof. -/
+theorem every_positive_depth_negative_of_deriv
+    (f : ℝ → ℝ) (hCont : ContinuousOn f (Set.Icc 0 1))
+    (hDeriv : ∀ x ∈ Set.Ioo (0:ℝ) 1, deriv f x < 0)
+    (hZero : f 0 = 0) :
+    ∀ g : ℝ, 0 < g → g ≤ 1 → f g < 0 := by
+  have hStrict : StrictAntiOn f (Set.Icc (0:ℝ) 1) :=
+    strictAntiOn_of_deriv_neg (convex_Icc (0:ℝ) 1) hCont
+      (by
+        intro x hx
+        exact hDeriv x (by simpa only [interior_Icc] using hx))
+  intro g hpos hle
+  have h0 : (0:ℝ) ∈ Set.Icc 0 1 := by norm_num
+  have hg : g ∈ Set.Icc (0:ℝ) 1 := ⟨le_of_lt hpos, hle⟩
+  have h := hStrict h0 hg hpos
+  simpa [hZero] using h
+
+/-- Lean checks the global analytic bridge from externally certified
+derivative *signs* (not pre-assumed payoff-level signs) to the governmental
+fragmentation logic. The Python interval inclusions are an explicit
+unverified external hypothesis; the inference to voting is formal. -/
+theorem global_inherited_depth_refusal_from_derivative_signs
+    (s : ℝ) (m o i : ℝ → ℝ)
+    (hContM : ContinuousOn (fun g => m g - s) (Set.Icc 0 1))
+    (hContC : ContinuousOn (fun g => i g - o g) (Set.Icc 0 1))
+    (hDerivM : ∀ g ∈ Set.Ioo (0:ℝ) 1, deriv (fun x => m x - s) g < 0)
+    (hDerivC : ∀ g ∈ Set.Ioo (0:ℝ) 1, deriv (fun x => i x - o x) g < 0)
+    (hM0 : m 0 = s) (hC0 : i 0 = o 0) :
+    ∀ g : ℝ, 0 < g → g ≤ 1 →
+      ¬ (i g ≥ s ∧ i g ≥ m g ∧ i g ≥ o g) ∧
+      ¬ (m g ≥ s) := by
+  have hm : ∀ g : ℝ, 0 < g → g ≤ 1 → m g - s < 0 :=
+    every_positive_depth_negative_of_deriv
+      (fun g => m g-s) hContM hDerivM (by simp [hM0])
+  have hc : ∀ g : ℝ, 0 < g → g ≤ 1 → i g - o g < 0 :=
+    every_positive_depth_negative_of_deriv
+      (fun g => i g-o g) hContC hDerivC (by simp [hC0])
+  intro g hpos hle
+  have hmem := hm g hpos hle
+  have hacc := hc g hpos hle
+  constructor
+  · intro ha
+    linarith [ha.2.2]
+  · intro hb
+    linarith
+
 end V2b.JPET
