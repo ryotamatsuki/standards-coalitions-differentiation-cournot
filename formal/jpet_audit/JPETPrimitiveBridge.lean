@@ -36,10 +36,13 @@ theorem own_design_quantity_matrix_rows
   subst P
   subst L
   dsimp [dxOwn, dxOther, qSym]
+  have hSquare : t*alpha*4 + t^2*4 + alpha^2 = (alpha+2*t)^2 := by ring
   constructor
   · field_simp [hPnz, hLnz]
     <;> ring
   · field_simp [hPnz, hLnz]
+    rw [hSquare]
+    field_simp [hLnz]
     <;> ring
 
 /-- At the symmetric fragmentation reference, the total domestic CS
@@ -97,5 +100,7 @@ theorem fixed_design_direct_incidence_exact
   dsimp [directCS, dProfitFixed, fixedD]
   field_simp [hPnz, hLnz]
   <;> ring
+
+end
 
 end V2b.JPET
