@@ -14,6 +14,8 @@ outside this file.
 
 namespace V2b.JPET
 
+noncomputable section
+
 def qSym (d L : ℝ) : ℝ := d / L
 def dxOwn (beta alpha d P L : ℝ) : ℝ :=
   -(beta * alpha * (d/L)) / (P*L)
@@ -35,9 +37,9 @@ theorem own_design_quantity_matrix_rows
   subst L
   dsimp [dxOwn, dxOther, qSym]
   constructor
-  · field_simp
+  · field_simp [hPnz, hLnz]
     <;> ring
-  · field_simp
+  · field_simp [hPnz, hLnz]
     <;> ring
 
 /-- At the symmetric fragmentation reference, the total domestic CS
@@ -61,7 +63,7 @@ theorem consumer_incidence_exact
   subst L
   subst alpha
   dsimp [consumerDesignSlope, consumerC, dxOwn, dxOther, qSym]
-  field_simp
+  field_simp [hPnz, hLnz]
   <;> ring
 
 /-- This is the incremental rival-firm worldwide-profit incidence V. -/
@@ -74,7 +76,7 @@ theorem rival_profit_incidence_exact
     6 * qSym d L * dxOther beta alpha t d P L
       = -rivalV beta alpha d t P L := by
   dsimp [qSym, dxOther, rivalV]
-  field_simp
+  field_simp [hPnz, hLnz]
   <;> ring
 
 /-- The D formula is verified by adding a direct CS effect and
@@ -93,7 +95,7 @@ theorem fixed_design_direct_incidence_exact
     directCS rho delta d t L + dProfitFixed delta alpha d P L
       = fixedD rho delta alpha d t P L := by
   dsimp [directCS, dProfitFixed, fixedD]
-  field_simp
+  field_simp [hPnz, hLnz]
   <;> ring
 
 end V2b.JPET
