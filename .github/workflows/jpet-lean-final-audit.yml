@@ -24,7 +24,7 @@ jobs:
       - name: Check no sorry or project axioms
         run: |
           set -euo pipefail
-          if grep -nE '^[[:space:]]*(sorry|admit|axiom)([[:space:]]|$)' formal/jpet_audit/JPETAnalyticCore.lean; then
+          if grep -nE '^[[:space:]]*(sorry|admit|axiom)([[:space:]]|$)' formal/jpet_audit/JPETAnalyticCore.lean formal/jpet_audit/JPETPrimitiveBridge.lean; then
             echo "Forbidden unproved placeholder"
             exit 1
           fi
@@ -38,6 +38,7 @@ jobs:
         working-directory: formal/jpet_audit
         run: |
           lake env lean JPETAnalyticCore.lean
+          lake env lean JPETPrimitiveBridge.lean
       - name: Verify scientific source and code unchanged on this audit branch
         run: |
           git diff --name-only 34af29b70f35dd22da2a69873c6832708f9d7c79...HEAD | tee /tmp/changed.txt
